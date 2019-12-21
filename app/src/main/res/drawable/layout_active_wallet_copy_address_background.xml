@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/layout_active_wallet_frameLayoutCopyAddress_circle" />
+    <solid android:color="@color/background_transparent" />
+    <stroke
+        android:width="@dimen/drawable_normal_stroke_default"
+        android:color="@color/mainColorHelp_default" />
+</shape>

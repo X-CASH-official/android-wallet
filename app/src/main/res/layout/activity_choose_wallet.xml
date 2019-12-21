@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/view_normal_margin_default"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textViewWalletTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/view_normal_margin_narrow"
+            android:text="@string/activity_choose_wallet_textViewWalletTips_text"
+            android:textColor="?attr/mainColorText"
+            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+        <Button
+            android:id="@+id/buttonCreateWallet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height_broad"
+            android:layout_margin="@dimen/view_normal_margin_narrow"
+            android:background="@drawable/activity_choose_wallet_background_1"
+            android:text="@string/activity_choose_wallet_buttonCreateWallet_text"
+            android:textColor="?attr/mainColorHelp"
+            android:textSize="@dimen/textView_normal_textSize_default" />
+
+        <Button
+            android:id="@+id/buttonImportWallet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height_broad"
+            android:layout_margin="@dimen/view_normal_margin_narrow"
+            android:background="@drawable/activity_choose_wallet_background_2"
+            android:text="@string/activity_choose_wallet_buttonImportWallet_text"
+            android:textColor="?attr/mainColorHelp"
+            android:textSize="@dimen/textView_normal_textSize_default" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayoutButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="@dimen/activity_choose_wallet_imageViewIcon_width"
+                android:layout_height="@dimen/activity_choose_wallet_imageViewIcon_width"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_normal_margin_default"
+                android:text="@string/app_name"
+                android:textColor="?attr/mainColorText"
+                android:textSize="@dimen/textView_normal_textSize_broad"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

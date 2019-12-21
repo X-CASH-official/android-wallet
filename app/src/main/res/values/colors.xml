@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="base_normal_load_completed">#999999</color>
+
+    <color name="colorPrimary_default">#469194</color>
+    <color name="mainColorDeepen_default">#3a7f82</color>
+    <color name="mainColorHelp_default">#ffffff</color>
+    <color name="mainColorText_default">#6d6d6d</color>
+    <color name="windowBackground_default">#ffffff</color>
+    <color name="windowBackgroundDeepen_default">#f8f8f8</color>
+    <color name="cursorColor_default">#6d6d6d</color>
+    <color name="darkColor_default">#000000</color>
+    <color name="background_transparent">#00ffffff</color>
+    <color name="normal_button_unEnabled_background">#d4d4d4</color>
+    <color name="editText_normal_hint">#aaaaaa</color>
+    <color name="textView_error">#fc5e47</color>
+
+    <color name="unSelectColor_default">#dddddd</color>
+    <color name="line_normal_background">#dddddd</color>
+    <color name="normal_load_completed">#999999</color>
+    <color name="editText_background_default">#f2f2f2</color>
+
+    <color name="activity_create_wallet_background_1">#469194</color>
+    <color name="activity_create_wallet_background_2">#fa741c</color>
+
+    <color name="activity_main_content_line_background">#33aaaaaa</color>
+    <color name="layout_active_wallet_circle_active_background">#00a761</color>
+    <color name="layout_active_wallet_circle_unactive_background">#fc5e47</color>
+
+    <color name="layout_transaction_item_pay_in">#469194</color>
+    <color name="layout_transaction_item_pay_out">#fa741c</color>
+</resources>

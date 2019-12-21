@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_default</item>
+        <item name="colorPrimaryDark">@color/colorPrimary_default</item>
+        <item name="colorAccent">@color/colorPrimary_default</item>
+        <item name="android:windowBackground">@color/windowBackground_default
+        </item>
+        <item name="mainColorDeepen">@color/mainColorDeepen_default</item>
+        <item name="mainColorHelp">@color/mainColorHelp_default</item>
+        <item name="mainColorText">@color/mainColorText_default</item>
+
+        <item name="android:windowAnimationStyle">@style/default_animation</item>
+        <item name="toolbarStyle">@style/removeSpacesToolbar</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance_default" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/textView_normal_textSize_default</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance_broad" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/textView_normal_textSize_broad</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="removeSpacesToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="default_animation" parent="@android:style/Animation.Activity">
+
+    </style>
+
+</resources>

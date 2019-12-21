@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_appbar_default" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        android:background="?attr/mainColorHelp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/mainColorHelp"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_normal_margin_default"
+                        android:background="@color/windowBackgroundDeepen_default" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+                        android:background="@color/line_normal_background" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_normal_margin_broad"
+                        android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                        android:background="?attr/mainColorHelp">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.45" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutLeft"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/guideline"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageViewIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/view_normal_margin_default"
+                                android:src="@mipmap/ic_launcher" />
+
+                            <TextView
+                                android:id="@+id/textViewWalletName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+                                android:singleLine="true"
+                                android:textColor="?attr/mainColorText"
+                                android:textSize="@dimen/textView_normal_textSize_default"
+                                tools:text="@string/app_name" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutRight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/normal_material_select_background_borderless"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/textViewAmountTips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/view_normal_margin_default"
+                                android:text="@string/activity_payment_textViewAmountTips_text"
+                                android:textColor="?attr/mainColorText"
+                                android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                                android:layout_marginRight="@dimen/view_normal_margin_default"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/textViewAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/number_amount_0_text"
+                                    android:textColor="?attr/mainColorText"
+                                    android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+                        android:background="@color/line_normal_background" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutTop"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_normal_margin_default"
+                        android:background="@color/windowBackgroundDeepen_default" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+                        android:layout_marginBottom="@dimen/view_normal_margin_default"
+                        android:background="@color/line_normal_background" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutWalletAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_normal_margin_broad"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <ImageView
+                            android:id="@+id/imageViewWalletAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:padding="@dimen/view_normal_margin_narrow"
+                            android:tint="?attr/mainColorText"
+                            android:src="@mipmap/activity_main_navigationview_address" />
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextWalletAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:layout_toLeftOf="@+id/imageViewWalletAddress"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextWalletAddress_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutWalletAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextWalletAddress"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextAmount_hint"
+                            android:inputType="numberDecimal"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextAmount"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutRingSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextRingSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextRingSize_hint"
+                            android:inputType="number"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutRingSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextRingSize"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutPaymentId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextPaymentId"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextPaymentId_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutPaymentId"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextPaymentId"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextDescription_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextDescription"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_broad"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad"
+                        android:background="?attr/mainColorHelp">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.333" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutLow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/normal_material_select_background_borderless"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/guideline1"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RadioButton
+                                android:id="@+id/radioButtonLow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/activity_payment_radioButtonLow_text"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textSize="@dimen/textView_normal_textSize_narrow" />
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.666" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutNormal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/normal_material_select_background_borderless"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline1"
+                            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RadioButton
+                                android:id="@+id/radioButtonNormal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/activity_payment_radioButtonNormal_text"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textSize="@dimen/textView_normal_textSize_narrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutHigh"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/normal_material_select_background_borderless"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RadioButton
+                                android:id="@+id/radioButtonHigh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/activity_payment_radioButtonHigh_text"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textSize="@dimen/textView_normal_textSize_narrow" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutPublic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/view_normal_margin_broad">
+
+                        <CheckBox
+                            android:id="@+id/checkBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/textViewPublicTips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/view_normal_margin_default"
+                            android:layout_toRightOf="@+id/checkBox"
+                            android:text="@string/activity_payment_textViewPublicTips_text"
+                            android:textColor="?attr/mainColorText"
+                            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/buttonNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_normal_height_broad"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad"
+                        android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/button_normal_marginTop"
+                        android:textSize="@dimen/textView_normal_textSize_default"
+                        android:background="@drawable/normal_solid_single_background"
+                        android:text="@string/button_next"
+                        android:textColor="?attr/mainColorHelp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

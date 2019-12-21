@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_view_normal_margin_default">10dp</dimen>
+    <dimen name="base_textView_normal_textSize_default">14sp</dimen>
+
+    <dimen name="popupwindow_horizontal_margin">33dp</dimen>
+    <dimen name="popupwindow_vertical_margin">33dp</dimen>
+    <dimen name="popupwindow_menu_listview_more_listView_width">100dp</dimen>
+    <dimen name="popupwindow_menu_listview_more_listView_height">40dp</dimen>
+    <dimen name="popupwindow_menu_listview_more_string_item_height">40dp</dimen>
+
+
+    <dimen name="textView_normal_textSize_super_broad">21sp</dimen>
+    <dimen name="textView_normal_textSize_broad">18sp</dimen>
+    <dimen name="textView_normal_textSize_default">15sp</dimen>
+    <dimen name="textView_normal_textSize_narrow">12sp</dimen>
+    <dimen name="textView_normal_textSize_super_narrow">9sp</dimen>
+
+    <dimen name="line_normal_widthOrHeight_broad">2dp</dimen>
+    <dimen name="line_normal_widthOrHeight_default">1dp</dimen>
+    <dimen name="line_normal_widthOrHeight_narrow">1px</dimen>
+
+    <dimen name="view_normal_margin_broad">18dp</dimen>
+    <dimen name="view_normal_margin_default">12dp</dimen>
+    <dimen name="view_normal_margin_narrow">6dp</dimen>
+
+    <dimen name="drawable_normal_stroke_broad">2dp</dimen>
+    <dimen name="drawable_normal_stroke_default">2px</dimen>
+    <dimen name="drawable_normal_stroke_narrow">1px</dimen>
+
+    <dimen name="drawable_normal_radius_broad">6dp</dimen>
+    <dimen name="drawable_normal_radius_default">4dp</dimen>
+    <dimen name="drawable_normal_radius_narrow">2dp</dimen>
+
+    <dimen name="button_normal_width_broad">100dp</dimen>
+    <dimen name="button_normal_width_default">80dp</dimen>
+    <dimen name="button_normal_width_narrow">60dp</dimen>
+
+    <dimen name="button_normal_height_broad">44dp</dimen>
+    <dimen name="button_normal_height_default">36dp</dimen>
+    <dimen name="button_normal_height_narrow">30dp</dimen>
+
+    <dimen name="button_normal_radius_circle_broad">22dp</dimen>
+    <dimen name="button_normal_radius_circle_default">18dp</dimen>
+    <dimen name="button_normal_radius_circle_narrow">15dp</dimen>
+
+    <dimen name="button_normal_marginTop">50dp</dimen>
+
+    <dimen name="editText_normal_height">44dp</dimen>
+    <dimen name="editText_normal_paddingLeft">3dp</dimen>
+    <dimen name="editText_normal_paddingRight">3dp</dimen>
+    <dimen name="editText_normal_paddingTop">5dp</dimen>
+    <dimen name="editText_normal_paddingBottom">5dp</dimen>
+
+    <dimen name="textViewTitle_horizontal_margin">48dp</dimen>
+
+    <dimen name="layout_active_wallet_frameLayoutCopyAddress_height">24dp</dimen>
+    <dimen name="layout_active_wallet_frameLayoutCopyAddress_circle">12dp</dimen>
+    <dimen name="layout_active_wallet_height">140dp</dimen>
+
+    <dimen name="activity_main_navigationView_width">266dp</dimen>
+
+    <dimen name="activity_main_content_bottomTab_height">45dp</dimen>
+    <dimen name="activity_main_content_bottomTab_item_marginTop">2dp</dimen>
+    <dimen name="activity_main_content_bottomTab_line_height">2dp</dimen>
+
+    <dimen name="activity_splash_relativeLayoutBottom_height">70dp</dimen>
+    <dimen name="activity_splash_imageViewIcon_width">34dp</dimen>
+    <dimen name="activity_choose_wallet_imageViewIcon_width">80dp</dimen>
+
+    <dimen name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_height">100dp</dimen>
+
+    <dimen name="activity_create_wallet_mnemonic_word_item_frameLayoutWord_height">45dp</dimen>
+
+
+    <dimen name="activity_main_navigationview_item_height">56dp</dimen>
+    <dimen name="activity_main_navigationview_textViewTitle_marginLeft">60dp</dimen>
+
+
+    <dimen name="activity_wallet_manager_item_textViewActiveStatus_height">40dp</dimen>
+    <dimen name="activity_wallet_manager_item_imageViewIcon_width">30dp</dimen>
+    <dimen name="activity_wallet_manager_item_textViewWalletName_marginRight">60dp</dimen>
+
+    <dimen name="activity_wallet_details_marginLeft">18dp</dimen>
+
+    <dimen name="activity_wallet_running_progressSynchronize_height">4dp</dimen>
+    <dimen name="activity_wallet_running_progressSynchronize_circle">2dp</dimen>
+    <dimen name="activity_wallet_running_imageViewCopy_width">16dp</dimen>
+    <dimen name="activity_wallet_running_imageViewCopy_height">16dp</dimen>
+
+    <dimen name="activity_address_manager_item_imageViewIcon_width">30dp</dimen>
+
+    <dimen name="activity_about_us_imageViewIcon_marginTop">40dp</dimen>
+
+
+</resources>

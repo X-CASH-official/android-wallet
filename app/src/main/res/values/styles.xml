@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="DialogAlertStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary_default</item>
+        <item name="android:textColorPrimary">@color/mainColorText_default</item>
+        <item name="android:background">@color/mainColorHelp_default</item>
+    </style>
+
+
+    <style name="popwindowNormalAnimation">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_in</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_out</item>
+    </style>
+
+    <style name="popwindowNormalAnimationCenter">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_in_center</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_out_center</item>
+    </style>
+
+</resources>

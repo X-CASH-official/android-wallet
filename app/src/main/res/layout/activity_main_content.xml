@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayoutMainContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutBottomTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_main_content_bottomTab_height"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/mainColorHelp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.333" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHomeTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/normal_material_select_background_borderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewHomeTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_main_home_select" />
+
+            <TextView
+                android:id="@+id/textViewHomeTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_main_bottomTab_textViewHomeTab_text"
+                android:textColor="?attr/mainColorText"
+                android:textSize="@dimen/textView_normal_textSize_narrow" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.666" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFindTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/normal_material_select_background_borderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/guideline1"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewFindTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_main_find_unselect" />
+
+            <TextView
+                android:id="@+id/textViewFindTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_main_bottomTab_textViewFindTab_text"
+                android:textColor="?attr/mainColorText"
+                android:textSize="@dimen/textView_normal_textSize_narrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutWalletTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/normal_material_select_background_borderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewWalletTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_main_wallet_unselect" />
+
+            <TextView
+                android:id="@+id/textViewWalletTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_main_bottomTab_textViewWalletTab_text"
+                android:textColor="?attr/mainColorText"
+                android:textSize="@dimen/textView_normal_textSize_narrow" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frameLayoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/constraintLayoutBottomTab" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_main_content_bottomTab_line_height"
+        android:layout_above="@+id/constraintLayoutBottomTab"
+        android:background="@drawable/activity_main_content_line_background" />
+
+
+</RelativeLayout>

@@ -1,0 +1,231 @@
+<resources>
+    <string name="app_name">XCASH</string>
+    <string name="contact_us_url">https://x-network.io</string>
+    <string name="about_us_url">https://github.com/snakewaypasser/xwallet/releases</string>
+
+    <string name="base_layout_load_completed_textView_text">No more</string>
+    <string name="base_recyclerview_lostviewtype_item_textView_text">lost viewType in recyclerView</string>
+
+    <string name="permission_setting_tips">Some of the main permissions are disabled and you need to authorize the appropriate permissions to use the software normally.</string>
+    <string name="permission_setting">Setting</string>
+    <string name="permission_cancel">Cancel</string>
+    <string name="button_next">Next</string>
+    <string name="button_ok">OK</string>
+    <string name="number_0_text">0</string>
+    <string name="number_over_99_text">···</string>
+    <string name="number_amount_0_text">0.00</string>
+    <string name="progressDialogHelp_tips">Please waiting...</string>
+    <string name="normal_nodata_textView_text">No data</string>
+    <string name="normal_load_completed_textView_text">No more</string>
+    <string name="normal_copySuccess_tips">Copy success</string>
+    <string name="over_request_tips">Request exceeded processing limit, please try again later</string>
+    <string name="wallet_not_exists_tips">Wallet not exists</string>
+    <string name="password_can_not_empty_tips">Password can not empty</string>
+    <string name="check_password_error_tips">Check password error</string>
+    <string name="set_daemon_error_tips">Set daemon failed</string>
+    <string name="create_transaction_error_tips">Create transaction failed, please check the content</string>
+    <string name="send_transaction_error_tips">Send transaction failed</string>
+    <string name="not_find_active_wallet_tips">Not find active wallet</string>
+    <string name="close_active_wallet_error_tips">Close active wallet failed</string>
+    <string name="get_wallet_data_error_tips">Get wallet data failed</string>
+    <string name="qrcode_cancel_tips">QR Code scanning has been canceled</string>
+    <string name="wallet_service_not_running_tips">Wallet service not running</string>
+    <string name="service_uninitialized_tips">Service uninitialized, please retry</string>
+    <string name="show_more_tips">show more</string>
+
+    <string name="popupwindow_textViewOK_text">OK</string>
+    <string name="popupwindow_textViewCancel_text">Cancel</string>
+
+    <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X Wallet All Rights Reserved</string>
+    <string name="activity_splash_initDaemonError_tips">Set daemon error</string>
+
+    <string name="activity_choose_wallet_buttonCreateWallet_text">Create Wallet</string>
+    <string name="activity_choose_wallet_buttonImportWallet_text">Import Wallet</string>
+    <string name="activity_choose_wallet_textViewWalletTips_text">You need at least one wallet, you can choose to create a new wallet or import an existing wallet.</string>
+
+    <string name="activity_set_wallet_textViewTips_text">• Validate sha256:\nFor the security and safety of your assets, please match the sha256 corresponding to the app current version.\n• Set password:\nFor the security and safety of your assets, please set a password used for authorization of your private key and transactions.</string>
+    <string name="activity_set_wallet_editTextLoginName_hint">Your wallet name</string>
+    <string name="activity_set_wallet_editTextPassword_hint">Your password</string>
+    <string name="activity_set_wallet_editTextConfirmPassword_hint">Confirm your password</string>
+    <string name="activity_set_wallet_editTextDescription_hint">Password description</string>
+    <string name="activity_set_wallet_textViewAgreementTips_text">I have validate the sha256 for current version</string>
+    <string name="activity_set_wallet_passwordConfirm_tips">Password confirm error</string>
+    <string name="activity_set_wallet_confirmEmpty_tips">Name and Password not empty</string>
+    <string name="activity_set_wallet_unCheck_tips">Please validate the sha256 for current version</string>
+    <string name="activity_set_wallet_SHA256_tips">Current sha256:</string>
+
+    <string name="activity_create_wallet_textViewTitle_text">Create Wallet</string>
+    <string name="activity_create_wallet_textViewTips_text">• Backup mnemonic words:\nThis is for restoring your wallet, please write it down legibly and store it in a safe place.\n• Please do not screenshot:\nAnyone with your mnemonic words can access or spend your assets.</string>
+    <string name="activity_create_wallet_buttonNext_text">Write down over</string>
+    <string name="activity_create_wallet_waitingCreateWalletTips_text">Waiting create wallet</string>
+    <string name="activity_create_wallet_writeDownTips_text">Please write down your mnemonic</string>
+    <string name="activity_create_wallet_createWalletError_tips">Create wallet error</string>
+    <string name="activity_create_wallet_walletExist_tips">This name wallet have exist</string>
+    <string name="activity_create_wallet_getActiveWalletError_tips">Do not have active wallet</string>
+
+    <string name="activity_import_wallet_textViewTitle_text">Import Wallet</string>
+    <string name="activity_import_wallet_fragment_tabLayout_mnemonic_text">Import Mnemonic</string>
+    <string name="activity_import_wallet_fragment_tabLayout_keys_text">Import Keys</string>
+    <string name="activity_import_wallet_fragment_quick_restore_height_tips">Quick restore height:</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">Mnemonic Words</string>
+    <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">Please enter mnemonic words and separate each word by spaces</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">It is highly recommended to fill recent transaction date to speed up sync or block height.</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">Recent Transaction Date (Optional)</string>
+    <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">Height (Optional)</string>
+    <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">Mnemonic can not be empty</string>
+    <string name="activity_import_wallet_fragment_mnemonic_buttonNext_text">Import Wallet</string>
+    <string name="activity_import_wallet_fragment_keys_textViewPrivateViewKeyTips_text">Private View Key</string>
+    <string name="activity_import_wallet_fragment_keys_editTextPrivateViewKey_hint">Enter your private view key</string>
+    <string name="activity_import_wallet_fragment_keys_textViewPrivateSpendKeyTips_text">Private Spend Key (Optional)</string>
+    <string name="activity_import_wallet_fragment_keys_editTextPrivateSpendKey_hint">Enter your private spend key, If do not provide private spend key, you will only be allowed to view the wallet.</string>
+    <string name="activity_import_wallet_fragment_keys_textViewInputAddressTips_text">Wallet\'s Address</string>
+    <string name="activity_import_wallet_fragment_keys_editTextInputAddressKey_hint">Enter your wallet\'s address</string>
+
+    <string name="activity_create_wallet_confirm_textViewTitle_text">Check Mnemonic</string>
+    <string name="activity_create_wallet_confirm_textViewTips_text">In order to ensure the correctness of your transcription of the mnemonic, please carefully enter the transcript of the transcript.</string>
+    <string name="activity_create_wallet_confirm_textViewWordTips_text">Enter the mnemonic of the transcription</string>
+    <string name="activity_create_wallet_confirm_buttonNext_text">Check</string>
+    <string name="activity_create_wallet_confirm_confirmMnemonicEmpty_tips">Mnemonic not empty</string>
+    <string name="activity_create_wallet_confirm_confirmMnemonicUnEquals_tips">Mnemonic input not right</string>
+
+
+    <string name="layout_active_wallet_textViewCopyAddress_text">Copy</string>
+
+    <string name="activity_main_bottomTab_textViewHomeTab_text">Home</string>
+    <string name="activity_main_bottomTab_textViewFindTab_text">Address</string>
+    <string name="activity_main_bottomTab_textViewWalletTab_text">Wallet</string>
+    <string name="activity_main_exitTips">Press again to exit</string>
+    <string name="activity_main_home_close_active_wallet_tips">Confirm to close active wallet?</string>
+
+    <string name="activity_main_navigationview_textViewWalletTitle_text">Wallet Manager</string>
+    <string name="activity_main_navigationview_textViewAddressTitle_text">Address Manager</string>
+    <string name="activity_main_navigationview_textViewNodeSetting_text">Node Setting</string>
+    <string name="activity_main_navigationview_textViewLanguageSetting_text">Language Setting</string>
+    <string name="activity_main_navigationview_textViewContactUs_text">Contact Us</string>
+    <string name="activity_main_navigationview_textViewAboutUs_text">About Us</string>
+
+    <string name="activity_wallet_manager_textViewTitle_text">Wallet Manager</string>
+    <string name="activity_wallet_manager_item_textViewActiveStatus_text">active</string>
+    <string name="activity_wallet_manager_item_textViewWalletType_text">X-CASH</string>
+    <string name="activity_wallet_manager_activeWallet_error_tips">Active wallet failed</string>
+    <string name="activity_wallet_manager_delete_address_tips">Confirm to delete address?</string>
+
+    <string name="popupwindow_password_textViewPasswordTips_text">Enter Wallet Password:</string>
+    <string name="popupwindow_password_editTextPassword_hint">Your password</string>
+    <string name="popupwindow_password_textViewPasswordHintTips_text">Password Hint</string>
+
+
+    <string name="activity_wallet_details_textViewTitle_text">Wallet Manager</string>
+    <string name="activity_wallet_details_textViewWalletNameTitle_text">Wallet Name</string>
+    <string name="activity_wallet_details_textViewWalletAddressTitle_text">Wallet Address</string>
+    <string name="activity_wallet_details_textViewPasswordHintTitle_text">Password Hint</string>
+    <string name="activity_wallet_details_textViewExportMnemonicWordsTitle_text">Export Mnemonic Words</string>
+    <string name="activity_wallet_details_textViewExportPrivateKeysTitle_text">Export Private Keys</string>
+    <string name="activity_wallet_details_textViewDeleteWalletTitle_text">Delete Wallet</string>
+    <string name="activity_wallet_details_openWalletPasswordError_tips">Password error</string>
+    <string name="activity_wallet_details_openWalletError_tips">Open wallet error</string>
+    <string name="activity_wallet_details_deleteSuccess_tips">Delete wallet success</string>
+    <string name="activity_wallet_details_deleteError_tips">Delete wallet failed</string>
+    <string name="activity_wallet_details_mnemonic_words_textViewTitle_text">Recover Mnemonic</string>
+    <string name="activity_wallet_details_mnemonic_words_waitingLoadingWalletTips_text">Waiting loading mnemonic</string>
+    <string name="activity_wallet_details_mnemonic_words_writeDownTips_text">Please write down your mnemonic</string>
+    <string name="activity_wallet_details_mnemonic_words_mnemonicEmpty_tips">Cannot get mnemonic words by non-mnemonic word import way</string>
+    <string name="activity_wallet_details_private_keys_textViewTitle_text">Recover Private keys</string>
+    <string name="activity_wallet_details_private_keys_textViewTips_text">• Backup private keys:\nThis is for restoring your wallet, please write it down legibly and store it in a safe place.\n• Please do not screenshot:\nAnyone with your private keys can access or spend your assets.</string>
+    <string name="activity_wallet_details_private_keys_waitingLoadingWalletTips_text">Waiting loading private keys</string>
+    <string name="activity_wallet_details_private_keys_writeDownTips_text">Please write down your private keys</string>
+    <string name="activity_wallet_details_private_keys_addressKey_tips">Address</string>
+    <string name="activity_wallet_details_private_keys_publicViewKey_tips">Public View Key</string>
+    <string name="activity_wallet_details_private_keys_privateViewKey_tips">Private View Key</string>
+    <string name="activity_wallet_details_private_keys_publicSpendKey_tips">Public Spend Key</string>
+    <string name="activity_wallet_details_private_keys_privateSpendKey_tips">Private Spend Key</string>
+
+    <string name="activity_wallet_running_textViewSynchronizeStatus_text">It may take 5 minutes, please wait...</string>
+    <string name="activity_wallet_running_buttonSend_text">Send</string>
+    <string name="activity_wallet_running_buttonReceive_text">Receive</string>
+
+    <string name="activity_wallet_running_tabLayout_all_text">All</string>
+    <string name="activity_wallet_running_tabLayout_receive_text">Receive</string>
+    <string name="activity_wallet_running_tabLayout_send_text">Send</string>
+    <string name="activity_wallet_running_SynchronizedError_tips">Synchronized error, please check net and node</string>
+    <string name="activity_wallet_running_SynchronizedSuccess_tips">Synchronized Success</string>
+    <string name="activity_wallet_running_leaveDistance_tips">During synchronization, the remaining blocks:</string>
+    <string name="activity_wallet_running_unlocked_tips">(unlocked)</string>
+
+
+    <string name="activity_node_manager_textViewTitle_text">Choose Node</string>
+    <string name="activity_node_manager_changeNodeSuccess_tips">Change node success</string>
+    <string name="activity_node_manager_changeNodeError_tips">Change node error</string>
+    <string name="activity_node_manager_deleteNodeSuccess_tips">Delete node success</string>
+    <string name="activity_node_manager_deleteNodeError_tips">Delete node error</string>
+    <string name="activity_node_add_textViewTitle_text">Add Node</string>
+    <string name="activity_node_delete_node_tips">Confirm to delete node?</string>
+    <string name="activity_node_add_editTextNodeIp_hint">Add node ip</string>
+    <string name="activity_node_add_editTextNodePort_hint">Add node port</string>
+    <string name="activity_node_add_confirmEmpty_tips">ip and port not empty</string>
+    <string name="activity_node_add_addNodeSuccess_tips">add node success</string>
+    <string name="activity_node_add_addNodeError_tips">add node error</string>
+
+
+    <string name="activity_main_content_fragment_home_top_item_textViewSynchronizeStatus_text">Wallet is locked, click to run</string>
+    <string name="activity_main_content_fragment_home_textViewTransactionTitle_text">Transaction History:</string>
+    <string name="activity_main_content_fragment_home_textViewTransactionDetails_text">Details</string>
+
+    <string name="layout_transaction_item_empty_tips">No transaction</string>
+    <string name="layout_transaction_item_status_tips">STATUS</string>
+    <string name="layout_transaction_item_status_pending_tips">PENDING</string>
+    <string name="layout_transaction_item_status_over_tips">COMPLETE</string>
+    <string name="layout_transaction_item_hash_tips">HASH:</string>
+    <string name="layout_transaction_item_date_tips">DATE:</string>
+
+    <string name="activity_payment_textViewTitle_text">Payment</string>
+    <string name="activity_payment_textViewAmountTips_text">Available Balance</string>
+    <string name="activity_payment_textViewPublicTips_text">Whether need public the transaction</string>
+    <string name="activity_payment_editTextWalletAddress_hint">Transfer Address</string>
+    <string name="activity_payment_editTextAmount_hint">Transfer Amount</string>
+    <string name="activity_payment_editTextRingSize_hint">Ring signature obfuscation,default 21(Optional)</string>
+    <string name="activity_payment_editTextPaymentId_hint">Payment Id(Optional)</string>
+    <string name="activity_payment_editTextDescription_hint">Description(Optional)</string>
+    <string name="activity_payment_confirmEmpty_tips">Address and Amount not empty</string>
+    <string name="activity_payment_confirm_textViewTitle_text">Payment Confirm</string>
+    <string name="activity_payment_radioButtonLow_text">Low Priority</string>
+    <string name="activity_payment_radioButtonNormal_text">Normal Priority</string>
+    <string name="activity_payment_radioButtonHigh_text">High Priority</string>
+
+    <string name="activity_address_manager_textViewTitle_text">Address Manager</string>
+    <string name="activity_address_manager_addAddressSuccess_tips">Add address success</string>
+    <string name="activity_address_manager_addAddressError_tips">Add address error</string>
+    <string name="activity_address_manager_deleteAddressSuccess_tips">Delete address success</string>
+    <string name="activity_address_manager_deleteAddressError_tips">Delete address error</string>
+
+    <string name="activity_address_add_textViewTitle_text">Add Address</string>
+    <string name="activity_address_add_confirmEmpty_tips">Address and Notes not empty</string>
+    <string name="activity_address_add_editTextAddress_hint">Add address</string>
+    <string name="activity_address_add_editTextNotes_hint">Add notes</string>
+    <string name="activity_address_add_addressError_tips">Error address</string>
+
+    <string name="activity_payment_confirm_address_tips">Address:</string>
+    <string name="activity_payment_confirm_amount_tips">Amount:</string>
+    <string name="activity_payment_confirm_fee_tips">Fee:</string>
+    <string name="activity_payment_confirm_firstTxId_tips">FirstTxId:</string>
+    <string name="activity_payment_confirm_txCount_tips">TxCount:</string>
+    <string name="activity_payment_confirm_paySuccess_tips">Pay success</string>
+
+    <string name="activity_webview_chooseFile_tips">Choose File</string>
+
+    <string name="activity_language_setting_textViewTitle_text">Language Setting</string>
+
+    <string name="activity_qrcode_textViewTitle_text">Scan QR Code</string>
+    <string name="activity_receive_textViewTitle_text">RECEIVE</string>
+
+    <string name="activity_transaction_details_textViewTitle_text">Transaction Details</string>
+    <string name="activity_transaction_details_fee_tips">Fee:</string>
+    <string name="activity_transaction_details_blockHeight_tips">BlockHeight:</string>
+    <string name="activity_transaction_details_confirmations_tips">Confirmations:</string>
+    <string name="activity_transaction_details_paymentId_tips">PaymentId:</string>
+
+    <string name="activity_about_us_textViewTitle_text">About Us</string>
+    <string name="activity_about_us_textViewDetails_text">XCASH is headquartered in Paris.CEO is Guilhem CHAUMONT, has many years of banking experience, is familiar with the payment trading industry and has his own cryptocurrency mining company.CTO is Zach HILDRETH,has more than 20 years of programming experience. Since 2013,he has been involved in the blockchain technology industry,engaged in mining technology research and development,and was the chief writer of a well-known mining website.COO is Paul,has many years of marketing experience and is also a patent attorney.\nFirst stage:\nBased on the core code of monero,the key code of monero v8 is added to the free exchange of private transactions and public trading on the basis of monroe. This is also beneficial to meet the government regulatory requirements and appropriate privacy requirements. Cryptonight HeavyX PoW algorithm can effectively fight asic mining machine,and make cpu and gpu mining more fair.\nSecond stage:\nIt will run on the basis of more than one year of running pow,and will switch to the dpops+dbft consensus on the main network after the public beta is completed. Based on more than one year of pow,it can ensure that the ticket process on dpops is more fair and decentralized. Based on the new dpops+dbft consensus,the throughput of the system will be greatly improved,making it possible to apply offline payment and become a medium for rapid exchange between different currencies.</string>
+    <string name="activity_about_us_textViewFindNewVersion_text">Find new version from github</string>
+
+</resources>

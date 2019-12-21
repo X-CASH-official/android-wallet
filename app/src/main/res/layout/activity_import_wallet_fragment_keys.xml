@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewPrivateViewKeyTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:singleLine="true"
+                    android:text="@string/activity_import_wallet_fragment_keys_textViewPrivateViewKeyTips_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+
+                <com.my.views.EditTextInNestedScrollView
+                    android:id="@+id/editTextPrivateViewKey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_import_wallet_fragment_mnemonic_editTextMnemonic_height"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:background="@drawable/normal_edittext_background"
+                    android:gravity="left|top"
+                    android:hint="@string/activity_import_wallet_fragment_keys_editTextPrivateViewKey_hint"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:textColor="?attr/mainColorText"
+                    android:textColorHint="@color/editText_normal_hint"
+                    android:textCursorDrawable="@drawable/normal_cursor"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <TextView
+                    android:id="@+id/textViewPrivateSpendKeyTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:singleLine="true"
+                    android:text="@string/activity_import_wallet_fragment_keys_textViewPrivateSpendKeyTips_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+
+                <com.my.views.EditTextInNestedScrollView
+                    android:id="@+id/editTextPrivateSpendKey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_import_wallet_fragment_mnemonic_editTextMnemonic_height"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:background="@drawable/normal_edittext_background"
+                    android:gravity="left|top"
+                    android:hint="@string/activity_import_wallet_fragment_keys_editTextPrivateSpendKey_hint"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:textColor="?attr/mainColorText"
+                    android:textColorHint="@color/editText_normal_hint"
+                    android:textCursorDrawable="@drawable/normal_cursor"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <TextView
+                    android:id="@+id/textViewInputAddressTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:singleLine="true"
+                    android:text="@string/activity_import_wallet_fragment_keys_textViewInputAddressTips_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+
+                <com.my.views.EditTextInNestedScrollView
+                    android:id="@+id/editTextInputAddressKey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_import_wallet_fragment_mnemonic_editTextMnemonic_height"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:background="@drawable/normal_edittext_background"
+                    android:gravity="left|top"
+                    android:hint="@string/activity_import_wallet_fragment_keys_editTextInputAddressKey_hint"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:textColor="?attr/mainColorText"
+                    android:textColorHint="@color/editText_normal_hint"
+                    android:textCursorDrawable="@drawable/normal_cursor"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <TextView
+                    android:id="@+id/textViewSyncTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:text="@string/activity_import_wallet_fragment_mnemonic_textViewSyncTips_text"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+
+                    <TextView
+                        android:id="@+id/textViewDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/editText_normal_height"
+                        android:background="@null"
+                        android:hint="@string/activity_import_wallet_fragment_mnemonic_textViewDate_text"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/editText_normal_hint"
+                        android:textSize="@dimen/textView_normal_textSize_default" />
+
+                    <FrameLayout
+                        android:id="@+id/frameLayoutDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                        android:layout_below="@+id/textViewDate"
+                        android:background="?attr/mainColorText" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutBlockHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:layout_marginBottom="@dimen/view_normal_margin_broad">
+
+
+                    <com.my.views.EditTextInNestedScrollView
+                        android:id="@+id/editTextBlockHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/editText_normal_height"
+                        android:background="@null"
+                        android:hint="@string/activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text"
+                        android:inputType="number"
+                        android:paddingTop="@dimen/editText_normal_paddingTop"
+                        android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                        android:singleLine="true"
+                        android:textColor="?attr/mainColorText"
+                        android:textColorHint="@color/editText_normal_hint"
+                        android:textCursorDrawable="@drawable/normal_cursor"
+                        android:textSize="@dimen/textView_normal_textSize_default" />
+
+                    <FrameLayout
+                        android:id="@+id/frameLayoutBlockHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                        android:layout_below="@+id/editTextBlockHeight"
+                        android:background="?attr/mainColorText" />
+
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/button_normal_marginTop"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                    android:background="@drawable/normal_solid_single_background"
+                    android:text="@string/activity_import_wallet_fragment_mnemonic_buttonNext_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

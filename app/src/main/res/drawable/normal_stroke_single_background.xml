@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <corners android:radius="@dimen/button_normal_radius_circle_broad" />
+        <solid android:color="@color/background_transparent" />
+        <stroke android:width="@dimen/drawable_normal_stroke_default" android:color="@color/unSelectColor_default" />
+    </item>
+    <item>
+        <corners android:radius="@dimen/button_normal_radius_circle_broad" />
+        <solid android:color="@color/background_transparent" />
+        <stroke android:width="@dimen/drawable_normal_stroke_default" android:color="@color/colorPrimary_default" />
+    </item>
+</selector>

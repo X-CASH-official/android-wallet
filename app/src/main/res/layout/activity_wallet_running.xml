@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/mainColorHelp"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+
+                <ImageView
+                    android:id="@+id/imageViewIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/textViewAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageViewIcon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:singleLine="true"
+                    android:text="@string/number_amount_0_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_broad"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewUnlockedAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewAmount"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:padding="@dimen/line_normal_widthOrHeight_broad"
+                    android:singleLine="true"
+                    android:text="@string/number_amount_0_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_narrow"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSynchronizeStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewUnlockedAmount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:text="@string/activity_wallet_running_textViewSynchronizeStatus_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewSynchronizeStatus"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                    <ProgressBar
+                        android:id="@+id/progressSynchronize"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:layout_marginBottom="@dimen/view_normal_margin_default" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressSynchronize"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:background="@drawable/normal_edittext_background">
+
+                        <TextView
+                            android:id="@+id/textViewAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:layout_marginRight="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:padding="@dimen/view_normal_margin_narrow"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textSize="@dimen/textView_normal_textSize_default"
+                            tools:text="@string/app_name" />
+
+                        <ImageView
+                            android:id="@+id/imageViewCopy"
+                            android:layout_width="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:layout_height="@dimen/activity_wallet_running_imageViewCopy_height"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/view_normal_margin_narrow"
+                            android:tint="?attr/colorPrimary"
+                            android:src="@mipmap/activity_create_wallet_copy" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayoutProgress"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.5" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutSend"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/guideline"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <Button
+                                android:id="@+id/buttonSend"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/button_normal_height_broad"
+                                android:layout_margin="@dimen/view_normal_margin_narrow"
+                                android:background="@drawable/activity_choose_wallet_background_1"
+                                android:text="@string/activity_wallet_running_buttonSend_text"
+                                android:textColor="?attr/mainColorHelp"
+                                android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutReceive"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <Button
+                                android:id="@+id/buttonReceive"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/button_normal_height_broad"
+                                android:layout_margin="@dimen/view_normal_margin_narrow"
+                                android:background="@drawable/activity_choose_wallet_background_2"
+                                android:text="@string/activity_wallet_running_buttonReceive_text"
+                                android:textColor="?attr/mainColorHelp"
+                                android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+
+                    <ImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/view_normal_margin_default"
+                        android:src="@mipmap/normal_back"
+                        android:tint="?attr/mainColorText" />
+
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+                        android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+                        android:singleLine="true"
+                        android:textColor="?attr/mainColorHelp"
+                        android:textSize="@dimen/textView_normal_textSize_broad"
+                        tools:text="@string/app_name" />
+
+                    <ImageView
+                        android:id="@+id/imageViewChangeNode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/view_normal_margin_default"
+                        android:src="@mipmap/activity_main_navigationview_node_setting"
+                        android:tint="?attr/mainColorText" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.my.views.tablayout.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/mainColorHelp"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorHeight="@dimen/line_normal_widthOrHeight_broad"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="@dimen/view_normal_margin_default"
+            app:tabPaddingStart="@dimen/view_normal_margin_default"
+            app:tabSelectedTextColor="?attr/colorPrimary"
+            app:tabTextColor="?attr/mainColorText" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

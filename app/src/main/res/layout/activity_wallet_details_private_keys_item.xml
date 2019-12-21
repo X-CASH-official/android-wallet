@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_normal_margin_default"
+        android:singleLine="true"
+        android:textColor="?attr/mainColorText"
+        android:textSize="@dimen/textView_normal_textSize_narrow"
+        tools:text="@string/app_name" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_normal_margin_default"
+        android:layout_marginRight="@dimen/view_normal_margin_default">
+
+        <ImageView
+            android:id="@+id/imageViewCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/activity_create_wallet_copy"
+            android:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textViewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_normal_margin_narrow"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/view_normal_margin_default"
+            android:layout_marginBottom="@dimen/view_normal_margin_default"
+            android:layout_toLeftOf="@+id/imageViewCopy"
+            android:textColor="?attr/mainColorText"
+            android:textSize="@dimen/textView_normal_textSize_narrow"
+            tools:text="@string/app_name" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+        android:layout_marginLeft="@dimen/view_normal_margin_default"
+        android:layout_marginRight="@dimen/view_normal_margin_default"
+        android:background="@color/line_normal_background" />
+
+
+</LinearLayout>
