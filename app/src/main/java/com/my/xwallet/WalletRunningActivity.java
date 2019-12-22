@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -27,9 +28,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.my.adapters.viewpageradapter.WalletRunningActivity_ViewPagerAdapter;
+import com.my.base.BaseActivity;
 import com.my.utils.ClipboardTool;
 import com.my.utils.database.entity.Wallet;
 import com.my.views.tablayout.TabLayout;
+import com.my.xwallet.aidl.OnWalletDataListener;
+import com.my.xwallet.aidl.WalletOperateManager;
 import com.my.xwallet.fragment.WalletRunningActivity_Fragment_Default;
 import com.my.xwallet.uihelp.ActivityHelp;
 import com.my.xwallet.uihelp.ColorHelp;
@@ -164,7 +168,12 @@ public class WalletRunningActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadRefreshWallet(wallet,set_wallet_password);
+            }
+        },500);
     }
 
     private void onClickListener() {
@@ -271,7 +280,6 @@ public class WalletRunningActivity extends NewBaseActivity {
         viewPager.addOnPageChangeListener(onPageChangeListener);
     }
 
-
     private void reset() {
         buttonSend.setEnabled(false);
         buttonReceive.setEnabled(false);
@@ -337,9 +345,45 @@ public class WalletRunningActivity extends NewBaseActivity {
         }
     }
 
+    private void loadRefreshWallet(Wallet wallet, String set_wallet_password) {
+        if (wallet == null || set_wallet_password == null) {
+            return;
+        }
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), false, new OnWalletDataListener.Stub() {
+                @Override
+                public void onSuccess(final com.my.xwallet.aidl.Wallet wallet) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            BaseActivity.showShortToast(WalletRunningActivity.this, error);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean isPageChanged() {
         return pageChanged;
     }
+
 
     public void doRefresh(int walletId) {
         if (this.walletId == walletId) {

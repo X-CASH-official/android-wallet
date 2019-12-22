@@ -1,14 +1,15 @@
+/**
+ *Copyright (c) 2019 by snakeway
+ *
+ *All rights reserved.
+ */
 package com.my.xwallet.aidl;
 
 import com.my.xwallet.aidl.OnWalletRefreshListener;
 import com.my.xwallet.aidl.OnWalletDataListener;
 import com.my.xwallet.aidl.OnNormalListener;
 import com.my.xwallet.aidl.OnCreateTransactionListener;
-/**
- *Copyright (c) 2019 by snakeway
- *
- *All rights reserved.
- */
+
 interface WalletOperateManager {
     void setDaemon(String url,OnNormalListener onNormalListener);
 

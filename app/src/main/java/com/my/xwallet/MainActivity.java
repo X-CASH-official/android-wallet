@@ -45,7 +45,7 @@ import com.my.xwallet.uihelp.PopupWindowHelp;
 
 public class MainActivity extends NewBaseActivity {
     public static final int TYPE_SHOW_WALLET_DETAILS = 1;
-    public static final int TYPE_CHOOSE_WALLET = 2;
+    public static final int TYPE_CHOOSE_NODE = 2;
 
     private final String FRAGMENT_HOME = "mainActivity_Fragment_Home";
     private final String FRAGMENT_FIND = "mainActivity_Fragment_Find";
@@ -203,7 +203,7 @@ public class MainActivity extends NewBaseActivity {
                         startActivity(intent3);
                         break;
                     case R.id.relativeLayoutNodeSetting:
-                        showPassword(relativeLayoutNodeSetting, TYPE_CHOOSE_WALLET);
+                        showPassword(relativeLayoutNodeSetting, TYPE_CHOOSE_NODE);
                         break;
                     case R.id.relativeLayoutLanguageSetting:
                         Intent intent4 = new Intent(MainActivity.this,
@@ -438,13 +438,12 @@ public class MainActivity extends NewBaseActivity {
                             if (mainActivity_Fragment_Home != null) {
                                 mainActivity_Fragment_Home.unLock();
                             }
-                            loadRefreshWallet(wallet, password, false);
                             Intent intent = new Intent(MainActivity.this,
                                     WalletRunningActivity.class);
                             intent.putExtra(ActivityHelp.WALLET_KEY, wallet);
                             intent.putExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY, password);
                             startActivity(intent);
-                        } else if (type == TYPE_CHOOSE_WALLET) {
+                        } else if (type == TYPE_CHOOSE_NODE) {
                             Intent intent = new Intent(MainActivity.this,
                                     NodeManagerActivity.class);
                             intent.putExtra(ActivityHelp.WALLET_KEY, wallet);
