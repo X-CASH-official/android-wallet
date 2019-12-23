@@ -9,14 +9,11 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.util.Log;
+
 
 import java.security.MessageDigest;
-import java.util.Arrays;
 
 public class AppSignTool {
-
-    static String TAG = "AppSignTool";
 
     public final static String ERROR = "error";
     public final static String MD5 = "MD5";
@@ -27,7 +24,6 @@ public class AppSignTool {
         String result = ERROR;
         try {
             Signature[] signatures = getSignatures(context, packageName);
-            Log.e(TAG, "signs =  " + Arrays.asList(signatures));
             Signature signature = signatures[0];
             if (type.equals(MD5)) {
                 result = getSignatureString(signature, MD5);

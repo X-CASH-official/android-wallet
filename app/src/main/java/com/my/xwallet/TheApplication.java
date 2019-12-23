@@ -27,6 +27,7 @@ import com.my.base.recyclerviewlibrary.adapters.LoadMoreRecyclerViewAdapter;
 import com.my.base.utils.ActivityManager;
 import com.my.base.utils.CatchBugManager;
 import com.my.base.utils.FileTool;
+import com.my.base.utils.LogTool;
 import com.my.base.utils.MD5Tool;
 import com.my.models.local.Setting;
 import com.my.utils.WalletServiceHelper;
@@ -59,6 +60,7 @@ public class TheApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LogTool.setDebug(true);
         CatchBugManager.getInstance(this);
         walletServiceHelper = new WalletServiceHelper(this);
         walletServiceHelper.bindService();

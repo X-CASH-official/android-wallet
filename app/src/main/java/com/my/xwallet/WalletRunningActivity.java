@@ -218,7 +218,9 @@ public class WalletRunningActivity extends NewBaseActivity {
         buttonReceive.setOnClickListener(onClickListener);
     }
 
-
+    /**
+     * Multiple page switching fluency optimization
+     */
     private void addViewPagerListener() {
         onPageChangeListener = new ViewPager.OnPageChangeListener() {
             @Override

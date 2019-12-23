@@ -21,9 +21,9 @@ Windows CMD: certutil -hashfile FILENAME SHA256
 Linux CMD: sha256sum FILENAME
 
 
-# Version v1.0.0
+# Version v1.0.1
 
-Apk File SHA256:10aade08691e5a68cd32f879c6e86b0fe63a1188b6a0cb798c9d3a97b6c600e5
+Apk File SHA256:12fd5d6adc65462277c67afee7723aac4d68f28d6bddd0f5d97004f8105d3b8a
 
 Signature information checked inside the app:
 
@@ -31,6 +31,7 @@ Signature SHA256:F02F8AFE256CEBFFCEE50F6FB68C6CA20EBDDB99D44EB227F477228F2ED1643
 
 
 # Preview
+
 
 ## Create or Import Wallet
 
@@ -51,7 +52,9 @@ Possibly due to the reason of the node, when the new wallet performs the functio
 
 ![image](https://github.com/snakewaypasser/xwallet/blob/master/preview/6.png)
 
+
 ## Menu
+
 
 ![image](https://github.com/snakewaypasser/xwallet/blob/master/preview/7.png)
 
@@ -73,7 +76,9 @@ Possibly due to the reason of the node, when the new wallet performs the functio
 
 ![image](https://github.com/snakewaypasser/xwallet/blob/master/preview/16.png)
 
+
 ## Wallet
+
 
 ![image](https://github.com/snakewaypasser/xwallet/blob/master/preview/17.png)
 

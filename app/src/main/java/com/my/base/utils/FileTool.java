@@ -5,7 +5,6 @@
  */
 package com.my.base.utils;
 
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -87,17 +86,17 @@ public class FileTool {
         if (type == 1) {
             newLog = "Error_" + time + ":" + theLog + "\n";
             if (showLog) {
-                Log.e(LOG_TAG, newLog);
+                LogTool.e(LOG_TAG, newLog);
             }
         } else if (type == 2) {
             newLog = "Waring_" + time + ":" + theLog + "\n";
             if (showLog) {
-                Log.w(LOG_TAG, newLog);
+                LogTool.w(LOG_TAG, newLog);
             }
         } else {
             newLog = "Debug_" + time + ":" + theLog + "\n";
             if (showLog) {
-                Log.d(LOG_TAG, newLog);
+                LogTool.d(LOG_TAG, newLog);
             }
         }
         long length = getFileLength(fileName);

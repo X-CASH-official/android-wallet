@@ -13,7 +13,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.my.base.utils.ActivityManager;
 import com.my.base.utils.TimeTool;
 import com.my.base.utils.ToastCompat;
+import com.my.base.utils.LogTool;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -191,7 +191,6 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void doBack() {
 
-
     }
 
     @Override
@@ -231,7 +230,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public static void showSystemErrorLog(String error) {
         if (error != null) {
-            Log.e("SystemError", error);
+            LogTool.e("SystemError", error);
         }
     }
 

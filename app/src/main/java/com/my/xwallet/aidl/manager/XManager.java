@@ -5,10 +5,9 @@
  */
 package com.my.xwallet.aidl.manager;
 
-import android.util.Log;
-
 import com.my.base.utils.FileTool;
 import com.my.monero.model.WalletManager;
+import com.my.base.utils.LogTool;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.Wallet;
@@ -146,7 +145,7 @@ public class XManager {
         File keysFile = getKeysFile(name + ".keys");
         File addressFile = getAddressFile(name + ".address.txt");
         if (walletFile.exists() || keysFile.exists() || addressFile.exists()) {
-            Log.e(TAG, "Some wallet files already exist for " + name);
+            LogTool.e(TAG, "Some wallet files already exist for " + name);
         }
         return walletFile;
     }

@@ -12,19 +12,18 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
-import android.util.Log;
 
 import com.my.base.utils.TimeTool;
 import com.my.monero.model.PendingTransaction;
 import com.my.monero.model.TransactionHistory;
 import com.my.monero.model.WalletManager;
 import com.my.utils.LanguageTool;
+import com.my.base.utils.LogTool;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.TransactionInfo;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.R;
-import com.my.xwallet.TheApplication;
 import com.my.xwallet.aidl.OnCreateTransactionListener;
 import com.my.xwallet.aidl.OnNormalListener;
 import com.my.xwallet.aidl.OnWalletDataListener;
@@ -63,7 +62,6 @@ public class WalletService extends Service {
 
     public final HashMap<String, WalletOperate> waitingWalletOperateHashMap = new HashMap<String, WalletOperate>();
     public final Object waitingWalletOperateHashMapLock = new Object();
-
     private int operateType = OPERATETYPE_STOP;
 
     private int runningWalletId = -1;
@@ -73,7 +71,7 @@ public class WalletService extends Service {
 
     @Override
     protected void attachBaseContext(Context context) {
-        language = TheApplication.getSetting().getLanguage();
+        language = LanguageTool.getSelectLanguage(context);
         WalletService.this.context = LanguageTool.initAppLanguage(context, language);
         super.attachBaseContext(WalletService.this.context);
     }
@@ -506,7 +504,7 @@ public class WalletService extends Service {
          * Running in thread
          */
         private void createTransaction(final WalletOperate walletOperate) throws Exception {
-            Log.e(XManager.TAG, "createTransaction");
+            LogTool.e(XManager.TAG, "createTransaction");
 
             OnCreateTransactionListener onCreateTransactionListener = walletOperate.getOnCreateTransactionListener();
             if (onCreateTransactionListener == null) {
@@ -773,7 +771,7 @@ public class WalletService extends Service {
                 progress = (int) (100f * blockChainHeight / daemonBlockChainHeight);
             }
             walletOperate.setRestoreHeight(blockChainHeight);
-            Log.e(XManager.TAG, "blockChainHeight:" + blockChainHeight + ";" + "daemonHeight:" + daemonBlockChainHeight + ";" + "progress:" + progress);
+            LogTool.e(XManager.TAG, "blockChainHeight:" + blockChainHeight + ";" + "daemonHeight:" + daemonBlockChainHeight + ";" + "progress:" + progress);
             walletInfo.setProgress(progress);
             if (progress < 100) {
                 walletInfo.setResult(false);

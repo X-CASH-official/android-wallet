@@ -5,8 +5,6 @@
  */
 package com.my.xwallet.aidl.manager;
 
-import android.util.Log;
-
 import com.my.monero.data.Node;
 import com.my.monero.data.TxData;
 import com.my.monero.model.PendingTransaction;
@@ -15,6 +13,7 @@ import com.my.monero.model.TransactionHistory;
 import com.my.monero.model.WalletListener;
 import com.my.monero.model.WalletManager;
 import com.my.monero.util.RestoreHeight;
+import com.my.base.utils.LogTool;
 import com.my.utils.database.entity.TransactionInfo;
 import com.my.utils.database.entity.Wallet;
 import com.my.utils.database.models.SubAddress;
@@ -149,11 +148,11 @@ public class XWalletController {
         closeWallet();
         com.my.monero.model.Wallet wallet = WalletManager.getInstance().openWallet(path, password);
         if (wallet == null) {
-            Log.e(TAG, "wallet opened failed");
+            LogTool.e(TAG, "wallet opened failed");
             return null;
         }
         if (wallet.getStatus() != com.my.monero.model.Wallet.Status.Status_Ok) {
-            Log.e(TAG, wallet.getErrorString());
+            LogTool.e(TAG, wallet.getErrorString());
         } else {
             activeWallet = wallet;
             activeWalletId = walletId;
@@ -178,10 +177,10 @@ public class XWalletController {
         }
         wallet.init(0);
         wallet.setRestoreHeight(restoreHeight);
-        Log.d(TAG, wallet.getRestoreHeight() + "Using daemon" + WalletManager.getInstance().getDaemonAddress());
+        LogTool.d(TAG, wallet.getRestoreHeight() + "Using daemon" + WalletManager.getInstance().getDaemonAddress());
 
         if (wallet.getConnectionStatus() != com.my.monero.model.Wallet.ConnectionStatus.ConnectionStatus_Connected) {
-            Log.d(TAG, "Connection error");
+            LogTool.d(TAG, "Connection error");
             onWalletListener.onWalletStartFailed(wallet.getErrorString());
             return false;
         }
@@ -194,22 +193,24 @@ public class XWalletController {
 
             @Override
             public void moneySpent(String txId, long amount) {
-                Log.d(TAG, "moneySpent txId: " + txId + "+amount:" + amount);
+                LogTool.d(TAG, "moneySpent txId: " + txId + "+amount:" + amount);
+                wallet.store();
             }
 
             @Override
             public void moneyReceived(String txId, long amount) {
-                Log.d(TAG, "moneyReceived txId: " + txId + "+amount:" + amount);
+                LogTool.d(TAG, "moneyReceived txId: " + txId + "+amount:" + amount);
+                wallet.store();
             }
 
             @Override
             public void unconfirmedMoneyReceived(String txId, long amount) {
-                Log.d(TAG, "unconfirmedMoneyReceived txId: " + txId + "+amount:" + amount);
+                LogTool.d(TAG, "unconfirmedMoneyReceived txId: " + txId + "+amount:" + amount);
             }
 
             @Override
             public void newBlock(long height) {
-                //Log.d(TAG, "newBlock height: " + height);
+                LogTool.d(TAG, "newBlock height: " + height);
                 if (lastBlockTime < System.currentTimeMillis() - 2000) {
                     lastBlockTime = System.currentTimeMillis();
                     onWalletListener.onRefreshed(height);
@@ -219,12 +220,12 @@ public class XWalletController {
 
             @Override
             public void updated() {
-                Log.d(TAG, "updated");
+                LogTool.d(TAG, "updated");
             }
 
             @Override
             public void refreshed() {
-                Log.d(TAG, "refreshed");
+                LogTool.d(TAG, "refreshed");
                 if (wallet.isSynchronized() && !synced) {
                     if (wallet.store()) {
                         synced = true;
@@ -255,13 +256,13 @@ public class XWalletController {
 
     public void closeWallet() {
         com.my.monero.model.Wallet wallet = getActiveWallet();
-        Log.d(TAG, "closeWallet");
+        LogTool.d(TAG, "closeWallet");
         if (wallet != null) {
             wallet.close();
             activeWallet = null;
             activeWalletId = -1;
         } else {
-            Log.e(TAG, "activeWallet is null");
+            LogTool.e(TAG, "activeWallet is null");
         }
     }
 
@@ -439,7 +440,7 @@ public class XWalletController {
 
             if (status != PendingTransaction.Status.Status_Ok) {
                 wallet.disposePendingTransaction();
-                Log.e(TAG, pendingTransaction.getErrorString());
+                LogTool.e(TAG, pendingTransaction.getErrorString());
                 return null;
             }
             return pendingTransaction;
@@ -456,13 +457,13 @@ public class XWalletController {
         }
         PendingTransaction pendingTransaction = wallet.getPendingTransaction();
         if (pendingTransaction == null) {
-            Log.e(TAG, "getPendingTransaction failed");
+            LogTool.e(TAG, "getPendingTransaction failed");
             return "";
         }
         PendingTransaction.Status status = pendingTransaction.getStatus();
         if (status != PendingTransaction.Status.Status_Ok) {
             wallet.disposePendingTransaction();
-            Log.e(TAG, pendingTransaction.getErrorString());
+            LogTool.e(TAG, pendingTransaction.getErrorString());
             return "";
         }
 
@@ -471,11 +472,11 @@ public class XWalletController {
         if (success) {
             wallet.disposePendingTransaction();
             if (!wallet.store()) {
-                Log.e(TAG, wallet.getErrorString());
+                LogTool.e(TAG, wallet.getErrorString());
             }
         } else {
             wallet.disposePendingTransaction();
-            Log.e(TAG, pendingTransaction.getErrorString());
+            LogTool.e(TAG, pendingTransaction.getErrorString());
             return "";
         }
         return firstTxId;
@@ -489,13 +490,13 @@ public class XWalletController {
         }
         PendingTransaction pendingTransaction = wallet.getPendingTransaction();
         if (pendingTransaction == null) {
-            Log.e(TAG, "getPendingTransaction failed");
+            LogTool.e(TAG, "getPendingTransaction failed");
             return "";
         }
         PendingTransaction.Status status = pendingTransaction.getStatus();
         if (status != PendingTransaction.Status.Status_Ok) {
             wallet.disposePendingTransaction();
-            Log.e(TAG, pendingTransaction.getErrorString());
+            LogTool.e(TAG, pendingTransaction.getErrorString());
             return "";
         }
         return getDisplayAmount(pendingTransaction.getAmount());
@@ -508,13 +509,13 @@ public class XWalletController {
         }
         PendingTransaction pendingTransaction = wallet.getPendingTransaction();
         if (pendingTransaction == null) {
-            Log.e(TAG, "getPendingTransaction failed");
+            LogTool.e(TAG, "getPendingTransaction failed");
             return "";
         }
         PendingTransaction.Status status = pendingTransaction.getStatus();
         if (status != PendingTransaction.Status.Status_Ok) {
             wallet.disposePendingTransaction();
-            Log.e(TAG, pendingTransaction.getErrorString());
+            LogTool.e(TAG, pendingTransaction.getErrorString());
             return "";
         }
         return getDisplayAmount(pendingTransaction.getFee());

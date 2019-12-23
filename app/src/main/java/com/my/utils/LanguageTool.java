@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class LanguageTool {
     public static final String LANGUAGE_ENGLISH = "ENGLISH";
-    public static final String LANGUAGE_CHINESE = "CHINESE";
+    public static final String LANGUAGE_CHINESE = "简体中文";
 
 
     public static Context initAppLanguage(Context context, String language) {
@@ -113,6 +113,7 @@ public class LanguageTool {
         for (int i = 0; i < languages.size(); i++) {
             if (language != null && languages.get(i).equals(language)) {
                 selectPosition = i;
+                break;
             }
         }
         objects[0] = languages;
@@ -120,6 +121,24 @@ public class LanguageTool {
         objects[2] = language;
         return objects;
     }
+    /**
+     * return NotNull
+     */
+    public static String getSelectLanguage(Context context) {
+        Setting setting = TheApplication.getSetting();
+        String language = setting.getLanguage();
+        if (language == null) {
+            String localLanguage = getCurrentLanguage(context);
+            if (localLanguage != null && localLanguage.equals(Locale.CHINESE.getLanguage())) {
+                language = LANGUAGE_CHINESE;
+            } else {
+                language = LANGUAGE_ENGLISH;
+            }
+        }
+        return language;
+    }
+
+
 
     public static String getLocaleStringResource(Context context, String language, int resourceId) {
         Locale requestedLocale = Locale.ENGLISH;
