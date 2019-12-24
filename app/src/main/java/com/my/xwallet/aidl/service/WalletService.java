@@ -423,6 +423,7 @@ public class WalletService extends Service {
         private void loadRefreshWallet(final WalletOperate walletOperate) throws Exception {
             final int walletId = walletOperate.getId();
             runningWalletId = walletId;
+            boolean result = false;
             try{
                 XManager.getInstance().insertNodes();
                 Node node = AppDatabase.getInstance().nodeDao().loadActiveNodeBySymbol(XManager.SYMBOL);
@@ -435,7 +436,6 @@ public class WalletService extends Service {
                 final com.my.monero.model.Wallet openWallet = XManager.getInstance().openWallet(walletOperate.getName(), walletOperate.getPassword(), walletId);
                 beginLoadWallet(walletId);
                 resultWalletData(openWallet, walletOperate.getOnWalletDataListener());
-                boolean result = false;
                 if (openWallet != null) {
                     result = XManager.getInstance().startWallet(openWallet, walletOperate.getRestoreHeight(), new XWalletController.OnWalletListener() {
                         @Override
@@ -458,11 +458,11 @@ public class WalletService extends Service {
                         }
                     });
                 }
-                resultStatus(walletId, result);
             }catch (Exception e){
                 e.printStackTrace();
                 runningWalletId = -2;
             }
+            resultStatus(walletId, result);
         }
 
         /**
