@@ -132,12 +132,12 @@ public class Wallet implements Parcelable {
     }
 
     public Wallet() {
+
     }
 
     protected Wallet(Parcel in) {
         readFromParcel(in);
     }
-
 
     protected void readFromParcel(Parcel in) {
         this.id = in.readInt();
@@ -181,4 +181,5 @@ public class Wallet implements Parcelable {
             return new Wallet[size];
         }
     };
+
 }

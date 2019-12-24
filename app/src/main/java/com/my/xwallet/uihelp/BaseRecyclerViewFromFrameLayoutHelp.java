@@ -19,4 +19,5 @@ public class BaseRecyclerViewFromFrameLayoutHelp {
         TextView textView = view.findViewById(R.id.textView);
         textView.setText(baseActivity.getString(R.string.layout_transaction_item_empty_tips));
     }
+
 }

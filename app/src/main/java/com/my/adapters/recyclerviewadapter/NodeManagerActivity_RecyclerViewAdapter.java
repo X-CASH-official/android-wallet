@@ -20,6 +20,7 @@ import com.my.xwallet.R;
 import java.util.List;
 
 public class NodeManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
+
     private BaseActivity baseActivity;
     private RecyclerView recyclerView;
     private int selectPosition = -1;
@@ -121,4 +122,5 @@ public class NodeManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerV
         void onLongClick(Node node);
 
     }
+
 }

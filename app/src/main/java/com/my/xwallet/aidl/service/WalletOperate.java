@@ -13,6 +13,7 @@ import com.my.xwallet.aidl.OnNormalListener;
 import com.my.xwallet.aidl.OnWalletDataListener;
 
 public class WalletOperate implements Comparable<WalletOperate> {
+
     public static final int TYPE_CREATE_WALLET = 1;
     public static final int TYPE_IMPORT_WALLET_MNEMONIC = 2;
     public static final int TYPE_IMPORT_WALLET_KEYS = 3;
@@ -337,4 +338,5 @@ public class WalletOperate implements Comparable<WalletOperate> {
                 ", maxDaemonBlockChainHeight=" + maxDaemonBlockChainHeight +
                 '}';
     }
+
 }

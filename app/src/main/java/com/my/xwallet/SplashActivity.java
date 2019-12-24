@@ -20,6 +20,7 @@ import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.aidl.manager.XManager;
 
 public class SplashActivity extends NewBaseActivity {
+
     private String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private PermissionHelper permissionHelper = new PermissionHelper(SplashActivity.this, permissions);
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
@@ -69,6 +70,7 @@ public class SplashActivity extends NewBaseActivity {
 
     @Override
     protected void initHttp() {
+
     }
 
     @Override
@@ -107,13 +109,11 @@ public class SplashActivity extends NewBaseActivity {
         });
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         permissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -126,4 +126,5 @@ public class SplashActivity extends NewBaseActivity {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
+
 }

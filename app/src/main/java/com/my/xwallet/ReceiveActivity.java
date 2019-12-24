@@ -23,6 +23,7 @@ import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.uihelp.ActivityHelp;
 
 public class ReceiveActivity extends NewBaseActivity {
+
     private Wallet wallet;
 
     private int halfWidth;
@@ -31,7 +32,6 @@ public class ReceiveActivity extends NewBaseActivity {
     private RelativeLayout relativeLayoutAddress;
     private TextView textViewAddress;
     private ImageView imageViewQRCode;
-
 
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
@@ -77,9 +77,7 @@ public class ReceiveActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-        if (wallet != null) {
-            showQRCode(wallet.getAddress(), halfWidth, halfWidth);
-        }
+        showQRCode();
     }
 
     private void onClickListener() {
@@ -102,12 +100,15 @@ public class ReceiveActivity extends NewBaseActivity {
         relativeLayoutAddress.setOnClickListener(onClickListener);
     }
 
-
-    private void showQRCode(final String content, final int width, final int height) {
+    private void showQRCode() {
+        if (wallet == null) {
+            return;
+        }
+        final String address=wallet.getAddress();
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<Bitmap>() {
             @Override
             public Bitmap runOnIo() {
-                return QRCodeTool.generateBitmap(content, width, height);
+                return QRCodeTool.generateBitmap(address, halfWidth, halfWidth);
             }
 
             @Override
@@ -118,7 +119,6 @@ public class ReceiveActivity extends NewBaseActivity {
             }
         });
     }
-
 
     @Override
     protected void doBack() {
@@ -131,6 +131,5 @@ public class ReceiveActivity extends NewBaseActivity {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
-
 
 }

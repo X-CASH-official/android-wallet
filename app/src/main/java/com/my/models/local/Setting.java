@@ -16,4 +16,5 @@ public class Setting {
     public void setLanguage(String language) {
         this.language = language;
     }
+
 }

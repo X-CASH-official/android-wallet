@@ -35,6 +35,7 @@ import com.my.xwallet.uihelp.ColorHelp;
 import com.my.xwallet.uihelp.ProgressDialogHelp;
 
 public class PaymentActivity extends NewBaseActivity {
+
     private Wallet wallet;
 
     private int colorPrimary;
@@ -66,11 +67,9 @@ public class PaymentActivity extends NewBaseActivity {
     private CheckBox checkBox;
     private Button buttonNext;
 
-    private Drawable drawableWalletAddress;
-
     private View.OnFocusChangeListener onFocusChangeListener;
     private View.OnClickListener onClickListener;
-
+    private Drawable drawableWalletAddress;
     private int priority = 1;
 
     @Override
@@ -155,7 +154,6 @@ public class PaymentActivity extends NewBaseActivity {
 
     }
 
-
     private void onFocusChangeListener() {
         onFocusChangeListener = new View.OnFocusChangeListener() {
             @Override
@@ -210,7 +208,6 @@ public class PaymentActivity extends NewBaseActivity {
         editTextPaymentId.setOnFocusChangeListener(onFocusChangeListener);
         editTextDescription.setOnFocusChangeListener(onFocusChangeListener);
     }
-
 
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
@@ -294,7 +291,6 @@ public class PaymentActivity extends NewBaseActivity {
         }
         createTransaction(walletAddress, amount, ringSize, paymentId, description, priority, checkBox.isChecked());
     }
-
 
     private void createTransaction(final String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();

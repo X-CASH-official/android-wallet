@@ -22,7 +22,6 @@ public class NetworkStateTool {
         }
     }
 
-
     public static int getNetworkType(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -65,4 +64,5 @@ public class NetworkStateTool {
         /** unknow */
         return -1;
     }
+
 }

@@ -22,6 +22,7 @@ import java.util.List;
 
 
 public class Menu_More_String_ListViewAdapter extends BaseAdapter {
+
     private BaseActivity baseActivity;
     private List<KeyValueItem> keyValueItems;
     private ListView listView;

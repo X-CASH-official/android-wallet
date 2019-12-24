@@ -25,6 +25,7 @@ public class QRCodeActivity extends NewBaseActivity {
     private ImageView imageViewBack;
     private TextView textViewTitle;
     private RelativeLayout relativeLayoutToolbar;
+
     private View.OnClickListener onClickListener;
 
     @Override
@@ -39,7 +40,6 @@ public class QRCodeActivity extends NewBaseActivity {
         setWindowType(1);
         initAll();
     }
-
 
     @Override
     protected void initHandler() {
@@ -70,7 +70,6 @@ public class QRCodeActivity extends NewBaseActivity {
 
     }
 
-
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
@@ -87,7 +86,6 @@ public class QRCodeActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -101,21 +99,20 @@ public class QRCodeActivity extends NewBaseActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        captureManager.onDestroy();
-    }
-
-    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         captureManager.onSaveInstanceState(outState);
     }
 
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return barcodeScannerView.onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        captureManager.onDestroy();
     }
 
     public static void openQRCodeActivity(Activity activity) {

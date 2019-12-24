@@ -65,4 +65,5 @@ public class ImportWalletActivity_ViewPagerAdapter extends FragmentStatePagerAda
     public int getCount() {
         return titles.length;
     }
+
 }

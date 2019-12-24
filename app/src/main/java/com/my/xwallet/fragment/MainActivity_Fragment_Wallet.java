@@ -44,11 +44,11 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
     private ImageView imageViewMenu;
     private ImageView imageViewMore;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
-    private CoroutineHelper coroutineHelper = new CoroutineHelper();
-    private WalletManagerActivity_RecyclerViewAdapter walletManagerActivity_recyclerViewAdapter;
 
     private boolean alreadyInitUi = true;
     private View.OnClickListener onClickListener;
+    private CoroutineHelper coroutineHelper = new CoroutineHelper();
+    private WalletManagerActivity_RecyclerViewAdapter walletManagerActivity_recyclerViewAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -87,7 +87,6 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
     protected void initOther() {
 
     }
-
 
     private void initBaseRecyclerViewFromFrameLayout() {
         TheApplication.setColorSchemeColors(getBaseActivity(), baseRecyclerViewFromFrameLayout.getSwipeRefreshLayout());
@@ -139,24 +138,6 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
         }
     }
 
-    private void showMore() {
-        final int[] locations = new int[2];
-        imageViewMore.getLocationOnScreen(locations);
-        List<KeyValueItem> keyValueItems = new ArrayList<KeyValueItem>();
-        String show_more_tips = getString(R.string.show_more_tips);
-        keyValueItems.add(new KeyValueItem(show_more_tips, show_more_tips));
-        PopupWindowHelp.showPopupWindowMenuListViewMore(getBaseActivity(), imageViewMore.getRootView(), imageViewMore, 0, locations[1] + imageViewMore.getHeight(), keyValueItems, 2, new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Intent intent = new Intent(getBaseActivity(),
-                            WalletManagerActivity.class);
-                    getBaseActivity().startActivity(intent);
-                }
-            }
-        });
-    }
-
     private void showWallets() {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<Wallet>>() {
             @Override
@@ -196,6 +177,23 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
         });
     }
 
+    private void showMore() {
+        final int[] locations = new int[2];
+        imageViewMore.getLocationOnScreen(locations);
+        List<KeyValueItem> keyValueItems = new ArrayList<KeyValueItem>();
+        String show_more_tips = getString(R.string.show_more_tips);
+        keyValueItems.add(new KeyValueItem(show_more_tips, show_more_tips));
+        PopupWindowHelp.showPopupWindowMenuListViewMore(getBaseActivity(), imageViewMore.getRootView(), imageViewMore, 0, locations[1] + imageViewMore.getHeight(), keyValueItems, 2, new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(getBaseActivity(),
+                            WalletManagerActivity.class);
+                    getBaseActivity().startActivity(intent);
+                }
+            }
+        });
+    }
 
     private void activeWallet(final Wallet wallet) {
         if (wallet == null) {
@@ -240,7 +238,6 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
             }
         });
     }
-
 
     public void doRefresh() {
         if (alreadyInitUi) {

@@ -19,6 +19,7 @@ import com.my.xwallet.R;
 import java.util.List;
 
 public class LanguageSettingActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
+
     private BaseActivity baseActivity;
     private RecyclerView recyclerView;
     private int selectPosition = -1;
@@ -106,4 +107,5 @@ public class LanguageSettingActivity_RecyclerViewAdapter extends UnLoadMoreRecyc
     public interface OnLanguageSettingListener {
         void onItemSelect(String language);
     }
+
 }

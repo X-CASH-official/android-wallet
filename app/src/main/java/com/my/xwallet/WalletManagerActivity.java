@@ -42,10 +42,10 @@ public class WalletManagerActivity extends NewBaseActivity {
     private Button buttonCreateWallet;
     private Button buttonImportWallet;
     private View.OnClickListener onClickListener;
-    private CoroutineHelper coroutineHelper = new CoroutineHelper();
-    private WalletManagerActivity_RecyclerViewAdapter walletManagerActivity_recyclerViewAdapter;
 
     private boolean doCloseActiveWallet;
+    private CoroutineHelper coroutineHelper = new CoroutineHelper();
+    private WalletManagerActivity_RecyclerViewAdapter walletManagerActivity_recyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,7 +146,6 @@ public class WalletManagerActivity extends NewBaseActivity {
         }
     }
 
-
     private void showWallets() {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<Wallet>>() {
             @Override
@@ -185,7 +184,6 @@ public class WalletManagerActivity extends NewBaseActivity {
             }
         });
     }
-
 
     private void activeWallet(final Wallet wallet) {
         if (wallet == null) {
@@ -269,11 +267,9 @@ public class WalletManagerActivity extends NewBaseActivity {
         doCloseActiveWallet = true;
     }
 
-
     public void doRefresh() {
         baseRecyclerViewFromFrameLayout.autoRefresh(handler, TheApplication.AUTOREFRESHDELAY);
     }
-
 
     @Override
     protected void doBack() {

@@ -31,14 +31,12 @@ public class PermissionHelper {
     private List<String> permissionList = new ArrayList<>();
     private Activity activity;
     private AlertDialog permissionDialog;
-
     private OnPermissionListener onPermissionListener;
 
     public PermissionHelper(Activity activity, String[] permissions) {
         this.activity = activity;
         this.permissions = permissions;
     }
-
 
     public void checkPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -93,7 +91,6 @@ public class PermissionHelper {
         }
     }
 
-
     private void showPermissionDialog() {
         if (permissionDialog == null) {
             permissionDialog = new AlertDialog.Builder(activity)
@@ -145,6 +142,5 @@ public class PermissionHelper {
 
         void onActivityResult(int requestCode, int resultCode, Intent data);
     }
-
 
 }

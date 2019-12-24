@@ -88,7 +88,6 @@
     <string name="activity_create_wallet_confirm_confirmMnemonicEmpty_tips">Mnemonic not empty</string>
     <string name="activity_create_wallet_confirm_confirmMnemonicUnEquals_tips">Mnemonic input not right</string>
 
-
     <string name="layout_active_wallet_textViewCopyAddress_text">Copy</string>
 
     <string name="activity_main_bottomTab_textViewHomeTab_text">Home</string>
@@ -113,7 +112,6 @@
     <string name="popupwindow_password_textViewPasswordTips_text">Enter Wallet Password:</string>
     <string name="popupwindow_password_editTextPassword_hint">Your password</string>
     <string name="popupwindow_password_textViewPasswordHintTips_text">Password Hint</string>
-
 
     <string name="activity_wallet_details_textViewTitle_text">Wallet Manager</string>
     <string name="activity_wallet_details_textViewWalletNameTitle_text">Wallet Name</string>
@@ -162,9 +160,9 @@
     <string name="activity_node_delete_node_tips">Confirm to delete node?</string>
     <string name="activity_node_add_editTextNodeIp_hint">Add node ip</string>
     <string name="activity_node_add_editTextNodePort_hint">Add node port</string>
-    <string name="activity_node_add_confirmEmpty_tips">ip and port not empty</string>
-    <string name="activity_node_add_addNodeSuccess_tips">add node success</string>
-    <string name="activity_node_add_addNodeError_tips">add node error</string>
+    <string name="activity_node_add_confirmEmpty_tips">Ip and port not empty</string>
+    <string name="activity_node_add_addNodeSuccess_tips">Add node success</string>
+    <string name="activity_node_add_addNodeError_tips">Add node error</string>
 
 
     <string name="activity_main_content_fragment_home_top_item_textViewSynchronizeStatus_text">Wallet is locked, click to run</string>

@@ -29,6 +29,7 @@ import androidx.appcompat.widget.TintTypedArray;
 import com.my.xwallet.R;
 
 public final class TabItem extends View {
+
     final CharSequence mText;
     final Drawable mIcon;
     final int mCustomLayout;
@@ -48,4 +49,5 @@ public final class TabItem extends View {
         mCustomLayout = a.getResourceId(R.styleable.TabItem_android_layout, 0);
         a.recycle();
     }
+
 }

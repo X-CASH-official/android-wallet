@@ -25,7 +25,6 @@ public class MachineInformationTool {
         return versionName;
     }
 
-
     public static int getVersionCode(Context context) {
         int versionCode = 0;
         try {
@@ -42,6 +41,5 @@ public class MachineInformationTool {
     public static String getMachineId(Context context) {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
-
 
 }

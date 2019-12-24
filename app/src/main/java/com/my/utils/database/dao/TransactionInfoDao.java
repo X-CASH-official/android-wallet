@@ -20,10 +20,8 @@ import java.util.List;
 @Dao
 public interface TransactionInfoDao {
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTransactionInfo(@NotNull TransactionInfo... transactionInfo);
-
 
     @Query("SELECT * FROM transactionInfos WHERE symbol = :symbol AND walletId = :walletId")
     List<TransactionInfo> loadTransactionInfoByWalletId(@NotNull String symbol, int walletId);
@@ -36,4 +34,5 @@ public interface TransactionInfoDao {
 
     @Delete
     void deleteTransactionInfo(@NotNull TransactionInfo... transactionInfo);
+
 }

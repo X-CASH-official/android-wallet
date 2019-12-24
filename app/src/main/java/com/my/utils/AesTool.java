@@ -41,7 +41,6 @@ public class AesTool {
         return null;
     }
 
-
     public static String base64Encode(byte[] bytes) {
         return new String(Base64.encode(bytes, Base64.DEFAULT));
     }

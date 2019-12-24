@@ -24,6 +24,7 @@ import com.my.xwallet.uihelp.ActivityHelp;
 import java.util.List;
 
 public class WalletManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
+
     private BaseActivity baseActivity;
     private RecyclerView recyclerView;
     private OnWalletManagerListener onWalletManagerListener;
@@ -110,4 +111,5 @@ public class WalletManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecycle
     public interface OnWalletManagerListener {
         void onItemSelect(Wallet wallet);
     }
+
 }

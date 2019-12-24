@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NodeManagerActivity extends NewBaseActivity {
+
     private Wallet wallet;
     private String set_wallet_password;
 
@@ -55,7 +56,6 @@ public class NodeManagerActivity extends NewBaseActivity {
         set_wallet_password = intent.getStringExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY);
         initAll();
     }
-
 
     @Override
     protected void initHandler() {
@@ -147,18 +147,11 @@ public class NodeManagerActivity extends NewBaseActivity {
         }
     }
 
-    private void addNode() {
-        Intent intent = new Intent(NodeManagerActivity.this,
-                NodeAddActivity.class);
-        startActivityForResult(intent, ActivityHelp.REQUEST_CODE_ADD_NODE);
-    }
-
     private void loadNodes() {
         if (wallet == null) {
             return;
         }
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<Node>>() {
-
             @Override
             public List<Node> runOnIo() {
                 List<Node> nodes = null;
@@ -188,6 +181,12 @@ public class NodeManagerActivity extends NewBaseActivity {
                 initOrRefreshAdapter(viewItems, activeIndex);
             }
         });
+    }
+
+    private void addNode() {
+        Intent intent = new Intent(NodeManagerActivity.this,
+                NodeAddActivity.class);
+        startActivityForResult(intent, ActivityHelp.REQUEST_CODE_ADD_NODE);
     }
 
     private void saveNode(final String ip, final String port, final String symbol) {
@@ -222,7 +221,6 @@ public class NodeManagerActivity extends NewBaseActivity {
             }
         });
     }
-
 
     private void updateNode(final Node node) {
         if (wallet == null) {
@@ -305,12 +303,6 @@ public class NodeManagerActivity extends NewBaseActivity {
     }
 
     @Override
-    protected void doBack() {
-        super.doBack();
-        finish();
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ActivityHelp.REQUEST_CODE_ADD_NODE && resultCode == RESULT_OK && data != null) {
             String ip = data.getStringExtra(ActivityHelp.REQUEST_NODE_IP_KEY);
@@ -321,10 +313,16 @@ public class NodeManagerActivity extends NewBaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    protected void doBack() {
+        super.doBack();
+        finish();
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
+
 }

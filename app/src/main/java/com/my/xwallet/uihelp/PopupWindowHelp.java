@@ -29,9 +29,9 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class PopupWindowHelp {
+
     public static final String WINDOWTOKENISNULL = "windowTokenIsNull";
     public static final String POPUPWINDOWKEY = "popupWindowKey";
-
 
     public static void showPopupWindowPasswordHintTips(final BaseActivity baseActivity, View view, final View needEnableView, final String passwordHint) {
         if (view.getWindowToken() == null) {
@@ -45,7 +45,6 @@ public class PopupWindowHelp {
         View popupWindowView = layoutInflater.inflate(R.layout.popupwindow_password_hint, null);
         int popupwindow_horizontal_margin = baseActivity.getResources().getDimensionPixelSize(
                 R.dimen.popupwindow_horizontal_margin);
-
         int popupWindowWidth = BaseActivity.getScreenWidth(baseActivity) - popupwindow_horizontal_margin * 2;
         final String popupWindowKey = POPUPWINDOWKEY + TimeTool.getOnlyTimeWithoutSleep();
         final PopupWindow popupWindow = new PopupWindow(popupWindowView, popupWindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -61,12 +60,9 @@ public class PopupWindowHelp {
                 baseActivity.removePopupWindow(popupWindowKey);
             }
         });
-
         final TextView textViewPasswordHint = (TextView) popupWindowView.findViewById(R.id.textViewPasswordHint);
         final TextView textViewOK = (TextView) popupWindowView.findViewById(R.id.textViewOK);
-
         textViewPasswordHint.setText(passwordHint);
-
         textViewOK.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -84,7 +80,6 @@ public class PopupWindowHelp {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
-
 
     public interface OnShowPopupWindowNormalTipsListener {
 
@@ -104,7 +99,6 @@ public class PopupWindowHelp {
         View popupWindowView = layoutInflater.inflate(R.layout.popupwindow_normal_tips, null);
         int popupwindow_horizontal_margin = baseActivity.getResources().getDimensionPixelSize(
                 R.dimen.popupwindow_horizontal_margin);
-
         int popupWindowWidth = BaseActivity.getScreenWidth(baseActivity) - popupwindow_horizontal_margin * 2;
         final String popupWindowKey = POPUPWINDOWKEY + TimeTool.getOnlyTimeWithoutSleep();
         final PopupWindow popupWindow = new PopupWindow(popupWindowView, popupWindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -120,13 +114,10 @@ public class PopupWindowHelp {
                 baseActivity.removePopupWindow(popupWindowKey);
             }
         });
-
         final TextView textViewTips = (TextView) popupWindowView.findViewById(R.id.textViewTips);
         final TextView textViewCancel = (TextView) popupWindowView.findViewById(R.id.textViewCancel);
         final TextView textViewOK = (TextView) popupWindowView.findViewById(R.id.textViewOK);
-
         textViewTips.setText(tips);
-
         textViewCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -152,7 +143,6 @@ public class PopupWindowHelp {
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
 
-
     public interface OnShowPopupWindowPasswordTipsListener {
 
         void okClick(PopupWindow popupWindow, EditText editTextPassword, View view);
@@ -171,7 +161,6 @@ public class PopupWindowHelp {
         View popupWindowView = layoutInflater.inflate(R.layout.popupwindow_password, null);
         int popupwindow_horizontal_margin = baseActivity.getResources().getDimensionPixelSize(
                 R.dimen.popupwindow_horizontal_margin);
-
         int popupWindowWidth = BaseActivity.getScreenWidth(baseActivity) - popupwindow_horizontal_margin * 2;
         final String popupWindowKey = POPUPWINDOWKEY + TimeTool.getOnlyTimeWithoutSleep();
         final PopupWindow popupWindow = new PopupWindow(popupWindowView, popupWindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -187,11 +176,9 @@ public class PopupWindowHelp {
                 baseActivity.removePopupWindow(popupWindowKey);
             }
         });
-
         final EditText editTextPassword = (EditText) popupWindowView.findViewById(R.id.editTextPassword);
         final TextView textViewCancel = (TextView) popupWindowView.findViewById(R.id.textViewCancel);
         final TextView textViewOK = (TextView) popupWindowView.findViewById(R.id.textViewOK);
-
         textViewCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -217,10 +204,10 @@ public class PopupWindowHelp {
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
 
-
     public interface OnShowPopupWindowChooseDateListener {
 
         void OKClick(DatePicker datePicker, PopupWindow popupWindow, View view);
+
     }
 
     public static void showPopupWindowChooseDate(final BaseActivity baseActivity, View view, final View needEnableView, String dateSelect, final OnShowPopupWindowChooseDateListener onShowPopupWindowChooseDateListener) {
@@ -250,11 +237,9 @@ public class PopupWindowHelp {
                 baseActivity.removePopupWindow(popupWindowKey);
             }
         });
-
         final DatePicker datePicker = (DatePicker) popupWindowView.findViewById(R.id.datePicker);
         final TextView textViewOK = (TextView) popupWindowView.findViewById(R.id.textViewOK);
         TextView textViewCancel = (TextView) popupWindowView.findViewById(R.id.textViewCancel);
-
         if (dateSelect == null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             dateSelect = simpleDateFormat.format(System.currentTimeMillis());
@@ -281,7 +266,6 @@ public class PopupWindowHelp {
                 }
             }
         });
-
         textViewCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -299,7 +283,6 @@ public class PopupWindowHelp {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
-
 
     public static void showPopupWindowMenuListViewMore(final BaseActivity baseActivity, View view, final View needEnableView, int rightX, int topY, List<KeyValueItem> keyValueItems, int showCount, final AdapterView.OnItemClickListener adapterViewOnItemClickListener) {
         if (view.getWindowToken() == null) {
@@ -341,7 +324,6 @@ public class PopupWindowHelp {
             layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             listView.setLayoutParams(layoutParams);
         }
-
         Menu_More_String_ListViewAdapter menu_More_String_ListViewAdapter = new Menu_More_String_ListViewAdapter(baseActivity, keyValueItems, listView, new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -352,7 +334,6 @@ public class PopupWindowHelp {
             }
         });
         listView.setAdapter(menu_More_String_ListViewAdapter);
-
         ColorDrawable colorDrawable = new ColorDrawable(Color.argb(0, 255, 255, 255));
         popupWindow.setBackgroundDrawable(colorDrawable);
         popupWindow.setFocusable(true);
@@ -372,7 +353,6 @@ public class PopupWindowHelp {
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
 
-
     public static String convertDate(DatePicker datePicker) {
         int year = datePicker.getYear();
         int month = datePicker.getMonth() + 1;
@@ -388,4 +368,5 @@ public class PopupWindowHelp {
         String date = year + "-" + monthString + "-" + dayString;
         return date;
     }
+
 }

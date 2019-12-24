@@ -22,6 +22,7 @@ import com.my.xwallet.uihelp.ActivityHelp;
 
 
 public class ImportWalletActivity extends NewBaseActivity {
+
     private String set_wallet_name;
     private String set_wallet_password;
     private String set_wallet_description;
@@ -111,6 +112,5 @@ public class ImportWalletActivity extends NewBaseActivity {
         super.doBack();
         finish();
     }
-
 
 }

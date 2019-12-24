@@ -28,8 +28,10 @@ import android.widget.TextView;
 import com.my.xwallet.uihelp.ActivityHelp;
 
 public class WebViewActivity extends NewBaseActivity {
+
     private String title;
     private String url;
+
     private ImageView imageViewBack;
     private TextView textViewTitle;
     private ProgressBar progressBar;
@@ -50,19 +52,16 @@ public class WebViewActivity extends NewBaseActivity {
         initAll();
     }
 
-
     @Override
     protected void initHandler() {
         handler = new Handler();
     }
-
 
     @Override
     protected void initUi() {
         imageViewBack = (ImageView) findViewById(R.id.imageViewBack);
         textViewTitle = (TextView) findViewById(R.id.textViewTitle);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -158,7 +157,6 @@ public class WebViewActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
     }
 
-
     private void openChooserActivity() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -224,4 +222,5 @@ public class WebViewActivity extends NewBaseActivity {
             finish();
         }
     }
+
 }

@@ -15,7 +15,6 @@ import java.util.List;
 
 public class ColorHelp {
 
-
     public static void setImageViewDrawableTint(ImageView imageView, Drawable drawable, int tint) {
         if (imageView != null && drawable != null) {
             Drawable theDrawable = DrawableCompat.wrap(drawable.mutate());
@@ -60,4 +59,5 @@ public class ColorHelp {
         }
         return resultColors;
     }
+
 }

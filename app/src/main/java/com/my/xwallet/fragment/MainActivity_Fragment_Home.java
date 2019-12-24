@@ -47,10 +47,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity_Fragment_Home extends BaseFragment {
+
     private View view;
-
     private int mainColorText;
-
     private RelativeLayout relativeLayoutRoot;
     private RelativeLayout relativeLayoutContent;
     private ImageView imageViewMenu;
@@ -70,11 +69,11 @@ public class MainActivity_Fragment_Home extends BaseFragment {
     private LinearLayout linearLayoutTransactionContent;
     private LinearLayout linearLayoutTransactionDetails;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
+
     private boolean alreadyInitUi = true;
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
     private Transaction_Default_RecyclerViewAdapter transaction_Default_RecyclerViewAdapter;
-
     private Wallet activeWallet;
     private int walletId;
     private boolean isExpand = true;
@@ -140,6 +139,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
 
     @Override
     protected void initHttp() {
+
     }
 
     @Override
@@ -227,7 +227,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         }
     }
 
-
     private void loadTransactionInfos() {
         if (activeWallet == null) {
             return;
@@ -258,7 +257,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             }
         });
     }
-
 
     private void closeActiveWallet(final View unEnabledView) {
         if (activeWallet == null) {
@@ -304,7 +302,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             }
         });
     }
-
 
     public void showActiveWallet(Wallet wallet) {
         if (wallet == null) {
@@ -449,4 +446,5 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
+
 }

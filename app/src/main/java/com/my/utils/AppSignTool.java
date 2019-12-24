@@ -38,7 +38,6 @@ public class AppSignTool {
         return result;
     }
 
-
     public static Signature[] getSignatures(Context context, String packageName) {
         PackageInfo packageInfo = null;
         try {
@@ -49,7 +48,6 @@ public class AppSignTool {
         }
         return null;
     }
-
 
     public static String getSignatureString(Signature signature, String type) {
         String result = ERROR;

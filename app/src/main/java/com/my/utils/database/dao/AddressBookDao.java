@@ -20,18 +20,16 @@ import java.util.List;
 @Dao
 public interface AddressBookDao {
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAddressBook(@NotNull AddressBook AddressBook);
 
-
     @Query("SELECT * FROM address_books ORDER BY _id DESC")
     List<AddressBook> loadAddressBooks();
-
 
     @Query("SELECT * FROM address_books WHERE symbol=:symbol ORDER BY _id DESC")
     List<AddressBook> loadAddressBooksBySymbol(@NotNull String symbol);
 
     @Delete
     void deleteAddressBook(@NotNull AddressBook AddressBook);
+
 }

@@ -30,19 +30,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionDetailsActivity extends NewBaseActivity {
+
     private Wallet wallet;
     private TransactionInfo transactionInfo;
+
     private int mainColorText;
     private int layout_transaction_item_pay_in;
     private int layout_transaction_item_pay_out;
     private int editText_normal_hint;
+
     private ImageView imageViewBack;
     private TextView textViewTitle;
     private TextView textViewStatus;
     private TextView textViewAmount;
     private TextView textViewHash;
     private TextView textViewTime;
-
     private LinearLayout linearLayoutDetails;
 
     private View.OnClickListener onClickListener;
@@ -56,7 +58,6 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         transactionInfo = (TransactionInfo) intent.getSerializableExtra(ActivityHelp.TRANSACTION_INFO_KEY);
         initAll();
     }
-
 
     @SuppressWarnings("ResourceType")
     private void getTypeArrayColor() {
@@ -85,7 +86,6 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         textViewAmount = (TextView) findViewById(R.id.textViewAmount);
         textViewHash = (TextView) findViewById(R.id.textViewHash);
         textViewTime = (TextView) findViewById(R.id.textViewTime);
-
         linearLayoutDetails = (LinearLayout) findViewById(R.id.linearLayoutDetails);
         onClickListener();
     }
@@ -122,7 +122,6 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
     }
 
-
     private void showTransactionDetails(LinearLayout linearLayout) {
         if (wallet == null || transactionInfo == null) {
             return;
@@ -144,7 +143,6 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         }
         textViewHash.setText(getString(R.string.layout_transaction_item_hash_tips) + "    " + transactionInfo.getHash());
         textViewTime.setText(getString(R.string.layout_transaction_item_date_tips) + "    " + StringTool.getDateTime(transactionInfo.getTimestamp()));
-
         textViewHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,14 +154,12 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_transaction_details_blockHeight_tips), String.valueOf(transactionInfo.getBlockHeight())));
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_transaction_details_confirmations_tips), String.valueOf(transactionInfo.getConfirmations())));
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_transaction_details_paymentId_tips), transactionInfo.getPaymentId()));
-
         linearLayout.removeAllViews();
         LayoutInflater layoutInflater = LayoutInflater.from(TransactionDetailsActivity.this);
         for (int i = 0; i < keyValueItems.size(); i++) {
             KeyValueItem keyValueItem = keyValueItems.get(i);
             View view = layoutInflater.inflate(R.layout.activity_payment_confirm_item, null);
             TextView textViewContent = (TextView) view.findViewById(R.id.textViewContent);
-
             final String value = (String) keyValueItem.getValue();
             textViewContent.setText(keyValueItem.getKey() + "  " + value);
             linearLayout.addView(view);
@@ -175,4 +171,5 @@ public class TransactionDetailsActivity extends NewBaseActivity {
         super.doBack();
         finish();
     }
+
 }

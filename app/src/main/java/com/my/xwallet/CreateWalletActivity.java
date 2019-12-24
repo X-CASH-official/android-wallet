@@ -44,7 +44,6 @@ public class CreateWalletActivity extends NewBaseActivity {
     private Button buttonNext;
 
     private View.OnClickListener onClickListener;
-
     private String seed;
 
     @Override
@@ -121,7 +120,6 @@ public class CreateWalletActivity extends NewBaseActivity {
         imageViewCopy.setOnClickListener(onClickListener);
         buttonNext.setOnClickListener(onClickListener);
     }
-
 
     private void createWallet() {
         if (set_wallet_name == null || set_wallet_password == null) {

@@ -21,6 +21,7 @@ import java.util.List;
  * All the operate need in service,static variables are not shared
  */
 public class XManager {
+
     public static final int TRANSACTION_MIN_CONFIRMATION = 10;
     public static final String SYMBOL = "XCASH";
     public static final String TAG = "XManager";
@@ -32,7 +33,6 @@ public class XManager {
     private XManager() {
         xWalletController = new XWalletController();
     }
-
 
     public static synchronized XManager getInstance() {
         if (xManager == null) {
@@ -62,7 +62,6 @@ public class XManager {
         return new File(getWalletDir(name), name + ".address.txt");
     }
 
-
     public Wallet createWallet(String walletName, String password) {
         return xWalletController.createWallet(generateXMRFile(walletName), password);
     }
@@ -74,7 +73,6 @@ public class XManager {
     public Wallet createWalletWithKeys(String walletName, String password, String address, String viewKey, String spendKey, long restoreHeight) {
         return xWalletController.createWalletWithKeys(generateXMRFile(walletName), password, restoreHeight, address, viewKey, spendKey);
     }
-
 
     public void setNode(String host, int port) throws UnknownHostException {
         if (host == null) {
@@ -97,7 +95,6 @@ public class XManager {
         return xWalletController.verifyWalletPasswordOnly(file.getPath(), password);
     }
 
-
     public com.my.monero.model.Wallet openWallet(String name, String password, int walletId) {
         if (name == null || password == null) {
             return null;
@@ -115,7 +112,6 @@ public class XManager {
         }
         return xWalletController.startWallet(wallet, restoreHeight, onWalletListener);
     }
-
 
     public XWalletController getXWalletController() {
         return xWalletController;
@@ -138,7 +134,6 @@ public class XManager {
         wallet.setActive(true);
         appDatabase.walletDao().insertWallet(wallet);
     }
-
 
     private File generateXMRFile(String name) {
         File walletFile = getWalletFile(name);

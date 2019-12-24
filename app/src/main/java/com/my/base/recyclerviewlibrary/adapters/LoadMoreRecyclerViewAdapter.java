@@ -18,6 +18,7 @@ import java.util.List;
 
 
 public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapter<ViewItem> {
+
     public static final int USE_DEFAULT_LOADMORELAYOUTID = -1;
     public static final int USE_DEFAULT_LOADCOMPLETEDLAYOUTID = -1;
     public static final int UNSHOW_LOADCOMPLETEDLAYOUTID = 0;
@@ -28,7 +29,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
     private LoadMoreCallback loadMoreCallback;
     private boolean loading = false;
     private boolean loadCompleted = false;
-
 
     public LoadMoreRecyclerViewAdapter(List<ViewItem> datas) {
         super(datas);
@@ -42,7 +42,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
             loadCompleted = true;
         }
     }
-
 
     public LoadMoreRecyclerViewAdapter(List<ViewItem> datas, int loadMoreLayoutId) {
         super(datas);
@@ -59,7 +58,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
             loadCompleted = true;
         }
     }
-
 
     public LoadMoreRecyclerViewAdapter(List<ViewItem> datas, int loadMoreLayoutId, int pageCount) {
         super(datas);
@@ -79,7 +77,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
             loadCompleted = true;
         }
     }
-
 
     public LoadMoreRecyclerViewAdapter(List<ViewItem> datas, int loadMoreLayoutId, int pageCount, int loadCompletedLayoutId) {
         super(datas);
@@ -103,7 +100,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
         }
     }
 
-
     public abstract int getNormalLayoutId(int viewType);
 
     public abstract void onBindNormalViewHolder(BaseRecyclerViewAdapter.BaseRecyclerViewHolder holder, int position);
@@ -118,7 +114,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
             return getNormalLayoutId(viewType);
         }
     }
-
 
     @Override
     public void onBindViewHolder(BaseRecyclerViewAdapter.BaseRecyclerViewHolder holder, int position) {
@@ -161,7 +156,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
             return viewItem.getViewType();
         }
     }
-
 
     @Override
     public void addAll(List<ViewItem> newDatas) {
@@ -209,7 +203,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
         loading = false;
     }
 
-
     public void loadMoreErrorUseNotifyDataSetChanged() {
         hideLoadMore(true);
         if (getDatas().size() >= pageCount) {
@@ -252,7 +245,6 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
         }
         return newDatas;
     }
-
 
     private void hideLoadMore(boolean useNotifyDataSetChanged) {
         List<ViewItem> datas = getDatas();
@@ -313,4 +305,5 @@ public abstract class LoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapte
     public interface LoadMoreCallback {
         void loadMore(ViewItem viewItem);
     }
+
 }

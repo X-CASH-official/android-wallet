@@ -18,6 +18,7 @@ import java.util.List;
 
 
 public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<BaseRecyclerViewAdapter.BaseRecyclerViewHolder> {
+
     public static final int ONITEMDEFAULT = 0;
     public static final int ONITEMRANGECHANGED = 1;
     public static final int ONITEMRANGEINSERTED = 2;
@@ -34,7 +35,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         }
         this.datas.addAll(datas);
     }
-
 
     public abstract int getLayoutId(int viewType);
 
@@ -135,12 +135,12 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         this.itemType = itemType;
     }
 
-
     public List<T> getDatas() {
         return datas;
     }
 
     public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
+
         private SparseArray<View> views = new SparseArray<View>();
 
         public BaseRecyclerViewHolder(View view) {
@@ -167,4 +167,5 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         }
 
     }
+
 }

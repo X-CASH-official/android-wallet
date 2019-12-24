@@ -43,29 +43,23 @@ import java.util.Map;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class WalletService extends Service {
+
     private final int OPERATETYPE_DESTROY = -1;
     private final int OPERATETYPE_RUN = 1;
     private final int OPERATETYPE_STOP = 2;
     private final String TAG_LOADREFRESHWALLET = "loadRefreshWallet";
-
     private final int maxQueueSize = 10;
-
+    private final PriorityBlockingQueue<WalletOperate> priorityBlockingQueueWalletOperate = new PriorityBlockingQueue<WalletOperate>();
+    private final RemoteCallbackList<OnWalletRefreshListener> onWalletRefreshListenerList = new RemoteCallbackList<>();
+    private final HashMap<String, WalletOperate> waitingWalletOperateHashMap = new HashMap<String, WalletOperate>();
+    private final Object waitingWalletOperateHashMapLock = new Object();
     private boolean canRunControlThread = true;
     private boolean loadWalletThreadStatusRunning = false;
     private Thread loadWalletThread;
-
     private Handler handler = new Handler();
     private MyBinder myBinder = new MyBinder();
-
-    private final PriorityBlockingQueue<WalletOperate> priorityBlockingQueueWalletOperate = new PriorityBlockingQueue<WalletOperate>();
-    private final RemoteCallbackList<OnWalletRefreshListener> onWalletRefreshListenerList = new RemoteCallbackList<>();
-
-    public final HashMap<String, WalletOperate> waitingWalletOperateHashMap = new HashMap<String, WalletOperate>();
-    public final Object waitingWalletOperateHashMapLock = new Object();
     private int operateType = OPERATETYPE_STOP;
-
     private int runningWalletId = -1;
-
     private Context context;
     private String language;
 
@@ -96,7 +90,6 @@ public class WalletService extends Service {
         loadWalletThread = new Thread(new LoadWalletThreadRunnable());
         loadWalletThread.start();
     }
-
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -155,7 +148,6 @@ public class WalletService extends Service {
         onWalletRefreshListenerList.finishBroadcast();
     }
 
-
     private void putWaitingWalletOperate(String key, WalletOperate walletOperate) {
         if (key == null || walletOperate == null) {
             return;
@@ -195,7 +187,6 @@ public class WalletService extends Service {
             }
         }
     }
-
 
     class LoadWalletThreadRunnable implements Runnable {
 
@@ -300,13 +291,12 @@ public class WalletService extends Service {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
 
         /**
          * Running in thread
          */
-        private void createWallet(final WalletOperate walletOperate) {
+        private void createWallet(final WalletOperate walletOperate) throws Exception{
             OnWalletDataListener onWalletDataListener = walletOperate.getOnWalletDataListener();
             if (onWalletDataListener == null) {
                 return;
@@ -335,7 +325,6 @@ public class WalletService extends Service {
                 e.printStackTrace();
             }
         }
-
 
         /**
          * Running in thread
@@ -434,41 +423,46 @@ public class WalletService extends Service {
         private void loadRefreshWallet(final WalletOperate walletOperate) throws Exception {
             final int walletId = walletOperate.getId();
             runningWalletId = walletId;
-            XManager.getInstance().insertNodes();
-            Node node = AppDatabase.getInstance().nodeDao().loadActiveNodeBySymbol(XManager.SYMBOL);
-            if (node != null && node.getUrl() != null) {
-                String[] strings = node.getUrl().split(":");
-                if (strings.length >= 2) {
-                    XManager.getInstance().setNode(strings[0], Integer.parseInt(strings[1]));
+            try{
+                XManager.getInstance().insertNodes();
+                Node node = AppDatabase.getInstance().nodeDao().loadActiveNodeBySymbol(XManager.SYMBOL);
+                if (node != null && node.getUrl() != null) {
+                    String[] strings = node.getUrl().split(":");
+                    if (strings.length >= 2) {
+                        XManager.getInstance().setNode(strings[0], Integer.parseInt(strings[1]));
+                    }
                 }
-            }
-            final com.my.monero.model.Wallet openWallet = XManager.getInstance().openWallet(walletOperate.getName(), walletOperate.getPassword(), walletId);
-            beginLoadWallet(walletId);
-            resultWalletData(openWallet, walletOperate.getOnWalletDataListener());
-            boolean result = false;
-            if (openWallet != null) {
-                result = XManager.getInstance().startWallet(openWallet, walletOperate.getRestoreHeight(), new XWalletController.OnWalletListener() {
-                    @Override
-                    public void onWalletStarted() {
+                final com.my.monero.model.Wallet openWallet = XManager.getInstance().openWallet(walletOperate.getName(), walletOperate.getPassword(), walletId);
+                beginLoadWallet(walletId);
+                resultWalletData(openWallet, walletOperate.getOnWalletDataListener());
+                boolean result = false;
+                if (openWallet != null) {
+                    result = XManager.getInstance().startWallet(openWallet, walletOperate.getRestoreHeight(), new XWalletController.OnWalletListener() {
+                        @Override
+                        public void onWalletStarted() {
 
-                    }
-
-                    @Override
-                    public void onWalletStartFailed(final String error) {
-
-                    }
-
-                    @Override
-                    public void onRefreshed(long height) {
-                        try {
-                            refresh(walletId, openWallet, walletOperate);
-                        } catch (Exception e) {
-                            e.printStackTrace();
                         }
-                    }
-                });
+
+                        @Override
+                        public void onWalletStartFailed(final String error) {
+
+                        }
+
+                        @Override
+                        public void onRefreshed(long height) {
+                            try {
+                                refresh(walletId, openWallet, walletOperate);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                }
+                resultStatus(walletId, result);
+            }catch (Exception e){
+                e.printStackTrace();
+                runningWalletId = -2;
             }
-            resultStatus(walletId, result);
         }
 
         /**
@@ -538,7 +532,6 @@ public class WalletService extends Service {
             }
         }
 
-
         /**
          * Running in thread
          */
@@ -560,7 +553,6 @@ public class WalletService extends Service {
                 onNormalListener.onError(LanguageTool.getLocaleStringResource(WalletService.this.context, language, R.string.send_transaction_error_tips));
             }
         }
-
 
         /**
          * Running in thread
@@ -650,7 +642,6 @@ public class WalletService extends Service {
                 onWalletDataListener.onError(LanguageTool.getLocaleStringResource(WalletService.this.context, language, R.string.get_wallet_data_error_tips));
             }
         }
-
 
         /**
          * Running in thread
@@ -807,7 +798,6 @@ public class WalletService extends Service {
         }
     }
 
-
     /**
      * Running in thread
      */
@@ -842,7 +832,6 @@ public class WalletService extends Service {
         }
     }
 
-
     private List<TransactionInfo> getTransactionHistory(int walletId, TransactionHistory transactionHistory) {
         List<TransactionInfo> transactionInfos = new ArrayList<>();
         if (transactionHistory == null) {
@@ -875,7 +864,6 @@ public class WalletService extends Service {
         return transactionInfos;
     }
 
-
     private boolean havePendingTransaction(List<TransactionInfo> transactionInfos) {
         if (transactionInfos == null) {
             return false;
@@ -888,7 +876,6 @@ public class WalletService extends Service {
         }
         return false;
     }
-
 
     private void addToPriorityBlockingQueue(WalletOperate walletOperate) {
         try {
@@ -907,7 +894,6 @@ public class WalletService extends Service {
         }
     }
 
-
     private void addWalletOperateSetDaemon(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, Node node) {
         WalletOperate walletOperate = new WalletOperate();
         walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
@@ -917,7 +903,6 @@ public class WalletService extends Service {
         walletOperate.setNode(node);
         addToPriorityBlockingQueue(walletOperate);
     }
-
 
     private void addWalletOperateCheckWalletPassword(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, String name, String password) {
         WalletOperate walletOperate = new WalletOperate();
@@ -1116,6 +1101,5 @@ public class WalletService extends Service {
             onWalletRefreshListenerList.unregister(onWalletRefreshListener);
         }
     }
-
 
 }

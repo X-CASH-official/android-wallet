@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class LanguageTool {
+
     public static final String LANGUAGE_ENGLISH = "ENGLISH";
     public static final String LANGUAGE_CHINESE = "简体中文";
-
 
     public static Context initAppLanguage(Context context, String language) {
         if (language == null) {
@@ -78,7 +78,6 @@ public class LanguageTool {
         resources.updateConfiguration(configuration, displayMetrics);
     }
 
-
     public static String getCurrentLanguage(Context context) {
         String language;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -121,6 +120,7 @@ public class LanguageTool {
         objects[2] = language;
         return objects;
     }
+
     /**
      * return NotNull
      */
@@ -137,8 +137,6 @@ public class LanguageTool {
         }
         return language;
     }
-
-
 
     public static String getLocaleStringResource(Context context, String language, int resourceId) {
         Locale requestedLocale = Locale.ENGLISH;

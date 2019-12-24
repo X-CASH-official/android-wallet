@@ -31,7 +31,6 @@ public class WalletServiceHelper {
     private Handler handler = new Handler(Looper.getMainLooper());
     private WalletOperateManager walletOperateManager;
     private OnWalletRefreshListener onWalletRefreshListener = new MyOnWalletRefreshListener();
-
     private Context context;
 
     private ServiceConnection serviceConnection = new ServiceConnection() {
@@ -63,11 +62,9 @@ public class WalletServiceHelper {
         }
     };
 
-
     public WalletServiceHelper(Context context) {
         this.context = context.getApplicationContext();
     }
-
 
     public void bindService() {
         Intent intent = new Intent(context, WalletService.class);
@@ -91,6 +88,49 @@ public class WalletServiceHelper {
             BaseActivity.showLongToast(TheApplication.getTheApplication(), TheApplication.getTheApplication().getString(R.string.service_uninitialized_tips));
         }
         return walletOperateManager;
+    }
+
+    public static void verifyWalletPasswordOnly(final BaseActivity baseActivity, String name, String password, final OnVerifyWalletPasswordListener onVerifyWalletPasswordListener) {
+        if (name == null || password == null || onVerifyWalletPasswordListener == null || baseActivity.handler == null) {
+            return;
+        }
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        Object[] objects = ProgressDialogHelp.unEnabledView(baseActivity, null);
+        final ProgressDialog progressDialog = (ProgressDialog) objects[0];
+        final String progressDialogKey = (String) objects[1];
+        try {
+            walletOperateManager.checkWalletPassword(name, password, new OnNormalListener.Stub() {
+                @Override
+                public void onSuccess(final String tips) throws RemoteException {
+                    baseActivity.handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            onVerifyWalletPasswordListener.onSuccess(tips);
+                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    baseActivity.handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            onVerifyWalletPasswordListener.onError(error);
+                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            onVerifyWalletPasswordListener.onError(baseActivity.getString(R.string.wallet_service_not_running_tips));
+            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
+        }
     }
 
     /**
@@ -184,57 +224,12 @@ public class WalletServiceHelper {
         }
     }
 
-
-    public static void verifyWalletPasswordOnly(final BaseActivity baseActivity, String name, String password, final OnVerifyWalletPasswordListener onVerifyWalletPasswordListener) {
-        if (name == null || password == null || onVerifyWalletPasswordListener == null || baseActivity.handler == null) {
-            return;
-        }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
-        }
-        Object[] objects = ProgressDialogHelp.unEnabledView(baseActivity, null);
-        final ProgressDialog progressDialog = (ProgressDialog) objects[0];
-        final String progressDialogKey = (String) objects[1];
-        try {
-            walletOperateManager.checkWalletPassword(name, password, new OnNormalListener.Stub() {
-                @Override
-                public void onSuccess(final String tips) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            onVerifyWalletPasswordListener.onSuccess(tips);
-                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            onVerifyWalletPasswordListener.onError(error);
-                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            onVerifyWalletPasswordListener.onError(baseActivity.getString(R.string.wallet_service_not_running_tips));
-            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-        }
-    }
-
-
     public interface OnVerifyWalletPasswordListener {
 
         void onSuccess(String tips);
 
         void onError(String error);
-    }
 
+    }
 
 }

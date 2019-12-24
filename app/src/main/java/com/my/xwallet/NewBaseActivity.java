@@ -16,6 +16,7 @@ import com.my.base.BaseActivity;
 import com.my.utils.LanguageTool;
 
 public class NewBaseActivity extends BaseActivity {
+
     @Override
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(LanguageTool.initAppLanguage(context, TheApplication.getSetting().getLanguage()));
@@ -30,7 +31,6 @@ public class NewBaseActivity extends BaseActivity {
     protected void initHandler() {
         handler = new Handler();
     }
-
 
     public void adaptationStatusBar(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

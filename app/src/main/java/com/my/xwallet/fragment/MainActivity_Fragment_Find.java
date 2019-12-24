@@ -41,11 +41,11 @@ public class MainActivity_Fragment_Find extends BaseFragment {
     private ImageView imageViewMenu;
     private ImageView imageViewMore;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
-    private CoroutineHelper coroutineHelper = new CoroutineHelper();
-    private AddressManagerActivity_RecyclerViewAdapter addressManagerActivity_RecyclerViewAdapter;
 
     private boolean alreadyInitUi = true;
     private View.OnClickListener onClickListener;
+    private CoroutineHelper coroutineHelper = new CoroutineHelper();
+    private AddressManagerActivity_RecyclerViewAdapter addressManagerActivity_RecyclerViewAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -140,30 +140,6 @@ public class MainActivity_Fragment_Find extends BaseFragment {
         }
     }
 
-
-    private void showMore() {
-        final int[] locations = new int[2];
-        imageViewMore.getLocationOnScreen(locations);
-        List<KeyValueItem> keyValueItems = new ArrayList<KeyValueItem>();
-        String show_more_tips = getString(R.string.show_more_tips);
-        keyValueItems.add(new KeyValueItem(show_more_tips, show_more_tips));
-        PopupWindowHelp.showPopupWindowMenuListViewMore(getBaseActivity(), imageViewMore.getRootView(), imageViewMore, 0, locations[1] + imageViewMore.getHeight(), keyValueItems, 2, new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Intent intent = new Intent(getBaseActivity(),
-                            AddressManagerActivity.class);
-                    getBaseActivity().startActivity(intent);
-                }
-            }
-        });
-    }
-
-
-    private void selectAddress(AddressBook addressBook) {
-        ClipboardTool.copyToClipboard(getBaseActivity(), addressBook.getAddress());
-    }
-
     private void loadAddresses() {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<AddressBook>>() {
             @Override
@@ -192,6 +168,27 @@ public class MainActivity_Fragment_Find extends BaseFragment {
         });
     }
 
+    private void selectAddress(AddressBook addressBook) {
+        ClipboardTool.copyToClipboard(getBaseActivity(), addressBook.getAddress());
+    }
+
+    private void showMore() {
+        final int[] locations = new int[2];
+        imageViewMore.getLocationOnScreen(locations);
+        List<KeyValueItem> keyValueItems = new ArrayList<KeyValueItem>();
+        String show_more_tips = getString(R.string.show_more_tips);
+        keyValueItems.add(new KeyValueItem(show_more_tips, show_more_tips));
+        PopupWindowHelp.showPopupWindowMenuListViewMore(getBaseActivity(), imageViewMore.getRootView(), imageViewMore, 0, locations[1] + imageViewMore.getHeight(), keyValueItems, 2, new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(getBaseActivity(),
+                            AddressManagerActivity.class);
+                    getBaseActivity().startActivity(intent);
+                }
+            }
+        });
+    }
 
     public void doRefresh() {
         if (alreadyInitUi) {
@@ -204,6 +201,5 @@ public class MainActivity_Fragment_Find extends BaseFragment {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
-
 
 }

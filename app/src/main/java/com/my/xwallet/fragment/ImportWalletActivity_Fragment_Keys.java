@@ -34,12 +34,12 @@ import com.my.xwallet.uihelp.PopupWindowHelp;
 import com.my.xwallet.uihelp.ProgressDialogHelp;
 
 public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
+
     private String set_wallet_name;
     private String set_wallet_password;
     private String set_wallet_description;
 
     private View view;
-
     private int mainColorText;
     private EditText editTextPrivateViewKey;
     private EditText editTextPrivateSpendKey;
@@ -74,7 +74,6 @@ public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
         }
     }
 
-
     @Override
     protected void initHandler() {
         handler = new Handler();
@@ -100,13 +99,13 @@ public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
 
     @Override
     protected void initHttp() {
+
     }
 
     @Override
     protected void initOther() {
 
     }
-
 
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
@@ -143,11 +142,9 @@ public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
         if (set_wallet_name == null || set_wallet_password == null) {
             return;
         }
-
         final String privateViewKey = editTextPrivateViewKey.getText().toString();
         final String privateSpendKey = editTextPrivateSpendKey.getText().toString();
         final String addressKey = editTextInputAddressKey.getText().toString();
-
         long blockHeight = 0;
         final String blockHeightString = editTextBlockHeight.getText().toString();
         if (!blockHeightString.equals("")) {
@@ -208,7 +205,6 @@ public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
             e.printStackTrace();
             ProgressDialogHelp.enabledView(getBaseActivity(), progressDialog, progressDialogKey, null);
         }
-
     }
 
 }

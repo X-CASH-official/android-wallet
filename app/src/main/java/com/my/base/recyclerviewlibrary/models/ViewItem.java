@@ -8,6 +8,7 @@ package com.my.base.recyclerviewlibrary.models;
 import java.io.Serializable;
 
 public class ViewItem implements Serializable {
+
     public static final int VIEW_TYPE_ITEM_LOAD_COMPLETED = -1;
     public static final int VIEW_TYPE_ITEM_LOAD_MORE = 0;
     public static final int VIEW_TYPE_ITEM_VIEWPAGER = 1;
@@ -48,4 +49,5 @@ public class ViewItem implements Serializable {
                 ", model=" + model +
                 '}';
     }
+
 }

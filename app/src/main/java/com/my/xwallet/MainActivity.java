@@ -44,8 +44,9 @@ import com.my.xwallet.uihelp.ColorHelp;
 import com.my.xwallet.uihelp.PopupWindowHelp;
 
 public class MainActivity extends NewBaseActivity {
+
     public static final int TYPE_SHOW_WALLET_DETAILS = 1;
-    public static final int TYPE_CHOOSE_NODE = 2;
+    public static int TYPE_CHOOSE_NODE = 2;
 
     private final String FRAGMENT_HOME = "mainActivity_Fragment_Home";
     private final String FRAGMENT_FIND = "mainActivity_Fragment_Find";
@@ -65,11 +66,9 @@ public class MainActivity extends NewBaseActivity {
     private LinearLayout linearLayoutHomeTab;
     private LinearLayout linearLayoutFindTab;
     private LinearLayout linearLayoutWalletTab;
-
     private ImageView imageViewHomeTab;
     private ImageView imageViewFindTab;
     private ImageView imageViewWalletTab;
-
     private TextView textViewHomeTab;
     private TextView textViewFindTab;
     private TextView textViewWalletTab;
@@ -79,7 +78,6 @@ public class MainActivity extends NewBaseActivity {
     private FrameLayout frameLayoutActiveWallet;
     private TextView textViewWalletName;
     private TextView textViewAddress;
-
     private RelativeLayout relativeLayoutWallet;
     private RelativeLayout relativeLayoutAddress;
     private RelativeLayout relativeLayoutNodeSetting;
@@ -90,7 +88,6 @@ public class MainActivity extends NewBaseActivity {
 
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
-
     private Wallet wallet;
 
     @Override
@@ -109,7 +106,6 @@ public class MainActivity extends NewBaseActivity {
         initAll();
         selectFragment(selectIndex);
     }
-
 
     @SuppressWarnings("ResourceType")
     private void getTypeArrayColor() {
@@ -130,15 +126,12 @@ public class MainActivity extends NewBaseActivity {
     @Override
     protected void initUi() {
         getTypeArrayColor();
-
         linearLayoutHomeTab = (LinearLayout) findViewById(R.id.linearLayoutHomeTab);
         linearLayoutFindTab = (LinearLayout) findViewById(R.id.linearLayoutFindTab);
         linearLayoutWalletTab = (LinearLayout) findViewById(R.id.linearLayoutWalletTab);
-
         imageViewHomeTab = (ImageView) findViewById(R.id.imageViewHomeTab);
         imageViewFindTab = (ImageView) findViewById(R.id.imageViewFindTab);
         imageViewWalletTab = (ImageView) findViewById(R.id.imageViewWalletTab);
-
         textViewHomeTab = (TextView) findViewById(R.id.textViewHomeTab);
         textViewFindTab = (TextView) findViewById(R.id.textViewFindTab);
         textViewWalletTab = (TextView) findViewById(R.id.textViewWalletTab);
@@ -224,7 +217,6 @@ public class MainActivity extends NewBaseActivity {
                         break;
                     default:
                         break;
-
                 }
             }
         };
@@ -239,7 +231,6 @@ public class MainActivity extends NewBaseActivity {
         relativeLayoutContactUs.setOnClickListener(onClickListener);
         relativeLayoutAboutUs.setOnClickListener(onClickListener);
     }
-
 
     private void selectFragment(int index) {
         if (nowSelect != index) {
@@ -298,12 +289,9 @@ public class MainActivity extends NewBaseActivity {
         Drawable drawableFindSelect = getResources().getDrawable(R.mipmap.activity_main_find_select);
         Drawable drawableWalletUnSelect = getResources().getDrawable(R.mipmap.activity_main_wallet_unselect);
         Drawable drawableWalletSelect = getResources().getDrawable(R.mipmap.activity_main_wallet_select);
-
         int unSelectColor = mainColorText;
         int selectColor = colorPrimary;
-
         imageViewHomeTab.setImageDrawable(drawableHomeUnSelect);
-
         ColorHelp.setImageViewDrawableTint(imageViewHomeTab, drawableHomeUnSelect, unSelectColor);
         textViewHomeTab.setTextColor(unSelectColor);
         ColorHelp.setImageViewDrawableTint(imageViewFindTab, drawableFindUnSelect, unSelectColor);
@@ -322,7 +310,6 @@ public class MainActivity extends NewBaseActivity {
         }
         nowSelect = index;
     }
-
 
     private void loadActiveWallet() {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<Wallet>() {
@@ -352,7 +339,6 @@ public class MainActivity extends NewBaseActivity {
             }
         });
     }
-
 
     private void beginLoadWallet(int walletId) {
         if (mainActivity_Fragment_Home != null) {
@@ -412,10 +398,78 @@ public class MainActivity extends NewBaseActivity {
         }
     }
 
+    private void loadRefreshWallet(Wallet wallet, String set_wallet_password, boolean needReset) {
+        if (wallet == null || set_wallet_password == null) {
+            return;
+        }
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), needReset, new OnWalletDataListener.Stub() {
+                @Override
+                public void onSuccess(final com.my.xwallet.aidl.Wallet wallet) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            BaseActivity.showShortToast(MainActivity.this, error);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void closeWallet() {
+        if (wallet == null) {
+            return;
+        }
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            walletOperateManager.closeWallet(wallet.getId(), new OnNormalListener.Stub() {
+                @Override
+                public void onSuccess(final String tips) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            BaseActivity.showShortToast(MainActivity.this, error);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void openDrawer() {
         drawerLayout.openDrawer(navigationView);
     }
-
 
     public void showPassword(View view, final int type) {
         if (wallet == null) {
@@ -459,77 +513,6 @@ public class MainActivity extends NewBaseActivity {
                 });
             }
         });
-    }
-
-
-    public void loadRefreshWallet(Wallet wallet, String set_wallet_password, boolean needReset) {
-        if (wallet == null || set_wallet_password == null) {
-            return;
-        }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
-        }
-        try {
-            walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), needReset, new OnWalletDataListener.Stub() {
-                @Override
-                public void onSuccess(final com.my.xwallet.aidl.Wallet wallet) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            BaseActivity.showShortToast(MainActivity.this, error);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    private void closeWallet() {
-        if (wallet == null) {
-            return;
-        }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
-        }
-        try {
-            walletOperateManager.closeWallet(wallet.getId(), new OnNormalListener.Stub() {
-                @Override
-                public void onSuccess(final String tips) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                        }
-                    });
-                }
-
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            BaseActivity.showShortToast(MainActivity.this, error);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

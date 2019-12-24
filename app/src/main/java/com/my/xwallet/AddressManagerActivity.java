@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddressManagerActivity extends NewBaseActivity {
+
     private RelativeLayout relativeLayoutRoot;
     private ImageView imageViewBack;
     private TextView textViewTitle;
@@ -42,7 +43,6 @@ public class AddressManagerActivity extends NewBaseActivity {
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
     private AddressManagerActivity_RecyclerViewAdapter addressManagerActivity_RecyclerViewAdapter;
-
     private boolean choose_address = false;
 
     @Override
@@ -53,7 +53,6 @@ public class AddressManagerActivity extends NewBaseActivity {
         choose_address = intent.getBooleanExtra(ActivityHelp.CHOOSE_ADDRESS_KEY, false);
         initAll();
     }
-
 
     @Override
     protected void initHandler() {
@@ -120,7 +119,6 @@ public class AddressManagerActivity extends NewBaseActivity {
         imageViewRight.setOnClickListener(onClickListener);
     }
 
-
     private void initOrRefreshAdapter(List<ViewItem> viewItems) {
         if (viewItems == null) {
             viewItems = new ArrayList<ViewItem>();
@@ -143,26 +141,6 @@ public class AddressManagerActivity extends NewBaseActivity {
             TheApplication.replaceAllFormBaseRecyclerViewAdapter(addressManagerActivity_RecyclerViewAdapter, viewItems, baseRecyclerViewFromFrameLayout.getRecyclerView());
         }
     }
-
-    private void selectAddress(AddressBook addressBook) {
-        if (choose_address) {
-            Intent intent = new Intent();
-            intent.putExtra(ActivityHelp.REQUEST_ADDRESS_KEY, addressBook.getAddress());
-            intent.putExtra(ActivityHelp.REQUEST_NOTES_KEY, addressBook.getNotes());
-            intent.putExtra(ActivityHelp.REQUEST_SYMBOL_KEY, addressBook.getSymbol());
-            setResult(Activity.RESULT_OK, intent);
-            finish();
-        } else {
-            ClipboardTool.copyToClipboard(AddressManagerActivity.this, addressBook.getAddress());
-        }
-    }
-
-    private void addAddress() {
-        Intent intent = new Intent(AddressManagerActivity.this,
-                AddressAddActivity.class);
-        startActivityForResult(intent, ActivityHelp.REQUEST_CODE_ADD_ADDRESS);
-    }
-
 
     private void loadAddresses() {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<AddressBook>>() {
@@ -190,6 +168,25 @@ public class AddressManagerActivity extends NewBaseActivity {
                 initOrRefreshAdapter(viewItems);
             }
         });
+    }
+
+    private void selectAddress(AddressBook addressBook) {
+        if (choose_address) {
+            Intent intent = new Intent();
+            intent.putExtra(ActivityHelp.REQUEST_ADDRESS_KEY, addressBook.getAddress());
+            intent.putExtra(ActivityHelp.REQUEST_NOTES_KEY, addressBook.getNotes());
+            intent.putExtra(ActivityHelp.REQUEST_SYMBOL_KEY, addressBook.getSymbol());
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+        } else {
+            ClipboardTool.copyToClipboard(AddressManagerActivity.this, addressBook.getAddress());
+        }
+    }
+
+    private void addAddress() {
+        Intent intent = new Intent(AddressManagerActivity.this,
+                AddressAddActivity.class);
+        startActivityForResult(intent, ActivityHelp.REQUEST_CODE_ADD_ADDRESS);
     }
 
     private void saveAddress(final String address, final String notes, final String symbol) {
@@ -225,7 +222,6 @@ public class AddressManagerActivity extends NewBaseActivity {
             }
         });
     }
-
 
     private void deleteAddress(final AddressBook addressBook) {
         if (addressBook == null) {
@@ -268,14 +264,6 @@ public class AddressManagerActivity extends NewBaseActivity {
     }
 
     @Override
-    protected void doBack() {
-        super.doBack();
-        Intent intent = new Intent();
-        setResult(RESULT_CANCELED, intent);
-        finish();
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ActivityHelp.REQUEST_CODE_ADD_ADDRESS && resultCode == RESULT_OK && data != null) {
             String address = data.getStringExtra(ActivityHelp.REQUEST_ADDRESS_KEY);
@@ -286,6 +274,13 @@ public class AddressManagerActivity extends NewBaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    protected void doBack() {
+        super.doBack();
+        Intent intent = new Intent();
+        setResult(RESULT_CANCELED, intent);
+        finish();
+    }
 
     @Override
     protected void onDestroy() {

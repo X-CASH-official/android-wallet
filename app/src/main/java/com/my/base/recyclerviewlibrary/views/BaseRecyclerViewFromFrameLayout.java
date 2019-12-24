@@ -24,6 +24,7 @@ import com.my.base.recyclerviewlibrary.models.ViewItem;
 import com.my.xwallet.R;
 
 public class BaseRecyclerViewFromFrameLayout extends FrameLayout {
+
     private Context context;
     private int mainId = R.layout.base_layout_main;
     private int emptyId = 0;
@@ -37,11 +38,9 @@ public class BaseRecyclerViewFromFrameLayout extends FrameLayout {
     private int spanCount = 1;
     private int layoutManagerOrientation = 1;
     private int scrollbarStyle = 0;
-
     private FrameLayout frameLayoutEmpty;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
-
     private SwipeRefreshLayout.OnRefreshListener onRefreshListener;
 
     public BaseRecyclerViewFromFrameLayout(Context context) {
@@ -255,7 +254,6 @@ public class BaseRecyclerViewFromFrameLayout extends FrameLayout {
     public RecyclerView getRecyclerView() {
         return recyclerView;
     }
-
 
     public void setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener onRefreshListener) {
         this.onRefreshListener = onRefreshListener;

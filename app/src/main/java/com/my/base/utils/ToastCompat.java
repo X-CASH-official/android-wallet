@@ -30,7 +30,6 @@ public class ToastCompat extends Toast {
         super(context);
     }
 
-
     public static Toast makeText(Context context, CharSequence text, int duration) {
         ToastCompat toastCompat = new ToastCompat(context);
 
@@ -44,7 +43,6 @@ public class ToastCompat extends Toast {
         toastCompat.setDuration(duration);
         return toastCompat;
     }
-
 
     public static Toast makeText(Context context, int resId, int duration)
             throws Resources.NotFoundException {
@@ -85,41 +83,6 @@ public class ToastCompat extends Toast {
             }
         } catch (Throwable e) {
             e.printStackTrace();
-        }
-    }
-
-    private class InternalRunnable implements Runnable {
-        private final Runnable mRunnable;
-
-        public InternalRunnable(Runnable mRunnable) {
-            this.mRunnable = mRunnable;
-        }
-
-        @Override
-        public void run() {
-            try {
-                this.mRunnable.run();
-            } catch (Throwable e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private class InternalHandlerCallback implements Handler.Callback {
-        private final Handler mHandler;
-
-        public InternalHandlerCallback(Handler mHandler) {
-            this.mHandler = mHandler;
-        }
-
-        @Override
-        public boolean handleMessage(Message msg) {
-            try {
-                mHandler.handleMessage(msg);
-            } catch (Throwable e) {
-                e.printStackTrace();
-            }
-            return true;
         }
     }
 
@@ -175,4 +138,42 @@ public class ToastCompat extends Toast {
         }
         return null;
     }
+
+    private class InternalRunnable implements Runnable {
+
+        private final Runnable runnable;
+
+        public InternalRunnable(Runnable mRunnable) {
+            this.runnable = mRunnable;
+        }
+
+        @Override
+        public void run() {
+            try {
+                this.runnable.run();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private class InternalHandlerCallback implements Handler.Callback {
+
+        private final Handler handler;
+
+        public InternalHandlerCallback(Handler handler) {
+            this.handler = handler;
+        }
+
+        @Override
+        public boolean handleMessage(Message msg) {
+            try {
+                handler.handleMessage(msg);
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+    }
+
 }

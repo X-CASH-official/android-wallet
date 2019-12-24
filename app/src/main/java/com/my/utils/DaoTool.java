@@ -22,7 +22,6 @@ public class DaoTool {
                 break;
             }
         }
-
     }
 
 }

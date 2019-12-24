@@ -20,6 +20,7 @@ import java.util.List;
 
 
 public class AddressManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
+
     private BaseActivity baseActivity;
     private RecyclerView recyclerView;
     private OnAddressManagerListener onAddressManagerListener;
@@ -95,4 +96,5 @@ public class AddressManagerActivity_RecyclerViewAdapter extends UnLoadMoreRecycl
         void onLongClick(AddressBook addressBook);
 
     }
+
 }

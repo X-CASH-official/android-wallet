@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class ActivityManager {
+
     public static final String ACTIVITYKEYSEPARATOR = "&&";
 
     private static ActivityManager activityManager;
@@ -157,4 +158,5 @@ public class ActivityManager {
             }
         }
     }
+
 }

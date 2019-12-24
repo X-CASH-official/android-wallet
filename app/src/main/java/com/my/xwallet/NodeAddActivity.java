@@ -22,6 +22,7 @@ import com.my.xwallet.aidl.manager.XManager;
 import com.my.xwallet.uihelp.ActivityHelp;
 
 public class NodeAddActivity extends NewBaseActivity {
+
     private int colorPrimary;
     private int mainColorText;
 
@@ -88,7 +89,6 @@ public class NodeAddActivity extends NewBaseActivity {
 
     }
 
-
     private void onFocusChangeListener() {
         onFocusChangeListener = new View.OnFocusChangeListener() {
             @Override
@@ -118,7 +118,6 @@ public class NodeAddActivity extends NewBaseActivity {
         editTextNodePort.setOnFocusChangeListener(onFocusChangeListener);
     }
 
-
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
@@ -138,7 +137,6 @@ public class NodeAddActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
         buttonNext.setOnClickListener(onClickListener);
     }
-
 
     private void doNext() {
         String nodeIp = editTextNodeIp.getText().toString();
@@ -162,4 +160,5 @@ public class NodeAddActivity extends NewBaseActivity {
         setResult(RESULT_CANCELED, intent);
         finish();
     }
+
 }

@@ -41,6 +41,7 @@ import com.my.xwallet.uihelp.ColorHelp;
 import java.util.List;
 
 public class WalletRunningActivity extends NewBaseActivity {
+
     private Wallet wallet;
     private String set_wallet_password;
 
@@ -60,18 +61,15 @@ public class WalletRunningActivity extends NewBaseActivity {
     private TextView textViewAddress;
     private Button buttonSend;
     private Button buttonReceive;
-
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
     private Drawable drawableNormalBack;
     private Drawable drawableChangeNode;
     private View.OnClickListener onClickListener;
-    private WalletRunningActivity_ViewPagerAdapter walletRunningActivity_ViewPagerAdapter;
-
-    private int walletId;
-
     private ViewPager.OnPageChangeListener onPageChangeListener;
+    private WalletRunningActivity_ViewPagerAdapter walletRunningActivity_ViewPagerAdapter;
+    private int walletId;
     private boolean pageChanged = false;
     private int currentPosition = 0;
 
@@ -89,7 +87,6 @@ public class WalletRunningActivity extends NewBaseActivity {
         setWindowType(1);
         initAll();
     }
-
 
     @SuppressWarnings("ResourceType")
     private void getTypeArrayColor() {
@@ -235,40 +232,41 @@ public class WalletRunningActivity extends NewBaseActivity {
                     pageChanged = true;
                 }
                 List<Fragment> fragments = getSupportFragmentManager().getFragments();
-                if (fragments != null) {
-                    for (int i = 0; i < fragments.size(); i++) {
-                        WalletRunningActivity_Fragment_Default walletRunningActivity_Fragment_Default = (WalletRunningActivity_Fragment_Default) fragments.get(i);
-                        walletRunningActivity_Fragment_Default.setSelectPosition(position);
-                    }
-                    for (int i = 0; i < fragments.size(); i++) {
-                        WalletRunningActivity_Fragment_Default walletRunningActivity_Fragment_Default = (WalletRunningActivity_Fragment_Default) fragments.get(i);
-                        if (walletRunningActivity_Fragment_Default != null) {
-                            boolean haveFind = false;
-                            switch (position) {
-                                case 0:
-                                    if (walletRunningActivity_Fragment_Default.getPosition() == 0) {
-                                        walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
-                                        haveFind = true;
-                                    }
-                                    break;
-                                case 1:
-                                    if (walletRunningActivity_Fragment_Default.getPosition() == 1) {
-                                        walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
-                                        haveFind = true;
-                                    }
-                                    break;
-                                case 2:
-                                    if (walletRunningActivity_Fragment_Default.getPosition() == 2) {
-                                        walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
-                                        haveFind = true;
-                                    }
-                                    break;
-                                default:
-                                    break;
-                            }
-                            if (haveFind) {
+                if (fragments == null) {
+                  return;
+                }
+                for (int i = 0; i < fragments.size(); i++) {
+                    WalletRunningActivity_Fragment_Default walletRunningActivity_Fragment_Default = (WalletRunningActivity_Fragment_Default) fragments.get(i);
+                    walletRunningActivity_Fragment_Default.setSelectPosition(position);
+                }
+                for (int i = 0; i < fragments.size(); i++) {
+                    WalletRunningActivity_Fragment_Default walletRunningActivity_Fragment_Default = (WalletRunningActivity_Fragment_Default) fragments.get(i);
+                    if (walletRunningActivity_Fragment_Default != null) {
+                        boolean haveFind = false;
+                        switch (position) {
+                            case 0:
+                                if (walletRunningActivity_Fragment_Default.getPosition() == 0) {
+                                    walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
+                                    haveFind = true;
+                                }
                                 break;
-                            }
+                            case 1:
+                                if (walletRunningActivity_Fragment_Default.getPosition() == 1) {
+                                    walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
+                                    haveFind = true;
+                                }
+                                break;
+                            case 2:
+                                if (walletRunningActivity_Fragment_Default.getPosition() == 2) {
+                                    walletRunningActivity_Fragment_Default.doRefreshWhenViewPagerSelect();
+                                    haveFind = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        if (haveFind) {
+                            break;
                         }
                     }
                 }
@@ -386,7 +384,6 @@ public class WalletRunningActivity extends NewBaseActivity {
         return pageChanged;
     }
 
-
     public void doRefresh(int walletId) {
         if (this.walletId == walletId) {
             List<Fragment> fragments = getSupportFragmentManager().getFragments();
@@ -399,16 +396,10 @@ public class WalletRunningActivity extends NewBaseActivity {
         }
     }
 
-
     @Override
     protected void doBack() {
         super.doBack();
         finish();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     public static void beginLoadWalletIfActivityExist(int walletId) {
@@ -452,4 +443,5 @@ public class WalletRunningActivity extends NewBaseActivity {
             walletRunningActivity.doRefresh(walletId);
         }
     }
+
 }

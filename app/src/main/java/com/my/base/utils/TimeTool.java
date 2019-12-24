@@ -8,7 +8,6 @@ package com.my.base.utils;
 public class TimeTool {
 
     private static long oldTime = -1;
-
     private static int count = 0;
 
     public static synchronized long getOnlyTime() {
@@ -41,4 +40,5 @@ public class TimeTool {
         time = time * ratio + count;
         return time;
     }
+
 }

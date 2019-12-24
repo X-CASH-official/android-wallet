@@ -83,6 +83,7 @@ public class Transaction implements Parcelable {
     }
 
     public Transaction() {
+
     }
 
     protected Transaction(Parcel in) {
@@ -104,4 +105,5 @@ public class Transaction implements Parcelable {
             return new Transaction[size];
         }
     };
+
 }

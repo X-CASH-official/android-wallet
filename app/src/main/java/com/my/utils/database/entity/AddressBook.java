@@ -15,8 +15,8 @@ import java.io.Serializable;
 
 @Entity(tableName = "address_books", indices = {@Index(value = {"symbol", "address", "notes"},
         unique = true)})
-
 public class AddressBook implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "_id")
     private int id;
@@ -58,4 +58,5 @@ public class AddressBook implements Serializable {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
 }

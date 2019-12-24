@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class UnLoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdapter<ViewItem> {
+
     public static final int USE_DEFAULT_LOADCOMPLETEDLAYOUTID = -1;
     public static final int UNSHOW_LOADCOMPLETEDLAYOUTID = 0;
 
@@ -27,7 +28,6 @@ public abstract class UnLoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdap
         loadCompletedLayoutId = R.layout.base_layout_load_completed;
         loadCompleted(getDatas());
     }
-
 
     public UnLoadMoreRecyclerViewAdapter(List<ViewItem> datas, int loadCompletedLayoutId) {
         super(datas);
@@ -50,7 +50,6 @@ public abstract class UnLoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdap
             return getNormalLayoutId(viewType);
         }
     }
-
 
     @Override
     public void onBindViewHolder(BaseRecyclerViewAdapter.BaseRecyclerViewHolder holder, int position) {
@@ -106,7 +105,6 @@ public abstract class UnLoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdap
         return newDatas;
     }
 
-
     private ViewItem getLoadCompletedItem() {
         return new ViewItem(ViewItem.VIEW_TYPE_ITEM_LOAD_COMPLETED, null);
     }
@@ -124,4 +122,5 @@ public abstract class UnLoadMoreRecyclerViewAdapter extends BaseRecyclerViewAdap
     public void setLoadCompletedLayoutId(int loadCompletedLayoutId) {
         this.loadCompletedLayoutId = loadCompletedLayoutId;
     }
+
 }

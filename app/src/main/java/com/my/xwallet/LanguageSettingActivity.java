@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageSettingActivity extends NewBaseActivity {
+
     private ImageView imageViewBack;
     private TextView textViewTitle;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
@@ -31,14 +32,12 @@ public class LanguageSettingActivity extends NewBaseActivity {
     private View.OnClickListener onClickListener;
     private LanguageSettingActivity_RecyclerViewAdapter languageSettingActivity_RecyclerViewAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_setting);
         initAll();
     }
-
 
     @Override
     protected void initHandler() {
@@ -122,7 +121,6 @@ public class LanguageSettingActivity extends NewBaseActivity {
         }
         initOrRefreshAdapter(viewItems, selectPosition);
     }
-
 
     private void updateLanguageSetting(final String language) {
         Setting setting = TheApplication.getSetting();

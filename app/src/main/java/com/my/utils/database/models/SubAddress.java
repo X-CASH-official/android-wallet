@@ -8,6 +8,7 @@ package com.my.utils.database.models;
 import java.io.Serializable;
 
 public class SubAddress implements Serializable {
+
     private int id;
     private String address;
     private String label;
@@ -45,6 +46,5 @@ public class SubAddress implements Serializable {
     public void setLabel(String label) {
         this.label = label;
     }
-
 
 }

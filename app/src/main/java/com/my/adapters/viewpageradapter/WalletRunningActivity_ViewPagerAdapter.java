@@ -72,4 +72,5 @@ public class WalletRunningActivity_ViewPagerAdapter extends FragmentStatePagerAd
     public int getCount() {
         return titles.length;
     }
+
 }

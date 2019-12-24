@@ -31,17 +31,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WalletRunningActivity_Fragment_Default extends BaseFragment {
+
     private Wallet wallet;
     private String transaction_type;
     private boolean need_auto_refresh;
 
     private View view;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
+
     private boolean alreadyInitUi = true;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
     private Transaction_Default_RecyclerViewAdapter transaction_Default_RecyclerViewAdapter;
     public int selectPosition = -1;
-    protected boolean getInitSuccess = false;
+    public boolean getInitSuccess = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -189,6 +191,5 @@ public class WalletRunningActivity_Fragment_Default extends BaseFragment {
         super.onDestroy();
         coroutineHelper.onDestroy();
     }
-
 
 }

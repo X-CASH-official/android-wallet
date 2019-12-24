@@ -40,21 +40,14 @@ import java.util.List;
 public class TheApplication extends Application {
 
     public static final String THEAPPLICATIONKEY = "theApplication";
-
     public static final String DEFAULT_ROOT_PATH = "xwallet";
-
     public static final String DOWNLOADCACHE_DIR_NAME = "downloadCache";
-
     public static final String SETTING_LASTFILENAME = "setting.txt";
-
     public static final int AUTOREFRESHDELAY = 450;
 
     private static TheApplication theApplication;
-
     private static String filesDirRootPath = null;
-
     private static Setting setting;
-
     private WalletServiceHelper walletServiceHelper;
 
     @Override
@@ -159,7 +152,6 @@ public class TheApplication extends Application {
         return downloadCacheFilePath;
     }
 
-
     public static void setColorSchemeColors(BaseActivity baseActivity, SwipeRefreshLayout swipeRefreshLayout) {
         TypedArray typedArray = baseActivity.getTheme().obtainStyledAttributes(new int[]{R.attr.colorPrimary, R.attr.mainColorDeepen});
         try {
@@ -182,7 +174,6 @@ public class TheApplication extends Application {
         }
         return contentType;
     }
-
 
     public static void setLayoutParams(View view, int width, int height) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -262,7 +253,6 @@ public class TheApplication extends Application {
         }
     }
 
-
     public static Activity getActivityFromActivityManager(String className) {
         Activity activity = null;
         ArrayList<Object[]> arrayListActivitys = ActivityManager.getInstance().getTheActivitysByClassName(className);
@@ -282,7 +272,6 @@ public class TheApplication extends Application {
     public static void killAllActivityExceptMe(String activityKey) {
         ActivityManager.getInstance().killAllActivityWithOutMe(activityKey);
     }
-
 
     public static void refreshPageScrolled(Handler handler, final TabLayout tabLayout) {
         if (handler != null && tabLayout != null) {

@@ -79,7 +79,6 @@ public class BaseActivity extends AppCompatActivity {
         hashMapProgressDialogs.clear();
     }
 
-
     public void addPopupWindow(String popupWindowKey, PopupWindow popupWindow) {
         if (popupWindowKey != null && popupWindow != null) {
             hashMapPopupWindows.put(popupWindowKey, popupWindow);
@@ -134,7 +133,6 @@ public class BaseActivity extends AppCompatActivity {
         initOther();
     }
 
-
     protected void initHandler() {
 
     }
@@ -154,7 +152,6 @@ public class BaseActivity extends AppCompatActivity {
     protected void initOther() {
 
     }
-
 
     public void setWindowType(int type) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -188,7 +185,6 @@ public class BaseActivity extends AppCompatActivity {
         this.allowKeyBack = allowKeyBack;
     }
 
-
     protected void doBack() {
 
     }
@@ -214,7 +210,6 @@ public class BaseActivity extends AppCompatActivity {
         ActivityManager.getInstance().removeBaseActivity(activityKey);
         super.onDestroy();
     }
-
 
     public static int getScreenWidth(Context context) {
         DisplayMetrics displayMetrics = context.getResources().

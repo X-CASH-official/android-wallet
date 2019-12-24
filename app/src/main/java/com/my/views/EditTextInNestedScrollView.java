@@ -13,7 +13,6 @@ import androidx.appcompat.widget.AppCompatEditText;
 
 public class EditTextInNestedScrollView extends AppCompatEditText {
 
-
     public EditTextInNestedScrollView(Context context) {
         super(context);
     }
@@ -25,7 +24,6 @@ public class EditTextInNestedScrollView extends AppCompatEditText {
     public EditTextInNestedScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

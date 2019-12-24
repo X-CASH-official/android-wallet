@@ -38,4 +38,5 @@ public interface NodeDao {
 
     @Delete
     void deleteNode(@NotNull Node node);
+
 }

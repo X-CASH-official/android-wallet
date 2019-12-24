@@ -24,6 +24,7 @@ import com.my.xwallet.uihelp.ActivityHelp;
 import com.my.xwallet.uihelp.ColorHelp;
 
 public class SetWalletActivity extends NewBaseActivity {
+
     private String choose_wallet_type;
 
     private int colorPrimary;
@@ -47,13 +48,12 @@ public class SetWalletActivity extends NewBaseActivity {
     private CheckBox checkBox;
     private Button buttonNext;
 
+    private View.OnFocusChangeListener onFocusChangeListener;
+    private View.OnClickListener onClickListener;
     private Drawable drawableName;
     private Drawable drawablePassword;
     private Drawable drawableConfirmPassword;
     private Drawable drawableDescription;
-
-    private View.OnFocusChangeListener onFocusChangeListener;
-    private View.OnClickListener onClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,6 @@ public class SetWalletActivity extends NewBaseActivity {
 
     @Override
     protected void initConfigUi() {
-
         drawableName = getResources().getDrawable(R.mipmap.activity_set_wallet_name);
         drawablePassword = getResources().getDrawable(R.mipmap.activity_set_wallet_password);
         drawableConfirmPassword = getResources().getDrawable(R.mipmap.activity_set_wallet_password);
@@ -245,10 +244,10 @@ public class SetWalletActivity extends NewBaseActivity {
         }
     }
 
-
     @Override
     protected void doBack() {
         super.doBack();
         finish();
     }
+
 }

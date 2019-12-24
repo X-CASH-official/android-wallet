@@ -23,6 +23,7 @@ import com.my.xwallet.aidl.manager.XManager;
 import java.util.List;
 
 public class Transaction_Default_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
+
     private BaseActivity baseActivity;
     private RecyclerView recyclerView;
     private int mainColorText;
@@ -116,4 +117,5 @@ public class Transaction_Default_RecyclerViewAdapter extends UnLoadMoreRecyclerV
     public interface OnTransactionDefaultListener {
         void onItemSelect(TransactionInfo transactionInfo);
     }
+
 }

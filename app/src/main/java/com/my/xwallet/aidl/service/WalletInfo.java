@@ -6,6 +6,7 @@
 package com.my.xwallet.aidl.service;
 
 public class WalletInfo {
+
     public static final int TYPE_QUEUE_FULL_ERROR = 1;
     public static final int TYPE_BEGIN_LOAD_WALLET = 2;
     public static final int TYPE_SYNCHRONIZE_STATUS_ERROR = 3;
@@ -96,4 +97,5 @@ public class WalletInfo {
     public void setBlockChainHeight(long blockChainHeight) {
         this.blockChainHeight = blockChainHeight;
     }
+
 }

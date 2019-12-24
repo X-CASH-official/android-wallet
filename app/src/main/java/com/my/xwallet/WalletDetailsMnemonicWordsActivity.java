@@ -17,12 +17,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.core.content.ContextCompat;
-
 import com.my.base.BaseActivity;
 import com.my.utils.ClipboardTool;
-import com.my.utils.CoroutineHelper;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.aidl.OnWalletDataListener;
 import com.my.xwallet.aidl.WalletOperateManager;
@@ -32,22 +29,19 @@ import com.my.xwallet.uihelp.ProgressDialogHelp;
 
 public class WalletDetailsMnemonicWordsActivity extends NewBaseActivity {
 
-
     private Wallet wallet;
     private String set_wallet_password;
 
     private int view_normal_margin_default;
     private int view_normal_margin_narrow;
     private int mnemonicWordViewWidth;
+
     private ImageView imageViewBack;
     private ImageView imageViewCopy;
     private TextView textViewWordTips;
     private LinearLayout linearLayoutWord;
 
     private View.OnClickListener onClickListener;
-    private CoroutineHelper coroutineHelper = new CoroutineHelper();
-
-
     private String seed;
 
     @Override
@@ -69,7 +63,6 @@ public class WalletDetailsMnemonicWordsActivity extends NewBaseActivity {
     protected void initUi() {
         view_normal_margin_default = getResources().getDimensionPixelSize(R.dimen.view_normal_margin_default);
         view_normal_margin_narrow = getResources().getDimensionPixelSize(R.dimen.view_normal_margin_narrow);
-
         mnemonicWordViewWidth = (BaseActivity.getScreenWidth(WalletDetailsMnemonicWordsActivity.this) - 2 * view_normal_margin_default - 6 * view_normal_margin_narrow) / 3;
         imageViewBack = (ImageView) findViewById(R.id.imageViewBack);
         imageViewCopy = (ImageView) findViewById(R.id.imageViewCopy);
@@ -112,7 +105,6 @@ public class WalletDetailsMnemonicWordsActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
         imageViewCopy.setOnClickListener(onClickListener);
     }
-
 
     private void recoverMnemonicWords() {
         if (wallet == null || set_wallet_password == null) {
@@ -185,20 +177,15 @@ public class WalletDetailsMnemonicWordsActivity extends NewBaseActivity {
                 linearLayoutHorizontal = new LinearLayout(WalletDetailsMnemonicWordsActivity.this);
                 linearLayoutHorizontal.setOrientation(LinearLayout.HORIZONTAL);
             }
-
             String word = words[i];
             View view = layoutInflater.inflate(R.layout.activity_create_wallet_mnemonic_word_item, null);
-
             RelativeLayout relativeLayoutWord = (RelativeLayout) view.findViewById(R.id.relativeLayoutWord);
             TextView textViewSerialNumber = (TextView) view.findViewById(R.id.textViewSerialNumber);
             TextView textViewContent = (TextView) view.findViewById(R.id.textViewContent);
-
             TheApplication.setLayoutParams(relativeLayoutWord, mnemonicWordViewWidth, -1);
             TheApplication.setLayoutMargins(relativeLayoutWord, view_normal_margin_narrow, view_normal_margin_narrow, view_normal_margin_narrow, view_normal_margin_narrow);
-
             textViewSerialNumber.setText(String.valueOf(i + 1));
             textViewContent.setText(word);
-
             linearLayoutHorizontal.addView(view);
             if ((i + 1) % 3 == 0 || i == wordsLength - 1) {
                 linearLayout.addView(linearLayoutHorizontal);
@@ -213,9 +200,4 @@ public class WalletDetailsMnemonicWordsActivity extends NewBaseActivity {
         finish();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        coroutineHelper.onDestroy();
-    }
 }

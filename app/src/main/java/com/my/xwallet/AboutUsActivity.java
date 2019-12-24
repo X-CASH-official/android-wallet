@@ -62,7 +62,6 @@ public class AboutUsActivity extends NewBaseActivity {
 
     }
 
-
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
@@ -87,10 +86,10 @@ public class AboutUsActivity extends NewBaseActivity {
         textViewFindNewVersion.setOnClickListener(onClickListener);
     }
 
-
     @Override
     protected void doBack() {
         super.doBack();
         finish();
     }
+
 }

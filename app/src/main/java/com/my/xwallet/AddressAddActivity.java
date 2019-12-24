@@ -24,6 +24,7 @@ import com.my.xwallet.aidl.manager.XManager;
 import com.my.xwallet.uihelp.ActivityHelp;
 
 public class AddressAddActivity extends NewBaseActivity {
+
     private int colorPrimary;
     private int mainColorText;
 
@@ -94,7 +95,6 @@ public class AddressAddActivity extends NewBaseActivity {
 
     }
 
-
     private void onFocusChangeListener() {
         onFocusChangeListener = new View.OnFocusChangeListener() {
             @Override
@@ -124,7 +124,6 @@ public class AddressAddActivity extends NewBaseActivity {
         editTextNotes.setOnFocusChangeListener(onFocusChangeListener);
     }
 
-
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
@@ -148,7 +147,6 @@ public class AddressAddActivity extends NewBaseActivity {
         imageViewRight.setOnClickListener(onClickListener);
         buttonNext.setOnClickListener(onClickListener);
     }
-
 
     private void doNext() {
         String address = editTextAddress.getText().toString();
@@ -190,4 +188,5 @@ public class AddressAddActivity extends NewBaseActivity {
         setResult(RESULT_CANCELED, intent);
         finish();
     }
+
 }

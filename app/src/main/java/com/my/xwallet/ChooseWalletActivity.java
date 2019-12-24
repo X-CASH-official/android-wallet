@@ -21,6 +21,7 @@ public class ChooseWalletActivity extends NewBaseActivity {
     private RelativeLayout relativeLayoutContent;
     private Button buttonCreateWallet;
     private Button buttonImportWallet;
+
     private View.OnClickListener onClickListener;
 
     @Override

@@ -18,11 +18,11 @@ import com.my.base.BaseActivity;
 
 
 public class BaseFragment extends Fragment {
+
     public static final String POSITION_KEY = "position_key";
 
-    private BaseActivity baseActivity;
     public Handler handler = null;
-
+    private BaseActivity baseActivity;
     private int position = -1;
 
     @Override
@@ -77,7 +77,6 @@ public class BaseFragment extends Fragment {
         return position;
     }
 
-
     public void adaptationStatusBar(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -99,4 +98,5 @@ public class BaseFragment extends Fragment {
         }
         super.onDestroy();
     }
+
 }

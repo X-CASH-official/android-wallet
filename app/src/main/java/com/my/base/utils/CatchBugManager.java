@@ -14,6 +14,7 @@ import java.io.StringWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 
 public class CatchBugManager implements UncaughtExceptionHandler {
+
     private static CatchBugManager catchBugManager;
     private final Application application;
     private final UncaughtExceptionHandler defaultUncaughtExceptionHandler;
@@ -23,7 +24,6 @@ public class CatchBugManager implements UncaughtExceptionHandler {
         defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
     }
-
 
     public static synchronized CatchBugManager getInstance(Application application) {
         if (catchBugManager == null) {
@@ -79,4 +79,5 @@ public class CatchBugManager implements UncaughtExceptionHandler {
         FileTool.needShowAndWriteLogToSdcard(true, FileTool.getDefaultRootPath() + File.separator + "CrashLog.txt", bug, null, 1);
         defaultUncaughtExceptionHandler.uncaughtException(thread, throwable);
     }
+
 }

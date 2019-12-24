@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 @Entity(tableName = "wallets", indices = {@Index(value = {"symbol", "name"},
         unique = true)})
-
 public class Wallet implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "_id")
     private int id;
@@ -153,4 +153,5 @@ public class Wallet implements Serializable {
     public void setErrorString(String errorString) {
         this.errorString = errorString;
     }
+
 }

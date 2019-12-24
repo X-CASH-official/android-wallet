@@ -6,6 +6,7 @@
 package com.my.models.local;
 
 public class KeyValueItem {
+
     private String key;
     private Object value;
 
@@ -41,5 +42,6 @@ public class KeyValueItem {
                 ", value=" + value +
                 '}';
     }
+
 }
 

@@ -50,4 +50,5 @@ public interface WalletDao {
 
     @Delete
     void deleteWallets(@NotNull Wallet... wallets);
+
 }

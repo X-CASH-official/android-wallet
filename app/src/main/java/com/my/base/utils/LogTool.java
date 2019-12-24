@@ -1,8 +1,14 @@
+/**
+ * Copyright (c) 2019 by snakeway
+ * <p>
+ * All rights reserved.
+ */
 package com.my.base.utils;
 
 import android.util.Log;
 
 public class LogTool {
+
     private static boolean debug = true;
 
     public static boolean isDebug() {
@@ -42,7 +48,5 @@ public class LogTool {
             Log.e(tag, message);
         }
     }
-
-
 
 }

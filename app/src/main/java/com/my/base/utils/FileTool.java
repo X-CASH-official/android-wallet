@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FileTool {
+
     public static final String LOG_TAG = "snakeway";
     public static final String DEFAULT_ROOT_PATH = "snakeway";
 
@@ -268,4 +269,5 @@ public class FileTool {
             file.delete();
         }
     }
+
 }

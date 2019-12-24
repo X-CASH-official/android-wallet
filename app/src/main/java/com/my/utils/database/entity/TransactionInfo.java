@@ -12,8 +12,8 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "transactionInfos")
-
 public class TransactionInfo implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "_id")
     private int id;
@@ -186,4 +186,5 @@ public class TransactionInfo implements Serializable {
                 ", address='" + address + '\'' +
                 '}';
     }
+
 }

@@ -17,6 +17,7 @@ import java.io.Serializable;
 @Entity(tableName = "nodes", indices = {@Index(value = {"symbol", "url"},
         unique = true)})
 public class Node implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "_id")
     private int id;
@@ -80,4 +81,5 @@ public class Node implements Serializable {
     public void setResponseTime(long responseTime) {
         this.responseTime = responseTime;
     }
+
 }

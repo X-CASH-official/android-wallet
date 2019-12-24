@@ -19,8 +19,8 @@ import java.util.List;
 
 
 public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewAdapter<ViewLayerItem> {
-    public static final int USE_DEFAULT_LOADMORELAYOUTID = -1;
 
+    public static final int USE_DEFAULT_LOADMORELAYOUTID = -1;
     public static final int USE_DEFAULT_LOADCOMPLETEDLAYOUTID = -1;
     public static final int UNSHOW_LOADCOMPLETEDLAYOUTID = 0;
 
@@ -30,7 +30,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
     private LoadMoreCallback loadMoreCallback;
     private boolean loading = false;
     private boolean loadCompleted = false;
-
 
     public LoadMoreLayerRecyclerViewAdapter(List<ViewLayerItem> datas) {
         super(datas);
@@ -44,7 +43,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
             loadCompleted = true;
         }
     }
-
 
     public LoadMoreLayerRecyclerViewAdapter(List<ViewLayerItem> datas, int loadMoreLayoutId) {
         super(datas);
@@ -118,7 +116,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
         }
     }
 
-
     @Override
     public void onBindViewHolder(BaseRecyclerViewAdapter.BaseRecyclerViewHolder holder, int position) {
         List<ViewLayerItem> datas = getDatas();
@@ -161,7 +158,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
         }
     }
 
-
     @Override
     public void addAll(List<ViewLayerItem> newDatas) {
         super.addAll(convertAddAllDatas(newDatas, false));
@@ -198,7 +194,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
         loading = false;
     }
 
-
     public void loadMoreError() {
         hideLoadMore(false);
         if (getViewLayerItemsRootCount(getDatas()) >= pageCount) {
@@ -218,7 +213,6 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
         }
         loading = false;
     }
-
 
     private List<ViewLayerItem> convertAddAllDatas(List<ViewLayerItem> newDatas, boolean useNotifyDataSetChanged) {
         if (newDatas == null) {
@@ -326,4 +320,5 @@ public abstract class LoadMoreLayerRecyclerViewAdapter extends BaseRecyclerViewA
     public interface LoadMoreCallback {
         void loadMore(ViewLayerItem viewLayerItem);
     }
+
 }

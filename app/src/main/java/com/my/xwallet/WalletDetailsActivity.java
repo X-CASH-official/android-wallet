@@ -35,9 +35,10 @@ import com.my.xwallet.uihelp.ProgressDialogHelp;
 import java.util.List;
 
 public class WalletDetailsActivity extends NewBaseActivity {
-    public static final int TYPE_SHOW_ADDRES = 1;
-    public static final int TYPE_SHOW_MNEMONIC_WORDS = 2;
-    public static final int TYPE_SHOW_PRIVATE_KEYS = 3;
+
+    private  final int TYPE_SHOW_ADDRES = 1;
+    private  final int TYPE_SHOW_MNEMONIC_WORDS = 2;
+    private  final int TYPE_SHOW_PRIVATE_KEYS = 3;
 
     private Wallet wallet;
 
@@ -52,6 +53,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
     private RelativeLayout relativeLayoutExportMnemonicWords;
     private RelativeLayout relativeLayoutExportPrivateKeys;
     private RelativeLayout relativeLayoutDeleteWallet;
+
     private View.OnClickListener onClickListener;
 
     @Override
@@ -145,7 +147,6 @@ public class WalletDetailsActivity extends NewBaseActivity {
         relativeLayoutDeleteWallet.setOnClickListener(onClickListener);
     }
 
-
     private void showPasswordHint(View view) {
         if (wallet == null) {
             return;
@@ -153,8 +154,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
         PopupWindowHelp.showPopupWindowPasswordHintTips(WalletDetailsActivity.this, view.getRootView(), view, wallet.getPasswordPrompt());
     }
 
-
-    public void showPassword(View view, final int type) {
+    private void showPassword(View view, final int type) {
         if (wallet == null) {
             BaseActivity.showShortToast(WalletDetailsActivity.this, getString(R.string.wallet_not_exists_tips));
             return;
@@ -257,7 +257,6 @@ public class WalletDetailsActivity extends NewBaseActivity {
             e.printStackTrace();
             ProgressDialogHelp.enabledView(WalletDetailsActivity.this, progressDialog, progressDialogKey, null);
         }
-
     }
 
     @Override

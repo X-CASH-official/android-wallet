@@ -34,18 +34,14 @@ import java.util.List;
 
 public class WalletDetailsPrivateKeysActivity extends NewBaseActivity {
 
-
     private Wallet wallet;
     private String set_wallet_password;
-
 
     private ImageView imageViewBack;
     private TextView textViewWordTips;
     private LinearLayout linearLayoutPrivateKeys;
 
     private View.OnClickListener onClickListener;
-    private CoroutineHelper coroutineHelper = new CoroutineHelper();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,9 +186,4 @@ public class WalletDetailsPrivateKeysActivity extends NewBaseActivity {
         finish();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        coroutineHelper.onDestroy();
-    }
 }

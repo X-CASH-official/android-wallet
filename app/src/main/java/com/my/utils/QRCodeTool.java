@@ -40,4 +40,5 @@ public class QRCodeTool {
         }
         return null;
     }
+
 }

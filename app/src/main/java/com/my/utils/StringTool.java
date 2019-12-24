@@ -41,7 +41,6 @@ public class StringTool {
                 + "TB";
     }
 
-
     public static String formatDouble2(double number) {
         if (number == 0) {
             return "0.00";
@@ -49,7 +48,6 @@ public class StringTool {
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
         return decimalFormat.format(number);
     }
-
 
     public static long convertStringToLong(String content) {
         long blockHeight = 0;

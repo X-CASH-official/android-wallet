@@ -34,12 +34,12 @@ import com.my.xwallet.uihelp.PopupWindowHelp;
 import com.my.xwallet.uihelp.ProgressDialogHelp;
 
 public class ImportWalletActivity_Fragment_Mnemonic extends BaseFragment {
+
     private String set_wallet_name;
     private String set_wallet_password;
     private String set_wallet_description;
 
     private View view;
-
     private int mainColorText;
     private EditText editTextMnemonic;
     private RelativeLayout relativeLayoutDate;
@@ -90,16 +90,18 @@ public class ImportWalletActivity_Fragment_Mnemonic extends BaseFragment {
 
     @Override
     protected void initConfigUi() {
+
     }
 
     @Override
     protected void initHttp() {
+
     }
 
     @Override
     protected void initOther() {
-    }
 
+    }
 
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
@@ -159,7 +161,6 @@ public class ImportWalletActivity_Fragment_Mnemonic extends BaseFragment {
         Object[] objects = ProgressDialogHelp.unEnabledView(getBaseActivity(), null);
         final ProgressDialog progressDialog = (ProgressDialog) objects[0];
         final String progressDialogKey = (String) objects[1];
-
         try {
             walletOperateManager.importWalletMnemonic(set_wallet_name, set_wallet_password, set_wallet_description, mnemonic, blockHeight, new OnWalletDataListener.Stub() {
                 @Override

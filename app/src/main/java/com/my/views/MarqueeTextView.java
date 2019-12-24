@@ -28,4 +28,5 @@ public class MarqueeTextView extends AppCompatTextView {
     public boolean isFocused() {
         return true;
     }
+
 }

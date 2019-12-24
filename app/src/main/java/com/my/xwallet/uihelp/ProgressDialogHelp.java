@@ -40,7 +40,6 @@ public class ProgressDialogHelp {
         return objects;
     }
 
-
     public static void enabledView(BaseActivity baseActivity, ProgressDialog progressDialog, String progressDialogKey, View view) {
         if (progressDialog != null) {
             progressDialog.dismiss();
@@ -50,4 +49,5 @@ public class ProgressDialogHelp {
             view.setEnabled(true);
         }
     }
+
 }

@@ -26,8 +26,7 @@ import java.util.List;
 public class XWalletController {
 
     public static final String MNEMONIC_LANGUAGE = "English";
-
-    private final String TAG = "XWalletController";
+    public static final String TAG = "XWalletController";
 
     private int activeWalletId = -1;
 
@@ -40,7 +39,6 @@ public class XWalletController {
     public com.my.monero.model.Wallet getActiveWallet() {
         return activeWallet;
     }
-
 
     public Wallet createWallet(File file, String password) {
         if (file == null || password == null) {
@@ -82,21 +80,6 @@ public class XWalletController {
         }
         newWallet.close();
         return wallet;
-    }
-
-
-    public void setNode(String host, int port) {
-        if (host == null) {
-            return;
-        }
-        try {
-            Node node = new Node();
-            node.setHost(host);
-            node.setRpcPort(port);
-            WalletManager.getInstance().setDaemon(node);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public boolean verifyWalletPasswordOnly(String keyPath, String password) {
@@ -177,19 +160,16 @@ public class XWalletController {
         }
         wallet.init(0);
         wallet.setRestoreHeight(restoreHeight);
-        LogTool.d(TAG, wallet.getRestoreHeight() + "Using daemon" + WalletManager.getInstance().getDaemonAddress());
-
+        LogTool.d(TAG, "Restore height:" +wallet.getRestoreHeight() + " Using daemon:" + WalletManager.getInstance().getDaemonAddress());
         if (wallet.getConnectionStatus() != com.my.monero.model.Wallet.ConnectionStatus.ConnectionStatus_Connected) {
             LogTool.d(TAG, "Connection error");
             onWalletListener.onWalletStartFailed(wallet.getErrorString());
             return false;
         }
-
         wallet.setListener(new WalletListener() {
 
             private long lastBlockTime;
             private boolean synced;
-
 
             @Override
             public void moneySpent(String txId, long amount) {
@@ -237,7 +217,6 @@ public class XWalletController {
         wallet.startRefresh();
         return true;
     }
-
 
     public void refreshWallet() {
         com.my.monero.model.Wallet wallet = getActiveWallet();
@@ -323,47 +302,6 @@ public class XWalletController {
         return wallet.isSynchronized();
     }
 
-    /**
-     * return NotNull
-     */
-    public List<TransactionInfo> getTransactionHistory() {
-        List<TransactionInfo> transactionInfos = new ArrayList<>();
-        com.my.monero.model.Wallet wallet = getActiveWallet();
-        if (wallet == null) {
-            return transactionInfos;
-        }
-        TransactionHistory transactionHistory = wallet.getHistory();
-        if (transactionHistory == null) {
-            return transactionInfos;
-        }
-        List<com.my.monero.model.TransactionInfo> theTransactionInfos = transactionHistory.getAll();
-        if (theTransactionInfos == null) {
-            return transactionInfos;
-        }
-        Collections.sort(theTransactionInfos);
-        for (int i = 0; i < theTransactionInfos.size(); i++) {
-            com.my.monero.model.TransactionInfo theTransactionInfo = theTransactionInfos.get(i);
-            if (theTransactionInfo != null) {
-                TransactionInfo transactionInfo = new TransactionInfo();
-                transactionInfo.setDirection(theTransactionInfo.direction.getValue());
-                transactionInfo.setPending(theTransactionInfo.isPending);
-                transactionInfo.setFailed(theTransactionInfo.isFailed);
-                transactionInfo.setAmount(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.amount));
-                transactionInfo.setFee(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.fee));
-                transactionInfo.setBlockHeight(theTransactionInfo.blockheight);
-                transactionInfo.setConfirmations(theTransactionInfo.confirmations);
-                transactionInfo.setHash(theTransactionInfo.hash);
-                transactionInfo.setTimestamp(theTransactionInfo.timestamp * 1000);
-                transactionInfo.setPaymentId(theTransactionInfo.paymentId);
-                transactionInfo.setTxKey(theTransactionInfo.txKey);
-                transactionInfo.setAddress(theTransactionInfo.address);
-                transactionInfos.add(transactionInfo);
-            }
-        }
-        return transactionInfos;
-    }
-
-
     public String getDisplayAmount(long amount) {
         String displayAmount = com.my.monero.model.Wallet.getDisplayAmount(amount);
         if (displayAmount == null) {
@@ -410,7 +348,6 @@ public class XWalletController {
         }
         return com.my.monero.model.Wallet.isPaymentIdValid(paymentId);
     }
-
 
     public PendingTransaction createTransaction(String walletAddress, String amount, String ringSize, String paymentId, String description, boolean publicTransaction, PendingTransaction.Priority priority) {
         if (walletAddress == null || amount == null) {
@@ -482,7 +419,6 @@ public class XWalletController {
         return firstTxId;
     }
 
-
     public String getTxAmount() {
         com.my.monero.model.Wallet wallet = getActiveWallet();
         if (wallet == null) {
@@ -552,7 +488,6 @@ public class XWalletController {
         }
         return subAddresses;
     }
-
 
     public interface OnWalletListener {
 

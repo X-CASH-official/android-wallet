@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentConfirmActivity extends NewBaseActivity {
+
     private Wallet wallet;
     private String address;
     private Transaction transaction;
@@ -52,7 +53,6 @@ public class PaymentConfirmActivity extends NewBaseActivity {
         transaction = (Transaction) intent.getParcelableExtra(ActivityHelp.TRANSACTION_KEY);
         initAll();
     }
-
 
     @Override
     protected void initHandler() {
@@ -104,7 +104,6 @@ public class PaymentConfirmActivity extends NewBaseActivity {
         buttonNext.setOnClickListener(onClickListener);
     }
 
-
     private void showTransactionDetails(LinearLayout linearLayout) {
         if (wallet == null || transaction == null) {
             return;
@@ -115,20 +114,17 @@ public class PaymentConfirmActivity extends NewBaseActivity {
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_payment_confirm_fee_tips), String.valueOf(transaction.getFee() / 1000000.0f) + " " + wallet.getSymbol()));
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_payment_confirm_firstTxId_tips), String.valueOf(transaction.getFirstTxId())));
         keyValueItems.add(new KeyValueItem(getString(R.string.activity_payment_confirm_txCount_tips), String.valueOf(transaction.getTxCount())));
-
         linearLayout.removeAllViews();
         LayoutInflater layoutInflater = LayoutInflater.from(PaymentConfirmActivity.this);
         for (int i = 0; i < keyValueItems.size(); i++) {
             KeyValueItem keyValueItem = keyValueItems.get(i);
             View view = layoutInflater.inflate(R.layout.activity_payment_confirm_item, null);
             TextView textViewContent = (TextView) view.findViewById(R.id.textViewContent);
-
             final String value = (String) keyValueItem.getValue();
             textViewContent.setText(keyValueItem.getKey() + "  " + value);
             linearLayout.addView(view);
         }
     }
-
 
     private void sendTransaction() {
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
@@ -169,10 +165,10 @@ public class PaymentConfirmActivity extends NewBaseActivity {
         }
     }
 
-
     @Override
     protected void doBack() {
         super.doBack();
         finish();
     }
+
 }
