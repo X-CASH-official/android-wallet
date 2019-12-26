@@ -5,6 +5,7 @@
  */
 package com.my.utils;
 
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -23,6 +24,7 @@ import com.my.xwallet.WalletRunningActivity;
 import com.my.xwallet.aidl.OnNormalListener;
 import com.my.xwallet.aidl.OnWalletRefreshListener;
 import com.my.xwallet.aidl.WalletOperateManager;
+import com.my.xwallet.aidl.manager.XManager;
 import com.my.xwallet.aidl.service.WalletService;
 import com.my.xwallet.uihelp.ProgressDialogHelp;
 
@@ -32,8 +34,11 @@ public class WalletServiceHelper {
     private WalletOperateManager walletOperateManager;
     private OnWalletRefreshListener onWalletRefreshListener = new MyOnWalletRefreshListener();
     private Context context;
-
+    private NotificationHelper notificationHelper;
+    private int notificationId = 1;
+    private CacheHelper cacheHelper=new CacheHelper<String>(200);
     private ServiceConnection serviceConnection = new ServiceConnection() {
+
         /**
          * Running in Main thread
          */
@@ -52,18 +57,21 @@ public class WalletServiceHelper {
          */
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
-            BaseActivity.showSystemErrorLog(componentName + ":onServiceDisconnected...");
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
+                    TheApplication.cancelAllDialogFromActivityManager();
                     bindService();
                 }
             }, 500);
         }
+
     };
 
     public WalletServiceHelper(Context context) {
         this.context = context.getApplicationContext();
+        notificationHelper= new NotificationHelper(context, context.getString(R.string.app_name), context.getString(R.string.app_name));
     }
 
     public void bindService() {
@@ -221,6 +229,54 @@ public class WalletServiceHelper {
                     MainActivity.closeWalletIfActivityExist(walletId);
                 }
             });
+        }
+
+        @Override
+        public void moneySpent(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
+        }
+
+        @Override
+        public void moneyReceive(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
+        }
+
+        @Override
+        public void unconfirmedMoneyReceive(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    if (txId!=null&&cacheHelper.getCache(txId)==null){
+                        cacheHelper.putCache(txId,txId);
+                        receiveNotfication(walletId,txId,amount);
+                    }
+                }
+            });
+        }
+
+        /**
+         * Running in Main thread
+         */
+        private void receiveNotfication(int walletId, String txId, long amount) {
+            try {
+                Intent notificationIntent = new Intent(context, MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
+                String content = context.getString(R.string.start_receive_transaction_notfication_tips) + String.valueOf(amount / 1000000.0f) + " " + XManager.SYMBOL;
+                notificationId=notificationId+1;
+                notificationHelper.sendNotification(notificationId,context.getString(R.string.app_name),content,pendingIntent);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 

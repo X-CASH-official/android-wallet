@@ -1,6 +1,8 @@
 # XWallet
 
-XCASH android wallet,is base on:
+XCASH Android Wallet. If you have two mobile phone, you can use one of offline mobile to generate a mnemonic, export private view key and import the private view key to the other networked mobile phone to implement the cold wallet and view the assets. It is highly safe for your xcash assets.
+
+Depend on:
 
 Official version  https://github.com/X-CASH-official/X-CASH
 
@@ -20,18 +22,15 @@ Windows CMD: certutil -hashfile FILENAME SHA256
 
 Linux CMD: sha256sum FILENAME
 
+# Version v1.0.2
 
-# Version v1.0.1
-
-Apk File SHA256:b280f84a1c394fa81326f1f8542f8238e750df69f5ade0733e73478ab364270c
+Apk File SHA256:3b2a74225203aededc23d711749fb05933d3ba52ffe22bc0cf99c774d47fdf53
 
 Signature information checked inside the app:
 
 Signature SHA256:F02F8AFE256CEBFFCEE50F6FB68C6CA20EBDDB99D44EB227F477228F2ED16430
 
-
 # Preview
-
 
 ## Create or Import Wallet
 

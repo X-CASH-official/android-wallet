@@ -67,14 +67,10 @@ public class TransactionHistory {
 
     public void refresh() {
         List<TransactionInfo> t = refreshJ();
-        Log.d(TAG, "refreshed " + t.size());
         for (Iterator<TransactionInfo> iterator = t.iterator(); iterator.hasNext(); ) {
             TransactionInfo info = iterator.next();
-            if (info.account != accountIndex) {
+            if (info.account != accountIndex||info.amount==0) {
                 iterator.remove();
-                Log.d(TAG, "removed " + info.hash);
-            } else {
-                Log.d(TAG, "kept " + info.hash);
             }
         }
         transactions = t;

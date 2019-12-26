@@ -170,6 +170,8 @@ public class MainActivity_Fragment_Home extends BaseFragment {
                     case R.id.imageViewLock:
                         if (imageViewLock.getTag() != null && (boolean) imageViewLock.getTag()) {
                             closeActiveWallet(imageViewLock);
+                        }else {
+                            ((MainActivity) getBaseActivity()).showPassword(cardView, MainActivity.TYPE_SHOW_WALLET_DETAILS);
                         }
                         break;
                     case R.id.cardView:

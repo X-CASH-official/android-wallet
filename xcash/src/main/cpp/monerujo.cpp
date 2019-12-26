@@ -134,6 +134,18 @@ struct MyWalletListener : XCash::WalletListener {
         if (jlistener == nullptr) return;
         LOGD("moneySpent %"
                      PRIu64, amount);
+        JNIEnv *jenv;
+        int envStat = attachJVM(&jenv);
+        if (envStat == JNI_ERR) return;
+
+        jstring _txId = jenv->NewStringUTF(txId.c_str());
+        jlong h = static_cast<jlong>(amount);
+        jmethodID listenerClass_moneySpent = jenv->GetMethodID(class_WalletListener, "moneySpent",
+                                                             "(Ljava/lang/String;J)V");
+        jenv->CallVoidMethod(jlistener, listenerClass_moneySpent,_txId, h);
+        jenv->DeleteLocalRef(_txId);
+
+        detachJVM(jenv, envStat);
     }
 
     /**
@@ -146,6 +158,18 @@ struct MyWalletListener : XCash::WalletListener {
         if (jlistener == nullptr) return;
         LOGD("moneyReceived %"
                      PRIu64, amount);
+        JNIEnv *jenv;
+        int envStat = attachJVM(&jenv);
+        if (envStat == JNI_ERR) return;
+
+        jstring _txId = jenv->NewStringUTF(txId.c_str());
+        jlong h = static_cast<jlong>(amount);
+        jmethodID listenerClass_moneyReceived = jenv->GetMethodID(class_WalletListener, "moneyReceived",
+                                                               "(Ljava/lang/String;J)V");
+        jenv->CallVoidMethod(jlistener, listenerClass_moneyReceived,_txId, h);
+        jenv->DeleteLocalRef(_txId);
+
+        detachJVM(jenv, envStat);
     }
 
     /**
@@ -158,6 +182,18 @@ struct MyWalletListener : XCash::WalletListener {
         if (jlistener == nullptr) return;
         LOGD("unconfirmedMoneyReceived %"
                      PRIu64, amount);
+        JNIEnv *jenv;
+        int envStat = attachJVM(&jenv);
+        if (envStat == JNI_ERR) return;
+
+        jstring _txId = jenv->NewStringUTF(txId.c_str());
+        jlong h = static_cast<jlong>(amount);
+        jmethodID listenerClass_unconfirmedMoneyReceived = jenv->GetMethodID(class_WalletListener, "unconfirmedMoneyReceived",
+                                                                  "(Ljava/lang/String;J)V");
+        jenv->CallVoidMethod(jlistener, listenerClass_unconfirmedMoneyReceived,_txId, h);
+        jenv->DeleteLocalRef(_txId);
+
+        detachJVM(jenv, envStat);
     }
 
     /**
@@ -920,12 +956,15 @@ Java_com_my_monero_model_Wallet_createTransactionJ(JNIEnv *env, jobject instance
     XCash::PendingTransaction::Priority _priority =
             static_cast<XCash::PendingTransaction::Priority>(priority);
     XCash::Wallet *wallet = getHandle<XCash::Wallet>(env, instance);
+    XCash::PendingTransaction *tx=0;
+    try {
+        tx = wallet->createTransaction(_dst_addr, _payment_id,
+                                       amount, (uint32_t) mixin_count,
+                                       _priority,
+                                       (uint32_t) accountIndex,{},privacy_settings);
+    } catch (const std::exception &e) {
 
-    XCash::PendingTransaction *tx = wallet->createTransaction(_dst_addr, _payment_id,
-                                                                  amount, (uint32_t) mixin_count,
-                                                                  _priority,
-                                                                  (uint32_t) accountIndex,{},privacy_settings);
-
+    }
     env->ReleaseStringUTFChars(dst_addr, _dst_addr);
     env->ReleaseStringUTFChars(payment_id, _payment_id);
     return reinterpret_cast<jlong>(tx);
@@ -936,7 +975,7 @@ Java_com_my_monero_model_Wallet_createSweepTransaction(JNIEnv *env, jobject inst
                                                        jstring dst_addr, jstring payment_id,
                                                        jint mixin_count,
                                                        jint priority,
-                                                       jint accountIndex) {
+                                                       jint accountIndex,jint privacy_settings) {
 
     const char *_dst_addr = env->GetStringUTFChars(dst_addr, NULL);
     const char *_payment_id = env->GetStringUTFChars(payment_id, NULL);
@@ -946,11 +985,15 @@ Java_com_my_monero_model_Wallet_createSweepTransaction(JNIEnv *env, jobject inst
 
     XCash::optional<uint64_t> empty;
 
-    XCash::PendingTransaction *tx = wallet->createTransaction(_dst_addr, _payment_id,
-                                                                  empty, (uint32_t) mixin_count,
-                                                                  _priority,
-                                                                  (uint32_t) accountIndex);
+    XCash::PendingTransaction *tx=0;
+    try {
+        tx = wallet->createTransaction(_dst_addr, _payment_id,
+                                       empty, (uint32_t) mixin_count,
+                                       _priority,
+                                       (uint32_t) accountIndex,{},privacy_settings);
+    } catch (const std::exception &e) {
 
+    }
     env->ReleaseStringUTFChars(dst_addr, _dst_addr);
     env->ReleaseStringUTFChars(payment_id, _payment_id);
     return reinterpret_cast<jlong>(tx);
@@ -960,7 +1003,12 @@ JNIEXPORT jlong JNICALL
 Java_com_my_monero_model_Wallet_createSweepUnmixableTransactionJ(JNIEnv *env,
                                                                  jobject instance) {
     XCash::Wallet *wallet = getHandle<XCash::Wallet>(env, instance);
-    XCash::PendingTransaction *tx = wallet->createSweepUnmixableTransaction();
+    XCash::PendingTransaction *tx=0;
+    try {
+        tx = wallet->createSweepUnmixableTransaction();
+    } catch (const std::exception &e) {
+
+    }
     return reinterpret_cast<jlong>(tx);
 }
 

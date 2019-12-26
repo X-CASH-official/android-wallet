@@ -23,7 +23,7 @@
     <string name="password_can_not_empty_tips">密码不能为空</string>
     <string name="check_password_error_tips">密码错误</string>
     <string name="set_daemon_error_tips">设置守护进程失败</string>
-    <string name="create_transaction_error_tips">交易创建失败，请检查填写内容</string>
+    <string name="create_transaction_error_tips">创建交易失败，请检查内容并需要支付足够的费用</string>
     <string name="send_transaction_error_tips">发送交易失败</string>
     <string name="not_find_active_wallet_tips">没有找到已激活的钱包</string>
     <string name="close_active_wallet_error_tips">关闭激活钱包失败</string>
@@ -31,11 +31,16 @@
     <string name="qrcode_cancel_tips">二维码扫描已取消</string>
     <string name="wallet_service_not_running_tips">钱包服务未运行</string>
     <string name="service_uninitialized_tips">服务未初始化，请重试</string>
-
+    <string name="start_receive_transaction_notfication_tips">收到一笔转账，金额为:</string>
+    <string name="retry_bind_service_tips">绑定服务断开连接，正在尝试重新连接，请稍后再试</string>
     <string name="show_more_tips">显示更多</string>
+    <string name="address_error_tips">地址错误</string>
 
     <string name="popupwindow_textViewOK_text">确定</string>
     <string name="popupwindow_textViewCancel_text">取消</string>
+    <string name="popupwindow_password_textViewPasswordTips_text">输入钱包密码:</string>
+    <string name="popupwindow_password_editTextPassword_hint">你的密码</string>
+    <string name="popupwindow_password_textViewPasswordHintTips_text">密码提示</string>
 
     <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X Wallet All Rights Reserved</string>
     <string name="activity_splash_initDaemonError_tips">初始化守护进程失败</string>
@@ -54,7 +59,6 @@
     <string name="activity_set_wallet_confirmEmpty_tips">名称和密码不能为空</string>
     <string name="activity_set_wallet_unCheck_tips">请仔细校验当前版本的sha256值</string>
     <string name="activity_set_wallet_SHA256_tips">当前sha256值:</string>
-
 
     <string name="activity_create_wallet_textViewTitle_text">创建钱包</string>
     <string name="activity_create_wallet_textViewTips_text">• 备份助记词:\n助记词用于恢复钱包，请将它准确的抄写在纸上并存放在安全的地方。\n• 请勿截图:\n如果有人获取您的助记词将直接获取您的资产。</string>
@@ -110,10 +114,6 @@
     <string name="activity_wallet_manager_item_textViewWalletType_text">X-CASH</string>
     <string name="activity_wallet_manager_activeWallet_error_tips">激活钱包失败</string>
     <string name="activity_wallet_manager_delete_address_tips">确认要删除地址?</string>
-
-    <string name="popupwindow_password_textViewPasswordTips_text">输入钱包密码:</string>
-    <string name="popupwindow_password_editTextPassword_hint">你的密码</string>
-    <string name="popupwindow_password_textViewPasswordHintTips_text">密码提示</string>
 
     <string name="activity_wallet_details_textViewTitle_text">钱包管理</string>
     <string name="activity_wallet_details_textViewWalletNameTitle_text">钱包名称</string>
@@ -189,6 +189,9 @@
     <string name="activity_payment_radioButtonLow_text">低优先级</string>
     <string name="activity_payment_radioButtonNormal_text">普通优先级</string>
     <string name="activity_payment_radioButtonHigh_text">高优先级</string>
+    <string name="activity_payment_textViewAllAmount_text">ALL</string>
+    <string name="activity_payment_payAllAmount_tips">您是否需要全额付款，全额付款将减去交易费用。</string>
+    <string name="activity_payment_payAmountCheckError_tips">付款金额需要大于0</string>
 
     <string name="activity_address_manager_textViewTitle_text">地址管理</string>
     <string name="activity_address_manager_addAddressSuccess_tips">添加地址成功</string>
@@ -200,7 +203,6 @@
     <string name="activity_address_add_confirmEmpty_tips">地址和记录不能为空</string>
     <string name="activity_address_add_editTextAddress_hint">添加地址</string>
     <string name="activity_address_add_editTextNotes_hint">添加记录</string>
-    <string name="activity_address_add_addressError_tips">地址错误</string>
 
     <string name="activity_payment_confirm_address_tips">地址:</string>
     <string name="activity_payment_confirm_amount_tips">金额:</string>
@@ -212,7 +214,9 @@
     <string name="activity_webview_chooseFile_tips">选择文件</string>
 
     <string name="activity_language_setting_textViewTitle_text">语言设置</string>
+
     <string name="activity_qrcode_textViewTitle_text">扫描二维码</string>
+
     <string name="activity_receive_textViewTitle_text">接收</string>
 
     <string name="activity_transaction_details_textViewTitle_text">交易详情</string>
@@ -224,6 +228,5 @@
     <string name="activity_about_us_textViewTitle_text">关于我们</string>
     <string name="activity_about_us_textViewDetails_text">XCASH总部位于巴黎。首席执行官Guilhem CHAUMONT，具备多年银行交易经验，熟悉支付交易行业，拥有自己的加密货币采矿公司。首席技术官Zach HILDRETH，拥有20多年编程经验，从2013年开始投入区块链技术行业，从事挖矿技术研发，曾任知名采矿网站首席作家。首席运营官Paul，拥有多年营销经验，同时也是一名专利律师。\n第一阶段:以pow为主，基于Monero v8的核心代码，在其基础上增加了隐私交易，公开交易等模式的自由切换，这也有利于同时满足政府监管要求和适当的隐私需求，使用独创的Cryptonight HeavyX PoW 算法，可以有效对抗asic矿机，也使得cpu和gpu挖矿更公平。\n第二阶段:将在运行一年多的pow 的基础上运行，将在主网切换到dpops+dbft共识，基于1年多的pow基础上运行可以保证dpops上票过程更加的公平和去中心化，基于新的dpops+dbft共识，系统的吞吐量将得到极大的提升，使得应用于线下支付和成为不同币种之间快速兑换的媒介成为可能。</string>
     <string name="activity_about_us_textViewFindNewVersion_text">从github发现新版本</string>
-
 
 </resources>

@@ -11,6 +11,7 @@ import com.my.xwallet.aidl.OnNormalListener;
 import com.my.xwallet.aidl.OnCreateTransactionListener;
 
 interface WalletOperateManager {
+
     void setDaemon(String url,OnNormalListener onNormalListener);
 
     void createWallet(String name,String password,String passwordPrompt,OnWalletDataListener onWalletDataListener);
@@ -42,5 +43,6 @@ interface WalletOperateManager {
     void registerListener(OnWalletRefreshListener onWalletRefreshListener);
 
     void unRegisterListener(OnWalletRefreshListener onWalletRefreshListener);
+
 }
 

@@ -17,7 +17,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import androidx.core.content.ContextCompat;
+
 import com.my.base.BaseActivity;
 import com.my.utils.ClipboardTool;
 import com.my.utils.database.entity.Wallet;

@@ -22,7 +22,6 @@ import androidx.core.content.ContextCompat;
 
 import com.my.models.local.KeyValueItem;
 import com.my.utils.ClipboardTool;
-import com.my.utils.CoroutineHelper;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.aidl.OnWalletDataListener;
 import com.my.xwallet.aidl.WalletOperateManager;

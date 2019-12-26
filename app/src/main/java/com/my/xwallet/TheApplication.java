@@ -269,6 +269,13 @@ public class TheApplication extends Application {
         }
     }
 
+    public static void cancelAllDialogFromActivityManager() {
+        ArrayList<BaseActivity>  arrayListBaseActivitys = ActivityManager.getInstance().getAllBaseActivitys();
+        for (int i = 0; i < arrayListBaseActivitys.size(); i++) {
+           arrayListBaseActivitys.get(i).dismissAndRemoveAllProgressDialog();
+        }
+    }
+
     public static void killAllActivityExceptMe(String activityKey) {
         ActivityManager.getInstance().killAllActivityWithOutMe(activityKey);
     }

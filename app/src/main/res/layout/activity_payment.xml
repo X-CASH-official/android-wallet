@@ -202,10 +202,24 @@
                         android:layout_marginTop="@dimen/view_normal_margin_default"
                         android:layout_marginRight="@dimen/view_normal_margin_broad">
 
+                        <TextView
+                            android:id="@+id/textViewAllAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:padding="@dimen/view_normal_margin_narrow"
+                            android:text="@string/activity_payment_textViewAllAmount_text"
+                            android:textStyle="bold"
+                            android:textColor="?attr/mainColorText"
+                            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+
                         <com.my.views.EditTextInNestedScrollView
                             android:id="@+id/editTextAmount"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/editText_normal_height"
+                            android:layout_toLeftOf="@+id/textViewAllAmount"
                             android:background="@null"
                             android:hint="@string/activity_payment_editTextAmount_hint"
                             android:inputType="numberDecimal"
@@ -225,37 +239,6 @@
                             android:background="?attr/mainColorText" />
                     </RelativeLayout>
 
-
-                    <RelativeLayout
-                        android:id="@+id/relativeLayoutRingSize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
-                        android:layout_marginTop="@dimen/view_normal_margin_default"
-                        android:layout_marginRight="@dimen/view_normal_margin_broad">
-
-                        <com.my.views.EditTextInNestedScrollView
-                            android:id="@+id/editTextRingSize"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/editText_normal_height"
-                            android:background="@null"
-                            android:hint="@string/activity_payment_editTextRingSize_hint"
-                            android:inputType="number"
-                            android:paddingTop="@dimen/editText_normal_paddingTop"
-                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
-                            android:singleLine="true"
-                            android:textColor="?attr/mainColorText"
-                            android:textColorHint="@color/editText_normal_hint"
-                            android:textCursorDrawable="@drawable/normal_cursor"
-                            android:textSize="@dimen/textView_normal_textSize_default" />
-
-                        <FrameLayout
-                            android:id="@+id/frameLayoutRingSize"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
-                            android:layout_below="@+id/editTextRingSize"
-                            android:background="?attr/mainColorText" />
-                    </RelativeLayout>
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutPaymentId"
@@ -287,6 +270,7 @@
                             android:background="?attr/mainColorText" />
                     </RelativeLayout>
 
+
                     <RelativeLayout
                         android:id="@+id/relativeLayoutDescription"
                         android:layout_width="match_parent"
@@ -317,6 +301,36 @@
                             android:background="?attr/mainColorText" />
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutRingSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.my.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextRingSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_payment_editTextRingSize_hint"
+                            android:inputType="number"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutRingSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextRingSize"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"

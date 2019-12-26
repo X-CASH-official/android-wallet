@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.my.base.BaseActivity;
+import com.my.utils.StringTool;
 import com.my.xwallet.aidl.manager.XManager;
 import com.my.xwallet.uihelp.ActivityHelp;
 
@@ -155,9 +156,8 @@ public class AddressAddActivity extends NewBaseActivity {
             BaseActivity.showShortToast(AddressAddActivity.this, getString(R.string.activity_address_add_confirmEmpty_tips));
             return;
         }
-        //support xca and monero address
-        if ((!address.startsWith("XCA") || address.length() != 98) && address.length() != 95) {
-            BaseActivity.showShortToast(AddressAddActivity.this, getString(R.string.activity_address_add_addressError_tips));
+        if (!StringTool.checkWalletAddress(address)) {
+            BaseActivity.showShortToast(AddressAddActivity.this, getString(R.string.address_error_tips));
             return;
         }
         Intent intent = new Intent();

@@ -10,7 +10,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 
-
 import java.security.MessageDigest;
 
 public class AppSignTool {

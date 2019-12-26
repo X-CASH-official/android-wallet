@@ -40,6 +40,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginTop="@dimen/line_normal_widthOrHeight_broad"
+                    android:layout_marginBottom="@dimen/line_normal_widthOrHeight_broad"
                     android:layout_toRightOf="@+id/imageViewIcon"
                     android:orientation="vertical">
 
@@ -56,7 +58,7 @@
                         android:id="@+id/textViewAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
                         android:singleLine="true"
                         android:textColor="?attr/mainColorText"
                         android:textSize="@dimen/textView_normal_textSize_narrow"

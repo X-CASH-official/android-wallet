@@ -23,4 +23,10 @@ interface OnWalletRefreshListener {
 
       void closeActiveWallet(int walletId);
 
+      void moneySpent(int walletId,String txId, long amount, boolean fullSynchronizeOnce);
+
+      void moneyReceive(int walletId,String txId, long amount, boolean fullSynchronizeOnce);
+
+      void unconfirmedMoneyReceive(int walletId,String txId, long amount, boolean fullSynchronizeOnce);
+
 }

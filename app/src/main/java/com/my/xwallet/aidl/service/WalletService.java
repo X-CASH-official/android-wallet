@@ -13,12 +13,12 @@ import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 
+import com.my.base.utils.LogTool;
 import com.my.base.utils.TimeTool;
 import com.my.monero.model.PendingTransaction;
 import com.my.monero.model.TransactionHistory;
 import com.my.monero.model.WalletManager;
 import com.my.utils.LanguageTool;
-import com.my.base.utils.LogTool;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.TransactionInfo;
@@ -52,7 +52,6 @@ public class WalletService extends Service {
     private final PriorityBlockingQueue<WalletOperate> priorityBlockingQueueWalletOperate = new PriorityBlockingQueue<WalletOperate>();
     private final RemoteCallbackList<OnWalletRefreshListener> onWalletRefreshListenerList = new RemoteCallbackList<>();
     private final HashMap<String, WalletOperate> waitingWalletOperateHashMap = new HashMap<String, WalletOperate>();
-    private final Object waitingWalletOperateHashMapLock = new Object();
     private boolean canRunControlThread = true;
     private boolean loadWalletThreadStatusRunning = false;
     private Thread loadWalletThread;
@@ -138,6 +137,15 @@ public class WalletService extends Service {
                     case WalletInfo.TYPE_CLOSE_ACTIVE_WALLET:
                         onWalletRefreshListener.closeActiveWallet(walletInfo.getWalletId());
                         break;
+                    case WalletInfo.TYPE_MONEY_SPENT:
+                        onWalletRefreshListener.moneySpent(walletInfo.getWalletId(),walletInfo.getTxId(),walletInfo.getAmount(),walletInfo.isFullSynchronizeOnce());
+                        break;
+                    case WalletInfo.TYPE_MONEY_RECEIVE:
+                        onWalletRefreshListener.moneyReceive(walletInfo.getWalletId(),walletInfo.getTxId(),walletInfo.getAmount(),walletInfo.isFullSynchronizeOnce());
+                        break;
+                    case WalletInfo.TYPE_UNCONFIRMED_MONEY_RECEIVE:
+                        onWalletRefreshListener.unconfirmedMoneyReceive(walletInfo.getWalletId(),walletInfo.getTxId(),walletInfo.getAmount(),walletInfo.isFullSynchronizeOnce());
+                        break;
                     default:
                         break;
                 }
@@ -152,7 +160,7 @@ public class WalletService extends Service {
         if (key == null || walletOperate == null) {
             return;
         }
-        synchronized (waitingWalletOperateHashMapLock) {
+        synchronized (waitingWalletOperateHashMap) {
             waitingWalletOperateHashMap.put(key, walletOperate);
         }
     }
@@ -161,7 +169,7 @@ public class WalletService extends Service {
         if (key == null) {
             return;
         }
-        synchronized (waitingWalletOperateHashMapLock) {
+        synchronized (waitingWalletOperateHashMap) {
             waitingWalletOperateHashMap.remove(key);
         }
     }
@@ -170,7 +178,7 @@ public class WalletService extends Service {
         if (tag == null) {
             return;
         }
-        synchronized (waitingWalletOperateHashMapLock) {
+        synchronized (waitingWalletOperateHashMap) {
             Iterator<Map.Entry<String, WalletOperate>> iterator = waitingWalletOperateHashMap.entrySet().iterator();
             List<WalletOperate> walletOperateList = new ArrayList<>();
             while (iterator.hasNext()) {
@@ -186,6 +194,228 @@ public class WalletService extends Service {
                 walletOperate.setCancel(true);
             }
         }
+    }
+
+    private void addToPriorityBlockingQueue(WalletOperate walletOperate) {
+        try {
+            int size = priorityBlockingQueueWalletOperate.size();
+            if (size >= maxQueueSize) {
+                WalletInfo walletInfo = new WalletInfo();
+                walletInfo.setType(WalletInfo.TYPE_QUEUE_FULL_ERROR);
+                walletInfo.setError(LanguageTool.getLocaleStringResource(WalletService.this.context, language, R.string.over_request_tips));
+                WalletService.this.callBack(walletInfo);
+                return;
+            }
+            priorityBlockingQueueWalletOperate.add(walletOperate);
+            putWaitingWalletOperate(walletOperate.getKey(), walletOperate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addWalletOperateSetDaemon(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, Node node) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnNormalListener(onNormalListener);
+        walletOperate.setPriority(2);
+        walletOperate.setNode(node);
+        addToPriorityBlockingQueue(walletOperate);
+    }
+
+    private void addWalletOperateCheckWalletPassword(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, String name, String password) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnNormalListener(onNormalListener);
+        walletOperate.setPriority(3);
+        walletOperate.setName(name);
+        walletOperate.setPassword(password);
+        addToPriorityBlockingQueue(walletOperate);
+    }
+
+    private void addWalletOperate(int type, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener, int id, String name, String password, String passwordPrompt, String mnemonic, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, boolean needReset, Node node) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnWalletDataListener(onWalletDataListener);
+        boolean ignore = false;
+        switch (type) {
+            case WalletOperate.TYPE_CREATE_WALLET:
+                walletOperate.setPriority(2);
+                walletOperate.setName(name);
+                walletOperate.setPassword(password);
+                walletOperate.setPasswordPrompt(passwordPrompt);
+                break;
+            case WalletOperate.TYPE_IMPORT_WALLET_MNEMONIC:
+                walletOperate.setPriority(2);
+                walletOperate.setName(name);
+                walletOperate.setPassword(password);
+                walletOperate.setPasswordPrompt(passwordPrompt);
+                walletOperate.setMnemonic(mnemonic);
+                walletOperate.setRestoreHeight(restoreHeight);
+                break;
+            case WalletOperate.TYPE_IMPORT_WALLET_KEYS:
+                walletOperate.setPriority(2);
+                walletOperate.setName(name);
+                walletOperate.setPassword(password);
+                walletOperate.setPasswordPrompt(passwordPrompt);
+                walletOperate.setAddressKey(addressKey);
+                walletOperate.setPrivateViewKey(privateViewKey);
+                walletOperate.setPrivateSpendKey(privateSpendKey);
+                walletOperate.setRestoreHeight(restoreHeight);
+                break;
+            case WalletOperate.TYPE_LOAD_REFRESH_WALLET:
+                if (runningWalletId != id || needReset) {
+                    cancelWaitingWalletOperate(TAG_LOADREFRESHWALLET);
+                    walletOperate.setTag(TAG_LOADREFRESHWALLET);
+                    walletOperate.setPriority(1);
+                    walletOperate.setId(id);
+                    walletOperate.setName(name);
+                    walletOperate.setPassword(password);
+                    walletOperate.setRestoreHeight(restoreHeight);
+                } else {
+                    ignore = true;
+                }
+                break;
+            case WalletOperate.TYPE_GET_WALLET_DATA:
+                walletOperate.setPriority(1);
+                walletOperate.setId(id);
+                walletOperate.setName(name);
+                walletOperate.setPassword(password);
+                break;
+            default:
+                break;
+        }
+        if (!ignore) {
+            addToPriorityBlockingQueue(walletOperate);
+        }
+    }
+
+    private void addWalletOperateCreateTransaction(int type, com.my.xwallet.aidl.OnCreateTransactionListener onCreateTransactionListener, String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnCreateTransactionListener(onCreateTransactionListener);
+        walletOperate.setPriority(1);
+        walletOperate.setWalletAddress(walletAddress);
+        walletOperate.setAmount(amount);
+        walletOperate.setRingSize(ringSize);
+        walletOperate.setPaymentId(paymentId);
+        walletOperate.setDescription(description);
+        walletOperate.setPendingPriority(PendingTransaction.Priority.fromInteger(priority));
+        walletOperate.setPublicTransaction(publicTransaction);
+        addToPriorityBlockingQueue(walletOperate);
+    }
+
+    private void addWalletOperateNormal(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnNormalListener(onNormalListener);
+        walletOperate.setPriority(1);
+        addToPriorityBlockingQueue(walletOperate);
+    }
+
+    private void addWalletOperateCloseWallet(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, int id) {
+        WalletOperate walletOperate = new WalletOperate();
+        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
+        walletOperate.setType(type);
+        walletOperate.setOnNormalListener(onNormalListener);
+        walletOperate.setPriority(1);
+        walletOperate.setId(id);
+        addToPriorityBlockingQueue(walletOperate);
+    }
+
+    class MyBinder extends WalletOperateManager.Stub {
+        @Override
+        public void setDaemon(String url, com.my.xwallet.aidl.OnNormalListener onNormalListener) throws RemoteException {
+            Node node = new Node();
+            node.setUrl(url);
+            addWalletOperateSetDaemon(WalletOperate.TYPE_SET_DAEMON_WALLET, onNormalListener, node);
+        }
+
+        @Override
+        public void createWallet(String name, String password, String passwordPrompt, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+            addWalletOperate(WalletOperate.TYPE_CREATE_WALLET, onWalletDataListener, 0, name, password, passwordPrompt, null, null, null, null, 0, false, null);
+        }
+
+        @Override
+        public void importWalletMnemonic(String name, String password, String passwordPrompt, String mnemonic, long restoreHeight, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+            addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_MNEMONIC, onWalletDataListener, 0, name, password, passwordPrompt, mnemonic, null, null, null, restoreHeight, false, null);
+        }
+
+        @Override
+        public void importWalletKeys(String name, String password, String passwordPrompt, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+            addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_KEYS, onWalletDataListener, 0, name, password, passwordPrompt, null, addressKey, privateViewKey, privateSpendKey, restoreHeight, false, null);
+        }
+
+        @Override
+        public void checkWalletPassword(String name, String password, OnNormalListener onNormalListener) throws RemoteException {
+            addWalletOperateCheckWalletPassword(WalletOperate.TYPE_CHECK_WALLET_PASSWORD, onNormalListener, name, password);
+        }
+
+        @Override
+        public void loadRefreshWallet(int id, String name, String password, long restoreHeight, boolean needReset, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+            addWalletOperate(WalletOperate.TYPE_LOAD_REFRESH_WALLET, onWalletDataListener, id, name, password, null, null, null, null, null, restoreHeight, needReset, null);
+        }
+
+        @Override
+        public void createTransaction(String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction, OnCreateTransactionListener onCreateTransactionListener) throws RemoteException {
+            addWalletOperateCreateTransaction(WalletOperate.TYPE_CREATE_TRANSACTION, onCreateTransactionListener, walletAddress, amount, ringSize, paymentId, description, priority, publicTransaction);
+        }
+
+        @Override
+        public void sendTransaction(OnNormalListener onNormalListener) throws RemoteException {
+            addWalletOperateNormal(WalletOperate.TYPE_SEND_TRANSACTION, onNormalListener);
+        }
+
+        @Override
+        public void closeActiveWallet(OnNormalListener onNormalListener) throws RemoteException {
+            addWalletOperateNormal(WalletOperate.TYPE_CLOSE_ACTIVE_WALLET, onNormalListener);
+        }
+
+        @Override
+        public void closeWallet(int id, OnNormalListener onNormalListener) throws RemoteException {
+            addWalletOperateCloseWallet(WalletOperate.TYPE_CLOSE_WALLET, onNormalListener, id);
+        }
+
+        @Override
+        public void getWalletData(int id, String name, String password, OnWalletDataListener onWalletDataListener) throws RemoteException {
+            addWalletOperate(WalletOperate.TYPE_GET_WALLET_DATA, onWalletDataListener, id, name, password, null, null, null, null, null, 0, false, null);
+        }
+
+        @Override
+        public void runService() throws RemoteException {
+            if (operateType == OPERATETYPE_DESTROY) {//the onDestroy() on the same thread
+                return;
+            }
+            operateType = OPERATETYPE_RUN;
+        }
+
+        @Override
+        public void stopService() throws RemoteException {
+            if (operateType == OPERATETYPE_DESTROY) {
+                return;
+            }
+            operateType = OPERATETYPE_STOP;
+        }
+
+        @Override
+        public void changeLanguage(String language) throws RemoteException {
+            WalletService.this.language = language;
+        }
+
+        @Override
+        public void registerListener(OnWalletRefreshListener onWalletRefreshListener) throws RemoteException {
+            onWalletRefreshListenerList.register(onWalletRefreshListener);
+        }
+
+        @Override
+        public void unRegisterListener(OnWalletRefreshListener onWalletRefreshListener) throws RemoteException {
+            onWalletRefreshListenerList.unregister(onWalletRefreshListener);
+        }
+
     }
 
     class LoadWalletThreadRunnable implements Runnable {
@@ -296,7 +526,7 @@ public class WalletService extends Service {
         /**
          * Running in thread
          */
-        private void createWallet(final WalletOperate walletOperate) throws Exception{
+        private void createWallet(final WalletOperate walletOperate) throws Exception {
             OnWalletDataListener onWalletDataListener = walletOperate.getOnWalletDataListener();
             if (onWalletDataListener == null) {
                 return;
@@ -424,7 +654,7 @@ public class WalletService extends Service {
             final int walletId = walletOperate.getId();
             runningWalletId = walletId;
             boolean result = false;
-            try{
+            try {
                 XManager.getInstance().insertNodes();
                 Node node = AppDatabase.getInstance().nodeDao().loadActiveNodeBySymbol(XManager.SYMBOL);
                 if (node != null && node.getUrl() != null) {
@@ -450,15 +680,26 @@ public class WalletService extends Service {
 
                         @Override
                         public void onRefreshed(long height) {
-                            try {
-                                refresh(walletId, openWallet, walletOperate);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                            refresh(walletId, openWallet, walletOperate);
+                        }
+
+                        @Override
+                        public void onMoneySpent(String txId, long amount) {
+                            moneySpent(txId, amount, walletOperate);
+                        }
+
+                        @Override
+                        public void onMoneyReceived(String txId, long amount) {
+                            moneyReceive(txId, amount, walletOperate);
+                        }
+
+                        @Override
+                        public void unconfirmedMoneyReceived(String txId, long amount) {
+                            unconfirmedMoneyReceive(txId, amount, walletOperate);
                         }
                     });
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 runningWalletId = -2;
             }
@@ -706,6 +947,9 @@ public class WalletService extends Service {
             }
         }
 
+        /**
+         * Running in thread
+         */
         private com.my.xwallet.aidl.Wallet convertWallet(com.my.monero.model.Wallet openWallet) {
             com.my.xwallet.aidl.Wallet wallet = new com.my.xwallet.aidl.Wallet();
             wallet.setSymbol(XManager.SYMBOL);
@@ -721,6 +965,9 @@ public class WalletService extends Service {
             return wallet;
         }
 
+        /**
+         * Running in thread
+         */
         private com.my.xwallet.aidl.Wallet convertByDBWallet(Wallet dbWallet) {
             com.my.xwallet.aidl.Wallet wallet = new com.my.xwallet.aidl.Wallet();
             wallet.setSymbol(XManager.SYMBOL);
@@ -738,40 +985,45 @@ public class WalletService extends Service {
         /**
          * Running in thread
          */
-        private void refresh(int walletId, final com.my.monero.model.Wallet wallet, WalletOperate walletOperate) throws Exception {
-            if (wallet == null || wallet.getStatus() != com.my.monero.model.Wallet.Status.Status_Ok) {
-                resultStatus(walletId, false);
-                return;
+        private void refresh(int walletId, final com.my.monero.model.Wallet wallet, WalletOperate walletOperate) {
+            try {
+                if (wallet == null || wallet.getStatus() != com.my.monero.model.Wallet.Status.Status_Ok) {
+                    resultStatus(walletId, false);
+                    return;
+                }
+                long blockChainHeight = wallet.getBlockChainHeight();
+                long daemonBlockChainHeight = wallet.getDaemonBlockChainHeight();
+                if (walletOperate.getMaxDaemonBlockChainHeight() > daemonBlockChainHeight || daemonBlockChainHeight == 0) {//when get a network error,while happen
+                    resultStatus(walletId, false);
+                    return;
+                }
+                walletOperate.setMaxDaemonBlockChainHeight(daemonBlockChainHeight);
+                WalletInfo walletInfo = new WalletInfo();
+                walletInfo.setWalletId(walletId);
+                walletInfo.setType(WalletInfo.TYPE_BLOCK_PROGRESS);
+                walletInfo.setBlockChainHeight(blockChainHeight);
+                walletInfo.setDaemonHeight(daemonBlockChainHeight);
+                int progress = 0;
+                if (blockChainHeight == daemonBlockChainHeight) {
+                    progress = 100;
+                } else {
+                    progress = (int) (100f * blockChainHeight / daemonBlockChainHeight);
+                }
+                walletOperate.setRestoreHeight(blockChainHeight);
+                LogTool.e(XManager.TAG, "blockChainHeight:" + blockChainHeight + ";" + "daemonHeight:" + daemonBlockChainHeight + ";" + "progress:" + progress);
+                walletInfo.setProgress(progress);
+                if (progress < 100) {
+                    walletInfo.setResult(false);
+                } else {
+                    walletOperate.setFullSynchronizeOnce(true);
+                    walletInfo.setResult(true);
+                    updateBalance(walletId, wallet);
+                    updateHistory(walletId, wallet, walletOperate, blockChainHeight);
+                }
+                callBack(walletInfo);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            long blockChainHeight = wallet.getBlockChainHeight();
-            long daemonBlockChainHeight = wallet.getDaemonBlockChainHeight();
-            if (walletOperate.getMaxDaemonBlockChainHeight() > daemonBlockChainHeight || daemonBlockChainHeight == 0) {//when get a network error,while happen
-                resultStatus(walletId, false);
-                return;
-            }
-            walletOperate.setMaxDaemonBlockChainHeight(daemonBlockChainHeight);
-            WalletInfo walletInfo = new WalletInfo();
-            walletInfo.setWalletId(walletId);
-            walletInfo.setType(WalletInfo.TYPE_BLOCK_PROGRESS);
-            walletInfo.setBlockChainHeight(blockChainHeight);
-            walletInfo.setDaemonHeight(daemonBlockChainHeight);
-            int progress = 0;
-            if (blockChainHeight == daemonBlockChainHeight) {
-                progress = 100;
-            } else {
-                progress = (int) (100f * blockChainHeight / daemonBlockChainHeight);
-            }
-            walletOperate.setRestoreHeight(blockChainHeight);
-            LogTool.e(XManager.TAG, "blockChainHeight:" + blockChainHeight + ";" + "daemonHeight:" + daemonBlockChainHeight + ";" + "progress:" + progress);
-            walletInfo.setProgress(progress);
-            if (progress < 100) {
-                walletInfo.setResult(false);
-            } else {
-                walletInfo.setResult(true);
-                updateBalance(walletId, wallet);
-                updateHistory(walletId, wallet, walletOperate, blockChainHeight);
-            }
-            callBack(walletInfo);
         }
 
         /**
@@ -796,310 +1048,139 @@ public class WalletService extends Service {
             walletInfo.setUnlockedBalance(unlockedBalance);
             callBack(walletInfo);
         }
-    }
 
-    /**
-     * Running in thread
-     */
-    private void updateHistory(int walletId, com.my.monero.model.Wallet wallet, WalletOperate walletOperate, long blockChainHeight) {
-        if (wallet == null) {
-            return;
-        }
-        TransactionHistory transactionHistory = wallet.getHistory();
-        if (transactionHistory == null) {
-            return;
-        }
-        transactionHistory.refresh();
-        List<TransactionInfo> transactionInfos = getTransactionHistory(walletId, transactionHistory);
-        if (transactionInfos == null) {
-            return;
-        }
-        if (transactionInfos.size() != walletOperate.getTransactionInfoSize() || (walletOperate.isHavePendingTransaction() && walletOperate.getUpdateTransactionHeight() != blockChainHeight)) {
-            walletOperate.setTransactionInfoSize(transactionInfos.size());
-            walletOperate.setHavePendingTransaction(havePendingTransaction(transactionInfos));
-            walletOperate.setUpdateTransactionHeight(blockChainHeight);
-
-            TransactionInfo[] transactionInfosArray = transactionInfos.toArray(new TransactionInfo[]{});
-            List<TransactionInfo> theTransactionInfos = AppDatabase.getInstance().transactionInfoDao().loadTransactionInfoByWalletId(XManager.SYMBOL, walletId);
-            if (theTransactionInfos != null) {
-                AppDatabase.getInstance().transactionInfoDao().deleteTransactionInfo(theTransactionInfos.toArray(new TransactionInfo[]{}));
+        /**
+         * Running in thread
+         */
+        private void updateHistory(int walletId, com.my.monero.model.Wallet wallet, WalletOperate walletOperate, long blockChainHeight) {
+            if (wallet == null) {
+                return;
             }
-            AppDatabase.getInstance().transactionInfoDao().insertTransactionInfo(transactionInfosArray);
-            WalletInfo walletInfo = new WalletInfo();
-            walletInfo.setWalletId(walletId);
-            walletInfo.setType(WalletInfo.TYPE_REFRESH_TRANSACTION);
-            callBack(walletInfo);
-        }
-    }
+            TransactionHistory transactionHistory = wallet.getHistory();
+            if (transactionHistory == null) {
+                return;
+            }
+            transactionHistory.refresh();
+            List<TransactionInfo> transactionInfos = getTransactionHistory(walletId, transactionHistory);
+            if (transactionInfos == null) {
+                return;
+            }
+            if (transactionInfos.size() != walletOperate.getTransactionInfoSize() || (walletOperate.isHavePendingTransaction() && walletOperate.getUpdateTransactionHeight() != blockChainHeight)) {
+                walletOperate.setTransactionInfoSize(transactionInfos.size());
+                walletOperate.setHavePendingTransaction(havePendingTransaction(transactionInfos));
+                walletOperate.setUpdateTransactionHeight(blockChainHeight);
 
-    private List<TransactionInfo> getTransactionHistory(int walletId, TransactionHistory transactionHistory) {
-        List<TransactionInfo> transactionInfos = new ArrayList<>();
-        if (transactionHistory == null) {
+                TransactionInfo[] transactionInfosArray = transactionInfos.toArray(new TransactionInfo[]{});
+                List<TransactionInfo> theTransactionInfos = AppDatabase.getInstance().transactionInfoDao().loadTransactionInfoByWalletId(XManager.SYMBOL, walletId);
+                if (theTransactionInfos != null) {
+                    AppDatabase.getInstance().transactionInfoDao().deleteTransactionInfo(theTransactionInfos.toArray(new TransactionInfo[]{}));
+                }
+                AppDatabase.getInstance().transactionInfoDao().insertTransactionInfo(transactionInfosArray);
+                WalletInfo walletInfo = new WalletInfo();
+                walletInfo.setWalletId(walletId);
+                walletInfo.setType(WalletInfo.TYPE_REFRESH_TRANSACTION);
+                callBack(walletInfo);
+            }
+        }
+
+        /**
+         * Running in thread
+         */
+        private List<TransactionInfo> getTransactionHistory(int walletId, TransactionHistory transactionHistory) {
+            List<TransactionInfo> transactionInfos = new ArrayList<>();
+            if (transactionHistory == null) {
+                return transactionInfos;
+            }
+            List<com.my.monero.model.TransactionInfo> theTransactionInfos = transactionHistory.getAll();
+            if (theTransactionInfos == null) {
+                return transactionInfos;
+            }
+            Collections.sort(theTransactionInfos);
+            for (int i = 0; i < theTransactionInfos.size(); i++) {
+                com.my.monero.model.TransactionInfo theTransactionInfo = theTransactionInfos.get(i);
+                TransactionInfo transactionInfo = new TransactionInfo();
+                transactionInfo.setSymbol(XManager.SYMBOL);
+                transactionInfo.setWalletId(walletId);
+                transactionInfo.setDirection(theTransactionInfo.direction.getValue());
+                transactionInfo.setPending(theTransactionInfo.isPending);
+                transactionInfo.setFailed(theTransactionInfo.isFailed);
+                transactionInfo.setAmount(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.amount));
+                transactionInfo.setFee(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.fee));
+                transactionInfo.setBlockHeight(theTransactionInfo.blockheight);
+                transactionInfo.setConfirmations(theTransactionInfo.confirmations);
+                transactionInfo.setHash(theTransactionInfo.hash);
+                transactionInfo.setTimestamp(theTransactionInfo.timestamp * 1000);
+                transactionInfo.setPaymentId(theTransactionInfo.paymentId);
+                transactionInfo.setTxKey(theTransactionInfo.txKey);
+                transactionInfo.setAddress(theTransactionInfo.address);
+                transactionInfos.add(transactionInfo);
+            }
             return transactionInfos;
         }
-        List<com.my.monero.model.TransactionInfo> theTransactionInfos = transactionHistory.getAll();
-        if (theTransactionInfos == null) {
-            return transactionInfos;
-        }
-        Collections.sort(theTransactionInfos);
-        for (int i = 0; i < theTransactionInfos.size(); i++) {
-            com.my.monero.model.TransactionInfo theTransactionInfo = theTransactionInfos.get(i);
-            TransactionInfo transactionInfo = new TransactionInfo();
-            transactionInfo.setSymbol(XManager.SYMBOL);
-            transactionInfo.setWalletId(walletId);
-            transactionInfo.setDirection(theTransactionInfo.direction.getValue());
-            transactionInfo.setPending(theTransactionInfo.isPending);
-            transactionInfo.setFailed(theTransactionInfo.isFailed);
-            transactionInfo.setAmount(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.amount));
-            transactionInfo.setFee(com.my.monero.model.Wallet.getDisplayAmount(theTransactionInfo.fee));
-            transactionInfo.setBlockHeight(theTransactionInfo.blockheight);
-            transactionInfo.setConfirmations(theTransactionInfo.confirmations);
-            transactionInfo.setHash(theTransactionInfo.hash);
-            transactionInfo.setTimestamp(theTransactionInfo.timestamp * 1000);
-            transactionInfo.setPaymentId(theTransactionInfo.paymentId);
-            transactionInfo.setTxKey(theTransactionInfo.txKey);
-            transactionInfo.setAddress(theTransactionInfo.address);
-            transactionInfos.add(transactionInfo);
-        }
-        return transactionInfos;
-    }
 
-    private boolean havePendingTransaction(List<TransactionInfo> transactionInfos) {
-        if (transactionInfos == null) {
+        /**
+         * Running in thread
+         */
+        private boolean havePendingTransaction(List<TransactionInfo> transactionInfos) {
+            if (transactionInfos == null) {
+                return false;
+            }
+            for (int i = 0; i < transactionInfos.size(); i++) {
+                TransactionInfo transactionInfo = transactionInfos.get(i);
+                if (transactionInfo.isPending() || transactionInfo.getConfirmations() < XManager.TRANSACTION_MIN_CONFIRMATION) {
+                    return true;
+                }
+            }
             return false;
         }
-        for (int i = 0; i < transactionInfos.size(); i++) {
-            TransactionInfo transactionInfo = transactionInfos.get(i);
-            if (transactionInfo.isPending() || transactionInfo.getConfirmations() < XManager.TRANSACTION_MIN_CONFIRMATION) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    private void addToPriorityBlockingQueue(WalletOperate walletOperate) {
-        try {
-            int size = priorityBlockingQueueWalletOperate.size();
-            if (size >= maxQueueSize) {
-                WalletInfo walletInfo = new WalletInfo();
-                walletInfo.setType(WalletInfo.TYPE_QUEUE_FULL_ERROR);
-                walletInfo.setError(LanguageTool.getLocaleStringResource(WalletService.this.context, language, R.string.over_request_tips));
-                WalletService.this.callBack(walletInfo);
+        /**
+         * Running in thread
+         */
+        private void moneySpent(final String txId, final long amount, WalletOperate walletOperate) {
+            if (txId == null) {
                 return;
             }
-            priorityBlockingQueueWalletOperate.add(walletOperate);
-            putWaitingWalletOperate(walletOperate.getKey(), walletOperate);
-        } catch (Exception e) {
-            e.printStackTrace();
+            WalletInfo walletInfo = new WalletInfo();
+            walletInfo.setWalletId(walletOperate.getId());
+            walletInfo.setType(WalletInfo.TYPE_MONEY_SPENT);
+            walletInfo.setTxId(txId);
+            walletInfo.setAmount(amount);
+            walletInfo.setFullSynchronizeOnce(walletOperate.isFullSynchronizeOnce());
+            callBack(walletInfo);
         }
-    }
-
-    private void addWalletOperateSetDaemon(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, Node node) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnNormalListener(onNormalListener);
-        walletOperate.setPriority(2);
-        walletOperate.setNode(node);
-        addToPriorityBlockingQueue(walletOperate);
-    }
-
-    private void addWalletOperateCheckWalletPassword(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, String name, String password) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnNormalListener(onNormalListener);
-        walletOperate.setPriority(3);
-        walletOperate.setName(name);
-        walletOperate.setPassword(password);
-        addToPriorityBlockingQueue(walletOperate);
-    }
-
-    private void addWalletOperate(int type, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener, int id, String name, String password, String passwordPrompt, String mnemonic, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, boolean needReset, Node node) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnWalletDataListener(onWalletDataListener);
-        boolean ignore = false;
-        switch (type) {
-            case WalletOperate.TYPE_CREATE_WALLET:
-                walletOperate.setPriority(2);
-                walletOperate.setName(name);
-                walletOperate.setPassword(password);
-                walletOperate.setPasswordPrompt(passwordPrompt);
-                break;
-            case WalletOperate.TYPE_IMPORT_WALLET_MNEMONIC:
-                walletOperate.setPriority(2);
-                walletOperate.setName(name);
-                walletOperate.setPassword(password);
-                walletOperate.setPasswordPrompt(passwordPrompt);
-                walletOperate.setMnemonic(mnemonic);
-                walletOperate.setRestoreHeight(restoreHeight);
-                break;
-            case WalletOperate.TYPE_IMPORT_WALLET_KEYS:
-                walletOperate.setPriority(2);
-                walletOperate.setName(name);
-                walletOperate.setPassword(password);
-                walletOperate.setPasswordPrompt(passwordPrompt);
-                walletOperate.setAddressKey(addressKey);
-                walletOperate.setPrivateViewKey(privateViewKey);
-                walletOperate.setPrivateSpendKey(privateSpendKey);
-                walletOperate.setRestoreHeight(restoreHeight);
-                break;
-            case WalletOperate.TYPE_LOAD_REFRESH_WALLET:
-                if (runningWalletId != id || needReset) {
-                    cancelWaitingWalletOperate(TAG_LOADREFRESHWALLET);
-                    walletOperate.setTag(TAG_LOADREFRESHWALLET);
-                    walletOperate.setPriority(1);
-                    walletOperate.setId(id);
-                    walletOperate.setName(name);
-                    walletOperate.setPassword(password);
-                    walletOperate.setRestoreHeight(restoreHeight);
-                } else {
-                    ignore = true;
-                }
-                break;
-            case WalletOperate.TYPE_SET_DAEMON_WALLET:
-                walletOperate.setPriority(2);
-                walletOperate.setNode(node);
-                break;
-            case WalletOperate.TYPE_GET_WALLET_DATA:
-                walletOperate.setPriority(2);
-                walletOperate.setId(id);
-                walletOperate.setName(name);
-                walletOperate.setPassword(password);
-                break;
-            default:
-                break;
-        }
-        if (!ignore) {
-            addToPriorityBlockingQueue(walletOperate);
-        }
-    }
-
-    private void addWalletOperateCreateTransaction(int type, com.my.xwallet.aidl.OnCreateTransactionListener onCreateTransactionListener, String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnCreateTransactionListener(onCreateTransactionListener);
-        walletOperate.setPriority(2);
-        walletOperate.setWalletAddress(walletAddress);
-        walletOperate.setAmount(amount);
-        walletOperate.setRingSize(ringSize);
-        walletOperate.setPaymentId(paymentId);
-        walletOperate.setDescription(description);
-        walletOperate.setPendingPriority(PendingTransaction.Priority.fromInteger(priority));
-        walletOperate.setPublicTransaction(publicTransaction);
-        addToPriorityBlockingQueue(walletOperate);
-    }
-
-    private void addWalletOperateNormal(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnNormalListener(onNormalListener);
-        walletOperate.setPriority(2);
-        addToPriorityBlockingQueue(walletOperate);
-    }
-
-    private void addWalletOperateCloseWallet(int type, com.my.xwallet.aidl.OnNormalListener onNormalListener, int id) {
-        WalletOperate walletOperate = new WalletOperate();
-        walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
-        walletOperate.setType(type);
-        walletOperate.setOnNormalListener(onNormalListener);
-        walletOperate.setPriority(2);
-        walletOperate.setId(id);
-        addToPriorityBlockingQueue(walletOperate);
-    }
-
-    class MyBinder extends WalletOperateManager.Stub {
-        @Override
-        public void setDaemon(String url, com.my.xwallet.aidl.OnNormalListener onNormalListener) throws RemoteException {
-            Node node = new Node();
-            node.setUrl(url);
-            addWalletOperateSetDaemon(WalletOperate.TYPE_SET_DAEMON_WALLET, onNormalListener, node);
-        }
-
-        @Override
-        public void createWallet(String name, String password, String passwordPrompt, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
-            addWalletOperate(WalletOperate.TYPE_CREATE_WALLET, onWalletDataListener, 0, name, password, passwordPrompt, null, null, null, null, 0, false, null);
-        }
-
-        @Override
-        public void importWalletMnemonic(String name, String password, String passwordPrompt, String mnemonic, long restoreHeight, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
-            addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_MNEMONIC, onWalletDataListener, 0, name, password, passwordPrompt, mnemonic, null, null, null, restoreHeight, false, null);
-        }
-
-        @Override
-        public void importWalletKeys(String name, String password, String passwordPrompt, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
-            addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_KEYS, onWalletDataListener, 0, name, password, passwordPrompt, null, addressKey, privateViewKey, privateSpendKey, restoreHeight, false, null);
-        }
-
-        @Override
-        public void checkWalletPassword(String name, String password, OnNormalListener onNormalListener) throws RemoteException {
-            addWalletOperateCheckWalletPassword(WalletOperate.TYPE_CHECK_WALLET_PASSWORD, onNormalListener, name, password);
-        }
-
-        @Override
-        public void loadRefreshWallet(int id, String name, String password, long restoreHeight, boolean needReset, com.my.xwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
-            addWalletOperate(WalletOperate.TYPE_LOAD_REFRESH_WALLET, onWalletDataListener, id, name, password, null, null, null, null, null, restoreHeight, needReset, null);
-        }
-
-        @Override
-        public void createTransaction(String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction, OnCreateTransactionListener onCreateTransactionListener) throws RemoteException {
-            addWalletOperateCreateTransaction(WalletOperate.TYPE_CREATE_TRANSACTION, onCreateTransactionListener, walletAddress, amount, ringSize, paymentId, description, priority, publicTransaction);
-        }
-
-        @Override
-        public void sendTransaction(OnNormalListener onNormalListener) throws RemoteException {
-            addWalletOperateNormal(WalletOperate.TYPE_SEND_TRANSACTION, onNormalListener);
-        }
-
-        @Override
-        public void closeActiveWallet(OnNormalListener onNormalListener) throws RemoteException {
-            addWalletOperateNormal(WalletOperate.TYPE_CLOSE_ACTIVE_WALLET, onNormalListener);
-        }
-
-        @Override
-        public void closeWallet(int id, OnNormalListener onNormalListener) throws RemoteException {
-            addWalletOperateCloseWallet(WalletOperate.TYPE_CLOSE_WALLET, onNormalListener, id);
-        }
-
-        @Override
-        public void getWalletData(int id, String name, String password, OnWalletDataListener onWalletDataListener) throws RemoteException {
-            addWalletOperate(WalletOperate.TYPE_GET_WALLET_DATA, onWalletDataListener, id, name, password, null, null, null, null, null, 0, false, null);
-        }
-
-        @Override
-        public void runService() throws RemoteException {
-            if (operateType == OPERATETYPE_DESTROY) {//the onDestroy() on the same thread
+        /**
+         * Running in thread
+         */
+        private void moneyReceive(final String txId, final long amount, WalletOperate walletOperate) {
+            if (txId == null) {
                 return;
             }
-            operateType = OPERATETYPE_RUN;
+            WalletInfo walletInfo = new WalletInfo();
+            walletInfo.setWalletId(walletOperate.getId());
+            walletInfo.setType(WalletInfo.TYPE_MONEY_RECEIVE);
+            walletInfo.setTxId(txId);
+            walletInfo.setAmount(amount);
+            walletInfo.setFullSynchronizeOnce(walletOperate.isFullSynchronizeOnce());
+            callBack(walletInfo);
         }
 
-        @Override
-        public void stopService() throws RemoteException {
-            if (operateType == OPERATETYPE_DESTROY) {
+        /**
+         * Running in thread
+         */
+        private void unconfirmedMoneyReceive(final String txId, final long amount, WalletOperate walletOperate) {
+            if (txId == null) {
                 return;
             }
-            operateType = OPERATETYPE_STOP;
+            WalletInfo walletInfo = new WalletInfo();
+            walletInfo.setWalletId(walletOperate.getId());
+            walletInfo.setType(WalletInfo.TYPE_UNCONFIRMED_MONEY_RECEIVE);
+            walletInfo.setTxId(txId);
+            walletInfo.setAmount(amount);
+            walletInfo.setFullSynchronizeOnce(walletOperate.isFullSynchronizeOnce());
+            callBack(walletInfo);
         }
 
-        @Override
-        public void changeLanguage(String language) throws RemoteException {
-            WalletService.this.language = language;
-        }
-
-        @Override
-        public void registerListener(OnWalletRefreshListener onWalletRefreshListener) throws RemoteException {
-            onWalletRefreshListenerList.register(onWalletRefreshListener);
-        }
-
-        @Override
-        public void unRegisterListener(OnWalletRefreshListener onWalletRefreshListener) throws RemoteException {
-            onWalletRefreshListenerList.unregister(onWalletRefreshListener);
-        }
     }
 
 }

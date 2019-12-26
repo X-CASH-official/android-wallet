@@ -23,7 +23,7 @@
     <string name="password_can_not_empty_tips">Password can not empty</string>
     <string name="check_password_error_tips">Check password error</string>
     <string name="set_daemon_error_tips">Set daemon failed</string>
-    <string name="create_transaction_error_tips">Create transaction failed, please check the content</string>
+    <string name="create_transaction_error_tips">Create transaction failed, please check the content and need have enough fees</string>
     <string name="send_transaction_error_tips">Send transaction failed</string>
     <string name="not_find_active_wallet_tips">Not find active wallet</string>
     <string name="close_active_wallet_error_tips">Close active wallet failed</string>
@@ -31,10 +31,16 @@
     <string name="qrcode_cancel_tips">QR Code scanning has been canceled</string>
     <string name="wallet_service_not_running_tips">Wallet service not running</string>
     <string name="service_uninitialized_tips">Service uninitialized, please retry</string>
+    <string name="start_receive_transaction_notfication_tips">Receive a transaction, amount is:</string>
+    <string name="retry_bind_service_tips">Bind service disconnected, trying to reconnect, please try anything again later</string>
     <string name="show_more_tips">show more</string>
+    <string name="address_error_tips">Error address</string>
 
     <string name="popupwindow_textViewOK_text">OK</string>
     <string name="popupwindow_textViewCancel_text">Cancel</string>
+    <string name="popupwindow_password_textViewPasswordTips_text">Enter Wallet Password:</string>
+    <string name="popupwindow_password_editTextPassword_hint">Your password</string>
+    <string name="popupwindow_password_textViewPasswordHintTips_text">Password Hint</string>
 
     <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X Wallet All Rights Reserved</string>
     <string name="activity_splash_initDaemonError_tips">Set daemon error</string>
@@ -109,10 +115,6 @@
     <string name="activity_wallet_manager_activeWallet_error_tips">Active wallet failed</string>
     <string name="activity_wallet_manager_delete_address_tips">Confirm to delete address?</string>
 
-    <string name="popupwindow_password_textViewPasswordTips_text">Enter Wallet Password:</string>
-    <string name="popupwindow_password_editTextPassword_hint">Your password</string>
-    <string name="popupwindow_password_textViewPasswordHintTips_text">Password Hint</string>
-
     <string name="activity_wallet_details_textViewTitle_text">Wallet Manager</string>
     <string name="activity_wallet_details_textViewWalletNameTitle_text">Wallet Name</string>
     <string name="activity_wallet_details_textViewWalletAddressTitle_text">Wallet Address</string>
@@ -150,7 +152,6 @@
     <string name="activity_wallet_running_leaveDistance_tips">During synchronization, the remaining blocks:</string>
     <string name="activity_wallet_running_unlocked_tips">(unlocked)</string>
 
-
     <string name="activity_node_manager_textViewTitle_text">Choose Node</string>
     <string name="activity_node_manager_changeNodeSuccess_tips">Change node success</string>
     <string name="activity_node_manager_changeNodeError_tips">Change node error</string>
@@ -163,7 +164,6 @@
     <string name="activity_node_add_confirmEmpty_tips">Ip and port not empty</string>
     <string name="activity_node_add_addNodeSuccess_tips">Add node success</string>
     <string name="activity_node_add_addNodeError_tips">Add node error</string>
-
 
     <string name="activity_main_content_fragment_home_top_item_textViewSynchronizeStatus_text">Wallet is locked, click to run</string>
     <string name="activity_main_content_fragment_home_textViewTransactionTitle_text">Transaction History:</string>
@@ -181,7 +181,7 @@
     <string name="activity_payment_textViewPublicTips_text">Whether need public the transaction</string>
     <string name="activity_payment_editTextWalletAddress_hint">Transfer Address</string>
     <string name="activity_payment_editTextAmount_hint">Transfer Amount</string>
-    <string name="activity_payment_editTextRingSize_hint">Ring signature obfuscation,default 21(Optional)</string>
+    <string name="activity_payment_editTextRingSize_hint">Ring signature obfuscation, default 21(Optional)</string>
     <string name="activity_payment_editTextPaymentId_hint">Payment Id(Optional)</string>
     <string name="activity_payment_editTextDescription_hint">Description(Optional)</string>
     <string name="activity_payment_confirmEmpty_tips">Address and Amount not empty</string>
@@ -189,6 +189,9 @@
     <string name="activity_payment_radioButtonLow_text">Low Priority</string>
     <string name="activity_payment_radioButtonNormal_text">Normal Priority</string>
     <string name="activity_payment_radioButtonHigh_text">High Priority</string>
+    <string name="activity_payment_textViewAllAmount_text">ALL</string>
+    <string name="activity_payment_payAllAmount_tips">Found that you tried to pay in full, the full payment will be less the transaction fee.</string>
+    <string name="activity_payment_payAmountCheckError_tips">Pay amount need greater than 0</string>
 
     <string name="activity_address_manager_textViewTitle_text">Address Manager</string>
     <string name="activity_address_manager_addAddressSuccess_tips">Add address success</string>
@@ -200,7 +203,6 @@
     <string name="activity_address_add_confirmEmpty_tips">Address and Notes not empty</string>
     <string name="activity_address_add_editTextAddress_hint">Add address</string>
     <string name="activity_address_add_editTextNotes_hint">Add notes</string>
-    <string name="activity_address_add_addressError_tips">Error address</string>
 
     <string name="activity_payment_confirm_address_tips">Address:</string>
     <string name="activity_payment_confirm_amount_tips">Amount:</string>
@@ -214,6 +216,7 @@
     <string name="activity_language_setting_textViewTitle_text">Language Setting</string>
 
     <string name="activity_qrcode_textViewTitle_text">Scan QR Code</string>
+
     <string name="activity_receive_textViewTitle_text">RECEIVE</string>
 
     <string name="activity_transaction_details_textViewTitle_text">Transaction Details</string>

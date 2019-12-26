@@ -63,6 +63,8 @@ public class WalletOperate implements Comparable<WalletOperate> {
 
     private long maxDaemonBlockChainHeight;
 
+    private boolean isFullSynchronizeOnce;
+
     public boolean isCancel() {
         return cancel;
     }
@@ -295,6 +297,14 @@ public class WalletOperate implements Comparable<WalletOperate> {
         this.maxDaemonBlockChainHeight = maxDaemonBlockChainHeight;
     }
 
+    public boolean isFullSynchronizeOnce() {
+        return isFullSynchronizeOnce;
+    }
+
+    public void setFullSynchronizeOnce(boolean fullSynchronizeOnce) {
+        isFullSynchronizeOnce = fullSynchronizeOnce;
+    }
+
     @Override
     public int compareTo(WalletOperate walletOperate) {
         int result = 0;
@@ -336,6 +346,7 @@ public class WalletOperate implements Comparable<WalletOperate> {
                 ", havePendingTransaction=" + havePendingTransaction +
                 ", updateTransactionHeight=" + updateTransactionHeight +
                 ", maxDaemonBlockChainHeight=" + maxDaemonBlockChainHeight +
+                ", isFullSynchronizeOnce=" + isFullSynchronizeOnce +
                 '}';
     }
 

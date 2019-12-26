@@ -134,7 +134,6 @@ public class SetWalletActivity extends NewBaseActivity {
 
     }
 
-
     private void onFocusChangeListener() {
         onFocusChangeListener = new View.OnFocusChangeListener() {
             @Override
@@ -187,7 +186,6 @@ public class SetWalletActivity extends NewBaseActivity {
         editTextConfirmPassword.setOnFocusChangeListener(onFocusChangeListener);
         editTextDescription.setOnFocusChangeListener(onFocusChangeListener);
     }
-
 
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {

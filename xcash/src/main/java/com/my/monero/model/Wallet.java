@@ -248,7 +248,7 @@ public class Wallet {
         }
     }
 
-    public PendingTransaction createTransaction(TxData txData) {
+    public PendingTransaction createTransaction(TxData txData) throws Exception{
         int privacy_settings = 0;
         if (!txData.isPublicTransaction()) {
             privacy_settings = 1;
@@ -265,13 +265,26 @@ public class Wallet {
 
     public PendingTransaction createTransaction(String dst_addr, String payment_id,
                                                 long amount, int mixin_count,
-                                                PendingTransaction.Priority priority, int privacy_settings) {
+                                                PendingTransaction.Priority priority, int privacy_settings) throws Exception{
         disposePendingTransaction();
         int _priority = priority.getValue();
-        long txHandle = createTransactionJ(dst_addr, payment_id, amount, mixin_count, _priority,
-                accountIndex, privacy_settings);
+        long txHandle;
+        if (amount==-1){
+            txHandle = createSweepTransaction(dst_addr, payment_id, mixin_count, _priority,
+                    accountIndex, privacy_settings);
+        }else{
+            txHandle = createTransactionJ(dst_addr, payment_id, amount, mixin_count, _priority,
+                    accountIndex, privacy_settings);
+        }
+        checkTxHandle(txHandle);
         pendingTransaction = new PendingTransaction(txHandle);
         return pendingTransaction;
+    }
+
+    private void checkTxHandle(long txHandle){
+        if (txHandle==0){
+            throw new IllegalStateException("createTransaction failed");
+        }
     }
 
     private native long createTransactionJ(String dst_addr, String payment_id,
@@ -280,15 +293,17 @@ public class Wallet {
 
     private native long createSweepTransaction(String dst_addr, String payment_id,
                                                int mixin_count,
-                                               int priority, int accountIndex);
+                                               int priority, int accountIndex, int tx_privacy_settings);
 
 
-    public PendingTransaction createSweepUnmixableTransaction() {
+    public PendingTransaction createSweepUnmixableTransaction() throws Exception{
         disposePendingTransaction();
         long txHandle = createSweepUnmixableTransactionJ();
+        checkTxHandle(txHandle);
         pendingTransaction = new PendingTransaction(txHandle);
         return pendingTransaction;
     }
+
 
     private native long createSweepUnmixableTransactionJ();
 

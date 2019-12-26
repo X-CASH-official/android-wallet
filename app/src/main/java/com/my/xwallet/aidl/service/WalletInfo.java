@@ -15,6 +15,9 @@ public class WalletInfo {
     public static final int TYPE_BLOCK_PROGRESS = 6;
     public static final int TYPE_REFRESH_TRANSACTION = 7;
     public static final int TYPE_CLOSE_ACTIVE_WALLET = 8;
+    public static final int TYPE_MONEY_SPENT = 9;
+    public static final int TYPE_MONEY_RECEIVE = 10;
+    public static final int TYPE_UNCONFIRMED_MONEY_RECEIVE = 11;
 
     private int walletId;
     private int type;
@@ -25,6 +28,9 @@ public class WalletInfo {
     private int progress;
     private long daemonHeight;
     private long blockChainHeight;
+    private String txId;
+    private long amount;
+    private boolean fullSynchronizeOnce;
 
     public int getWalletId() {
         return walletId;
@@ -98,4 +104,27 @@ public class WalletInfo {
         this.blockChainHeight = blockChainHeight;
     }
 
+    public String getTxId() {
+        return txId;
+    }
+
+    public void setTxId(String txId) {
+        this.txId = txId;
+    }
+
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
+
+    public boolean isFullSynchronizeOnce() {
+        return fullSynchronizeOnce;
+    }
+
+    public void setFullSynchronizeOnce(boolean fullSynchronizeOnce) {
+        this.fullSynchronizeOnce = fullSynchronizeOnce;
+    }
 }

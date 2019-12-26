@@ -5,22 +5,18 @@
  */
 package com.my.xwallet.aidl.manager;
 
-import com.my.monero.data.Node;
+import com.my.base.utils.LogTool;
 import com.my.monero.data.TxData;
 import com.my.monero.model.PendingTransaction;
 import com.my.monero.model.SubaddressRow;
-import com.my.monero.model.TransactionHistory;
 import com.my.monero.model.WalletListener;
 import com.my.monero.model.WalletManager;
 import com.my.monero.util.RestoreHeight;
-import com.my.base.utils.LogTool;
-import com.my.utils.database.entity.TransactionInfo;
 import com.my.utils.database.entity.Wallet;
 import com.my.utils.database.models.SubAddress;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class XWalletController {
@@ -174,18 +170,22 @@ public class XWalletController {
             @Override
             public void moneySpent(String txId, long amount) {
                 LogTool.d(TAG, "moneySpent txId: " + txId + "+amount:" + amount);
+                onWalletListener.onMoneySpent(txId,amount);
                 wallet.store();
             }
 
             @Override
             public void moneyReceived(String txId, long amount) {
                 LogTool.d(TAG, "moneyReceived txId: " + txId + "+amount:" + amount);
+                onWalletListener.onMoneyReceived(txId,amount);
                 wallet.store();
             }
 
             @Override
             public void unconfirmedMoneyReceived(String txId, long amount) {
                 LogTool.d(TAG, "unconfirmedMoneyReceived txId: " + txId + "+amount:" + amount);
+                onWalletListener.unconfirmedMoneyReceived(txId,amount);
+                wallet.store();
             }
 
             @Override
@@ -367,7 +367,11 @@ public class XWalletController {
             TxData txData = new TxData();
             txData.setDstAddr(walletAddress);
             txData.setPaymentId(paymentId);
-            txData.setAmount(com.my.monero.model.Wallet.getAmountFromString(amount));
+            if (amount.equals("-1")){
+                txData.setAmount(-1);
+            }else {
+                txData.setAmount(com.my.monero.model.Wallet.getAmountFromString(amount));
+            }
             txData.setMixin(Integer.valueOf(ringSize) - 1);
             txData.setPriority(priority);
             txData.setPublicTransaction(publicTransaction);
@@ -496,6 +500,12 @@ public class XWalletController {
         void onWalletStartFailed(String error);
 
         void onRefreshed(long height);
+
+        void onMoneySpent(String txId, long amount);
+
+        void onMoneyReceived(String txId, long amount);
+
+        void unconfirmedMoneyReceived(String txId, long amount);
 
     }
 

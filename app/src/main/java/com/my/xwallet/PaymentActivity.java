@@ -20,18 +20,21 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.my.base.BaseActivity;
+import com.my.utils.StringTool;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.aidl.OnCreateTransactionListener;
 import com.my.xwallet.aidl.Transaction;
 import com.my.xwallet.aidl.WalletOperateManager;
 import com.my.xwallet.uihelp.ActivityHelp;
 import com.my.xwallet.uihelp.ColorHelp;
+import com.my.xwallet.uihelp.PopupWindowHelp;
 import com.my.xwallet.uihelp.ProgressDialogHelp;
 
 public class PaymentActivity extends NewBaseActivity {
@@ -50,6 +53,7 @@ public class PaymentActivity extends NewBaseActivity {
     private ImageView imageViewWalletAddress;
     private EditText editTextWalletAddress;
     private FrameLayout frameLayoutWalletAddress;
+    private TextView textViewAllAmount;
     private EditText editTextAmount;
     private FrameLayout frameLayoutAmount;
     private EditText editTextRingSize;
@@ -67,10 +71,11 @@ public class PaymentActivity extends NewBaseActivity {
     private CheckBox checkBox;
     private Button buttonNext;
 
+    private Drawable drawableWalletAddress;
     private View.OnFocusChangeListener onFocusChangeListener;
     private View.OnClickListener onClickListener;
-    private Drawable drawableWalletAddress;
     private int priority = 1;
+    private String unlockedBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +114,7 @@ public class PaymentActivity extends NewBaseActivity {
         imageViewWalletAddress = (ImageView) findViewById(R.id.imageViewWalletAddress);
         editTextWalletAddress = (EditText) findViewById(R.id.editTextWalletAddress);
         frameLayoutWalletAddress = (FrameLayout) findViewById(R.id.frameLayoutWalletAddress);
+        textViewAllAmount= (TextView) findViewById(R.id.textViewAllAmount);
         editTextAmount = (EditText) findViewById(R.id.editTextAmount);
         frameLayoutAmount = (FrameLayout) findViewById(R.id.frameLayoutAmount);
         editTextRingSize = (EditText) findViewById(R.id.editTextRingSize);
@@ -138,7 +144,8 @@ public class PaymentActivity extends NewBaseActivity {
         ColorHelp.setImageViewDrawableTint(imageViewWalletAddress, drawableWalletAddress, mainColorText);
         if (wallet != null) {
             textViewWalletName.setText(wallet.getName());
-            textViewAmount.setText(wallet.getUnlockedBalance() + " " + wallet.getSymbol());
+            unlockedBalance=wallet.getUnlockedBalance();
+            textViewAmount.setText(unlockedBalance + " " + wallet.getSymbol());
         }
         radioButtonLow.setActivated(true);
         setPriority(1);
@@ -170,8 +177,10 @@ public class PaymentActivity extends NewBaseActivity {
                         break;
                     case R.id.editTextAmount:
                         if (hasFocus) {
+                            textViewAllAmount.setTextColor(colorPrimary);
                             frameLayoutAmount.setBackgroundColor(colorPrimary);
                         } else {
+                            textViewAllAmount.setTextColor(mainColorText);
                             frameLayoutAmount.setBackgroundColor(mainColorText);
                         }
                         break;
@@ -223,6 +232,9 @@ public class PaymentActivity extends NewBaseActivity {
                     case R.id.imageViewWalletAddress:
                         chooseAddress();
                         break;
+                    case R.id.textViewAllAmount:
+                        setAllAmount();
+                        break;
                     case R.id.linearLayoutLow:
                         setPriority(1);
                         break;
@@ -233,7 +245,7 @@ public class PaymentActivity extends NewBaseActivity {
                         setPriority(3);
                         break;
                     case R.id.buttonNext:
-                        doNext();
+                        doNext(buttonNext);
                         break;
                     default:
                         break;
@@ -243,6 +255,7 @@ public class PaymentActivity extends NewBaseActivity {
         imageViewBack.setOnClickListener(onClickListener);
         imageViewRight.setOnClickListener(onClickListener);
         imageViewWalletAddress.setOnClickListener(onClickListener);
+        textViewAllAmount.setOnClickListener(onClickListener);
         linearLayoutLow.setOnClickListener(onClickListener);
         linearLayoutNormal.setOnClickListener(onClickListener);
         linearLayoutHigh.setOnClickListener(onClickListener);
@@ -254,6 +267,11 @@ public class PaymentActivity extends NewBaseActivity {
                 AddressManagerActivity.class);
         intent.putExtra(ActivityHelp.CHOOSE_ADDRESS_KEY, true);
         startActivityForResult(intent, ActivityHelp.REQUEST_CODE_CHOOSE_ADDRESS);
+    }
+
+    private void setAllAmount() {
+        editTextAmount.setText(unlockedBalance);
+        TheApplication.setCursorToLast(editTextAmount);
     }
 
     private void setPriority(int priority) {
@@ -276,20 +294,54 @@ public class PaymentActivity extends NewBaseActivity {
         this.priority = priority;
     }
 
-    private void doNext() {
+    private void doNext(View view) {
         if (wallet == null) {
             return;
         }
-        String walletAddress = editTextWalletAddress.getText().toString();
-        String amount = editTextAmount.getText().toString();
-        String ringSize = editTextRingSize.getText().toString();
-        String paymentId = editTextPaymentId.getText().toString();
-        String description = editTextDescription.getText().toString();
+        final String walletAddress = editTextWalletAddress.getText().toString();
+        final String amount = editTextAmount.getText().toString();
+        final String ringSize = editTextRingSize.getText().toString();
+        final String paymentId = editTextPaymentId.getText().toString();
+        final String description = editTextDescription.getText().toString();
         if (walletAddress.equals("") || amount.equals("")) {
             BaseActivity.showShortToast(PaymentActivity.this, getString(R.string.activity_payment_confirmEmpty_tips));
             return;
         }
-        createTransaction(walletAddress, amount, ringSize, paymentId, description, priority, checkBox.isChecked());
+        if (!StringTool.checkWalletAddress(walletAddress)) {
+            BaseActivity.showShortToast(PaymentActivity.this, getString(R.string.address_error_tips));
+            return;
+        }
+        boolean amountCheck=false;
+        boolean all=false;
+        try{
+            float theAmount= Float.parseFloat(amount);
+            if (theAmount>0){
+                amountCheck=true;
+            }
+            if (unlockedBalance!=null){
+                float theAllAmount= Float.parseFloat(unlockedBalance);
+                if (theAmount==theAllAmount){
+                    all=true;
+                }
+            }
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+        if (!amountCheck){
+            BaseActivity.showShortToast(PaymentActivity.this, getString(R.string.activity_payment_payAmountCheckError_tips));
+            return;
+        }
+        if (all){
+            PopupWindowHelp.showPopupWindowNormalTips(PaymentActivity.this, view.getRootView(), view, getString(R.string.activity_payment_payAllAmount_tips), new PopupWindowHelp.OnShowPopupWindowNormalTipsListener() {
+                @Override
+                public void okClick(PopupWindow popupWindow, View view) {
+                    popupWindow.dismiss();
+                    createTransaction(walletAddress, "-1", ringSize, paymentId, description, priority, checkBox.isChecked());
+                }
+            });
+        }else {
+            createTransaction(walletAddress, amount, ringSize, paymentId, description, priority, checkBox.isChecked());
+        }
     }
 
     private void createTransaction(final String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {

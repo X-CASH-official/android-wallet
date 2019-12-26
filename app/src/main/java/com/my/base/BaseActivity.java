@@ -22,9 +22,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.my.base.utils.ActivityManager;
+import com.my.base.utils.LogTool;
 import com.my.base.utils.TimeTool;
 import com.my.base.utils.ToastCompat;
-import com.my.base.utils.LogTool;
 
 import java.util.ArrayList;
 import java.util.HashMap;
