@@ -9,7 +9,8 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/normal_nodate" />
+        android:tint="@color/normal_load_completed"
+        android:src="@mipmap/normal_nodate1" />
 
     <TextView
         android:id="@+id/textView"

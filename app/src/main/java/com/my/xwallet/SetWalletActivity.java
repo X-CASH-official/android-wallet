@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,6 +19,8 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.my.base.BaseActivity;
 import com.my.utils.AppSignTool;
@@ -29,6 +33,7 @@ public class SetWalletActivity extends NewBaseActivity {
 
     private int colorPrimary;
     private int mainColorText;
+    private int textView_error;
 
     private ImageView imageViewBack;
     private TextView textViewTitle;
@@ -48,12 +53,13 @@ public class SetWalletActivity extends NewBaseActivity {
     private CheckBox checkBox;
     private Button buttonNext;
 
-    private View.OnFocusChangeListener onFocusChangeListener;
-    private View.OnClickListener onClickListener;
     private Drawable drawableName;
     private Drawable drawablePassword;
     private Drawable drawableConfirmPassword;
     private Drawable drawableDescription;
+    private View.OnFocusChangeListener onFocusChangeListener;
+    private View.OnClickListener onClickListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +89,7 @@ public class SetWalletActivity extends NewBaseActivity {
     @Override
     protected void initUi() {
         getTypeArray();
+        textView_error = ContextCompat.getColor(SetWalletActivity.this, R.color.textView_error);
         imageViewBack = (ImageView) findViewById(R.id.imageViewBack);
         textViewTitle = (TextView) findViewById(R.id.textViewTitle);
         imageViewName = (ImageView) findViewById(R.id.imageViewName);
@@ -100,6 +107,7 @@ public class SetWalletActivity extends NewBaseActivity {
         textViewSha256Tips = (TextView) findViewById(R.id.textViewSha256Tips);
         checkBox = (CheckBox) findViewById(R.id.checkBox);
         buttonNext = (Button) findViewById(R.id.buttonNext);
+        addTextChangedListener();
         onFocusChangeListener();
         onClickListener();
     }
@@ -150,8 +158,7 @@ public class SetWalletActivity extends NewBaseActivity {
                         break;
                     case R.id.editTextPassword:
                         if (hasFocus) {
-                            ColorHelp.setImageViewDrawableTint(imageViewPassword, drawablePassword, colorPrimary);
-                            frameLayoutPassword.setBackgroundColor(colorPrimary);
+                            checkPasswordLength();
                         } else {
                             ColorHelp.setImageViewDrawableTint(imageViewPassword, drawablePassword, mainColorText);
                             frameLayoutPassword.setBackgroundColor(mainColorText);
@@ -159,8 +166,7 @@ public class SetWalletActivity extends NewBaseActivity {
                         break;
                     case R.id.editTextConfirmPassword:
                         if (hasFocus) {
-                            ColorHelp.setImageViewDrawableTint(imageViewConfirmPassword, drawableConfirmPassword, colorPrimary);
-                            frameLayoutConfirmPassword.setBackgroundColor(colorPrimary);
+                            checkConfirmPasswordLength();
                         } else {
                             ColorHelp.setImageViewDrawableTint(imageViewConfirmPassword, drawableConfirmPassword, mainColorText);
                             frameLayoutConfirmPassword.setBackgroundColor(mainColorText);
@@ -187,6 +193,44 @@ public class SetWalletActivity extends NewBaseActivity {
         editTextDescription.setOnFocusChangeListener(onFocusChangeListener);
     }
 
+    private void addTextChangedListener(){
+        editTextPassword.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                checkPasswordLength();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+        editTextConfirmPassword.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                checkConfirmPasswordLength();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
     private void onClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
@@ -207,6 +251,26 @@ public class SetWalletActivity extends NewBaseActivity {
         buttonNext.setOnClickListener(onClickListener);
     }
 
+    private void checkPasswordLength(){
+        if (editTextPassword.getText().length()<6){
+            ColorHelp.setImageViewDrawableTint(imageViewPassword, drawablePassword, textView_error);
+            frameLayoutPassword.setBackgroundColor(textView_error);
+        }else {
+            ColorHelp.setImageViewDrawableTint(imageViewPassword, drawablePassword, colorPrimary);
+            frameLayoutPassword.setBackgroundColor(colorPrimary);
+        }
+    }
+
+    private void checkConfirmPasswordLength(){
+        if (editTextConfirmPassword.getText().length()<6){
+            ColorHelp.setImageViewDrawableTint(imageViewConfirmPassword, drawableConfirmPassword, textView_error);
+            frameLayoutConfirmPassword.setBackgroundColor(textView_error);
+        }else {
+            ColorHelp.setImageViewDrawableTint(imageViewConfirmPassword, drawableConfirmPassword, colorPrimary);
+            frameLayoutConfirmPassword.setBackgroundColor(colorPrimary);
+        }
+    }
+
     private void doNext() {
         String name = editTextName.getText().toString();
         String password = editTextPassword.getText().toString();
@@ -220,11 +284,14 @@ public class SetWalletActivity extends NewBaseActivity {
             BaseActivity.showShortToast(SetWalletActivity.this, getString(R.string.activity_set_wallet_passwordConfirm_tips));
             return;
         }
+        if (password.length()<6){
+            BaseActivity.showShortToast(SetWalletActivity.this, getString(R.string.activity_set_wallet_passwordDigitError_tips));
+            return;
+        }
         if (!checkBox.isChecked()) {
             BaseActivity.showShortToast(SetWalletActivity.this, getString(R.string.activity_set_wallet_unCheck_tips));
             return;
         }
-
         if (choose_wallet_type != null && choose_wallet_type.equals(ActivityHelp.CHOOSE_WALLET_TYPE_IMPORT)) {
             Intent intent = new Intent(SetWalletActivity.this,
                     ImportWalletActivity.class);

@@ -59,6 +59,7 @@
     <string name="activity_set_wallet_confirmEmpty_tips">Name and Password not empty</string>
     <string name="activity_set_wallet_unCheck_tips">Please validate the sha256 for current version</string>
     <string name="activity_set_wallet_SHA256_tips">Current sha256:</string>
+    <string name="activity_set_wallet_passwordDigitError_tips">Password must be at least 6 characters</string>
 
     <string name="activity_create_wallet_textViewTitle_text">Create Wallet</string>
     <string name="activity_create_wallet_textViewTips_text">• Backup mnemonic words:\nThis is for restoring your wallet, please write it down legibly and store it in a safe place.\n• Please do not screenshot:\nAnyone with your mnemonic words can access or spend your assets.</string>
@@ -75,7 +76,7 @@
     <string name="activity_import_wallet_fragment_quick_restore_height_tips">Quick restore height:</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">Mnemonic Words</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">Please enter mnemonic words and separate each word by spaces</string>
-    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">It is highly recommended to fill recent transaction date to speed up sync or block height.</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">Can fill recent transaction date or block height to speed up sync</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">Recent Transaction Date (Optional)</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">Height (Optional)</string>
     <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">Mnemonic can not be empty</string>

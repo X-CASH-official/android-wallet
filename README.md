@@ -24,7 +24,7 @@ Linux CMD: sha256sum FILENAME
 
 # Version v1.0.2
 
-Apk File SHA256:3b2a74225203aededc23d711749fb05933d3ba52ffe22bc0cf99c774d47fdf53
+Apk File SHA256:12e355fe8fd75368b7ecf31bc6765caeb4b1134ca2c946dec6d9571300a48019
 
 Signature information checked inside the app:
 

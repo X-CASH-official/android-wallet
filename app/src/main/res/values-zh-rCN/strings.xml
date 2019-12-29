@@ -59,6 +59,7 @@
     <string name="activity_set_wallet_confirmEmpty_tips">名称和密码不能为空</string>
     <string name="activity_set_wallet_unCheck_tips">请仔细校验当前版本的sha256值</string>
     <string name="activity_set_wallet_SHA256_tips">当前sha256值:</string>
+    <string name="activity_set_wallet_passwordDigitError_tips">密码不能少于6位</string>
 
     <string name="activity_create_wallet_textViewTitle_text">创建钱包</string>
     <string name="activity_create_wallet_textViewTips_text">• 备份助记词:\n助记词用于恢复钱包，请将它准确的抄写在纸上并存放在安全的地方。\n• 请勿截图:\n如果有人获取您的助记词将直接获取您的资产。</string>
@@ -75,7 +76,7 @@
     <string name="activity_import_wallet_fragment_quick_restore_height_tips">快速恢复高度:</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">助记词</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">输入助记词，用空格分割</string>
-    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">为了极大提升区块同步速度，我们建议您填写近期交易时间或区块号</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">可以填写最近的交易日期或区块高度以加快同步</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">近期交易日期（选填）</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">区块号（选填）</string>
     <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">助记词不能为空</string>
