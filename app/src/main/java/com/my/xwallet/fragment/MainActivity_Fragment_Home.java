@@ -268,6 +268,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             @Override
             public void okClick(PopupWindow popupWindow, View view) {
                 popupWindow.dismiss();
+                TheApplication.getTheApplication().getWalletServiceHelper().closeActiveWallet();
                 WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
                 if (walletOperateManager == null) {
                     return;

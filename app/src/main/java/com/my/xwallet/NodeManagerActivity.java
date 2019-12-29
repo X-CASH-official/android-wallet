@@ -256,7 +256,7 @@ public class NodeManagerActivity extends NewBaseActivity {
                     BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeError_tips));
                 } else {
                     BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeSuccess_tips));
-                    MainActivity.loadRefreshWalletIfActivityExist(wallet, set_wallet_password, true);
+                    TheApplication.getTheApplication().getWalletServiceHelper().openWallet(wallet,set_wallet_password,true);
                     finish();
                 }
             }

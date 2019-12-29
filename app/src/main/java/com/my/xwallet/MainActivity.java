@@ -34,7 +34,6 @@ import com.my.utils.WalletServiceHelper;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.aidl.OnNormalListener;
-import com.my.xwallet.aidl.OnWalletDataListener;
 import com.my.xwallet.aidl.WalletOperateManager;
 import com.my.xwallet.fragment.MainActivity_Fragment_Find;
 import com.my.xwallet.fragment.MainActivity_Fragment_Home;
@@ -398,41 +397,6 @@ public class MainActivity extends NewBaseActivity {
         }
     }
 
-    private void loadRefreshWallet(Wallet wallet, String set_wallet_password, boolean needReset) {
-        if (wallet == null || set_wallet_password == null) {
-            return;
-        }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
-        }
-        try {
-            walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), needReset, new OnWalletDataListener.Stub() {
-                @Override
-                public void onSuccess(final com.my.xwallet.aidl.Wallet wallet) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            BaseActivity.showShortToast(MainActivity.this, error);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void closeWallet() {
         if (wallet == null) {
             return;
@@ -563,13 +527,6 @@ public class MainActivity extends NewBaseActivity {
         MainActivity mainActivity = (MainActivity) TheApplication.getActivityFromActivityManager(MainActivity.class.getName());
         if (mainActivity != null) {
             mainActivity.refreshAddress();
-        }
-    }
-
-    public static void loadRefreshWalletIfActivityExist(Wallet wallet, String set_wallet_password, boolean needReset) {
-        MainActivity mainActivity = (MainActivity) TheApplication.getActivityFromActivityManager(MainActivity.class.getName());
-        if (mainActivity != null) {
-            mainActivity.loadRefreshWallet(wallet, set_wallet_password, needReset);
         }
     }
 

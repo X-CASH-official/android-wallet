@@ -201,6 +201,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
         if (wallet == null) {
             return;
         }
+        TheApplication.getTheApplication().getWalletServiceHelper().closeWallet(wallet.getId());
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
         if (walletOperateManager == null) {
             return;

@@ -235,6 +235,7 @@ public class WalletManagerActivity extends NewBaseActivity {
         if (doCloseActiveWallet) {
             return;
         }
+        TheApplication.getTheApplication().getWalletServiceHelper().closeActiveWallet();
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
         if (walletOperateManager == null) {
             return;

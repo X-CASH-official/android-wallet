@@ -17,11 +17,13 @@ import android.os.Looper;
 import android.os.RemoteException;
 
 import com.my.base.BaseActivity;
+import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.MainActivity;
 import com.my.xwallet.R;
 import com.my.xwallet.TheApplication;
 import com.my.xwallet.WalletRunningActivity;
 import com.my.xwallet.aidl.OnNormalListener;
+import com.my.xwallet.aidl.OnWalletDataListener;
 import com.my.xwallet.aidl.OnWalletRefreshListener;
 import com.my.xwallet.aidl.WalletOperateManager;
 import com.my.xwallet.aidl.manager.XManager;
@@ -36,7 +38,10 @@ public class WalletServiceHelper {
     private Context context;
     private NotificationHelper notificationHelper;
     private int notificationId = 1;
-    private CacheHelper cacheHelper=new CacheHelper<String>(200);
+    private CacheHelper cacheHelper=new CacheHelper<String>(2000);
+    private Wallet wallet;
+    private String password;
+
     private ServiceConnection serviceConnection = new ServiceConnection() {
 
         /**
@@ -63,6 +68,7 @@ public class WalletServiceHelper {
                     BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
                     TheApplication.cancelAllDialogFromActivityManager();
                     bindService();
+                    openWallet(wallet,password,true);
                 }
             }, 500);
         }
@@ -72,6 +78,41 @@ public class WalletServiceHelper {
     public WalletServiceHelper(Context context) {
         this.context = context.getApplicationContext();
         notificationHelper= new NotificationHelper(context, context.getString(R.string.app_name), context.getString(R.string.app_name));
+    }
+
+    private void loadRefreshWallet(Wallet wallet, String set_wallet_password,boolean needReset) {
+        if (wallet == null || set_wallet_password == null) {
+            return;
+        }
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), needReset, new OnWalletDataListener.Stub() {
+                @Override
+                public void onSuccess(final com.my.xwallet.aidl.Wallet wallet) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            BaseActivity.showShortToast(context, error);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     public void bindService() {
@@ -96,6 +137,32 @@ public class WalletServiceHelper {
             BaseActivity.showLongToast(TheApplication.getTheApplication(), TheApplication.getTheApplication().getString(R.string.service_uninitialized_tips));
         }
         return walletOperateManager;
+    }
+
+    public void openWallet(final Wallet wallet,final String password,final boolean needReset){
+        if (wallet==null||password==null){
+            return;
+        }
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadRefreshWallet(wallet,password,needReset);
+            }
+        },500);
+        this.wallet=wallet;
+        this.password=password;
+    }
+
+    public void closeWallet(int walletId){
+        if (wallet!=null&&wallet.getId()==walletId) {
+            wallet = null;
+            password = null;
+        }
+    }
+
+    public void closeActiveWallet(){
+        wallet=null;
+        password=null;
     }
 
     public static void verifyWalletPasswordOnly(final BaseActivity baseActivity, String name, String password, final OnVerifyWalletPasswordListener onVerifyWalletPasswordListener) {
