@@ -67,6 +67,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
     private RelativeLayout relativeLayoutAddress;
     private TextView textViewAddress;
     private LinearLayout linearLayoutTransactionContent;
+    private RelativeLayout relativeLayoutTransactionInfo;
     private LinearLayout linearLayoutTransactionDetails;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
 
@@ -120,6 +121,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         relativeLayoutAddress = (RelativeLayout) view.findViewById(R.id.relativeLayoutAddress);
         textViewAddress = (TextView) view.findViewById(R.id.textViewAddress);
         linearLayoutTransactionContent = (LinearLayout) view.findViewById(R.id.linearLayoutTransactionContent);
+        relativeLayoutTransactionInfo= (RelativeLayout) view.findViewById(R.id.relativeLayoutTransactionInfo);
         linearLayoutTransactionDetails = (LinearLayout) view.findViewById(R.id.linearLayoutTransactionDetails);
         baseRecyclerViewFromFrameLayout = (BaseRecyclerViewFromFrameLayout) view.findViewById(R.id.baseRecyclerViewFromFrameLayout);
 
@@ -133,7 +135,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         adaptationStatusBar(relativeLayoutContent);
         cardView.setVisibility(View.GONE);
         linearLayoutTransactionContent.setVisibility(View.GONE);
-
         BaseRecyclerViewFromFrameLayoutHelp.setEmptyTransactionTips(getBaseActivity(), baseRecyclerViewFromFrameLayout);
     }
 
@@ -210,6 +211,11 @@ public class MainActivity_Fragment_Home extends BaseFragment {
     private void initOrRefreshAdapter(List<ViewItem> viewItems) {
         if (viewItems == null) {
             viewItems = new ArrayList<ViewItem>();
+        }
+        if (viewItems.size()==0){
+            relativeLayoutTransactionInfo.setVisibility(View.GONE);
+        }else {
+            relativeLayoutTransactionInfo.setVisibility(View.VISIBLE);
         }
         if (transaction_Default_RecyclerViewAdapter == null) {
             transaction_Default_RecyclerViewAdapter = new Transaction_Default_RecyclerViewAdapter(getBaseActivity(), baseRecyclerViewFromFrameLayout.getRecyclerView(), viewItems);

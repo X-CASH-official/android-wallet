@@ -20,4 +20,5 @@
         android:text="@string/normal_nodata_textView_text"
         android:textColor="?attr/mainColorText"
         android:textSize="@dimen/textView_normal_textSize_default" />
+
 </LinearLayout>
