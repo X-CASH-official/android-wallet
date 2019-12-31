@@ -9,7 +9,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tint="?attr/mainColorText"
+        android:tint="@color/normal_nodata"
         android:src="@mipmap/normal_nodata" />
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/view_normal_margin_default"
         android:text="@string/normal_nodata_textView_text"
-        android:textColor="?attr/mainColorText"
+        android:textColor="@color/normal_nodata"
         android:textSize="@dimen/textView_normal_textSize_default" />
 
 </LinearLayout>

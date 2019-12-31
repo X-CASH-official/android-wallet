@@ -19,6 +19,7 @@
     <color name="unSelectColor_default">#dddddd</color>
     <color name="line_normal_background">#dddddd</color>
     <color name="normal_load_completed">#999999</color>
+    <color name="normal_nodata">#999999</color>
     <color name="editText_background_default">#f2f2f2</color>
 
     <color name="activity_create_wallet_background_1">#469194</color>

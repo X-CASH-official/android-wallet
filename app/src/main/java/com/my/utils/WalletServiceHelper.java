@@ -65,7 +65,7 @@ public class WalletServiceHelper {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
+                  //BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
                     TheApplication.cancelAllDialogFromActivityManager();
                     bindService();
                     openWallet(wallet,password,true);
