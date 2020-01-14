@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
@@ -11,6 +11,7 @@ package com.my.monero.api;
 import java.util.Date;
 
 public interface QueryOrderStatus {
+
     enum State {
         UNDEF,
         TO_BE_CREATED, // order creation pending

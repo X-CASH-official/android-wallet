@@ -1,14 +1,15 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
 package com.my.monero.ledger;
 
 public enum Instruction {
+
     INS_NONE(0x00),
     INS_RESET(0x02),
     INS_GET_KEY(0x20),
@@ -131,4 +132,5 @@ public enum Instruction {
     Instruction(int value) {
         this.value = value;
     }
+
 }

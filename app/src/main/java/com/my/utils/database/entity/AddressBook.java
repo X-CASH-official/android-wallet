@@ -59,4 +59,14 @@ public class AddressBook implements Serializable {
         this.notes = notes;
     }
 
+    @Override
+    public String toString() {
+        return "AddressBook{" +
+                "id=" + id +
+                ", symbol='" + symbol + '\'' +
+                ", address='" + address + '\'' +
+                ", notes='" + notes + '\'' +
+                '}';
+    }
+
 }

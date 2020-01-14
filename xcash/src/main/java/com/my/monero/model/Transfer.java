@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
@@ -12,6 +12,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Transfer implements Parcelable {
+
     public long amount;
     public String address;
 

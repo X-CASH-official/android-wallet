@@ -26,19 +26,22 @@ public class Node implements Serializable {
     @ColumnInfo
     private String url;
     @ColumnInfo
-    private boolean isActive;
-    @Ignore
+    private String username;
     @ColumnInfo
-    private long responseTime;
+    private String password;
+    @ColumnInfo
+    private boolean isActive;
 
     public Node() {
 
     }
 
     @Ignore
-    public Node(String symbol, String url, boolean isActive) {
+    public Node(String symbol, String url, String username, String password, boolean isActive) {
         this.symbol = symbol;
         this.url = url;
+        this.username = username;
+        this.password = password;
         this.isActive = isActive;
     }
 
@@ -66,6 +69,22 @@ public class Node implements Serializable {
         this.url = url;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public boolean isActive() {
         return isActive;
     }
@@ -74,12 +93,16 @@ public class Node implements Serializable {
         isActive = active;
     }
 
-    public long getResponseTime() {
-        return responseTime;
-    }
-
-    public void setResponseTime(long responseTime) {
-        this.responseTime = responseTime;
+    @Override
+    public String toString() {
+        return "Node{" +
+                "id=" + id +
+                ", symbol='" + symbol + '\'' +
+                ", url='" + url + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", isActive=" + isActive +
+                '}';
     }
 
 }

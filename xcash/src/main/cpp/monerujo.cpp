@@ -571,7 +571,7 @@ Java_com_my_monero_model_WalletManager_closeJ(JNIEnv *env, jobject instance,
                                               jobject walletInstance) {
     XCash::Wallet *wallet = getHandle<XCash::Wallet>(env, walletInstance);
     bool closeSuccess = XCash::WalletManagerFactory::getWalletManager()->closeWallet(wallet,
-                                                                                         false);
+                                                                                     false);
     if (closeSuccess) {
         MyWalletListener *walletListener = getHandle<MyWalletListener>(env, walletInstance,
                                                                        "listenerHandle");

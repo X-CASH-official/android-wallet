@@ -1,17 +1,14 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
 package com.my.monero.model;
 
 
-import android.util.Log;
-
-import com.my.monero.data.Node;
 import com.my.monero.ledger.Ledger;
 import com.my.monero.util.RestoreHeight;
 
@@ -20,22 +17,11 @@ import java.util.Date;
 
 public class WalletManager {
 
-    private static final String TAG = "WalletManager";
-
     static {
         System.loadLibrary("monerujo");
     }
 
     private static WalletManager walletManager;
-
-
-    private String daemonUsername = "";
-
-    private String daemonPassword = "";
-
-    private boolean activeDaemon;
-
-    private String daemonAddress = null;
 
     private final NetworkType networkType = NetworkType.NetworkType_Mainnet;
 
@@ -46,19 +32,15 @@ public class WalletManager {
         return walletManager;
     }
 
-
     public Wallet createWallet(File aFile, String password, String language) {
         long walletHandle = createWalletJ(aFile.getAbsolutePath(), password, language, getNetworkType().getValue());
         Wallet wallet = new Wallet(walletHandle);
         if (wallet.getStatus() == Wallet.Status.Status_Ok) {
-            long oldHeight = wallet.getRestoreHeight();
             wallet.setRestoreHeight(RestoreHeight.getInstance().getHeight(new Date()));
-            Log.d(TAG, "Changed Restore Height from " + oldHeight + " to " + wallet.getRestoreHeight());
             wallet.setPassword(password); // this rewrites the keys file (which contains the restore height)
         }
         return wallet;
     }
-
 
     public Wallet openAccount(String path, int accountIndex, String password) {
         long walletHandle = openWalletJ(path, password, getNetworkType().getValue());
@@ -72,7 +54,6 @@ public class WalletManager {
         return wallet;
     }
 
-
     public Wallet recoveryWallet(File aFile, String password, String mnemonic) {
         return recoveryWallet(aFile, password, mnemonic, 0);
     }
@@ -83,7 +64,6 @@ public class WalletManager {
         Wallet wallet = new Wallet(walletHandle);
         return wallet;
     }
-
 
     public Wallet createWalletWithKeys(File aFile, String password, String language, long restoreHeight,
                                        String addressString, String viewKeyString, String spendKeyString) {
@@ -104,15 +84,12 @@ public class WalletManager {
     }
 
     public boolean close(Wallet wallet) {
-        wallet.pauseRefresh();
-        wallet.setListener(null);
         return closeJ(wallet);
     }
 
     public boolean walletExists(File aFile) {
         return walletExists(aFile.getAbsolutePath());
     }
-
 
     public boolean verifyWalletPasswordOnly(String keys_file_name, String password) {
         return queryWalletDeviceJ(keys_file_name, password) >= 0;
@@ -121,24 +98,6 @@ public class WalletManager {
     public Wallet.Device queryWalletDevice(String keys_file_name, String password) {
         int device = queryWalletDeviceJ(keys_file_name, password);
         return Wallet.Device.values()[device + 1];
-    }
-
-
-    public void setDaemon(Node node) {
-        if (node != null) {
-            this.daemonAddress = node.getAddress();
-            if (networkType != node.getNetworkType())
-                throw new IllegalArgumentException("network type does not match");
-            this.daemonUsername = node.getUsername();
-            this.daemonPassword = node.getPassword();
-            setDaemonAddressJ(daemonAddress);
-        } else {
-            this.daemonAddress = null;
-            this.daemonUsername = "";
-            this.daemonPassword = "";
-            setDaemonAddressJ("");
-        }
-        activeDaemon = true;
     }
 
     public NetworkType getNetworkType() {
@@ -157,31 +116,11 @@ public class WalletManager {
         }
     }
 
-
-    public String getDaemonAddress() {
-        return this.daemonAddress;
-    }
-
-    public String getDaemonUsername() {
-        return daemonUsername;
-    }
-
-    public String getDaemonPassword() {
-        return daemonPassword;
-    }
-
-    public boolean isActiveDaemon() {
-        return activeDaemon;
-    }
-
-
     public native long createWalletJ(String path, String password, String language, int networkType);
 
     public native int queryWalletDeviceJ(String keys_file_name, String password);
 
-
     public native long openWalletJ(String path, String password, int networkType);
-
 
     public native long recoveryWalletJ(String path, String password, String mnemonic,
                                        int networkType, long restoreHeight);

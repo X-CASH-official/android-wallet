@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7481e29d-fd88-4ecc-a5ea-d872d5c85960" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/aidl/com/my/xwallet/aidl/WalletOperateManager.aidl" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/aidl/com/my/xwallet/aidl/WalletOperateManager.aidl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/WalletServiceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/WalletServiceHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/AddressBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/utils/database/entity/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/NodeAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/NodeAddActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/NodeManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/NodeManagerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/WalletRunningActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/WalletRunningActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/manager/XManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/manager/XManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/manager/XWalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/manager/XWalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/aidl/service/WalletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/uihelp/ActivityHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/my/xwallet/uihelp/ActivityHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_node_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_node_add.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values-zh-rCN/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values-zh-rCN/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/21.png" beforeDir="false" afterPath="$PROJECT_DIR$/21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libblocks.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libcncrypto.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libcommon.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libdevice.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libeasylogging.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libepee.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/liblmdb.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libmnemonics.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libmultisig.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libringct.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libringct_basic.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libunbound.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libversion.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libwallet.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/arm64-v8a/libwallet_api.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libblockchain_db.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libblocks.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libcheckpoints.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libcncrypto.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libcommon.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libcryptonote_basic.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libcryptonote_core.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libdevice.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libeasylogging.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libepee.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/liblmdb.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libmnemonics.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libmultisig.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libringct.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libringct_basic.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libunbound.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libversion.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libwallet.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash-libs/monero/lib/armeabi-v7a/libwallet_api.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/cpp/monerujo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/cpp/monerujo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/api/QueryOrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/api/QueryOrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/data/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/data/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/data/TxData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/data/TxData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/ledger/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/ledger/Instruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/ledger/Ledger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/ledger/Ledger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/NetworkType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/NetworkType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/PendingTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/PendingTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/SubaddressRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/SubaddressRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/TransactionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/TransactionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/Transfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/WalletManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/model/WalletManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/util/RestoreHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/util/RestoreHeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/util/UserNotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../xcash/src/main/java/com/my/monero/util/UserNotes.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-192" />
+    <option name="y" value="422" />
+    <option name="width" value="1657" />
+    <option name="height" value="1016" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7481e29d-fd88-4ecc-a5ea-d872d5c85960" name="Default Changelist" comment="" />
+      <created>1579015835865</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579015835865</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-192" y="422" width="1657" height="1016" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32944787" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+</project>

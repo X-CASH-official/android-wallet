@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
@@ -132,7 +132,6 @@ public class Wallet {
 
     public boolean store() {
         final boolean ok = store("");
-        Log.d(TAG, "stored");
         return ok;
     }
 
@@ -146,10 +145,8 @@ public class Wallet {
     public native String getFilename();
 
     //    virtual std::string keysFilename() const = 0;
-    public boolean init(long upper_transaction_size_limit) {
-        return initJ(WalletManager.getInstance().getDaemonAddress(), upper_transaction_size_limit,
-                WalletManager.getInstance().getDaemonUsername(),
-                WalletManager.getInstance().getDaemonPassword());
+    public boolean init(String daemon_address, long upper_transaction_size_limit, String daemon_username, String daemon_password) {
+        return initJ(daemon_address, upper_transaction_size_limit, daemon_username, daemon_password);
     }
 
     private native boolean initJ(String daemon_address, long upper_transaction_size_limit,
@@ -248,7 +245,7 @@ public class Wallet {
         }
     }
 
-    public PendingTransaction createTransaction(TxData txData) throws Exception{
+    public PendingTransaction createTransaction(TxData txData) throws Exception {
         int privacy_settings = 0;
         if (!txData.isPublicTransaction()) {
             privacy_settings = 1;
@@ -265,14 +262,14 @@ public class Wallet {
 
     public PendingTransaction createTransaction(String dst_addr, String payment_id,
                                                 long amount, int mixin_count,
-                                                PendingTransaction.Priority priority, int privacy_settings) throws Exception{
+                                                PendingTransaction.Priority priority, int privacy_settings) throws Exception {
         disposePendingTransaction();
         int _priority = priority.getValue();
         long txHandle;
-        if (amount==-1){
+        if (amount == -1) {
             txHandle = createSweepTransaction(dst_addr, payment_id, mixin_count, _priority,
                     accountIndex, privacy_settings);
-        }else{
+        } else {
             txHandle = createTransactionJ(dst_addr, payment_id, amount, mixin_count, _priority,
                     accountIndex, privacy_settings);
         }
@@ -281,8 +278,8 @@ public class Wallet {
         return pendingTransaction;
     }
 
-    private void checkTxHandle(long txHandle){
-        if (txHandle==0){
+    private void checkTxHandle(long txHandle) {
+        if (txHandle == 0) {
             throw new IllegalStateException("createTransaction failed");
         }
     }
@@ -296,7 +293,7 @@ public class Wallet {
                                                int priority, int accountIndex, int tx_privacy_settings);
 
 
-    public PendingTransaction createSweepUnmixableTransaction() throws Exception{
+    public PendingTransaction createSweepUnmixableTransaction() throws Exception {
         disposePendingTransaction();
         long txHandle = createSweepUnmixableTransactionJ();
         checkTxHandle(txHandle);

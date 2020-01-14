@@ -175,7 +175,6 @@ public class WalletRunningActivity extends NewBaseActivity {
                         Intent intent = new Intent(WalletRunningActivity.this,
                                 NodeManagerActivity.class);
                         intent.putExtra(ActivityHelp.WALLET_KEY, wallet);
-                        intent.putExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY, set_wallet_password);
                         startActivity(intent);
                         break;
                     case R.id.relativeLayoutAddress:

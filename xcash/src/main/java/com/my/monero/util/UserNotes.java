@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
@@ -15,6 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserNotes {
+
     public String txNotes = "";
     public String note = "";
     public String xmrtoKey = null;
@@ -78,4 +79,5 @@ public class UserNotes {
         sb.append(note);
         return sb.toString();
     }
+
 }

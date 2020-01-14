@@ -12,7 +12,7 @@ import com.my.xwallet.aidl.OnCreateTransactionListener;
 
 interface WalletOperateManager {
 
-    void setDaemon(String url,OnNormalListener onNormalListener);
+    void setDaemon(String url,String username,String password,OnNormalListener onNormalListener);
 
     void createWallet(String name,String password,String passwordPrompt,OnWalletDataListener onWalletDataListener);
 

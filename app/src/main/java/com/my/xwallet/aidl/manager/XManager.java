@@ -7,14 +7,12 @@ package com.my.xwallet.aidl.manager;
 
 import com.my.base.utils.FileTool;
 import com.my.base.utils.LogTool;
-import com.my.monero.model.WalletManager;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.Wallet;
 import com.my.xwallet.TheApplication;
 
 import java.io.File;
-import java.net.UnknownHostException;
 import java.util.List;
 
 /**
@@ -74,16 +72,6 @@ public class XManager {
         return xWalletController.createWalletWithKeys(generateXMRFile(walletName), password, restoreHeight, address, viewKey, spendKey);
     }
 
-    public void setNode(String host, int port) throws UnknownHostException {
-        if (host == null) {
-            return;
-        }
-        com.my.monero.data.Node node = new com.my.monero.data.Node();
-        node.setHost(host);
-        node.setRpcPort(port);
-        WalletManager.getInstance().setDaemon(node);
-    }
-
     public boolean verifyWalletPasswordOnly(String name, String password) {
         if (name == null || password == null) {
             return false;
@@ -106,11 +94,11 @@ public class XManager {
         return xWalletController.openWallet(file.getPath(), password, walletId);
     }
 
-    public boolean startWallet(com.my.monero.model.Wallet wallet, long restoreHeight, XWalletController.OnWalletListener onWalletListener) {
+    public boolean startWallet(com.my.monero.model.Wallet wallet, Node node, long restoreHeight, XWalletController.OnWalletListener onWalletListener) {
         if (wallet == null) {
             return false;
         }
-        return xWalletController.startWallet(wallet, restoreHeight, onWalletListener);
+        return xWalletController.startWallet(wallet, node, restoreHeight, onWalletListener);
     }
 
     public XWalletController getXWalletController() {
@@ -150,15 +138,17 @@ public class XManager {
         if (nodes != null && nodes.size() > 0) {
             return;
         }
-        Node[] defaultNodesArray = new Node[8];
-        defaultNodesArray[0] = new Node(SYMBOL, "asiaseed2.x-cash.org:18281", true);
-        defaultNodesArray[1] = new Node(SYMBOL, "asiaseed1.x-cash.org:18281", false);
-        defaultNodesArray[2] = new Node(SYMBOL, "usseed3.x-cash.org:18281", false);
-        defaultNodesArray[3] = new Node(SYMBOL, "usseed2.x-cash.org:18281", false);
-        defaultNodesArray[4] = new Node(SYMBOL, "usseed1.x-cash.org:18281", false);
-        defaultNodesArray[5] = new Node(SYMBOL, "euseed3.x-cash.org:18281", false);
-        defaultNodesArray[6] = new Node(SYMBOL, "euseed2.x-cash.org:18281", false);
-        defaultNodesArray[7] = new Node(SYMBOL, "euseed1.x-cash.org:18281", false);
+        Node[] defaultNodesArray = new Node[10];
+        defaultNodesArray[0] = new Node(SYMBOL, "asiaseed2.x-cash.org:18281", "","",true);
+        defaultNodesArray[1] = new Node(SYMBOL, "asiaseed1.x-cash.org:18281", "","",false);
+        defaultNodesArray[2] = new Node(SYMBOL, "usseed3.x-cash.org:18281", "","",false);
+        defaultNodesArray[3] = new Node(SYMBOL, "usseed2.x-cash.org:18281", "","",false);
+        defaultNodesArray[4] = new Node(SYMBOL, "usseed1.x-cash.org:18281", "","",false);
+        defaultNodesArray[5] = new Node(SYMBOL, "euseed3.x-cash.org:18281", "","",false);
+        defaultNodesArray[6] = new Node(SYMBOL, "euseed2.x-cash.org:18281", "","",false);
+        defaultNodesArray[7] = new Node(SYMBOL, "euseed1.x-cash.org:18281", "","",false);
+        defaultNodesArray[8] = new Node(SYMBOL, "xcash-china2.oiwm.com:18281", "","",false);
+        defaultNodesArray[9] = new Node(SYMBOL, "xcash-china1.oiwm.com:18281", "snakeway","snake123456",false);
         AppDatabase.getInstance().nodeDao().insertNodes(defaultNodesArray);
     }
 

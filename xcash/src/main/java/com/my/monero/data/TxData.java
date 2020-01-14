@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
@@ -17,6 +17,7 @@ import com.my.monero.util.UserNotes;
 
 // https://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-android-activity-to-another-using-intents
 public class TxData implements Parcelable {
+
     private String dstAddr;
     private String paymentId;
     private long amount;
@@ -27,6 +28,7 @@ public class TxData implements Parcelable {
     private UserNotes userNotes;
 
     public TxData() {
+
     }
 
     public TxData(TxData txData) {
@@ -132,7 +134,6 @@ public class TxData implements Parcelable {
         this.publicTransaction = in.readByte() != 0;
     }
 
-
     @Override
     public String toString() {
         return "TxData{" +
@@ -157,4 +158,5 @@ public class TxData implements Parcelable {
             return new TxData[size];
         }
     };
+
 }

@@ -32,6 +32,10 @@ public class NodeAddActivity extends NewBaseActivity {
     private FrameLayout frameLayoutNodeIp;
     private EditText editTextNodePort;
     private FrameLayout frameLayoutNodePort;
+    private EditText editTextUsername;
+    private FrameLayout frameLayoutUsername;
+    private EditText editTextPassword;
+    private FrameLayout frameLayoutPassword;
     private Button buttonNext;
 
     private View.OnFocusChangeListener onFocusChangeListener;
@@ -69,6 +73,10 @@ public class NodeAddActivity extends NewBaseActivity {
         frameLayoutNodeIp = (FrameLayout) findViewById(R.id.frameLayoutNodeIp);
         editTextNodePort = (EditText) findViewById(R.id.editTextNodePort);
         frameLayoutNodePort = (FrameLayout) findViewById(R.id.frameLayoutNodePort);
+        editTextUsername = (EditText) findViewById(R.id.editTextUsername);
+        frameLayoutUsername = (FrameLayout) findViewById(R.id.frameLayoutUsername);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        frameLayoutPassword = (FrameLayout) findViewById(R.id.frameLayoutPassword);
         buttonNext = (Button) findViewById(R.id.buttonNext);
         onFocusChangeListener();
         onClickListener();
@@ -108,6 +116,20 @@ public class NodeAddActivity extends NewBaseActivity {
                             frameLayoutNodePort.setBackgroundColor(mainColorText);
                         }
                         break;
+                    case R.id.editTextUsername:
+                        if (hasFocus) {
+                            frameLayoutUsername.setBackgroundColor(colorPrimary);
+                        } else {
+                            frameLayoutUsername.setBackgroundColor(mainColorText);
+                        }
+                        break;
+                    case R.id.editTextPassword:
+                        if (hasFocus) {
+                            frameLayoutPassword.setBackgroundColor(colorPrimary);
+                        } else {
+                            frameLayoutPassword.setBackgroundColor(mainColorText);
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -116,6 +138,8 @@ public class NodeAddActivity extends NewBaseActivity {
         };
         editTextNodeIp.setOnFocusChangeListener(onFocusChangeListener);
         editTextNodePort.setOnFocusChangeListener(onFocusChangeListener);
+        editTextUsername.setOnFocusChangeListener(onFocusChangeListener);
+        editTextPassword.setOnFocusChangeListener(onFocusChangeListener);
     }
 
     private void onClickListener() {
@@ -141,6 +165,8 @@ public class NodeAddActivity extends NewBaseActivity {
     private void doNext() {
         String nodeIp = editTextNodeIp.getText().toString();
         String nodePort = editTextNodePort.getText().toString();
+        String username = editTextUsername.getText().toString();
+        String password = editTextPassword.getText().toString();
         if (nodeIp.equals("") || nodePort.equals("")) {
             BaseActivity.showShortToast(NodeAddActivity.this, getString(R.string.activity_node_add_confirmEmpty_tips));
             return;
@@ -148,6 +174,8 @@ public class NodeAddActivity extends NewBaseActivity {
         Intent intent = new Intent();
         intent.putExtra(ActivityHelp.REQUEST_NODE_IP_KEY, nodeIp);
         intent.putExtra(ActivityHelp.REQUEST_NODE_PORT_KEY, nodePort);
+        intent.putExtra(ActivityHelp.REQUEST_NODE_USERNAME_KEY, username);
+        intent.putExtra(ActivityHelp.REQUEST_NODE_PASSWORD_KEY, password);
         intent.putExtra(ActivityHelp.REQUEST_SYMBOL_KEY, XManager.SYMBOL);
         setResult(Activity.RESULT_OK, intent);
         finish();

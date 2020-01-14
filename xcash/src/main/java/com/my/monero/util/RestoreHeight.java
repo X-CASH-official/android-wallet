@@ -1,14 +1,13 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
 package com.my.monero.util;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,7 +20,7 @@ public class RestoreHeight {
 
     private static RestoreHeight restoreHeight;
 
-    private Map<String, Long> blockheight = new HashMap<>();
+    private Map<String, Long> blockHeight = new HashMap<>();
 
     public static synchronized RestoreHeight getInstance() {
         if (restoreHeight == null) {
@@ -30,25 +29,24 @@ public class RestoreHeight {
         return restoreHeight;
     }
 
-
     public RestoreHeight() {
-        blockheight.put("2018-08-01", 0L);
-        blockheight.put("2018-09-01", 49000L);
-        blockheight.put("2018-10-01", 89900L);
-        blockheight.put("2018-11-01", 127000L);
-        blockheight.put("2018-12-01", 170000L);
-        blockheight.put("2019-01-01", 215000L);
-        blockheight.put("2019-02-01", 257000L);
-        blockheight.put("2019-03-01", 289000L);
-        blockheight.put("2019-04-01", 311000L);
-        blockheight.put("2019-05-01", 333000L);
-        blockheight.put("2019-06-01", 355000L);
-        blockheight.put("2019-07-01", 377000L);
-        blockheight.put("2019-08-01", 399000L);
-        blockheight.put("2019-09-01", 421000L);
-        blockheight.put("2019-10-01", 443660L);
-        blockheight.put("2019-11-01", 465560L);
-        blockheight.put("2019-12-01", 487600L);
+        blockHeight.put("2018-08-01", 0L);
+        blockHeight.put("2018-09-01", 49000L);
+        blockHeight.put("2018-10-01", 89900L);
+        blockHeight.put("2018-11-01", 127000L);
+        blockHeight.put("2018-12-01", 170000L);
+        blockHeight.put("2019-01-01", 215000L);
+        blockHeight.put("2019-02-01", 257000L);
+        blockHeight.put("2019-03-01", 289000L);
+        blockHeight.put("2019-04-01", 311000L);
+        blockHeight.put("2019-05-01", 333000L);
+        blockHeight.put("2019-06-01", 355000L);
+        blockHeight.put("2019-07-01", 377000L);
+        blockHeight.put("2019-08-01", 399000L);
+        blockHeight.put("2019-09-01", 421000L);
+        blockHeight.put("2019-10-01", 443660L);
+        blockHeight.put("2019-11-01", 465560L);
+        blockHeight.put("2019-12-01", 487600L);
     }
 
     public long getHeight(String date) {
@@ -77,7 +75,7 @@ public class RestoreHeight {
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         long prevTime = calendar.getTimeInMillis();
         String prevDate = formatter.format(prevTime);
-        Long prevBc = blockheight.get(prevDate);
+        Long prevBc = blockHeight.get(prevDate);
         if (prevBc == null) {
             while (prevBc == null) {
                 calendar.add(Calendar.MONTH, -1);
@@ -86,7 +84,7 @@ public class RestoreHeight {
                 }
                 prevTime = calendar.getTimeInMillis();
                 prevDate = formatter.format(prevTime);
-                prevBc = blockheight.get(prevDate);
+                prevBc = blockHeight.get(prevDate);
             }
         }
         long height = prevBc;
@@ -94,7 +92,7 @@ public class RestoreHeight {
         calendar.add(Calendar.MONTH, 1);
         long nextTime = calendar.getTimeInMillis();
         String nextDate = formatter.format(nextTime);
-        Long nextBc = blockheight.get(nextDate);
+        Long nextBc = blockHeight.get(nextDate);
         if (nextBc != null) {
             long diff = nextBc - prevBc;
             long diffDays = TimeUnit.DAYS.convert(nextTime - prevTime, TimeUnit.MILLISECONDS);
@@ -108,4 +106,5 @@ public class RestoreHeight {
         }
         return height;
     }
+
 }

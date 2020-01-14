@@ -70,4 +70,8 @@ public class ActivityHelp {
 
     public static final String REQUEST_NODE_PORT_KEY = "request_node_port_key";
 
+    public static final String REQUEST_NODE_USERNAME_KEY = "request_node_username_key";
+
+    public static final String REQUEST_NODE_PASSWORD_KEY = "request_node_password_key";
+
 }

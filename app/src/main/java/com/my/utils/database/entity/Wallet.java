@@ -154,4 +154,23 @@ public class Wallet implements Serializable {
         this.errorString = errorString;
     }
 
+    @Override
+    public String toString() {
+        return "Wallet{" +
+                "id=" + id +
+                ", symbol='" + symbol + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", balance='" + balance + '\'' +
+                ", unlockedBalance='" + unlockedBalance + '\'' +
+                ", passwordPrompt='" + passwordPrompt + '\'' +
+                ", restoreHeight=" + restoreHeight +
+                ", isActive=" + isActive +
+                ", seed='" + seed + '\'' +
+                ", secretViewKey='" + secretViewKey + '\'' +
+                ", secretSpendKey='" + secretSpendKey + '\'' +
+                ", errorString='" + errorString + '\'' +
+                '}';
+    }
+
 }

@@ -12,6 +12,7 @@ import com.my.monero.model.SubaddressRow;
 import com.my.monero.model.WalletListener;
 import com.my.monero.model.WalletManager;
 import com.my.monero.util.RestoreHeight;
+import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.Wallet;
 import com.my.utils.database.models.SubAddress;
 
@@ -139,24 +140,23 @@ public class XWalletController {
         return wallet;
     }
 
-    public boolean startWallet(com.my.monero.model.Wallet wallet, long restoreHeight, OnWalletListener onWalletListener) {
+    public boolean startWallet(com.my.monero.model.Wallet wallet,Node node,long restoreHeight, OnWalletListener onWalletListener) {
         if (wallet == null || onWalletListener == null) {
             return false;
         }
-        if (!startRefresh(wallet, restoreHeight, onWalletListener)) {
+        if (!startRefresh(wallet,node,restoreHeight, onWalletListener)) {
             return false;
         }
         onWalletListener.onWalletStarted();
         return true;
     }
 
-    public boolean startRefresh(final com.my.monero.model.Wallet wallet, long restoreHeight, final OnWalletListener onWalletListener) {
-        if (wallet == null || onWalletListener == null) {
+    public boolean startRefresh(final com.my.monero.model.Wallet wallet, Node node, long restoreHeight, final OnWalletListener onWalletListener) {
+        if (wallet == null||node==null|| onWalletListener == null) {
             return false;
         }
-        wallet.init(0);
+        wallet.init(node.getUrl(),0,node.getUsername(),node.getPassword());
         wallet.setRestoreHeight(restoreHeight);
-        LogTool.d(TAG, "Restore height:" +wallet.getRestoreHeight() + " Using daemon:" + WalletManager.getInstance().getDaemonAddress());
         if (wallet.getConnectionStatus() != com.my.monero.model.Wallet.ConnectionStatus.ConnectionStatus_Connected) {
             LogTool.d(TAG, "Connection error");
             onWalletListener.onWalletStartFailed(wallet.getErrorString());

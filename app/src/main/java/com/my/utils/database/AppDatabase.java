@@ -26,7 +26,7 @@ import com.my.xwallet.TheApplication;
 
 import org.jetbrains.annotations.NotNull;
 
-@Database(entities = {AddressBook.class, Node.class, TransactionInfo.class, Wallet.class}, version = 2, exportSchema = false)
+@Database(entities = {AddressBook.class, Node.class, TransactionInfo.class, Wallet.class}, version = 3, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "wallet.db";
@@ -53,20 +53,29 @@ public abstract class AppDatabase extends RoomDatabase {
         return appDatabase;
     }
 
-    public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+    public static final Migration MIGRATION_2_3 = new Migration(2, 3) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
-            database.execSQL("CREATE TABLE `transactionInfo` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `symbol` TEXT NOT NULL, `walletId` INTEGER NOT NULL, `direction` INTEGER NOT NULL, `isPending` INTEGER NOT NULL, `isFailed` INTEGER NOT NULL, `amount` TEXT, `fee` TEXT, `blockHeight` INTEGER NOT NULL, `confirmations` INTEGER NOT NULL, `hash` TEXT, `timestamp` INTEGER NOT NULL, `paymentId` TEXT, `txKey` TEXT, `address` TEXT)");
+            try {
+                database.execSQL("ALTER TABLE nodes ADD COLUMN username TEXT");
+                database.execSQL("ALTER TABLE nodes ADD COLUMN password TEXT");
+                database.execSQL("DELETE FROM nodes");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     };
 
-
     private static AppDatabase create(final Context context) {
+//        return Room.databaseBuilder(
+//                context,
+//                AppDatabase.class,
+//                DB_NAME).allowMainThreadQueries().fallbackToDestructiveMigration().build();
         return Room.databaseBuilder(
                 context,
                 AppDatabase.class,
-                DB_NAME).
-                addMigrations(new Migration[]{(Migration) AppDatabase.MIGRATION_1_2}).build();
+                DB_NAME).allowMainThreadQueries().
+                addMigrations(new Migration[]{AppDatabase.MIGRATION_2_3}).build();
     }
 
 }

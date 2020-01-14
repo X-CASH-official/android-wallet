@@ -1,14 +1,15 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
 package com.my.monero.model;
 
 public class PendingTransaction {
+
     static {
         System.loadLibrary("monerujo");
     }

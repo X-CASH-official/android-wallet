@@ -22,6 +22,7 @@ import com.my.base.BaseActivity;
 import com.my.base.recyclerviewlibrary.models.ViewItem;
 import com.my.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
 import com.my.utils.CoroutineHelper;
+import com.my.utils.WalletServiceHelper;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.Node;
 import com.my.utils.database.entity.Wallet;
@@ -35,7 +36,6 @@ import java.util.List;
 public class NodeManagerActivity extends NewBaseActivity {
 
     private Wallet wallet;
-    private String set_wallet_password;
 
     private RelativeLayout relativeLayoutRoot;
     private ImageView imageViewBack;
@@ -53,7 +53,6 @@ public class NodeManagerActivity extends NewBaseActivity {
         setContentView(R.layout.activity_node_manager);
         Intent intent = getIntent();
         wallet = (Wallet) intent.getSerializableExtra(ActivityHelp.WALLET_KEY);
-        set_wallet_password = intent.getStringExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY);
         initAll();
     }
 
@@ -189,7 +188,7 @@ public class NodeManagerActivity extends NewBaseActivity {
         startActivityForResult(intent, ActivityHelp.REQUEST_CODE_ADD_NODE);
     }
 
-    private void saveNode(final String ip, final String port, final String symbol) {
+    private void saveNode(final String ip, final String port, final String username,final String password, final String symbol) {
         if (ip == null || port == null) {
             return;
         }
@@ -200,6 +199,8 @@ public class NodeManagerActivity extends NewBaseActivity {
                 try {
                     Node node = new Node();
                     node.setUrl(ip + ":" + port);
+                    node.setUsername(username);
+                    node.setPassword(password);
                     node.setActive(false);
                     node.setSymbol(symbol);
                     AppDatabase.getInstance().nodeDao().insertNodes(node);
@@ -255,8 +256,17 @@ public class NodeManagerActivity extends NewBaseActivity {
                 if (!result) {
                     BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeError_tips));
                 } else {
-                    BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeSuccess_tips));
-                    TheApplication.getTheApplication().getWalletServiceHelper().openWallet(wallet,set_wallet_password,true);
+                    TheApplication.getTheApplication().getWalletServiceHelper().setDaemon(NodeManagerActivity.this,node.getUrl(),node.getUsername(),node.getPassword(),new WalletServiceHelper.OnSetDaemonListener(){
+                        @Override
+                        public void onSuccess(String tips) {
+                            BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeSuccess_tips));
+                        }
+
+                        @Override
+                        public void onError(String error) {
+                            BaseActivity.showShortToast(NodeManagerActivity.this, error);
+                        }
+                    });
                     finish();
                 }
             }
@@ -307,8 +317,10 @@ public class NodeManagerActivity extends NewBaseActivity {
         if (requestCode == ActivityHelp.REQUEST_CODE_ADD_NODE && resultCode == RESULT_OK && data != null) {
             String ip = data.getStringExtra(ActivityHelp.REQUEST_NODE_IP_KEY);
             String port = data.getStringExtra(ActivityHelp.REQUEST_NODE_PORT_KEY);
+            String username = data.getStringExtra(ActivityHelp.REQUEST_NODE_USERNAME_KEY);
+            String password = data.getStringExtra(ActivityHelp.REQUEST_NODE_PASSWORD_KEY);
             String symbol = data.getStringExtra(ActivityHelp.REQUEST_SYMBOL_KEY);
-            saveNode(ip, port, symbol);
+            saveNode(ip, port, username, password, symbol);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

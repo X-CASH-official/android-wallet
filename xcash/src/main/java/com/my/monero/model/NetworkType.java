@@ -1,14 +1,15 @@
 /**
  * Copyright (c) 2017-2018 m2049r
- *
+ * <p>
  * Copyright (c) 2019 by snakeway
- *
+ * <p>
  * All rights reserved.
  */
 
 package com.my.monero.model;
 
 public enum NetworkType {
+
     NetworkType_Mainnet(0),
     NetworkType_Testnet(1),
     NetworkType_Stagenet(2);
@@ -34,4 +35,5 @@ public enum NetworkType {
     NetworkType(int value) {
         this.value = value;
     }
+
 }

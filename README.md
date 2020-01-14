@@ -22,9 +22,9 @@ Windows CMD: certutil -hashfile FILENAME SHA256
 
 Linux CMD: sha256sum FILENAME
 
-# Version v1.0.2
+# Version v1.0.3
 
-Apk File SHA256:61fdc17768014620440437f38158e2b8dc3ca0d1300d21b75b0fa5db35b21ed3
+Apk File SHA256:5d0220ccde06365366ca55f76cbbe1e5871bb63ca847e4d2f4245e5b9a1f2699
 
 Signature information checked inside the app:
 
