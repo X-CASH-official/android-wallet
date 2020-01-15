@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">XCASH</string>
     <string name="contact_us_url">https://x-network.io</string>
-    <string name="about_us_url">https://github.com/snakewaypasser/xwallet/releases</string>
+    <string name="about_us_url">https://github.com/snakewaybackup/xcash-wallet/releases</string>
 
     <string name="base_layout_load_completed_textView_text">No more</string>
     <string name="base_recyclerview_lostviewtype_item_textView_text">lost viewType in recyclerView</string>
