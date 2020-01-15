@@ -162,8 +162,8 @@
     <string name="activity_node_delete_node_tips">Confirm to delete node?</string>
     <string name="activity_node_add_editTextNodeIp_hint">Node ip</string>
     <string name="activity_node_add_editTextNodePort_hint">Node port</string>
-    <string name="activity_node_add_editTextUsername_hint">Node username (Optional)</string>
-    <string name="activity_node_add_editTextPassword_hint">Node password (Optional)</string>
+    <string name="activity_node_add_editTextUsername_hint">Username (Optional)</string>
+    <string name="activity_node_add_editTextPassword_hint">Password (Optional)</string>
     <string name="activity_node_add_confirmEmpty_tips">Ip and port not empty</string>
     <string name="activity_node_add_addNodeSuccess_tips">Add node success</string>
     <string name="activity_node_add_addNodeError_tips">Add node error</string>
