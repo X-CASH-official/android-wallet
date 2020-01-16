@@ -21,8 +21,6 @@ import java.util.Locale;
 
 public class Wallet {
 
-    private static final String TAG = "Wallet";
-
     final static public long SWEEP_ALL = Long.MAX_VALUE;
 
     static {
@@ -36,7 +34,6 @@ public class Wallet {
     }
 
     public void setAccountIndex(int accountIndex) {
-        Log.d(TAG, "setAccountIndex " + accountIndex);
         this.accountIndex = accountIndex;
         getHistory().setAccountFor(this);
     }
@@ -405,7 +402,6 @@ public class Wallet {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss", Locale.US).format(new Date());
         addSubaddress(accountIndex, timeStamp);
         String subaddress = getLastSubaddress(accountIndex);
-        Log.d(TAG, getNumSubaddresses(accountIndex) - 1 + ": " + subaddress);
         return subaddress;
     }
 

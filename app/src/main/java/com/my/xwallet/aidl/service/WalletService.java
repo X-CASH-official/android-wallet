@@ -422,7 +422,6 @@ public class WalletService extends Service {
     }
 
     class LoadWalletThreadRunnable implements Runnable {
-        private WalletOperate walletOperate;//Running in one thread
 
         public void run() {
             try {
@@ -657,7 +656,6 @@ public class WalletService extends Service {
         private void loadRefreshWallet(final WalletOperate walletOperate) throws Exception {
             final int walletId = walletOperate.getId();
             runningWalletId = walletId;
-            LoadWalletThreadRunnable.this.walletOperate=walletOperate;
             boolean result = false;
             try {
                 final com.my.monero.model.Wallet openWallet = XManager.getInstance().openWallet(walletOperate.getName(), walletOperate.getPassword(), walletId);
@@ -715,8 +713,8 @@ public class WalletService extends Service {
             }
             try {
                 Node node = walletOperate.getNode();
-                if (node!=null&&LoadWalletThreadRunnable.this.walletOperate!=null){//setDaemon and loadRefreshWallet running in one thread
-                    loadRefreshWallet(LoadWalletThreadRunnable.this.walletOperate);
+                if (node!=null) {
+                    WalletManager.getInstance().setDaemonAddress(node.getUrl());
                 }
                 onNormalListener.onSuccess("");
             } catch (Exception e) {
@@ -884,7 +882,6 @@ public class WalletService extends Service {
             walletInfo.setType(WalletInfo.TYPE_CLOSE_ACTIVE_WALLET);
             callBack(walletInfo);
             runningWalletId = -1;
-            LoadWalletThreadRunnable.this.walletOperate=null;
         }
 
         /**

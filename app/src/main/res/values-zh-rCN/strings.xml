@@ -42,7 +42,7 @@
     <string name="popupwindow_password_editTextPassword_hint">你的密码</string>
     <string name="popupwindow_password_textViewPasswordHintTips_text">密码提示</string>
 
-    <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X Wallet All Rights Reserved</string>
+    <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X-Wallet All Rights Reserved</string>
     <string name="activity_splash_initDaemonError_tips">初始化守护进程失败</string>
 
     <string name="activity_choose_wallet_buttonCreateWallet_text">创建钱包</string>

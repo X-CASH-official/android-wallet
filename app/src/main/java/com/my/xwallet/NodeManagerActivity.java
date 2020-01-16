@@ -256,15 +256,15 @@ public class NodeManagerActivity extends NewBaseActivity {
                 if (!result) {
                     BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeError_tips));
                 } else {
-                    TheApplication.getTheApplication().getWalletServiceHelper().setDaemon(NodeManagerActivity.this,node.getUrl(),node.getUsername(),node.getPassword(),new WalletServiceHelper.OnSetDaemonListener(){
+                    TheApplication.getTheApplication().getWalletServiceHelper().resetOpenWallet(new WalletServiceHelper.OnOpenWalletListener() {
                         @Override
-                        public void onSuccess(String tips) {
+                        public void onSuccess(com.my.xwallet.aidl.Wallet wallet) {
                             BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeSuccess_tips));
                         }
 
                         @Override
                         public void onError(String error) {
-                            BaseActivity.showShortToast(NodeManagerActivity.this, error);
+                            BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeError_tips));
                         }
                     });
                     finish();

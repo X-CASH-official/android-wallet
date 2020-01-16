@@ -68,7 +68,7 @@ public class WalletServiceHelper {
                   //BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
                     TheApplication.cancelAllDialogFromActivityManager();
                     bindService();
-                    openWallet(wallet,password,true);
+                    resetOpenWallet(null);
                 }
             }, 500);
         }
@@ -80,7 +80,7 @@ public class WalletServiceHelper {
         notificationHelper= new NotificationHelper(context, context.getString(R.string.app_name), context.getString(R.string.app_name));
     }
 
-    private void loadRefreshWallet(Wallet wallet, String set_wallet_password,boolean needReset) {
+    private void loadRefreshWallet(Wallet wallet, String set_wallet_password,boolean needReset,final OnOpenWalletListener onOpenWalletListener) {
         if (wallet == null || set_wallet_password == null) {
             return;
         }
@@ -95,7 +95,9 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-
+                            if (onOpenWalletListener!=null){
+                                onOpenWalletListener.onSuccess(wallet);
+                            }
                         }
                     });
                 }
@@ -105,7 +107,9 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            BaseActivity.showShortToast(context, error);
+                            if (onOpenWalletListener!=null){
+                                onOpenWalletListener.onError(error);
+                            }
                         }
                     });
                 }
@@ -139,14 +143,18 @@ public class WalletServiceHelper {
         return walletOperateManager;
     }
 
-    public void openWallet(final Wallet wallet,final String password,final boolean needReset){
+    public void  resetOpenWallet(OnOpenWalletListener onOpenWalletListener){
+        openWallet(wallet,password,true,onOpenWalletListener);
+    }
+
+    public void openWallet(final Wallet wallet,final String password,final boolean needReset,final OnOpenWalletListener onOpenWalletListener){
         if (wallet==null||password==null){
             return;
         }
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                loadRefreshWallet(wallet,password,needReset);
+                loadRefreshWallet(wallet,password,needReset,onOpenWalletListener);
             }
         },500);
         this.wallet=wallet;
@@ -204,48 +212,6 @@ public class WalletServiceHelper {
         } catch (RemoteException e) {
             e.printStackTrace();
             onVerifyWalletPasswordListener.onError(baseActivity.getString(R.string.wallet_service_not_running_tips));
-            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-        }
-    }
-
-    public static void setDaemon(final BaseActivity baseActivity, String url, String name, String password, final OnSetDaemonListener onSetDaemonListener) {
-        if (baseActivity.handler == null||url==null ||name == null || password == null ) {
-            return;
-        }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
-        }
-        Object[] objects = ProgressDialogHelp.unEnabledView(baseActivity, null);
-        final ProgressDialog progressDialog = (ProgressDialog) objects[0];
-        final String progressDialogKey = (String) objects[1];
-        try {
-            walletOperateManager.setDaemon(url, name, password, new OnNormalListener.Stub() {
-                @Override
-                public void onSuccess(final String tips) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            onSetDaemonListener.onSuccess(tips);
-                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-                        }
-                    });
-                }
-
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            onSetDaemonListener.onError(error);
-                            ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            onSetDaemonListener.onError(baseActivity.getString(R.string.activity_node_manager_changeNodeError_tips));
             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
         }
     }
@@ -397,9 +363,9 @@ public class WalletServiceHelper {
 
     }
 
-    public interface OnSetDaemonListener {
+    public interface OnOpenWalletListener {
 
-        void onSuccess(String tips);
+        void onSuccess(com.my.xwallet.aidl.Wallet wallet);
 
         void onError(String error);
 

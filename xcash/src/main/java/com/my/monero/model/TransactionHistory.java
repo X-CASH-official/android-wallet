@@ -14,8 +14,6 @@ import java.util.List;
 
 public class TransactionHistory {
 
-    private static final String TAG = "TransactionHistory";
-
     static {
         System.loadLibrary("monerujo");
     }

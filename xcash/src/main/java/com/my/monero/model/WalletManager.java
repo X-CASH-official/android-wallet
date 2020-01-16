@@ -84,6 +84,7 @@ public class WalletManager {
     }
 
     public boolean close(Wallet wallet) {
+        wallet.pauseRefresh();
         return closeJ(wallet);
     }
 
@@ -113,6 +114,12 @@ public class WalletManager {
             case NetworkType_Mainnet:
             default:
                 return "XCA-";
+        }
+    }
+
+    public void setDaemonAddress(String address) {
+        if (address != null) {
+            setDaemonAddressJ(address);
         }
     }
 

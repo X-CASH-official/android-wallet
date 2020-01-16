@@ -42,7 +42,7 @@
     <string name="popupwindow_password_editTextPassword_hint">Your password</string>
     <string name="popupwindow_password_textViewPasswordHintTips_text">Password Hint</string>
 
-    <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X Wallet All Rights Reserved</string>
+    <string name="activity_splash_textViewCopyright_text">Copyright © 2019 X-Wallet All Rights Reserved</string>
     <string name="activity_splash_initDaemonError_tips">Set daemon error</string>
 
     <string name="activity_choose_wallet_buttonCreateWallet_text">Create Wallet</string>

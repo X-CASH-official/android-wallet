@@ -160,7 +160,7 @@ public class WalletRunningActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-        TheApplication.getTheApplication().getWalletServiceHelper().openWallet(wallet,set_wallet_password,false);
+        TheApplication.getTheApplication().getWalletServiceHelper().openWallet(wallet,set_wallet_password,false,null);
     }
 
     private void onClickListener() {

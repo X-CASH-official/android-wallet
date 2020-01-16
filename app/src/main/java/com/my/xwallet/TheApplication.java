@@ -53,7 +53,7 @@ public class TheApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogTool.setDebug(true);
+        //LogTool.setDebug(true);
         CatchBugManager.getInstance(this);
         walletServiceHelper = new WalletServiceHelper(this);
         walletServiceHelper.bindService();

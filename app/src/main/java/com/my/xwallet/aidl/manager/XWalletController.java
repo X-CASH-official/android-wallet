@@ -155,6 +155,7 @@ public class XWalletController {
         if (wallet == null||node==null|| onWalletListener == null) {
             return false;
         }
+        WalletManager.getInstance().setDaemonAddress(node.getUrl());
         wallet.init(node.getUrl(),0,node.getUsername(),node.getPassword());
         wallet.setRestoreHeight(restoreHeight);
         if (wallet.getConnectionStatus() != com.my.monero.model.Wallet.ConnectionStatus.ConnectionStatus_Connected) {
@@ -190,9 +191,9 @@ public class XWalletController {
 
             @Override
             public void newBlock(long height) {
-                LogTool.d(TAG, "newBlock height: " + height);
                 if (lastBlockTime < System.currentTimeMillis() - 2000) {
                     lastBlockTime = System.currentTimeMillis();
+                    LogTool.d(TAG, "newBlock height: " + height);
                     onWalletListener.onRefreshed(height);
                     wallet.store();
                 }
