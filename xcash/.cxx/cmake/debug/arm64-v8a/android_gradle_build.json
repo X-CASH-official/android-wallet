@@ -1,0 +1,286 @@
+
+{
+	"buildFiles" : [ "/home/snakeway/gitProject/github/x-wallet/xcash/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"/home/snakeway/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/debug/arm64-v8a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"blockchain_db-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "blockchain_db",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"blocks-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "blocks",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libblocks.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_chrono-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_chrono",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_chrono.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_date_time-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_date_time",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_date_time.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_filesystem-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_filesystem",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_filesystem.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_program_options-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_program_options",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_program_options.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_regex-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_regex",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_regex.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_serialization-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_serialization",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_serialization.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_system-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_system",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_system.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_thread-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_thread",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_thread.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"boost_wserialization-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "boost_wserialization",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/boost/lib/arm64-v8a/libboost_wserialization.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"checkpoints-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "checkpoints",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"cncrypto-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "cncrypto",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libcncrypto.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"common-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "common",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libcommon.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"crypto-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "crypto",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/openssl/lib/arm64-v8a/libcrypto.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"cryptonote_basic-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "cryptonote_basic",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"cryptonote_core-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "cryptonote_core",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"device-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "device",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libdevice.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"easylogging-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "easylogging",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libeasylogging.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"epee-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "epee",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libepee.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"lmdb-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "lmdb",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/liblmdb.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"mnemonics-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "mnemonics",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libmnemonics.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"monerujo-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "monerujo",
+			"buildCommand" : "/home/snakeway/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/debug/arm64-v8a --target monerujo",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android21 --gcc-toolchain=/home/snakeway/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/snakeway/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dmonerujo_EXPORTS -I../../../../../xcash-libs/monero/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -std=c++11 -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC    -c ",
+					"src" : "/home/snakeway/gitProject/github/x-wallet/xcash/src/main/cpp/monerujo.cpp",
+					"workingDirectory" : "/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/debug/arm64-v8a"
+				}
+			],
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/build/intermediates/cmake/debug/obj/arm64-v8a/libmonerujo.so",
+			"toolchain" : "8719828849761526280"
+		},
+		"multisig-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "multisig",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libmultisig.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"ringct-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "ringct",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libringct.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"ringct_basic-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "ringct_basic",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libringct_basic.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"sodium-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "sodium",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/libsodium/lib/arm64-v8a/libsodium.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"ssl-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "ssl",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/openssl/lib/arm64-v8a/libssl.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"unbound-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "unbound",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libunbound.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"version-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "version",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libversion.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"wallet-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "wallet",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libwallet.a",
+			"toolchain" : "8719828849761526280"
+		},
+		"wallet_api-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "wallet_api",
+			"buildType" : "debug",
+			"output" : "/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs/monero/lib/arm64-v8a/libwallet_api.a",
+			"toolchain" : "8719828849761526280"
+		}
+	},
+	"toolchains" : 
+	{
+		"8719828849761526280" : 
+		{
+			"cCompilerExecutable" : "/home/snakeway/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/home/snakeway/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}

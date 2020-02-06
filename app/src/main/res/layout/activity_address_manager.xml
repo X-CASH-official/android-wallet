@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_default" />
+
+    <com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout
+        android:id="@+id/baseRecyclerViewFromFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        android:background="@color/windowBackgroundDeepen_default"
+        app:layout_empty="@layout/normal_nodata"
+        app:recyclerClipToPadding="false"
+        app:recyclerLayoutManager="linearLayout"
+        app:recyclerLayoutManagerOrientation="vertical"
+        app:recyclerPaddingTop="@dimen/view_normal_margin_narrow"
+        app:scrollbarStyle="outsideOverlay" />
+
+
+</RelativeLayout>

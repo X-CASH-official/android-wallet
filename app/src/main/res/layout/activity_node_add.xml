@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_appbar_default" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        android:background="?attr/mainColorHelp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_normal_margin_default" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutNodeIp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.xcash.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextNodeIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_node_add_editTextNodeIp_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutNodeIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextNodeIp"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutNodePort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.xcash.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextNodePort"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_node_add_editTextNodePort_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutNodePort"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextNodePort"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                        <com.xcash.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_node_add_editTextUsername_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextUsername"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad"
+                        android:layout_marginBottom="@dimen/view_normal_margin_broad">
+
+                        <com.xcash.views.EditTextInNestedScrollView
+                            android:id="@+id/editTextPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/editText_normal_height"
+                            android:background="@null"
+                            android:hint="@string/activity_node_add_editTextPassword_hint"
+                            android:paddingTop="@dimen/editText_normal_paddingTop"
+                            android:paddingBottom="@dimen/editText_normal_paddingBottom"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textColorHint="@color/editText_normal_hint"
+                            android:textCursorDrawable="@drawable/normal_cursor"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <FrameLayout
+                            android:id="@+id/frameLayoutPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                            android:layout_below="@+id/editTextPassword"
+                            android:background="?attr/mainColorText" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/buttonNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_normal_height_broad"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginTop="@dimen/button_normal_marginTop"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad"
+                        android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                        android:background="@drawable/normal_solid_single_background"
+                        android:text="@string/button_ok"
+                        android:textColor="?attr/mainColorHelp"
+                        android:textSize="@dimen/textView_normal_textSize_default" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

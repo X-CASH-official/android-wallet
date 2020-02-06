@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_appbar_default" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        android:background="?attr/mainColorHelp">
+
+        <TextView
+            android:id="@+id/textViewFindNewVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/view_normal_margin_default"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/activity_about_us_textViewFindNewVersion_text"
+            android:textColor="?attr/mainColorText"
+            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textViewFindNewVersion"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageViewIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_about_us_imageViewIcon_marginTop"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="?attr/mainColorText"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/textView_normal_textSize_broad" />
+
+                    <TextView
+                        android:id="@+id/textViewVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        tools:text="@string/number_0_text"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="?attr/mainColorText"
+                        android:textSize="@dimen/textView_normal_textSize_default" />
+
+                    <TextView
+                        android:id="@+id/textViewDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:text="@string/activity_about_us_textViewDetails_text"
+                        android:padding="@dimen/view_normal_margin_default"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="?attr/mainColorText"
+                        android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

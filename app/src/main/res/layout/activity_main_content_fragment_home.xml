@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageViewMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:tint="?attr/mainColorHelp"
+                    android:src="@mipmap/activity_main_home_menu" />
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+                    android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+                    android:singleLine="true"
+                    android:textColor="?attr/mainColorHelp"
+                    tools:text="@string/app_name"
+                    android:textSize="@dimen/textView_normal_textSize_broad" />
+
+                <ImageView
+                    android:id="@+id/imageViewLock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:tint="?attr/mainColorHelp"
+                    android:src="@mipmap/activity_main_content_fragment_home_top_item_lock" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appBarLayout"
+            android:background="@color/windowBackgroundDeepen_default"
+            android:orientation="vertical">
+
+            <include layout="@layout/activity_main_content_fragment_home_top_item" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTransactionContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutTransactionInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textViewTransactionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:textColor="?attr/mainColorText"
+                        android:text="@string/activity_main_content_fragment_home_textViewTransactionTitle_text"
+                        android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutTransactionDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textViewTransactionDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:text="@string/activity_main_content_fragment_home_textViewTransactionDetails_text"
+                            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+                        <ImageView
+                            android:id="@+id/imageViewArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tint="?attr/mainColorText"
+                            android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+                            android:src="@mipmap/normal_target_arrow" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout
+                    android:id="@+id/baseRecyclerViewFromFrameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/windowBackgroundDeepen_default"
+                    android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                    app:layout_empty="@layout/normal_nodata"
+                    app:recyclerClipToPadding="false"
+                    app:recyclerLayoutManager="linearLayout"
+                    app:recyclerLayoutManagerOrientation="vertical"
+                    app:scrollbarStyle="outsideOverlay" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

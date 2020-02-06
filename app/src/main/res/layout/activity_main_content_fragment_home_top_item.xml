@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_normal_margin_default"
+        app:cardCornerRadius="@dimen/drawable_normal_radius_broad">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutWalletTop"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/imageViewWalletTopArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:tint="?attr/mainColorText"
+                    android:src="@mipmap/activity_main_content_fragment_home_top_item_arrow_up" />
+
+                <TextView
+                    android:id="@+id/textViewWalletTopAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+                    android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+                    android:singleLine="true"
+                    android:visibility="gone"
+                    android:text="@string/number_amount_0_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_broad"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutWalletDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imageViewIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_normal_margin_default"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/textViewAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageViewIcon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:singleLine="true"
+                    android:text="@string/number_amount_0_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_broad"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewUnlockedAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewAmount"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:padding="@dimen/line_normal_widthOrHeight_broad"
+                    android:singleLine="true"
+                    android:text="@string/number_amount_0_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_narrow"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSynchronizeStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewUnlockedAmount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_default"
+                    android:layout_marginRight="@dimen/view_normal_margin_default"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/view_normal_margin_narrow"
+                    android:text="@string/activity_main_content_fragment_home_top_item_textViewSynchronizeStatus_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewSynchronizeStatus"
+                    android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad">
+
+                    <ProgressBar
+                        android:id="@+id/progressSynchronize"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:layout_marginBottom="@dimen/view_normal_margin_default" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressSynchronize"
+                        android:layout_marginLeft="@dimen/view_normal_margin_default"
+                        android:layout_marginRight="@dimen/view_normal_margin_default"
+                        android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                        android:background="@drawable/normal_edittext_background">
+
+                        <TextView
+                            android:id="@+id/textViewAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:layout_marginRight="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:padding="@dimen/view_normal_margin_narrow"
+                            android:singleLine="true"
+                            android:textColor="?attr/mainColorText"
+                            android:textSize="@dimen/textView_normal_textSize_default"
+                            tools:text="@string/app_name" />
+
+                        <ImageView
+                            android:id="@+id/imageViewCopy"
+                            android:layout_width="@dimen/activity_wallet_running_imageViewCopy_width"
+                            android:layout_height="@dimen/activity_wallet_running_imageViewCopy_height"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/view_normal_margin_narrow"
+                            android:tint="?attr/colorPrimary"
+                            android:src="@mipmap/activity_create_wallet_copy" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
