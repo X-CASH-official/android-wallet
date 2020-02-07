@@ -9,79 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce22a729-a079-46f7-a9ec-d32d6ef628cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblocks.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblocks.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcncrypto.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcncrypto.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcommon.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcommon.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libdevice.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libdevice.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libeasylogging.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libeasylogging.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libepee.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libepee.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/liblmdb.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/liblmdb.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmnemonics.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmnemonics.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmultisig.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmultisig.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct_basic.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libunbound.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libunbound.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libversion.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libversion.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet_api.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet_api.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblockchain_db.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblockchain_db.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblocks.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblocks.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcheckpoints.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcheckpoints.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcncrypto.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcncrypto.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcommon.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcommon.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_basic.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_core.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libdevice.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libdevice.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libeasylogging.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libeasylogging.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libepee.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libepee.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/liblmdb.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/liblmdb.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmnemonics.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmnemonics.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmultisig.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmultisig.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct_basic.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libunbound.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libunbound.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libversion.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libversion.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet_api.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet_api.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/xcash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/xcash.iml" afterDir="false" />
-    </list>
+    <list default="true" id="ce22a729-a079-46f7-a9ec-d32d6ef628cb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,30 +35,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
               <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -165,8 +80,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="632" />
-    <option name="y" value="52" />
+    <option name="x" value="531" />
+    <option name="y" value="216" />
     <option name="width" value="1389" />
     <option name="height" value="984" />
   </component>
@@ -195,6 +110,13 @@
               <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,7 +226,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="443" y="96" width="1389" height="984" extended-state="0" />
+    <frame x="594" y="71" width="1389" height="984" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -494,6 +416,9 @@
           <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
