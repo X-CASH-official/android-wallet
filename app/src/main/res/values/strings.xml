@@ -57,7 +57,7 @@
     <string name="activity_set_wallet_editTextLoginName_hint">Your wallet name</string>
     <string name="activity_set_wallet_editTextPassword_hint">Your password</string>
     <string name="activity_set_wallet_editTextConfirmPassword_hint">Confirm your password</string>
-    <string name="activity_set_wallet_editTextDescription_hint">Password description</string>
+    <string name="activity_set_wallet_editTextDescription_hint">Password Hint</string>
     <string name="activity_set_wallet_textViewAgreementTips_text">I have validate the SHA256 for current version</string>
     <string name="activity_set_wallet_passwordConfirm_tips">Password confirm error</string>
     <string name="activity_set_wallet_confirmEmpty_tips">Name and Password can not be empty</string>
@@ -154,8 +154,8 @@
     <string name="activity_wallet_running_tabLayout_receive_text">Receive</string>
     <string name="activity_wallet_running_tabLayout_send_text">Send</string>
     <string name="activity_wallet_running_SynchronizedError_tips">Synchronized error, please check net and node</string>
-    <string name="activity_wallet_running_SynchronizedSuccess_tips">Synchronized Success</string>
-    <string name="activity_wallet_running_leaveDistance_tips">Synchronizing,remaining blocks:\n</string>
+    <string name="activity_wallet_running_SynchronizedSuccess_tips">Synchronized success</string>
+    <string name="activity_wallet_running_leaveDistance_tips">Synchronizing, remaining blocks:\n</string>
     <string name="activity_wallet_running_unlocked_tips">(unlocked)</string>
 
     <string name="activity_node_manager_textViewTitle_text">Choose Node</string>
@@ -165,8 +165,8 @@
     <string name="activity_node_manager_deleteNodeError_tips">Delete node error</string>
     <string name="activity_node_add_textViewTitle_text">Add Node</string>
     <string name="activity_node_delete_node_tips">Confirm to delete node?</string>
-    <string name="activity_node_add_editTextNodeIp_hint">Node ip</string>
-    <string name="activity_node_add_editTextNodePort_hint">Node port</string>
+    <string name="activity_node_add_editTextNodeIp_hint">Node IP</string>
+    <string name="activity_node_add_editTextNodePort_hint">Node Port</string>
     <string name="activity_node_add_editTextUsername_hint">Username (Optional)</string>
     <string name="activity_node_add_editTextPassword_hint">Password (Optional)</string>
     <string name="activity_node_add_confirmEmpty_tips">Ip and port can not be empty</string>

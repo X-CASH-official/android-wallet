@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ce22a729-a079-46f7-a9ec-d32d6ef628cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblockchain_db.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblocks.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libblocks.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcheckpoints.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcncrypto.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcncrypto.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcommon.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcommon.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_basic.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libcryptonote_core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libdevice.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libdevice.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libeasylogging.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libeasylogging.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libepee.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libepee.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/liblmdb.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/liblmdb.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmnemonics.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmnemonics.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmultisig.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libmultisig.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libringct_basic.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libunbound.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libunbound.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libversion.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libversion.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet_api.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/arm64-v8a/libwallet_api.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblockchain_db.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblockchain_db.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblocks.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libblocks.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcheckpoints.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcheckpoints.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcncrypto.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcncrypto.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcommon.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcommon.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_basic.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libcryptonote_core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libdevice.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libdevice.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libeasylogging.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libeasylogging.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libepee.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libepee.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/liblmdb.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/liblmdb.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmnemonics.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmnemonics.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmultisig.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libmultisig.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct_basic.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libringct_basic.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libunbound.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libunbound.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libversion.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libversion.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet_api.a" beforeDir="false" afterPath="$PROJECT_DIR$/xcash-libs/monero/lib/armeabi-v7a/libwallet_api.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/xcash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/xcash.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +105,43 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>descri</find>
+      <find>activity_set_wallet_editTextDescription_hint</find>
+      <find>success</find>
+      <find>Hint</find>
+    </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="KEY_STORE_PATH" value="$USER_HOME$/keys/xwallet/snakeway.jks" />
@@ -42,14 +154,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="760" />
-    <option name="y" value="199" />
-    <option name="width" value="1391" />
+    <option name="x" value="632" />
+    <option name="y" value="52" />
+    <option name="width" value="1389" />
     <option name="height" value="984" />
   </component>
   <component name="ProjectView">
@@ -57,10 +175,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -72,6 +211,9 @@
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -162,10 +304,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-138" y="532" width="1391" height="984" extended-state="0" />
+    <frame x="443" y="96" width="1389" height="984" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.34255797" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.36554307" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -174,14 +317,14 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.06078665" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.10250298" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.18241759" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -193,17 +336,162 @@
     <entry file="file://$PROJECT_DIR$/x-wallet.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/release/app-release.apk" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/normal_target_arrow.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/normal_show.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_set_wallet_password.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_set_wallet_name.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_main_navigationview_node_setting.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_main_navigationview_contact_us.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_main_navigationview_about_us.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_main_content_fragment_home_top_item_lock.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_main_content_fragment_home_top_item_arrow_up.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/activity_dpops_more.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/activity_create_wallet_copy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/activity_wallet_manage_item_switch_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/activity_wallet_manage_item_switch_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcash/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/WalletRunningActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3960">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/DpopsUpdateActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="180" column="56" selection-start-line="180" selection-start-column="56" selection-end-line="180" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="437" column="49" selection-start-line="437" selection-start-column="45" selection-end-line="437" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/OperationHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/AddressBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/Wallet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/entity/TransactionInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#3348#3349#0" expanded="true" />
+            <element signature="e#3402#3403#0" expanded="true" />
+            <element signature="e#3448#3449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="59" column="62" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        <state relative-caret-position="390">
+          <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
         </state>
       </provider>
     </entry>

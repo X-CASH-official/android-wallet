@@ -1,3 +1,5 @@
 # ninja log v5
 0	2147	0	CMakeFiles/monerujo.dir/src/main/cpp/monerujo.cpp.o	991be55023c549bc
 2148	3922	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libmonerujo.so	36c10df0d1e5332a
+1	2004	0	CMakeFiles/monerujo.dir/src/main/cpp/monerujo.cpp.o	991be55023c549bc
+2004	3678	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libmonerujo.so	36c10df0d1e5332a
