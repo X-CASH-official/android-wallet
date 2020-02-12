@@ -1,3 +1,0 @@
-/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/arm64-v8a/CMakeFiles/edit_cache.dir
-/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/arm64-v8a/CMakeFiles/rebuild_cache.dir
-/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/arm64-v8a/CMakeFiles/monerujo.dir

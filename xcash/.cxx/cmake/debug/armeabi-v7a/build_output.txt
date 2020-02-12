@@ -1,5 +1,0 @@
--- ABI_INFO=armeabi-v7a
--- EXTERNAL_LIBS_DIR:/home/snakeway/gitProject/github/x-wallet/xcash/../xcash-libs
--- Configuring done
--- Generating done
--- Build files have been written to: /home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/debug/armeabi-v7a

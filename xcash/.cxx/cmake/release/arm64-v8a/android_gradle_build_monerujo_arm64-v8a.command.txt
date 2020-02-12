@@ -1,8 +1,0 @@
-Executable : /home/snakeway/Android/Sdk/cmake/3.6.4111459/bin/cmake
-arguments : 
---build
-/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/arm64-v8a
---target
-monerujo
-jvmArgs : 
-
