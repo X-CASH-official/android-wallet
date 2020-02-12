@@ -56,10 +56,9 @@ public class TransactionInfo implements Parcelable, Comparable<TransactionInfo> 
     public long confirmations;
     public String subaddressLabel;
     public List<Transfer> transfers;
-
-    public String txKey = null;
-    public String notes = null;
-    public String address = null;
+    public String txKey ;
+    public String notes ;
+    public String address ;
 
     public TransactionInfo(
             int direction,
