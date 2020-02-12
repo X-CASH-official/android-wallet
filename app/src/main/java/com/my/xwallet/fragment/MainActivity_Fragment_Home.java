@@ -121,7 +121,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         relativeLayoutAddress = (RelativeLayout) view.findViewById(R.id.relativeLayoutAddress);
         textViewAddress = (TextView) view.findViewById(R.id.textViewAddress);
         linearLayoutTransactionContent = (LinearLayout) view.findViewById(R.id.linearLayoutTransactionContent);
-        relativeLayoutTransactionInfo= (RelativeLayout) view.findViewById(R.id.relativeLayoutTransactionInfo);
+        relativeLayoutTransactionInfo = (RelativeLayout) view.findViewById(R.id.relativeLayoutTransactionInfo);
         linearLayoutTransactionDetails = (LinearLayout) view.findViewById(R.id.linearLayoutTransactionDetails);
         baseRecyclerViewFromFrameLayout = (BaseRecyclerViewFromFrameLayout) view.findViewById(R.id.baseRecyclerViewFromFrameLayout);
 
@@ -171,7 +171,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
                     case R.id.imageViewLock:
                         if (imageViewLock.getTag() != null && (boolean) imageViewLock.getTag()) {
                             closeActiveWallet(imageViewLock);
-                        }else {
+                        } else {
                             ((MainActivity) getBaseActivity()).showPassword(cardView, MainActivity.TYPE_SHOW_WALLET_DETAILS);
                         }
                         break;
@@ -212,9 +212,9 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         if (viewItems == null) {
             viewItems = new ArrayList<ViewItem>();
         }
-        if (viewItems.size()==0){
+        if (viewItems.size() == 0) {
             relativeLayoutTransactionInfo.setVisibility(View.GONE);
-        }else {
+        } else {
             relativeLayoutTransactionInfo.setVisibility(View.VISIBLE);
         }
         if (transaction_Default_RecyclerViewAdapter == null) {
@@ -236,7 +236,14 @@ public class MainActivity_Fragment_Home extends BaseFragment {
     }
 
     private void loadTransactionInfos() {
+        final List<ViewItem> viewItems = new ArrayList<ViewItem>();
         if (activeWallet == null) {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    initOrRefreshAdapter(viewItems);
+                }
+            }, 100);
             return;
         }
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<List<TransactionInfo>>() {
@@ -253,7 +260,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
 
             @Override
             public void overRunOnMain(List<TransactionInfo> transactionInfos) {
-                List<ViewItem> viewItems = new ArrayList<ViewItem>();
                 if (transactionInfos != null) {
                     for (int i = 0; i < transactionInfos.size(); i++) {
                         TransactionInfo transactionInfo = transactionInfos.get(i);
@@ -330,6 +336,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             cardView.setVisibility(View.VISIBLE);
             imageViewLock.setImageResource(R.mipmap.activity_main_content_fragment_home_top_item_lock);
             imageViewLock.setTag(false);
+            imageViewLock.setEnabled(true);
             linearLayoutTransactionContent.setVisibility(View.GONE);
             progressSynchronize.setVisibility(View.GONE);
             textViewUnlockedAmount.setVisibility(View.GONE);
@@ -354,6 +361,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
         if (alreadyInitUi) {
             imageViewLock.setImageResource(R.mipmap.activity_main_content_fragment_home_top_item_unlock);
             imageViewLock.setTag(true);
+            imageViewLock.setEnabled(true);
             linearLayoutTransactionContent.setVisibility(View.VISIBLE);
         }
     }
@@ -423,6 +431,11 @@ public class MainActivity_Fragment_Home extends BaseFragment {
                 } else {
                     textViewSynchronizeStatus.setText(getString(R.string.activity_wallet_running_leaveDistance_tips) + blockChainHeight + "/" + daemonHeight);
                     progressSynchronize.setProgress(progress);
+                }
+                if (imageViewLock.getTag() == null || !(boolean) imageViewLock.getTag()) {
+                    imageViewLock.setImageResource(R.mipmap.activity_main_content_fragment_home_top_item_unlock);
+                    imageViewLock.setTag(true);
+                    imageViewLock.setEnabled(true);
                 }
             }
         }

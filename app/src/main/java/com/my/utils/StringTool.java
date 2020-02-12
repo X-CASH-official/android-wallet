@@ -69,8 +69,8 @@ public class StringTool {
     }
 
     public static boolean checkWalletAddress(String address) {
-        //support xca and monero address
-        if ((!address.startsWith("XCA") || address.length() != 98) && address.length() != 95) {
+        //support XCA|XCB and Monero address
+        if (address.length() < 95) {
             return false;
         }
         return true;

@@ -187,10 +187,12 @@ public class WalletRunningActivity extends NewBaseActivity {
                         startActivity(intent1);
                         break;
                     case R.id.buttonReceive:
-                        Intent intent2 = new Intent(WalletRunningActivity.this,
-                                ReceiveActivity.class);
-                        intent2.putExtra(ActivityHelp.WALLET_KEY, wallet);
-                        startActivity(intent2);
+                        if (wallet!=null){
+                            Intent intent3 = new Intent(WalletRunningActivity.this,
+                                    ReceiveActivity.class);
+                            intent3.putExtra(ActivityHelp.ADDRESS_KEY, wallet.getAddress());
+                            startActivity(intent3);
+                        }
                         break;
                     default:
                         break;

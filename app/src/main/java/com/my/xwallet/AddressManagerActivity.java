@@ -22,7 +22,6 @@ import com.my.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAd
 import com.my.base.BaseActivity;
 import com.my.base.recyclerviewlibrary.models.ViewItem;
 import com.my.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
-import com.my.utils.ClipboardTool;
 import com.my.utils.CoroutineHelper;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.AddressBook;
@@ -179,7 +178,9 @@ public class AddressManagerActivity extends NewBaseActivity {
             setResult(Activity.RESULT_OK, intent);
             finish();
         } else {
-            ClipboardTool.copyToClipboard(AddressManagerActivity.this, addressBook.getAddress());
+            Intent intent = new Intent(AddressManagerActivity.this, ReceiveActivity.class);
+            intent.putExtra(ActivityHelp.ADDRESS_KEY, addressBook.getAddress());
+            startActivity(intent);
         }
     }
 

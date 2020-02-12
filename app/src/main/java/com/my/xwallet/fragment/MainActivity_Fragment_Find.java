@@ -21,14 +21,15 @@ import com.my.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAd
 import com.my.base.recyclerviewlibrary.models.ViewItem;
 import com.my.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
 import com.my.models.local.KeyValueItem;
-import com.my.utils.ClipboardTool;
 import com.my.utils.CoroutineHelper;
 import com.my.utils.database.AppDatabase;
 import com.my.utils.database.entity.AddressBook;
 import com.my.xwallet.AddressManagerActivity;
 import com.my.xwallet.MainActivity;
 import com.my.xwallet.R;
+import com.my.xwallet.ReceiveActivity;
 import com.my.xwallet.TheApplication;
+import com.my.xwallet.uihelp.ActivityHelp;
 import com.my.xwallet.uihelp.PopupWindowHelp;
 
 import java.util.ArrayList;
@@ -169,7 +170,9 @@ public class MainActivity_Fragment_Find extends BaseFragment {
     }
 
     private void selectAddress(AddressBook addressBook) {
-        ClipboardTool.copyToClipboard(getBaseActivity(), addressBook.getAddress());
+        Intent intent = new Intent(getBaseActivity(), ReceiveActivity.class);
+        intent.putExtra(ActivityHelp.ADDRESS_KEY, addressBook.getAddress());
+        startActivity(intent);
     }
 
     private void showMore() {

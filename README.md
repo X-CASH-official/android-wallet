@@ -22,9 +22,9 @@ Windows CMD: certutil -hashfile FILENAME SHA256
 
 Linux CMD: sha256sum FILENAME
 
-# Version v1.0.3
+# Version v1.0.4
 
-Apk File SHA256:6fb49392abc5670ac718622468318c3adc7ec89f922330de4546b161b8ebda31
+Apk File SHA256:fa9c53d26ea039b33c995943647d218901e6ec4920a3029207b5c6fc0f0eda8f
 
 Signature information checked inside the app:
 
@@ -33,11 +33,6 @@ Signature SHA256:F02F8AFE256CEBFFCEE50F6FB68C6CA20EBDDB99D44EB227F477228F2ED1643
 # Preview
 
 ## Create or Import Wallet
-
-here have a unresoled question:
-
-Possibly due to the reason of the node, when the new wallet performs the function of quickly jumping to the specified height, the node will refuse to pass the leading block id incorrectly, resulting in the need to start synchronization from 0 height.
-
 
 ![image](https://github.com/snakewaypasser/xwallet/blob/master/preview/1.png)
 

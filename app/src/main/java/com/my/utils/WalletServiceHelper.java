@@ -38,7 +38,7 @@ public class WalletServiceHelper {
     private Context context;
     private NotificationHelper notificationHelper;
     private int notificationId = 1;
-    private CacheHelper cacheHelper=new CacheHelper<String>(2000);
+    private CacheHelper cacheHelper = new CacheHelper<String>(2000);
     private Wallet wallet;
     private String password;
 
@@ -65,7 +65,7 @@ public class WalletServiceHelper {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                  //BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
+                    //BaseActivity.showLongToast(context,context.getString(R.string.retry_bind_service_tips));
                     TheApplication.cancelAllDialogFromActivityManager();
                     bindService();
                     resetOpenWallet(null);
@@ -77,10 +77,10 @@ public class WalletServiceHelper {
 
     public WalletServiceHelper(Context context) {
         this.context = context.getApplicationContext();
-        notificationHelper= new NotificationHelper(context, context.getString(R.string.app_name), context.getString(R.string.app_name));
+        notificationHelper = new NotificationHelper(context, context.getString(R.string.app_name), context.getString(R.string.app_name));
     }
 
-    private void loadRefreshWallet(Wallet wallet, String set_wallet_password,boolean needReset,final OnOpenWalletListener onOpenWalletListener) {
+    private void loadRefreshWallet(Wallet wallet, String set_wallet_password, boolean needReset, final OnOpenWalletListener onOpenWalletListener) {
         if (wallet == null || set_wallet_password == null) {
             return;
         }
@@ -95,7 +95,7 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            if (onOpenWalletListener!=null){
+                            if (onOpenWalletListener != null) {
                                 onOpenWalletListener.onSuccess(wallet);
                             }
                         }
@@ -107,7 +107,7 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            if (onOpenWalletListener!=null){
+                            if (onOpenWalletListener != null) {
                                 onOpenWalletListener.onError(error);
                             }
                         }
@@ -143,38 +143,46 @@ public class WalletServiceHelper {
         return walletOperateManager;
     }
 
-    public void  resetOpenWallet(OnOpenWalletListener onOpenWalletListener){
-        openWallet(wallet,password,true,onOpenWalletListener);
+    public void resetOpenWallet(OnOpenWalletListener onOpenWalletListener) {
+        openWallet(wallet, password, true, onOpenWalletListener);
     }
 
-    public void openWallet(final Wallet wallet,final String password,final boolean needReset,final OnOpenWalletListener onOpenWalletListener){
-        if (wallet==null||password==null){
+    public void openWallet(final Wallet wallet, final String password, final boolean needReset, final OnOpenWalletListener onOpenWalletListener) {
+        if (wallet == null || password == null) {
             return;
         }
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                loadRefreshWallet(wallet,password,needReset,onOpenWalletListener);
+                loadRefreshWallet(wallet, password, needReset, onOpenWalletListener);
             }
-        },500);
-        this.wallet=wallet;
-        this.password=password;
+        }, 500);
+        this.wallet = wallet;
+        this.password = password;
     }
 
-    public void closeWallet(int walletId){
-        if (wallet!=null&&wallet.getId()==walletId) {
+    public void closeWallet(int walletId) {
+        if (wallet != null && wallet.getId() == walletId) {
             wallet = null;
             password = null;
         }
     }
 
-    public void closeActiveWallet(){
-        wallet=null;
-        password=null;
+    public void closeActiveWallet() {
+        wallet = null;
+        password = null;
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public static void verifyWalletPasswordOnly(final BaseActivity baseActivity, String name, String password, final OnVerifyWalletPasswordListener onVerifyWalletPasswordListener) {
-        if (baseActivity.handler == null||name == null || password == null || onVerifyWalletPasswordListener == null ) {
+        if (baseActivity.handler == null || name == null || password == null || onVerifyWalletPasswordListener == null) {
             return;
         }
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
@@ -307,7 +315,7 @@ public class WalletServiceHelper {
         }
 
         @Override
-        public void moneySpent(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+        public void moneySpent(final int walletId, final String txId, final long amount, final boolean fullSynchronizeOnce) throws RemoteException {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -317,7 +325,7 @@ public class WalletServiceHelper {
         }
 
         @Override
-        public void moneyReceive(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+        public void moneyReceive(final int walletId, final String txId, final long amount, final boolean fullSynchronizeOnce) throws RemoteException {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -327,13 +335,13 @@ public class WalletServiceHelper {
         }
 
         @Override
-        public void unconfirmedMoneyReceive(final int walletId,final String txId,final long amount,final boolean fullSynchronizeOnce) throws RemoteException {
+        public void unconfirmedMoneyReceive(final int walletId, final String txId, final long amount, final boolean fullSynchronizeOnce) throws RemoteException {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (txId!=null&&cacheHelper.getCache(txId)==null){
-                        cacheHelper.putCache(txId,txId);
-                        receiveNotfication(walletId,txId,amount);
+                    if (txId != null && cacheHelper.getCache(txId) == null) {
+                        cacheHelper.putCache(txId, txId);
+                        receiveNotfication(walletId, txId, amount);
                     }
                 }
             });
@@ -347,9 +355,9 @@ public class WalletServiceHelper {
                 Intent notificationIntent = new Intent(context, MainActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
                 String content = context.getString(R.string.start_receive_transaction_notfication_tips) + String.valueOf(amount / 1000000.0f) + " " + XManager.SYMBOL;
-                notificationId=notificationId+1;
-                notificationHelper.sendNotification(notificationId,context.getString(R.string.app_name),content,pendingIntent);
-            }catch (Exception e){
+                notificationId = notificationId + 1;
+                notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, pendingIntent);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

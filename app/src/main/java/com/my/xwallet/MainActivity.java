@@ -50,6 +50,8 @@ public class MainActivity extends NewBaseActivity {
     private final String FRAGMENT_FIND = "mainActivity_Fragment_Find";
     private final String FRAGMENT_Wallet = "mainActivity_Fragment_Wallet";
     private final String NOWSELECT_KEY = "nowSelect_key";
+    private final String RUNNINGWALLET_KEY = "runningWallet_key";
+    private final String RUNNINGWALLETPASSWORD_KEY = "runningWalletPassword_key";
 
     private FragmentManager fragmentManager;
     private MainActivity_Fragment_Home mainActivity_Fragment_Home;
@@ -87,6 +89,8 @@ public class MainActivity extends NewBaseActivity {
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
     private Wallet wallet;
+    private Wallet runningWallet;
+    private String runningWalletPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +99,8 @@ public class MainActivity extends NewBaseActivity {
         int selectIndex = 0;
         if (savedInstanceState != null) {
             selectIndex = savedInstanceState.getInt(NOWSELECT_KEY);
+            runningWallet = (Wallet) savedInstanceState.getSerializable(RUNNINGWALLET_KEY);
+            runningWalletPassword = savedInstanceState.getString(RUNNINGWALLETPASSWORD_KEY);
         }
         fragmentManager = getSupportFragmentManager();
         mainActivity_Fragment_Home = (MainActivity_Fragment_Home) fragmentManager.findFragmentByTag(FRAGMENT_HOME);
@@ -163,7 +169,7 @@ public class MainActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-        loadActiveWallet();
+        loadActiveWallet(true);
     }
 
     private void onClickListener() {
@@ -312,7 +318,10 @@ public class MainActivity extends NewBaseActivity {
         nowSelect = index;
     }
 
-    private void loadActiveWallet() {
+    /**
+     * If android system recycle MainActivity,try resume the running wallet.
+     */
+    private void loadActiveWallet(final boolean needResume) {
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<Wallet>() {
             @Override
             public Wallet runOnIo() {
@@ -335,6 +344,9 @@ public class MainActivity extends NewBaseActivity {
                     textViewAddress.setText(wallet.getAddress());
                     if (mainActivity_Fragment_Home != null) {
                         mainActivity_Fragment_Home.showActiveWallet(wallet);
+                    }
+                    if (needResume && runningWallet != null && wallet.getId() == runningWallet.getId()) {
+                        TheApplication.getTheApplication().getWalletServiceHelper().openWallet(runningWallet, runningWalletPassword, false, null);
                     }
                 }
             }
@@ -403,6 +415,7 @@ public class MainActivity extends NewBaseActivity {
         if (wallet == null) {
             return;
         }
+        TheApplication.getTheApplication().getWalletServiceHelper().closeActiveWallet();
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
         if (walletOperateManager == null) {
             return;
@@ -479,6 +492,8 @@ public class MainActivity extends NewBaseActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt(NOWSELECT_KEY, nowSelect);
+        outState.putSerializable(RUNNINGWALLET_KEY, TheApplication.getTheApplication().getWalletServiceHelper().getWallet());
+        outState.putString(RUNNINGWALLETPASSWORD_KEY, TheApplication.getTheApplication().getWalletServiceHelper().getPassword());
         super.onSaveInstanceState(outState);
     }
 
@@ -507,7 +522,7 @@ public class MainActivity extends NewBaseActivity {
         MainActivity mainActivity = (MainActivity) TheApplication.getActivityFromActivityManager(MainActivity.class.getName());
         if (mainActivity != null) {
             TheApplication.killAllActivityExceptMe(mainActivity.activityKey);
-            mainActivity.loadActiveWallet();
+            mainActivity.loadActiveWallet(false);
             mainActivity.refreshWallet();
         }
     }
@@ -515,7 +530,7 @@ public class MainActivity extends NewBaseActivity {
     public static void doRefreshIfActivityExist() {
         MainActivity mainActivity = (MainActivity) TheApplication.getActivityFromActivityManager(MainActivity.class.getName());
         if (mainActivity != null) {
-            mainActivity.loadActiveWallet();
+            mainActivity.loadActiveWallet(false);
             mainActivity.refreshWallet();
         }
     }

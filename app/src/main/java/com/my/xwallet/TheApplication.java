@@ -27,7 +27,6 @@ import com.my.base.recyclerviewlibrary.adapters.LoadMoreRecyclerViewAdapter;
 import com.my.base.utils.ActivityManager;
 import com.my.base.utils.CatchBugManager;
 import com.my.base.utils.FileTool;
-import com.my.base.utils.LogTool;
 import com.my.base.utils.MD5Tool;
 import com.my.models.local.Setting;
 import com.my.utils.WalletServiceHelper;
