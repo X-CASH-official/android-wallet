@@ -68,8 +68,13 @@ public class StringTool {
         return simpleDateFormat.format(date);
     }
 
+    /**
+     * Support XCA|XCB and Monero address
+     */
     public static boolean checkWalletAddress(String address) {
-        //support XCA|XCB and Monero address
+        if (address==null){
+            return false;
+        }
         if (address.length() < 95) {
             return false;
         }
