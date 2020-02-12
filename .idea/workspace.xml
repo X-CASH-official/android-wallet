@@ -15,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
@@ -24,17 +23,28 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/AddressManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/AddressManagerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/ReceiveActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/ReceiveActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/WalletRunningActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/WalletRunningActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Find.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Find.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/build_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/build_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xcash/src/main/java/com/my/monero/model/TransactionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/src/main/java/com/my/monero/model/TransactionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/android_gradle_build_monerujo_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/android_gradle_build_monerujo_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/android_gradle_build_monerujo_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/android_gradle_build_monerujo_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/xcash/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +69,40 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -91,20 +134,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/dao/TransactionInfoDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/database/AppDatabase.java" />
         <option value="$PROJECT_DIR$/xcash/src/main/java/com/my/monero/model/TransactionInfo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/ReceiveActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/WalletRunningActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/fragment/MainActivity_Fragment_Find.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/wallet/AddressManagerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="383" />
-    <option name="y" value="84" />
+    <option name="x" value="599" />
+    <option name="y" value="94" />
     <option name="width" value="1389" />
     <option name="height" value="1041" />
   </component>
@@ -113,9 +156,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,36 +174,19 @@
               <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
               <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="release" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
               <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="x-wallet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="x-wallet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,7 +196,7 @@
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cold/x-wallet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -271,10 +296,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="383" y="84" width="1389" height="1041" extended-state="0" />
+    <frame x="599" y="93" width="1389" height="1041" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.5543071" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3752809" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -346,11 +372,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/activity_wallet_manage_item_switch_1.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xcash/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
@@ -554,24 +575,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="390">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguardMapping.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xcash/utils/StringTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
         </state>
       </provider>
     </entry>
