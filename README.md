@@ -14,6 +14,22 @@ android 4.2+ (api 17+）
 
 native support  'arm64-v8a','armeabi-v7a'
 
+# Environment
+
+ubuntu18.04
+
+Android Studio 3.5.3
+
+# How To Build Native Library
+
+Need build in linux system,If need change some support,just need change ./xcash-libs/script
+
+cd ./xcash-libs
+
+./build.sh
+
+Then waiting for build to finish,then will get a new folder in ./xcash-libs directory, move the relevant lib into the corresponding folder.
+
 # Warning
 
 For the safety of your assets, when you install the apk, please check the following information of the apk first.
