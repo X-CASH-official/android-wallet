@@ -74,8 +74,8 @@
             android:name="com.xcash.wallet.aidl.service.WalletService"
             android:enabled="true"
             android:exported="true"
-            android:permission="com.my.xwallet.aidl.permission.LOCAL"
-            android:process=":remote" />
+            android:permission="com.xcash.wallet.aidl.permission.LOCAL"
+            />
 
 
     </application>
