@@ -6,16 +6,16 @@ source script/env.sh
 
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
-url="https://github.com/snakewaypasser/X-CASH_DPOPS.git"
+url="https://github.com/snakewaybackup/xcash-core.git"
 
-if [ ! -d "X-CASH_DPOPS" ]; then
+if [ ! -d "xcash-core" ]; then
   git clone ${url}
-  cd X-CASH_DPOPS
-#  git checkout tag
+  cd xcash-core
+  git checkout xcash_proof_of_stake
   git submodule update --recursive --init
 else
-  cd X-CASH_DPOPS
-#  git checkout tag
+  cd xcash-core
+  git checkout xcash_proof_of_stake
   git pull
   git submodule update --recursive --init
 fi

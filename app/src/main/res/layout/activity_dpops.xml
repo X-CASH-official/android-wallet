@@ -253,7 +253,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutRemove"
+                android:id="@+id/linearLayoutMore"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/normal_material_select_background_borderless"
@@ -264,13 +264,13 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <Button
-                    android:id="@+id/buttonRemove"
+                    android:id="@+id/buttonMore"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_normal_height_broad"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="@dimen/view_normal_margin_narrow"
                     android:background="@drawable/activity_dpops_background_1"
-                    android:text="@string/activity_dpops_buttonRemove_text"
+                    android:text="@string/activity_dpops_buttonMore_text"
                     android:textColor="?attr/mainColorHelp"
                     android:textSize="@dimen/textView_normal_textSize_default" />
 

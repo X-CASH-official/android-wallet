@@ -4,9 +4,7 @@ XCASH Android Wallet with dpops support. If you have two mobile phone, you can u
 
 Depend on:
 
-Official version  https://github.com/X-CASH-official/X-CASH
-
-Android support version  https://github.com/snakewaypasser/X-CASH_DPOPS
+Official version  https://github.com/X-CASH-official/xcash-core
 
 # Device Support
 
@@ -40,7 +38,7 @@ Linux CMD: sha256sum FILENAME
 
 # Version v1.0.0
 
-Apk File SHA256:3c49fef7d336daebcbbf9f382cf19e12bae5cd1bbc656b49032b4554f3192f7a
+Apk File SHA256:c827d9956aa13da231b7934cf67d50c0b7fd8b8c901cdcaa8f24655c8172a545
 
 Signature information checked inside the app:
 

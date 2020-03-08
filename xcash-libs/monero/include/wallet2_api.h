@@ -759,7 +759,7 @@ struct Wallet
                                                    optional<uint64_t> amount, uint32_t mixin_count,
                                                    PendingTransaction::Priority = PendingTransaction::Priority_Low,
                                                    uint32_t subaddr_account = 0,
-                                                   std::set<uint32_t> subaddr_indices = {}, uint32_t  privacy_settings=0) = 0;
+                                                   std::set<uint32_t> subaddr_indices = {},uint32_t  privacy_settings=1) = 0;
 
     /*!
      * \brief createSweepUnmixableTransaction creates transaction with unmixable outputs.
@@ -933,12 +933,9 @@ struct Wallet
 
     virtual std::string delegate_register(const  std::string &delegate_name,const  std::string &delegate_IP_address,const  std::string &block_verifier_messages_public_key)  = 0;
     
-    virtual std::string delegate_remove() = 0;
-
     virtual std::string delegate_update(const  std::string &item,const  std::string &value)  = 0;
 
     virtual std::string vote(const  std::string &value)  = 0;
-
 };
 
 /**

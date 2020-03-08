@@ -64,7 +64,7 @@ public class DpopsActivity extends NewBaseActivity {
     private Button buttonVote;
     private Button buttonRegister;
     private Button buttonUpdate;
-    private Button buttonRemove;
+    private Button buttonMore;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
 
     private View.OnClickListener onClickListener;
@@ -102,7 +102,7 @@ public class DpopsActivity extends NewBaseActivity {
         buttonVote = (Button) findViewById(R.id.buttonVote);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
-        buttonRemove = (Button) findViewById(R.id.buttonRemove);
+        buttonMore = (Button) findViewById(R.id.buttonMore);
         baseRecyclerViewFromFrameLayout = (BaseRecyclerViewFromFrameLayout) findViewById(R.id.baseRecyclerViewFromFrameLayout);
 
         initBaseRecyclerViewFromFrameLayout();
@@ -173,10 +173,11 @@ public class DpopsActivity extends NewBaseActivity {
                         intent1.putExtra(ActivityHelp.WALLET_KEY, wallet);
                         startActivity(intent1);
                         break;
-                    case R.id.buttonRemove:
+                    case R.id.buttonMore:
                         Intent intent2 = new Intent(DpopsActivity.this,
-                                DpopsRemoveActivity.class);
-                        intent2.putExtra(ActivityHelp.WALLET_KEY, wallet);
+                                WebViewActivity.class);
+                        intent2.putExtra(ActivityHelp.REQUEST_TITLE_KEY, selectSearch);
+                        intent2.putExtra(ActivityHelp.REQUEST_URL_KEY, selectSearch);
                         startActivity(intent2);
                         break;
                     default:
@@ -191,7 +192,7 @@ public class DpopsActivity extends NewBaseActivity {
         buttonVote.setOnClickListener(onClickListener);
         buttonRegister.setOnClickListener(onClickListener);
         buttonUpdate.setOnClickListener(onClickListener);
-        buttonRemove.setOnClickListener(onClickListener);
+        buttonMore.setOnClickListener(onClickListener);
     }
 
     private void initOrRefreshAdapter(List<ViewItem> viewItems) {

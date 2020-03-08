@@ -244,7 +244,7 @@
     <string name="activity_dpops_buttonVote_text">Vote</string>
     <string name="activity_dpops_buttonRegister_text">Register</string>
     <string name="activity_dpops_buttonUpdate_text">Update</string>
-    <string name="activity_dpops_buttonRemove_text">Remove</string>
+    <string name="activity_dpops_buttonMore_text">More</string>
     <string name="activity_dpops_confirmEmpty_tips">Search content can not be empty</string>
     <string name="activity_dpops_checkVoteValue_tips">Vote value can not be empty</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">Unlocked balance must greater than 0</string>

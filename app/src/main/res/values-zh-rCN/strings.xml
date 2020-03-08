@@ -244,7 +244,7 @@
     <string name="activity_dpops_buttonVote_text">投票</string>
     <string name="activity_dpops_buttonRegister_text">注册代表</string>
     <string name="activity_dpops_buttonUpdate_text">更新代表</string>
-    <string name="activity_dpops_buttonRemove_text">移除代表</string>
+    <string name="activity_dpops_buttonMore_text">更多内容</string>
     <string name="activity_dpops_confirmEmpty_tips">搜索内容不能为空</string>
     <string name="activity_dpops_checkVoteValue_tips">投票内容不能为空</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">可用余额必须大于0</string>
