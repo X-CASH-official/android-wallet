@@ -6,7 +6,7 @@ source script/env.sh
 
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
-url="https://github.com/snakewaybackup/xcash-core.git"
+url="https://github.com/X-CASH-official/xcash-core.git"
 
 if [ ! -d "xcash-core" ]; then
   git clone ${url}

@@ -132,6 +132,9 @@ public class WebViewActivity extends NewBaseActivity {
     @Override
     protected void initHttp() {
         if (url != null) {
+            if (!url.startsWith("http")){
+                url="http://"+url;
+            }
             webView.loadUrl(url);
         }
     }

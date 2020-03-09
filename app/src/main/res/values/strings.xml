@@ -248,6 +248,7 @@
     <string name="activity_dpops_confirmEmpty_tips">Search content can not be empty</string>
     <string name="activity_dpops_checkVoteValue_tips">Vote value can not be empty</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">Unlocked balance must greater than 0</string>
+    <string name="activity_dpops_vote_failed_tips">Delegate vote failed,you can view the info in history page</string>
 
     <string name="activity_dpops_register_textViewTitle_text">Register Delegate</string>
     <string name="activity_dpops_register_editTextDelegateName_hint">Delegate Name</string>

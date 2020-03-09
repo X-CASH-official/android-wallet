@@ -384,7 +384,7 @@ public class DpopsActivity extends NewBaseActivity {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            BaseActivity.showShortToast(DpopsActivity.this, error);
+                            BaseActivity.showShortToast(DpopsActivity.this, getString(R.string.activity_dpops_vote_failed_tips));
                             ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, view);
                         }
                     });
