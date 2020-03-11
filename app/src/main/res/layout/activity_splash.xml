@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_splash_relativeLayoutBottom_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/textViewCopyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="@string/activity_splash_textViewCopyright_text"
+            android:textColor="?attr/mainColorText"
+            android:layout_marginBottom="@dimen/view_normal_margin_narrow"
+            android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutIconAndName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewCopyright"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/view_normal_margin_narrow"
+            android:layout_marginBottom="@dimen/view_normal_margin_narrow"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="@dimen/activity_splash_imageViewIcon_width"
+                android:layout_height="@dimen/activity_splash_imageViewIcon_width"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_normal_margin_narrow">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_broad"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

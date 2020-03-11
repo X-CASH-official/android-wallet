@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/view_normal_margin_default"
+            android:src="@mipmap/normal_back" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+            android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+            android:singleLine="true"
+            tools:text="@string/app_name"
+            android:textColor="?attr/mainColorHelp"
+            android:textSize="@dimen/textView_normal_textSize_broad" />
+
+        <ImageView
+            android:id="@+id/imageViewRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/view_normal_margin_default"
+            tools:src="@mipmap/activity_main_home_menu_more"
+            android:tint="?attr/mainColorHelp" />
+
+    </RelativeLayout>
+
+
+</com.google.android.material.appbar.AppBarLayout>

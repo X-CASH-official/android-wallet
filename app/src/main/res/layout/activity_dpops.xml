@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_default" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_margin="@dimen/view_normal_margin_narrow">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.666" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutTarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+            android:layout_marginRight="@dimen/view_normal_margin_narrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.xcash.views.EditTextInNestedScrollView
+                android:id="@+id/editTextTarget"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/editText_normal_height"
+                android:layout_marginRight="@dimen/activity_dpops_frameLayoutHistory_width"
+                android:background="@null"
+                android:hint="@string/activity_dpops_editTextTarget_hint"
+                android:paddingTop="@dimen/editText_normal_paddingTop"
+                android:singleLine="true"
+                android:textColor="?attr/mainColorText"
+                android:textColorHint="@color/editText_normal_hint"
+                android:textCursorDrawable="@drawable/normal_cursor"
+                android:textSize="@dimen/textView_normal_textSize_default" />
+
+            <FrameLayout
+                android:id="@+id/frameLayoutHistory"
+                android:layout_width="@dimen/activity_dpops_frameLayoutHistory_width"
+                android:layout_height="@dimen/editText_normal_height"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/imageViewHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:paddingBottom="@dimen/line_normal_widthOrHeight_default"
+                    android:tint="?attr/mainColorText"
+                    android:src="@mipmap/activity_dpops_more" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/frameLayoutTarget"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                android:layout_below="@+id/editTextTarget"
+                android:background="?attr/mainColorText" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/normal_material_select_background_borderless"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/buttonSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_normal_height_broad"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/view_normal_margin_narrow"
+                android:background="@drawable/activity_dpops_background_2"
+                android:text="@string/activity_dpops_buttonSearch_text"
+                android:textColor="?attr/mainColorHelp"
+                android:textSize="@dimen/textView_normal_textSize_default" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+            android:background="@color/line_normal_background" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutVote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_normal_margin_narrow"
+            android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+            android:layout_marginRight="@dimen/view_normal_margin_narrow">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.666" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutVoteValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+                android:layout_marginRight="@dimen/view_normal_margin_narrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.xcash.views.EditTextInNestedScrollView
+                    android:id="@+id/editTextVoteValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editText_normal_height"
+                    android:background="@null"
+                    android:hint="@string/activity_dpops_editTextVoteValue_hint"
+                    android:paddingTop="@dimen/editText_normal_paddingTop"
+                    android:singleLine="true"
+                    android:textColor="?attr/mainColorText"
+                    android:textColorHint="@color/editText_normal_hint"
+                    android:textCursorDrawable="@drawable/normal_cursor"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutVoteValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_normal_widthOrHeight_default"
+                    android:layout_below="@+id/editTextVoteValue"
+                    android:background="?attr/mainColorText" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutVote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/normal_material_select_background_borderless"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/guideline1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/buttonVote"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/view_normal_margin_narrow"
+                    android:background="@drawable/activity_dpops_background_2"
+                    android:text="@string/activity_dpops_buttonVote_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/constraintLayoutVote"
+            android:layout_marginLeft="@dimen/view_normal_margin_narrow"
+            android:layout_marginRight="@dimen/view_normal_margin_narrow"
+            android:layout_marginBottom="@dimen/view_normal_margin_narrow">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.333" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/normal_material_select_background_borderless"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <Button
+                    android:id="@+id/buttonRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/view_normal_margin_narrow"
+                    android:background="@drawable/activity_dpops_background_1"
+                    android:text="@string/activity_dpops_buttonRegister_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.666" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/normal_material_select_background_borderless"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/guideline2"
+                app:layout_constraintRight_toLeftOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/buttonUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/view_normal_margin_narrow"
+                    android:background="@drawable/activity_dpops_background_1"
+                    android:text="@string/activity_dpops_buttonUpdate_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRemove"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/normal_material_select_background_borderless"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/guideline3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/buttonRemove"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/view_normal_margin_narrow"
+                    android:background="@drawable/activity_dpops_background_1"
+                    android:text="@string/activity_dpops_buttonRemove_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+    <com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout
+        android:id="@+id/baseRecyclerViewFromFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/constraintLayoutTop"
+        android:layout_above="@+id/relativeLayoutBottom"
+        app:layout_empty="@layout/normal_nodata"
+        app:recyclerClipToPadding="false"
+        app:recyclerLayoutManager="linearLayout"
+        app:recyclerLayoutManagerOrientation="vertical"
+        app:scrollbarStyle="outsideOverlay" />
+
+
+</RelativeLayout>

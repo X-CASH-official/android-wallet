@@ -1,0 +1,3 @@
+/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/snakeway/gitProject/github/x-wallet/xcash/.cxx/cmake/release/armeabi-v7a/CMakeFiles/monerujo.dir

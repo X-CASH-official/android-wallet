@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/view_normal_margin_default"
+            android:src="@mipmap/normal_back"
+            android:tint="?attr/mainColorHelp" />
+
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+            android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+            android:singleLine="true"
+            android:text="@string/activity_payment_confirm_textViewTitle_text"
+            android:textColor="?attr/mainColorHelp"
+            android:textSize="@dimen/textView_normal_textSize_broad" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayoutToolbar"
+        android:background="?attr/mainColorHelp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_normal_margin_broad" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:orientation="vertical" />
+
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/button_normal_marginTop"
+                    android:background="@drawable/normal_solid_single_background"
+                    android:text="@string/button_next"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

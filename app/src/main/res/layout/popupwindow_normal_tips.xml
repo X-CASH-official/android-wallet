@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="@dimen/popupwindow_horizontal_margin"
+    android:layout_marginTop="@dimen/popupwindow_vertical_margin"
+    android:layout_marginRight="@dimen/popupwindow_horizontal_margin"
+    android:layout_marginBottom="@dimen/popupwindow_vertical_margin">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_normal_margin_narrow"
+        app:cardCornerRadius="@dimen/drawable_normal_radius_broad">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_normal_margin_default" />
+
+            <TextView
+                android:id="@+id/textViewTips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_normal_margin_default"
+                android:layout_marginBottom="@dimen/view_normal_margin_default"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/view_normal_margin_default"
+                android:textColor="@color/darkColor_default"
+                android:textSize="@dimen/textView_normal_textSize_default"
+                tools:text="@string/app_name" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_normal_margin_default" />
+
+            <FrameLayout
+                android:id="@+id/frameLayoutBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+                    android:background="@color/line_normal_background" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+
+                    <TextView
+                        android:id="@+id/textViewCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/view_normal_margin_default"
+                        android:text="@string/popupwindow_textViewCancel_text"
+                        android:textColor="@color/darkColor_default"
+                        android:textSize="@dimen/textView_normal_textSize_default"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/guideline"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewOK"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/view_normal_margin_default"
+                        android:text="@string/popupwindow_textViewOK_text"
+                        android:textColor="@color/darkColor_default"
+                        android:textSize="@dimen/textView_normal_textSize_default"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/guideline"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:layout_width="@dimen/line_normal_widthOrHeight_narrow"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/line_normal_background" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

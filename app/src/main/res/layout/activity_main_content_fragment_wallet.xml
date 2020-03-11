@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageViewMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:tint="?attr/mainColorHelp"
+                    android:src="@mipmap/activity_main_home_menu" />
+
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+                    android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:text="@string/activity_main_bottomTab_textViewWalletTab_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_broad" />
+
+                <ImageView
+                    android:id="@+id/imageViewMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/view_normal_margin_default"
+                    android:tint="?attr/mainColorHelp"
+                    android:src="@mipmap/activity_main_home_menu_more" />
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+        >
+
+        <com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout
+            android:id="@+id/baseRecyclerViewFromFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appBarLayout"
+            android:background="@color/windowBackgroundDeepen_default"
+            app:layout_empty="@layout/normal_nodata"
+            app:recyclerClipToPadding="false"
+            app:recyclerLayoutManager="linearLayout"
+            app:recyclerLayoutManagerOrientation="vertical"
+            app:recyclerPaddingTop="@dimen/view_normal_margin_narrow"
+            app:scrollbarStyle="outsideOverlay" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

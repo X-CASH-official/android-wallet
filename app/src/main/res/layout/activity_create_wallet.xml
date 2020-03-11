@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/view_normal_margin_default"
+            android:src="@mipmap/normal_back" />
+
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/textViewTitle_horizontal_margin"
+            android:layout_marginRight="@dimen/textViewTitle_horizontal_margin"
+            android:singleLine="true"
+            android:text="@string/activity_create_wallet_textViewTitle_text"
+            android:textColor="?attr/mainColorHelp"
+            android:textSize="@dimen/textView_normal_textSize_broad" />
+
+        <ImageView
+            android:id="@+id/imageViewCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/view_normal_margin_default"
+            android:src="@mipmap/activity_create_wallet_copy"
+            android:tint="?attr/mainColorHelp" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutToolbar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/frameLayoutTips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary">
+
+                <TextView
+                    android:id="@+id/textViewTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:text="@string/activity_create_wallet_textViewTips_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_narrow" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frameLayoutTips"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewWordTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:text="@string/activity_create_wallet_waitingCreateWalletTips_text"
+                    android:textColor="?attr/mainColorText"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_normal_margin_broad"
+                    android:orientation="vertical" />
+
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height_broad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                    android:layout_marginRight="@dimen/view_normal_margin_broad"
+                    android:layout_marginBottom="@dimen/view_normal_margin_broad"
+                    android:layout_marginTop="@dimen/button_normal_marginTop"
+                    android:background="@drawable/normal_solid_single_background"
+                    android:text="@string/activity_create_wallet_buttonNext_text"
+                    android:textColor="?attr/mainColorHelp"
+                    android:textSize="@dimen/textView_normal_textSize_default" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
