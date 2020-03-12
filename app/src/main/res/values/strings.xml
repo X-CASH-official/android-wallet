@@ -271,5 +271,6 @@
     <string name="activity_dpops_show_history_tips">Show History</string>
 
     <string name="activity_dpops_operation_history_textViewTitle_text">Show History</string>
+    <string name="activity_dpops_utcTime_tips">Current UTC Time:</string>
 
 </resources>

@@ -271,5 +271,6 @@
     <string name="activity_dpops_show_history_tips">历史记录</string>
 
     <string name="activity_dpops_operation_history_textViewTitle_text">历史记录</string>
+    <string name="activity_dpops_utcTime_tips">当前UTC时间:</string>
 
 </resources>
