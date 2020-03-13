@@ -5,14 +5,12 @@
 *.iml
 .gradle
 local.properties
-settings.gradle
 .idea/
 .DS_Store
 /build/
 /captures
 .externalNativeBuild
 .cxx
-.gradle
 /build/
 # Ignore Gradle GUI config
 !gradle-wrapper.jar
