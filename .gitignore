@@ -5,6 +5,7 @@
 *.iml
 .gradle
 local.properties
+settings.gradle
 .idea/
 .DS_Store
 /build/
