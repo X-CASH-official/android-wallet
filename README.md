@@ -16,15 +16,18 @@ Easily end XCASH publicly or privately, manage your wallets, etc... from your ph
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Download](#download)
-- [Features](#features)
-- [License](#license)
-- [Contributing](#contributing)
-- [Documentation](#documentation)
-- [Security](#security)
-- [Acknowledgement](#acknowledgement)
-- [System Requirements](#system-requirements)
+- [X-Cash Android Mobile Wallet](#x-cash-android-mobile-wallet)
+  - [Table of Contents](#table-of-contents)
+  - [Download](#download)
+  - [Features](#features)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Documentation](#documentation)
+  - [Security](#security)
+  - [Acknowledgement](#acknowledgement)
+  - [System Requirements](#system-requirements)
+      - [Mobile](#mobile)
+      - [Native](#native)
 
 ## Download
 
@@ -71,6 +74,8 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 🙏 A special thanks to [@snakewaypasser](https://github.com/snakewaypasser) for providing the first release of the wallet.
 
 ## System Requirements
+
+Android Studio 
 
 #### Mobile
 
