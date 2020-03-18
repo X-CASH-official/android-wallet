@@ -16,18 +16,15 @@ Easily end XCASH publicly or privately, manage your wallets, etc... from your ph
 
 ## Table of Contents
 
-- [X-Cash Android Mobile Wallet](#x-cash-android-mobile-wallet)
-  - [Table of Contents](#table-of-contents)
-  - [Download](#download)
-  - [Features](#features)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Documentation](#documentation)
-  - [Security](#security)
-  - [Acknowledgement](#acknowledgement)
-  - [System Requirements](#system-requirements)
-      - [Mobile](#mobile)
-      - [Native](#native)
+- [Table of Contents](#table-of-contents)
+- [Download](#download)
+- [Features](#features)
+- [License](#license)
+- [Contributing](#contributing)
+- [Documentation](#documentation)
+- [Security](#security)
+- [Acknowledgement](#acknowledgement)
+- [System Requirements](#system-requirements)
 
 ## Download
 
