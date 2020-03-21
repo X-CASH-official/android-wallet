@@ -11,7 +11,9 @@
 # X-Cash Android Mobile Wallet
 
 📱 **Securely store and manage your XCASH on your mobile.**  
-Easily end XCASH publicly or privately, manage your wallets, etc... from your phone !
+Easily end XCASH publicly or privately, manage your wallets, etc... from your phone!
+
+> *Initially forked from [m2049r](https://github.com/m2049r)'s [monerujo](https://github.com/m2049r/xmrwallet) wallet.*
 
 ## Table of Contents
 
