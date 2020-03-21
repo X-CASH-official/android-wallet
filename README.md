@@ -70,7 +70,7 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 
 ## Acknowledgement
 
-🙏 A special thanks to [@snakewaypasser](https://github.com/snakewaypasser) for providing the first release of the wallet.
+🙏 A special thanks to [@snakewaypasser](https://github.com/snakewaypasser) for providing the first release of the wallet. Thanks to his tremendous work, we are now able to store XCASH directly on Android phones !
 
 ## System Requirements
 
