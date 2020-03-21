@@ -100,4 +100,4 @@ git clone https://github.com/X-CASH-official/android-wallet.git
 
 #### Open with Android Studio
 
-Open project in Android Studio and `Run`
+Open project in Android Studio and `Run` the proect
