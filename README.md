@@ -2,8 +2,7 @@
 
 <a align="center" href="https://x-network.io/xcash"><img src="header.png" alt="X-Cash Core"></a>
 
-[![Release](https://img.shields.io/github/v/release/X-CASH-official-team/desktop-wallet)](https://github.com/X-CASH-official/android-wallet/releases)
-[![Gitter](https://badges.gitter.im/xcash-foundation/xcash-core.svg)](https://gitter.im/xcash-foundation/xcash-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Release](https://img.shields.io/github/v/release/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/releases)
 [![chat](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://opensource.org/licenses/MIT)
 
