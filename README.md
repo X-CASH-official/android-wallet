@@ -25,6 +25,9 @@ Easily end XCASH publicly or privately, manage your wallets, etc... from your ph
 - [Security](#security)
 - [Acknowledgement](#acknowledgement)
 - [System Requirements](#system-requirements)
+- [Installing from source](#installing-from-source)
+  - [Dependencies](#dependencies)
+  - [Develop](#develop)
 
 ## Download
 
@@ -72,8 +75,6 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 
 ## System Requirements
 
-Android Studio 
-
 #### Mobile
 
 `Android 4.2+` (API 17+）
@@ -81,3 +82,21 @@ Android Studio
 #### Native
 
 `arm64-v8a`,`armeabi-v7a`
+
+## Installing from source
+
+### Dependencies
+
+[Android Studio](https://developer.android.com/studio) 
+
+### Develop
+
+#### Clone repository
+
+```bash
+git clone https://github.com/X-CASH-official/android-wallet.git
+```
+
+#### Open with Android Studio
+
+Open project in Android Studio and `Run`
