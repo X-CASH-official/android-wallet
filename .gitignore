@@ -12,6 +12,7 @@ local.properties
 .externalNativeBuild
 .cxx
 /build/
+/app/release
 # Ignore Gradle GUI config
 !gradle-wrapper.jar
 # Cache of project
