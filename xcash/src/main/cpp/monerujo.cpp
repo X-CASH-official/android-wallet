@@ -853,14 +853,6 @@ Java_com_my_monero_model_Wallet_delegateRegister(JNIEnv *env, jobject instance,
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_my_monero_model_Wallet_delegateRemove(JNIEnv *env, jobject instance) {
-
-    XCash::Wallet *wallet = getHandle<XCash::Wallet>(env, instance);
-    std::string result  =wallet->delegate_remove();
-    return env->NewStringUTF(result.c_str());
-}
-
-JNIEXPORT jstring JNICALL
 Java_com_my_monero_model_Wallet_delegateUpdate(JNIEnv *env, jobject instance,
                                                  jstring  item,jstring  value) {
 

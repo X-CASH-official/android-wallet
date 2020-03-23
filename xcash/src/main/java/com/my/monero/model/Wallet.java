@@ -388,8 +388,6 @@ public class Wallet {
 
     public native String delegateRegister(String delegate_name, String delegate_IP_address, String block_verifier_messages_public_key);
 
-    public native String delegateRemove();
-
     public native String delegateUpdate(String item, String value);
 
     public native String vote(String value);
