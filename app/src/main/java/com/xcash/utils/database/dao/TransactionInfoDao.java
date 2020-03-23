@@ -23,10 +23,10 @@ public interface TransactionInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTransactionInfos(@NotNull TransactionInfo... transactionInfo);
 
-    @Query("SELECT * FROM transactionInfos WHERE symbol = :symbol AND walletId = :walletId ORDER BY _id")
+    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId ORDER BY _id")
     List<TransactionInfo> loadTransactionInfosByWalletId(@NotNull String symbol, int walletId);
 
-    @Query("SELECT * FROM transactionInfos WHERE symbol = :symbol AND walletId = :walletId AND direction = :direction ORDER BY _id")
+    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId AND direction = :direction ORDER BY _id")
     List<TransactionInfo> loadTransactionInfosByWalletIdAndDirection(@NotNull String symbol, int walletId, int direction);
 
     @Delete

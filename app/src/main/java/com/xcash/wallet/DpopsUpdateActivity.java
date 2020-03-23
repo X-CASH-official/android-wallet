@@ -178,6 +178,7 @@ public class DpopsUpdateActivity extends NewBaseActivity {
         keyValueItems.add(new KeyValueItem("IP_address", "IP_address"));
         keyValueItems.add(new KeyValueItem("about", "about"));
         keyValueItems.add(new KeyValueItem("website", "website"));
+        keyValueItems.add(new KeyValueItem("team", "team"));
         keyValueItems.add(new KeyValueItem("pool_mode", "pool_mode"));
         keyValueItems.add(new KeyValueItem("fee_structure", "fee_structure"));
         keyValueItems.add(new KeyValueItem("server_settings", "server_settings"));

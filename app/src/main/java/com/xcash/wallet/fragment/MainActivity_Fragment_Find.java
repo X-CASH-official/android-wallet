@@ -28,7 +28,9 @@ import com.xcash.utils.database.entity.AddressBook;
 import com.xcash.wallet.AddressManagerActivity;
 import com.xcash.wallet.MainActivity;
 import com.xcash.wallet.R;
+import com.xcash.wallet.ReceiveActivity;
 import com.xcash.wallet.TheApplication;
+import com.xcash.wallet.uihelp.ActivityHelp;
 import com.xcash.wallet.uihelp.PopupWindowHelp;
 
 import java.util.ArrayList;
@@ -169,7 +171,9 @@ public class MainActivity_Fragment_Find extends BaseFragment {
     }
 
     private void selectAddress(AddressBook addressBook) {
-        ClipboardTool.copyToClipboard(getBaseActivity(), addressBook.getAddress());
+        Intent intent = new Intent(getBaseActivity(), ReceiveActivity.class);
+        intent.putExtra(ActivityHelp.ADDRESS_KEY, addressBook.getAddress());
+        startActivity(intent);
     }
 
     private void showMore(View view) {

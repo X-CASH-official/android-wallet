@@ -215,7 +215,7 @@
     <string name="activity_payment_confirm_address_tips">地址:</string>
     <string name="activity_payment_confirm_amount_tips">金额:</string>
     <string name="activity_payment_confirm_fee_tips">费用:</string>
-    <string name="activity_payment_confirm_firstTxId_tips">交易Id:</string>
+    <string name="activity_payment_confirm_firstTxId_tips">交易哈希:</string>
     <string name="activity_payment_confirm_txCount_tips">交易总数:</string>
     <string name="activity_payment_confirm_paySuccess_tips">支付成功</string>
 
@@ -231,7 +231,7 @@
     <string name="activity_transaction_details_fee_tips">费用:</string>
     <string name="activity_transaction_details_blockHeight_tips">区块高度:</string>
     <string name="activity_transaction_details_confirmations_tips">确认总数:</string>
-    <string name="activity_transaction_details_paymentId_tips">支付ID:</string>
+    <string name="activity_transaction_details_paymentId_tips">付款 ID:</string>
 
     <string name="activity_about_us_textViewTitle_text">关于我们</string>
     <string name="activity_about_us_textViewDetails_text">XCASH总部位于巴黎。首席执行官Guilhem，具备多年银行交易经验，熟悉支付交易行业，拥有自己的加密货币采矿公司。首席技术官Zach，拥有20多年编程经验，从2013年开始投入区块链技术行业，从事挖矿技术研发，曾任知名采矿网站首席作家。首席运营官Paul，拥有多年营销经验，同时也是一名专利律师。\n第一阶段:以pow为主，基于Monero v8的核心代码，在其基础上增加了隐私交易，公开交易等模式的自由切换，这也有利于同时满足政府监管要求和适当的隐私需求，使用独创的Cryptonight HeavyX PoW 算法，可以有效对抗asic矿机，也使得cpu和gpu挖矿更公平。\n第二阶段:将在运行一年多的pow 的基础上运行，将在主网切换到dpops+dbft共识，基于1年多的pow基础上运行可以保证dpops上票过程更加的公平和去中心化，基于新的dpops+dbft共识，系统的吞吐量将得到极大的提升，使得应用于线下支付和成为不同币种之间快速兑换的媒介成为可能。</string>
@@ -244,10 +244,11 @@
     <string name="activity_dpops_buttonVote_text">投票</string>
     <string name="activity_dpops_buttonRegister_text">注册代表</string>
     <string name="activity_dpops_buttonUpdate_text">更新代表</string>
-    <string name="activity_dpops_buttonRemove_text">移除代表</string>
+    <string name="activity_dpops_buttonMore_text">更多内容</string>
     <string name="activity_dpops_confirmEmpty_tips">搜索内容不能为空</string>
     <string name="activity_dpops_checkVoteValue_tips">投票内容不能为空</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">可用余额必须大于0</string>
+    <string name="activity_dpops_vote_failed_tips">投票给指定代表失败，您可以在历史记录页面中查看信息</string>
 
     <string name="activity_dpops_register_textViewTitle_text">注册代表</string>
     <string name="activity_dpops_register_editTextDelegateName_hint">代表名称</string>
@@ -270,5 +271,6 @@
     <string name="activity_dpops_show_history_tips">历史记录</string>
 
     <string name="activity_dpops_operation_history_textViewTitle_text">历史记录</string>
+    <string name="activity_dpops_utcTime_tips">当前UTC时间:</string>
 
 </resources>

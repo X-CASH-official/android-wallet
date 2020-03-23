@@ -67,15 +67,14 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name="com.xcash.wallet.DpopsRegisterActivity" />
         <activity android:name="com.xcash.wallet.DpopsUpdateActivity" />
-        <activity android:name="com.xcash.wallet.DpopsRemoveActivity" />
         <activity android:name="com.xcash.wallet.DpopsOperationHistoryActivity" />
 
         <service
             android:name="com.xcash.wallet.aidl.service.WalletService"
             android:enabled="true"
             android:exported="true"
-            android:permission="com.my.xwallet.aidl.permission.LOCAL"
-            android:process=":remote" />
+            android:permission="com.xcash.wallet.aidl.permission.LOCAL"
+            />
 
 
     </application>

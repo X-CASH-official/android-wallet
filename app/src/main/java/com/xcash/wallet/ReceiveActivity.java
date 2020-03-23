@@ -19,12 +19,11 @@ import com.xcash.base.BaseActivity;
 import com.xcash.utils.ClipboardTool;
 import com.xcash.utils.CoroutineHelper;
 import com.xcash.utils.QRCodeTool;
-import com.xcash.utils.database.entity.Wallet;
 import com.xcash.wallet.uihelp.ActivityHelp;
 
 public class ReceiveActivity extends NewBaseActivity {
 
-    private Wallet wallet;
+    private String address;
 
     private int halfWidth;
     private ImageView imageViewBack;
@@ -41,7 +40,7 @@ public class ReceiveActivity extends NewBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive);
         Intent intent = getIntent();
-        wallet = (Wallet) intent.getSerializableExtra(ActivityHelp.WALLET_KEY);
+        address = intent.getStringExtra(ActivityHelp.ADDRESS_KEY);
         initAll();
     }
 
@@ -64,8 +63,8 @@ public class ReceiveActivity extends NewBaseActivity {
     @Override
     protected void initConfigUi() {
         textViewTitle.setText(R.string.activity_receive_textViewTitle_text);
-        if (wallet != null) {
-            textViewAddress.setText(wallet.getAddress());
+        if (address != null) {
+            textViewAddress.setText(address);
         }
         TheApplication.setLayoutParams(imageViewQRCode, halfWidth, halfWidth);
     }
@@ -77,7 +76,7 @@ public class ReceiveActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-        showQRCode();
+        showQRCode(address);
     }
 
     private void onClickListener() {
@@ -100,11 +99,10 @@ public class ReceiveActivity extends NewBaseActivity {
         relativeLayoutAddress.setOnClickListener(onClickListener);
     }
 
-    private void showQRCode() {
-        if (wallet == null) {
+    private void showQRCode(final String address) {
+        if (address == null) {
             return;
         }
-        final String address = wallet.getAddress();
         coroutineHelper.launch(new CoroutineHelper.OnCoroutineListener<Bitmap>() {
             @Override
             public Bitmap runOnIo() {

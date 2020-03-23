@@ -179,7 +179,9 @@ public class AddressManagerActivity extends NewBaseActivity {
             setResult(Activity.RESULT_OK, intent);
             finish();
         } else {
-            ClipboardTool.copyToClipboard(AddressManagerActivity.this, addressBook.getAddress());
+            Intent intent = new Intent(AddressManagerActivity.this, ReceiveActivity.class);
+            intent.putExtra(ActivityHelp.ADDRESS_KEY, addressBook.getAddress());
+            startActivity(intent);
         }
     }
 

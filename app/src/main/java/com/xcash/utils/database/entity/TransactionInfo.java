@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "transactionInfos")
+@Entity(tableName = "transaction_infos")
 public class TransactionInfo implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
@@ -45,6 +45,8 @@ public class TransactionInfo implements Serializable {
     private String txKey;
     @ColumnInfo
     private String address;
+    @ColumnInfo
+    private String description;
 
     public int getId() {
         return id;
@@ -166,6 +168,14 @@ public class TransactionInfo implements Serializable {
         this.address = address;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "TransactionInfo{" +
@@ -184,6 +194,7 @@ public class TransactionInfo implements Serializable {
                 ", paymentId='" + paymentId + '\'' +
                 ", txKey='" + txKey + '\'' +
                 ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 

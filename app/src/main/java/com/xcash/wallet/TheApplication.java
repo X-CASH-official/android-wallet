@@ -39,10 +39,10 @@ import java.util.List;
 public class TheApplication extends Application {
 
     public static final String THEAPPLICATIONKEY = "theApplication";
-    public static final String DEFAULT_ROOT_PATH = "xwallet";
+    public static final String DEFAULT_ROOT_PATH = "xcash";
     public static final String DOWNLOADCACHE_DIR_NAME = "downloadCache";
     public static final String SETTING_LASTFILENAME = "setting.txt";
-    public static final int AUTOREFRESHDELAY = 450;
+    public static final int AUTOREFRESHDELAY = 350;
 
     private static TheApplication theApplication;
     private static String filesDirRootPath = null;
