@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.RemoteException;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.xcash.adapters.listviewadapter.Search_History_ListViewAdapter;
@@ -44,8 +46,11 @@ import com.xcash.wallet.uihelp.ActivityHelp;
 import com.xcash.wallet.uihelp.PopupWindowHelp;
 import com.xcash.wallet.uihelp.ProgressDialogHelp;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 
 public class DpopsActivity extends NewBaseActivity {
@@ -64,8 +69,9 @@ public class DpopsActivity extends NewBaseActivity {
     private Button buttonVote;
     private Button buttonRegister;
     private Button buttonUpdate;
-    private Button buttonRemove;
+    private Button buttonMore;
     private BaseRecyclerViewFromFrameLayout baseRecyclerViewFromFrameLayout;
+    private TextView textViewUtcTime;
 
     private View.OnClickListener onClickListener;
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
@@ -84,8 +90,24 @@ public class DpopsActivity extends NewBaseActivity {
 
     @Override
     protected void initHandler() {
-        handler = new Handler();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                        textViewUtcTime.setText(getString(R.string.activity_dpops_utcTime_tips)+simpleDateFormat.format(new Date()));
+                        handler.sendEmptyMessageDelayed(0, 30000);
+                        break;
+                    default:
+                        break;
+                }
+                super.handleMessage(msg);
+            }
+        };
     }
+
 
     @Override
     protected void initUi() {
@@ -102,8 +124,9 @@ public class DpopsActivity extends NewBaseActivity {
         buttonVote = (Button) findViewById(R.id.buttonVote);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
-        buttonRemove = (Button) findViewById(R.id.buttonRemove);
+        buttonMore = (Button) findViewById(R.id.buttonMore);
         baseRecyclerViewFromFrameLayout = (BaseRecyclerViewFromFrameLayout) findViewById(R.id.baseRecyclerViewFromFrameLayout);
+        textViewUtcTime = (TextView) findViewById(R.id.textViewUtcTime);
 
         initBaseRecyclerViewFromFrameLayout();
         onClickListener();
@@ -117,6 +140,7 @@ public class DpopsActivity extends NewBaseActivity {
         TheApplication.setCursorToLast(editTextTarget);
         imageViewRight.setVisibility(View.VISIBLE);
         imageViewRight.setImageResource(R.mipmap.activity_main_home_menu_more);
+        handler.sendEmptyMessage(0);
     }
 
     @Override
@@ -173,10 +197,11 @@ public class DpopsActivity extends NewBaseActivity {
                         intent1.putExtra(ActivityHelp.WALLET_KEY, wallet);
                         startActivity(intent1);
                         break;
-                    case R.id.buttonRemove:
+                    case R.id.buttonMore:
                         Intent intent2 = new Intent(DpopsActivity.this,
-                                DpopsRemoveActivity.class);
-                        intent2.putExtra(ActivityHelp.WALLET_KEY, wallet);
+                                WebViewActivity.class);
+                        intent2.putExtra(ActivityHelp.REQUEST_TITLE_KEY, selectSearch);
+                        intent2.putExtra(ActivityHelp.REQUEST_URL_KEY, selectSearch);
                         startActivity(intent2);
                         break;
                     default:
@@ -191,7 +216,7 @@ public class DpopsActivity extends NewBaseActivity {
         buttonVote.setOnClickListener(onClickListener);
         buttonRegister.setOnClickListener(onClickListener);
         buttonUpdate.setOnClickListener(onClickListener);
-        buttonRemove.setOnClickListener(onClickListener);
+        buttonMore.setOnClickListener(onClickListener);
     }
 
     private void initOrRefreshAdapter(List<ViewItem> viewItems) {
@@ -383,7 +408,7 @@ public class DpopsActivity extends NewBaseActivity {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            BaseActivity.showShortToast(DpopsActivity.this, error);
+                            BaseActivity.showShortToast(DpopsActivity.this, getString(R.string.activity_dpops_vote_failed_tips));
                             ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, view);
                         }
                     });

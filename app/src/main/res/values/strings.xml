@@ -57,7 +57,7 @@
     <string name="activity_set_wallet_editTextLoginName_hint">Your wallet name</string>
     <string name="activity_set_wallet_editTextPassword_hint">Your password</string>
     <string name="activity_set_wallet_editTextConfirmPassword_hint">Confirm your password</string>
-    <string name="activity_set_wallet_editTextDescription_hint">Password description</string>
+    <string name="activity_set_wallet_editTextDescription_hint">Password Hint</string>
     <string name="activity_set_wallet_textViewAgreementTips_text">I have validate the SHA256 for current version</string>
     <string name="activity_set_wallet_passwordConfirm_tips">Password confirm error</string>
     <string name="activity_set_wallet_confirmEmpty_tips">Name and Password can not be empty</string>
@@ -154,8 +154,8 @@
     <string name="activity_wallet_running_tabLayout_receive_text">Receive</string>
     <string name="activity_wallet_running_tabLayout_send_text">Send</string>
     <string name="activity_wallet_running_SynchronizedError_tips">Synchronized error, please check net and node</string>
-    <string name="activity_wallet_running_SynchronizedSuccess_tips">Synchronized Success</string>
-    <string name="activity_wallet_running_leaveDistance_tips">Synchronizing,remaining blocks:\n</string>
+    <string name="activity_wallet_running_SynchronizedSuccess_tips">Synchronized success</string>
+    <string name="activity_wallet_running_leaveDistance_tips">Synchronizing, remaining blocks:\n</string>
     <string name="activity_wallet_running_unlocked_tips">(unlocked)</string>
 
     <string name="activity_node_manager_textViewTitle_text">Choose Node</string>
@@ -165,8 +165,8 @@
     <string name="activity_node_manager_deleteNodeError_tips">Delete node error</string>
     <string name="activity_node_add_textViewTitle_text">Add Node</string>
     <string name="activity_node_delete_node_tips">Confirm to delete node?</string>
-    <string name="activity_node_add_editTextNodeIp_hint">Node ip</string>
-    <string name="activity_node_add_editTextNodePort_hint">Node port</string>
+    <string name="activity_node_add_editTextNodeIp_hint">Node IP</string>
+    <string name="activity_node_add_editTextNodePort_hint">Node Port</string>
     <string name="activity_node_add_editTextUsername_hint">Username (Optional)</string>
     <string name="activity_node_add_editTextPassword_hint">Password (Optional)</string>
     <string name="activity_node_add_confirmEmpty_tips">Ip and port can not be empty</string>
@@ -190,7 +190,7 @@
     <string name="activity_payment_editTextWalletAddress_hint">Transfer Address</string>
     <string name="activity_payment_editTextAmount_hint">Transfer Amount</string>
     <string name="activity_payment_editTextRingSize_hint">Transfer obfuscation, default 21(Optional)</string>
-    <string name="activity_payment_editTextPaymentId_hint">Payment Id(Optional)</string>
+    <string name="activity_payment_editTextPaymentId_hint">Payment ID(Optional)</string>
     <string name="activity_payment_editTextDescription_hint">Description(Optional)</string>
     <string name="activity_payment_confirmEmpty_tips">Address and Amount can not be empty</string>
     <string name="activity_payment_confirm_textViewTitle_text">Payment Confirm</string>
@@ -215,7 +215,7 @@
     <string name="activity_payment_confirm_address_tips">Address:</string>
     <string name="activity_payment_confirm_amount_tips">Amount:</string>
     <string name="activity_payment_confirm_fee_tips">Fee:</string>
-    <string name="activity_payment_confirm_firstTxId_tips">FirstTxId:</string>
+    <string name="activity_payment_confirm_firstTxId_tips">TxId:</string>
     <string name="activity_payment_confirm_txCount_tips">TxCount:</string>
     <string name="activity_payment_confirm_paySuccess_tips">Pay success</string>
 
@@ -231,7 +231,7 @@
     <string name="activity_transaction_details_fee_tips">Fee:</string>
     <string name="activity_transaction_details_blockHeight_tips">BlockHeight:</string>
     <string name="activity_transaction_details_confirmations_tips">Confirmations:</string>
-    <string name="activity_transaction_details_paymentId_tips">PaymentId:</string>
+    <string name="activity_transaction_details_paymentId_tips">Payment ID:</string>
 
     <string name="activity_about_us_textViewTitle_text">About Us</string>
     <string name="activity_about_us_textViewDetails_text">XCASH is headquartered in Paris. CEO is Guilhem, has many years of banking experience, is familiar with the payment trading industry and has his own cryptocurrency mining company. CTO is Zach, has more than 20 years of programming experience. Since 2013, he has been involved in the blockchain technology industry, engaged in mining technology research and development, and was the chief writer of a well-known mining website. COO is Paul, has many years of marketing experience and is also a patent attorney.\nFirst stage: Based on the core code of monero, the key code of monero v8 is added to the free exchange of private transactions and public trading on the basis of monroe. This is also beneficial to meet the government regulatory requirements and appropriate privacy requirements. Cryptonight heavyX pow algorithm can effectively fight asic mining machine, and make cpu and gpu mining more fair.\nSecond stage: It will run on the basis of more than one year of running pow, and will switch to the dpops+dbft on the main network . Based on more than one year of pow, it can ensure that the ticket process on dpops is more fair and decentralized.Based on the new dpops+dbft consensus, the throughput of the system will be greatly improved, making it possible to apply offline payment and become a medium for rapid exchange between different currencies.</string>
@@ -244,10 +244,11 @@
     <string name="activity_dpops_buttonVote_text">Vote</string>
     <string name="activity_dpops_buttonRegister_text">Register</string>
     <string name="activity_dpops_buttonUpdate_text">Update</string>
-    <string name="activity_dpops_buttonRemove_text">Remove</string>
+    <string name="activity_dpops_buttonMore_text">More</string>
     <string name="activity_dpops_confirmEmpty_tips">Search content can not be empty</string>
     <string name="activity_dpops_checkVoteValue_tips">Vote value can not be empty</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">Unlocked balance must greater than 0</string>
+    <string name="activity_dpops_vote_failed_tips">Delegate vote failed,you can view the info in history page</string>
 
     <string name="activity_dpops_register_textViewTitle_text">Register Delegate</string>
     <string name="activity_dpops_register_editTextDelegateName_hint">Delegate Name</string>
@@ -270,5 +271,6 @@
     <string name="activity_dpops_show_history_tips">Show History</string>
 
     <string name="activity_dpops_operation_history_textViewTitle_text">Show History</string>
+    <string name="activity_dpops_utcTime_tips">Current UTC Time:</string>
 
 </resources>

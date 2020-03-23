@@ -1006,7 +1006,7 @@ public class WalletService extends Service {
             try {
                 com.my.monero.model.Wallet activeWallet = XManager.getInstance().getXWalletController().getActiveWallet();
                 if (activeWallet != null) {
-                    String result = activeWallet.delegateRemove();
+                    String result = "Registered delegate does not support remove.";
                     if (result != null && result.equals(DPOPS_SUCCESS)) {
                         onNormalListener.onSuccess(result);
                     } else {

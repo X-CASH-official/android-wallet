@@ -25,7 +25,7 @@ import com.xcash.wallet.TheApplication;
 
 import org.jetbrains.annotations.NotNull;
 
-@Database(entities = {AddressBook.class, Node.class, OperationHistory.class, TransactionInfo.class, Wallet.class}, version = 4, exportSchema = false)
+@Database(entities = {AddressBook.class, Node.class, OperationHistory.class, TransactionInfo.class, Wallet.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "wallet.db";

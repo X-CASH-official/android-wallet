@@ -447,6 +447,19 @@ public class MainActivity extends NewBaseActivity {
         }
     }
 
+    private void enterWalletRunningActivity(final String password){
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,
+                        WalletRunningActivity.class);
+                intent.putExtra(ActivityHelp.WALLET_KEY, wallet);
+                intent.putExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY, password);
+                startActivity(intent);
+            }
+        },500);
+    }
+
     public void openDrawer() {
         drawerLayout.openDrawer(navigationView);
     }
@@ -472,11 +485,7 @@ public class MainActivity extends NewBaseActivity {
                             if (mainActivity_Fragment_Home != null) {
                                 mainActivity_Fragment_Home.unLock();
                             }
-                            Intent intent = new Intent(MainActivity.this,
-                                    WalletRunningActivity.class);
-                            intent.putExtra(ActivityHelp.WALLET_KEY, wallet);
-                            intent.putExtra(ActivityHelp.SET_WALLET_PASSWORD_KEY, password);
-                            startActivity(intent);
+                            enterWalletRunningActivity(password);
                         }
                     }
 

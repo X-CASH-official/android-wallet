@@ -432,6 +432,11 @@ public class MainActivity_Fragment_Home extends BaseFragment {
                     textViewSynchronizeStatus.setText(getString(R.string.activity_wallet_running_leaveDistance_tips) + blockChainHeight + "/" + daemonHeight);
                     progressSynchronize.setProgress(progress);
                 }
+                if (imageViewLock.getTag() == null || !(boolean) imageViewLock.getTag()) {
+                    imageViewLock.setImageResource(R.mipmap.activity_main_content_fragment_home_top_item_unlock);
+                    imageViewLock.setTag(true);
+                    imageViewLock.setEnabled(true);
+                }
             }
         }
     }
