@@ -13,8 +13,6 @@
 📱 **Securely store and manage your XCASH on your mobile.**  
 Easily end XCASH publicly or privately, manage your wallets, etc... from your phone!
 
-> *Initially forked from [m2049r](https://github.com/m2049r)'s [monerujo](https://github.com/m2049r/xmrwallet) wallet.*
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
@@ -51,8 +49,10 @@ See your payment history from anywhere, directly on your phone.
 
 ## License
 
+> *Cloned from [m2049r](https://github.com/m2049r)'s [xmrwallet](https://github.com/m2049r/xmrwallet).*
+
 **X-Cash GUI Wallet is an open-source project managed by the X-Cash Foundation**.  
-We are operating under the [MIT License](LICENSE).
+Licensed under the Apache License, Version 2.0. View [License](LICENSE)
 
 ## Contributing
 

@@ -1,2 +1,2 @@
 include ':app', ':xcash'
-rootProject.name='x-wallet'
+rootProject.name='android-wallet'
