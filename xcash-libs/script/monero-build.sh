@@ -4,7 +4,7 @@ set -e
 
 source script/env.sh
 
-cd $EXTERNAL_LIBS_BUILD_ROOT/X-CASH_DPOPS
+cd $EXTERNAL_LIBS_BUILD_ROOT/xcash-core
 
 sed -i 's/-Werror/-Wall/g' CMakeLists.txt
 sed -i 's/program_options locale/program_options/g' CMakeLists.txt
