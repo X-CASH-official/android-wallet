@@ -19,7 +19,7 @@
     <string name="normal_load_completed_textView_text">Complete</string>
     <string name="normal_copySuccess_tips">Copied to clipboard!</string>
     <string name="over_request_tips">Request exceeds the processing limit. Please try again later</string>
-    <string name="wallet_not_exists_tips">The wallet doesn't exist</string>
+    <string name="wallet_not_exists_tips">The wallet doesn\'t exist</string>
     <string name="password_can_not_empty_tips">Password cannot be empty!</string>
     <string name="check_password_error_tips">Check password error</string>
     <string name="set_daemon_error_tips">Set daemon failed</string>

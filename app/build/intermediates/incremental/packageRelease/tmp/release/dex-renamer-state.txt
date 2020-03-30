@@ -1,0 +1,4 @@
+#Mon Mar 30 22:47:44 CEST 2020
+base.0=/root/android-wallet/app/build/intermediates/transforms/r8/release/0/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

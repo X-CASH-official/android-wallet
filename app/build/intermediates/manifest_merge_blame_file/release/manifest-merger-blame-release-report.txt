@@ -1,0 +1,244 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.xcash.wallet"
+4    android:versionCode="1"
+5    android:versionName="1.0.0-beta" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="17"
+8-->/root/android-wallet/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->/root/android-wallet/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/root/android-wallet/app/src/main/AndroidManifest.xml:5:5-67
+11-->/root/android-wallet/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/root/android-wallet/app/src/main/AndroidManifest.xml:6:5-79
+12-->/root/android-wallet/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/root/android-wallet/app/src/main/AndroidManifest.xml:7:5-81
+13-->/root/android-wallet/app/src/main/AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+14-->/root/android-wallet/app/src/main/AndroidManifest.xml:9:5-83
+14-->/root/android-wallet/app/src/main/AndroidManifest.xml:9:22-80
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->/root/android-wallet/app/src/main/AndroidManifest.xml:10:5-65
+15-->/root/android-wallet/app/src/main/AndroidManifest.xml:10:22-62
+16
+17    <permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />
+17-->/root/android-wallet/app/src/main/AndroidManifest.xml:12:5-73
+17-->/root/android-wallet/app/src/main/AndroidManifest.xml:12:17-70
+18
+19    <uses-permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />
+19-->/root/android-wallet/app/src/main/AndroidManifest.xml:13:5-78
+19-->/root/android-wallet/app/src/main/AndroidManifest.xml:13:22-75
+20
+21    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+22    <uses-feature
+22-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:25:5-27:36
+23        android:name="android.hardware.camera"
+23-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:26:9-47
+24        android:required="false" />
+24-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:27:9-33
+25    <uses-feature
+25-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:28:5-30:36
+26        android:name="android.hardware.camera.front"
+26-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:29:9-53
+27        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+27-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:30:9-33
+28    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+29    <uses-feature
+29-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:33:5-35:36
+30        android:name="android.hardware.camera.autofocus"
+30-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:34:9-57
+31        android:required="false" />
+31-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:35:9-33
+32    <uses-feature
+32-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:36:5-38:36
+33        android:name="android.hardware.camera.flash"
+33-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:37:9-53
+34        android:required="false" />
+34-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:38:9-33
+35    <uses-feature
+35-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:39:5-41:36
+36        android:name="android.hardware.screen.landscape"
+36-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:40:9-57
+37        android:required="false" />
+37-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:41:9-33
+38    <uses-feature
+38-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:42:5-44:36
+39        android:name="android.hardware.wifi"
+39-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:43:9-45
+40        android:required="false" />
+40-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:44:9-33
+41
+42    <application
+42-->/root/android-wallet/app/src/main/AndroidManifest.xml:15:5-80:19
+43        android:name="com.xcash.wallet.TheApplication"
+43-->/root/android-wallet/app/src/main/AndroidManifest.xml:16:9-55
+44        android:allowBackup="true"
+44-->/root/android-wallet/app/src/main/AndroidManifest.xml:17:9-35
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:24:18-86
+46        android:icon="@mipmap/ic_launcher"
+46-->/root/android-wallet/app/src/main/AndroidManifest.xml:18:9-43
+47        android:label="@string/app_name"
+47-->/root/android-wallet/app/src/main/AndroidManifest.xml:19:9-41
+48        android:supportsRtl="true"
+48-->/root/android-wallet/app/src/main/AndroidManifest.xml:20:9-35
+49        android:theme="@style/AppThemeNoActionBar"
+49-->/root/android-wallet/app/src/main/AndroidManifest.xml:21:9-51
+50        android:usesCleartextTraffic="true" >
+50-->/root/android-wallet/app/src/main/AndroidManifest.xml:22:9-44
+51        <provider
+52            android:name="androidx.core.content.FileProvider"
+52-->/root/android-wallet/app/src/main/AndroidManifest.xml:25:13-62
+53            android:authorities="com.xcash.wallet.fileprovider"
+53-->/root/android-wallet/app/src/main/AndroidManifest.xml:26:13-64
+54            android:exported="false"
+54-->/root/android-wallet/app/src/main/AndroidManifest.xml:27:13-37
+55            android:grantUriPermissions="true" >
+55-->/root/android-wallet/app/src/main/AndroidManifest.xml:28:13-47
+56            <meta-data
+56-->/root/android-wallet/app/src/main/AndroidManifest.xml:29:13-31:57
+57                android:name="android.support.FILE_PROVIDER_PATHS"
+57-->/root/android-wallet/app/src/main/AndroidManifest.xml:30:17-67
+58                android:resource="@xml/file_provider" />
+58-->/root/android-wallet/app/src/main/AndroidManifest.xml:31:17-54
+59        </provider>
+60
+61        <activity android:name="com.xcash.wallet.SplashActivity" >
+61-->/root/android-wallet/app/src/main/AndroidManifest.xml:35:9-41:20
+61-->/root/android-wallet/app/src/main/AndroidManifest.xml:35:19-65
+62            <intent-filter>
+62-->/root/android-wallet/app/src/main/AndroidManifest.xml:36:13-40:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->/root/android-wallet/app/src/main/AndroidManifest.xml:37:17-69
+63-->/root/android-wallet/app/src/main/AndroidManifest.xml:37:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->/root/android-wallet/app/src/main/AndroidManifest.xml:39:17-77
+65-->/root/android-wallet/app/src/main/AndroidManifest.xml:39:27-74
+66            </intent-filter>
+67        </activity>
+68        <activity android:name="com.xcash.wallet.ChooseWalletActivity" />
+68-->/root/android-wallet/app/src/main/AndroidManifest.xml:42:9-74
+68-->/root/android-wallet/app/src/main/AndroidManifest.xml:42:19-71
+69        <activity android:name="com.xcash.wallet.SetWalletActivity" />
+69-->/root/android-wallet/app/src/main/AndroidManifest.xml:43:9-71
+69-->/root/android-wallet/app/src/main/AndroidManifest.xml:43:19-68
+70        <activity android:name="com.xcash.wallet.CreateWalletActivity" />
+70-->/root/android-wallet/app/src/main/AndroidManifest.xml:44:9-74
+70-->/root/android-wallet/app/src/main/AndroidManifest.xml:44:19-71
+71        <activity android:name="com.xcash.wallet.ImportWalletActivity" />
+71-->/root/android-wallet/app/src/main/AndroidManifest.xml:45:9-74
+71-->/root/android-wallet/app/src/main/AndroidManifest.xml:45:19-71
+72        <activity android:name="com.xcash.wallet.CreateWalletConfirmActivity" />
+72-->/root/android-wallet/app/src/main/AndroidManifest.xml:46:9-81
+72-->/root/android-wallet/app/src/main/AndroidManifest.xml:46:19-78
+73        <activity android:name="com.xcash.wallet.MainActivity" />
+73-->/root/android-wallet/app/src/main/AndroidManifest.xml:47:9-66
+73-->/root/android-wallet/app/src/main/AndroidManifest.xml:47:19-63
+74        <activity android:name="com.xcash.wallet.WalletManagerActivity" />
+74-->/root/android-wallet/app/src/main/AndroidManifest.xml:48:9-75
+74-->/root/android-wallet/app/src/main/AndroidManifest.xml:48:19-72
+75        <activity android:name="com.xcash.wallet.WalletDetailsActivity" />
+75-->/root/android-wallet/app/src/main/AndroidManifest.xml:49:9-75
+75-->/root/android-wallet/app/src/main/AndroidManifest.xml:49:19-72
+76        <activity android:name="com.xcash.wallet.WalletDetailsMnemonicWordsActivity" />
+76-->/root/android-wallet/app/src/main/AndroidManifest.xml:50:9-88
+76-->/root/android-wallet/app/src/main/AndroidManifest.xml:50:19-85
+77        <activity android:name="com.xcash.wallet.WalletDetailsPrivateKeysActivity" />
+77-->/root/android-wallet/app/src/main/AndroidManifest.xml:51:9-86
+77-->/root/android-wallet/app/src/main/AndroidManifest.xml:51:19-83
+78        <activity android:name="com.xcash.wallet.WalletRunningActivity" />
+78-->/root/android-wallet/app/src/main/AndroidManifest.xml:52:9-75
+78-->/root/android-wallet/app/src/main/AndroidManifest.xml:52:19-72
+79        <activity android:name="com.xcash.wallet.NodeManagerActivity" />
+79-->/root/android-wallet/app/src/main/AndroidManifest.xml:53:9-73
+79-->/root/android-wallet/app/src/main/AndroidManifest.xml:53:19-70
+80        <activity android:name="com.xcash.wallet.PaymentActivity" />
+80-->/root/android-wallet/app/src/main/AndroidManifest.xml:54:9-69
+80-->/root/android-wallet/app/src/main/AndroidManifest.xml:54:19-66
+81        <activity android:name="com.xcash.wallet.PaymentConfirmActivity" />
+81-->/root/android-wallet/app/src/main/AndroidManifest.xml:55:9-76
+81-->/root/android-wallet/app/src/main/AndroidManifest.xml:55:19-73
+82        <activity android:name="com.xcash.wallet.AddressManagerActivity" />
+82-->/root/android-wallet/app/src/main/AndroidManifest.xml:56:9-76
+82-->/root/android-wallet/app/src/main/AndroidManifest.xml:56:19-73
+83        <activity android:name="com.xcash.wallet.AddressAddActivity" />
+83-->/root/android-wallet/app/src/main/AndroidManifest.xml:57:9-72
+83-->/root/android-wallet/app/src/main/AndroidManifest.xml:57:19-69
+84        <activity android:name="com.xcash.wallet.LanguageSettingActivity" />
+84-->/root/android-wallet/app/src/main/AndroidManifest.xml:58:9-77
+84-->/root/android-wallet/app/src/main/AndroidManifest.xml:58:19-74
+85        <activity android:name="com.xcash.wallet.NodeAddActivity" />
+85-->/root/android-wallet/app/src/main/AndroidManifest.xml:59:9-69
+85-->/root/android-wallet/app/src/main/AndroidManifest.xml:59:19-66
+86        <activity android:name="com.xcash.wallet.WebViewActivity" />
+86-->/root/android-wallet/app/src/main/AndroidManifest.xml:60:9-69
+86-->/root/android-wallet/app/src/main/AndroidManifest.xml:60:19-66
+87        <activity android:name="com.xcash.wallet.QRCodeActivity" />
+87-->/root/android-wallet/app/src/main/AndroidManifest.xml:61:9-68
+87-->/root/android-wallet/app/src/main/AndroidManifest.xml:61:19-65
+88        <activity android:name="com.xcash.wallet.ReceiveActivity" />
+88-->/root/android-wallet/app/src/main/AndroidManifest.xml:62:9-69
+88-->/root/android-wallet/app/src/main/AndroidManifest.xml:62:19-66
+89        <activity android:name="com.xcash.wallet.TransactionDetailsActivity" />
+89-->/root/android-wallet/app/src/main/AndroidManifest.xml:63:9-80
+89-->/root/android-wallet/app/src/main/AndroidManifest.xml:63:19-77
+90        <activity android:name="com.xcash.wallet.AboutUsActivity" />
+90-->/root/android-wallet/app/src/main/AndroidManifest.xml:64:9-69
+90-->/root/android-wallet/app/src/main/AndroidManifest.xml:64:19-66
+91        <activity
+91-->/root/android-wallet/app/src/main/AndroidManifest.xml:65:9-67:70
+92            android:name="com.xcash.wallet.DpopsActivity"
+92-->/root/android-wallet/app/src/main/AndroidManifest.xml:66:13-58
+93            android:windowSoftInputMode="adjustResize|stateHidden" />
+93-->/root/android-wallet/app/src/main/AndroidManifest.xml:67:13-67
+94        <activity android:name="com.xcash.wallet.DpopsRegisterActivity" />
+94-->/root/android-wallet/app/src/main/AndroidManifest.xml:68:9-75
+94-->/root/android-wallet/app/src/main/AndroidManifest.xml:68:19-72
+95        <activity android:name="com.xcash.wallet.DpopsUpdateActivity" />
+95-->/root/android-wallet/app/src/main/AndroidManifest.xml:69:9-73
+95-->/root/android-wallet/app/src/main/AndroidManifest.xml:69:19-70
+96        <activity android:name="com.xcash.wallet.DpopsOperationHistoryActivity" />
+96-->/root/android-wallet/app/src/main/AndroidManifest.xml:70:9-83
+96-->/root/android-wallet/app/src/main/AndroidManifest.xml:70:19-80
+97
+98        <service
+98-->/root/android-wallet/app/src/main/AndroidManifest.xml:72:9-77:15
+99            android:name="com.xcash.wallet.aidl.service.WalletService"
+99-->/root/android-wallet/app/src/main/AndroidManifest.xml:73:13-71
+100            android:enabled="true"
+100-->/root/android-wallet/app/src/main/AndroidManifest.xml:74:13-35
+101            android:exported="true"
+101-->/root/android-wallet/app/src/main/AndroidManifest.xml:75:13-36
+102            android:permission="com.xcash.wallet.aidl.permission.LOCAL" />
+102-->/root/android-wallet/app/src/main/AndroidManifest.xml:76:13-72
+103
+104        <activity
+104-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:47:9-53:63
+105            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+105-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:48:13-74
+106            android:clearTaskOnLaunch="true"
+106-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:49:13-45
+107            android:screenOrientation="sensorLandscape"
+107-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:50:13-56
+108            android:stateNotNeeded="true"
+108-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:51:13-42
+109            android:theme="@style/zxing_CaptureTheme"
+109-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:52:13-54
+110            android:windowSoftInputMode="stateAlwaysHidden" />
+110-->[com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:53:13-60
+111
+112        <service
+112-->[androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:25:9-27:40
+113            android:name="androidx.room.MultiInstanceInvalidationService"
+113-->[androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:26:13-74
+114            android:exported="false" />
+114-->[androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:27:13-37
+115    </application>
+116
+117</manifest>

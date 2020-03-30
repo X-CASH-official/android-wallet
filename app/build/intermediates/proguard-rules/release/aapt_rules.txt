@@ -1,0 +1,329 @@
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:42
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:51
+-keep class androidx.core.content.FileProvider { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:112
+-keep class androidx.room.MultiInstanceInvalidationService { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:104
+-keep class com.journeyapps.barcodescanner.CaptureActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:90
+-keep class com.xcash.wallet.AboutUsActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:83
+-keep class com.xcash.wallet.AddressAddActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:82
+-keep class com.xcash.wallet.AddressManagerActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:68
+-keep class com.xcash.wallet.ChooseWalletActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:70
+-keep class com.xcash.wallet.CreateWalletActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:72
+-keep class com.xcash.wallet.CreateWalletConfirmActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:91
+-keep class com.xcash.wallet.DpopsActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:96
+-keep class com.xcash.wallet.DpopsOperationHistoryActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:94
+-keep class com.xcash.wallet.DpopsRegisterActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:95
+-keep class com.xcash.wallet.DpopsUpdateActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:71
+-keep class com.xcash.wallet.ImportWalletActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:84
+-keep class com.xcash.wallet.LanguageSettingActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:73
+-keep class com.xcash.wallet.MainActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:85
+-keep class com.xcash.wallet.NodeAddActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:79
+-keep class com.xcash.wallet.NodeManagerActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:80
+-keep class com.xcash.wallet.PaymentActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:81
+-keep class com.xcash.wallet.PaymentConfirmActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:87
+-keep class com.xcash.wallet.QRCodeActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:88
+-keep class com.xcash.wallet.ReceiveActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:69
+-keep class com.xcash.wallet.SetWalletActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:61
+-keep class com.xcash.wallet.SplashActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:42
+-keep class com.xcash.wallet.TheApplication { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:89
+-keep class com.xcash.wallet.TransactionDetailsActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:75
+-keep class com.xcash.wallet.WalletDetailsActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:76
+-keep class com.xcash.wallet.WalletDetailsMnemonicWordsActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:77
+-keep class com.xcash.wallet.WalletDetailsPrivateKeysActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:74
+-keep class com.xcash.wallet.WalletManagerActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:78
+-keep class com.xcash.wallet.WalletRunningActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:86
+-keep class com.xcash.wallet.WebViewActivity { <init>(); }
+# Referenced at /root/android-wallet/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:98
+-keep class com.xcash.wallet.aidl.service.WalletService { <init>(); }
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout-watch-v20/abc_alert_dialog_title_material.xml:53
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog_title.xml:41
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog_actions.xml:45
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog.xml:51
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_title_material.xml:57
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_material.xml:52
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_button_bar_material.xml:43
+-keep class android.widget.Space { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_select_dialog_material.xml:23
+-keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_action_menu_item_layout.xml:17
+-keep class androidx.appcompat.view.menu.ActionMenuItemView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_expanded_menu_layout.xml:17
+-keep class androidx.appcompat.view.menu.ExpandedMenuView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_popup_menu_item_layout.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_list_menu_item_layout.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_cascading_menu_item_layout.xml:20
+-keep class androidx.appcompat.view.menu.ListMenuItemView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_toolbar.xml:27
+-keep class androidx.appcompat.widget.ActionBarContainer { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_toolbar.xml:43
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_action_mode_bar.xml:19
+-keep class androidx.appcompat.widget.ActionBarContextView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_toolbar.xml:17
+-keep class androidx.appcompat.widget.ActionBarOverlayLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_action_menu_layout.xml:17
+-keep class androidx.appcompat.widget.ActionMenuView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_activity_chooser_view.xml:19
+-keep class androidx.appcompat.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_material.xml:18
+-keep class androidx.appcompat.widget.AlertDialogLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog_actions.xml:26
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_button_bar_material.xml:26
+-keep class androidx.appcompat.widget.ButtonBarLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_content_include.xml:19
+-keep class androidx.appcompat.widget.ContentFrameLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog_title.xml:36
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_title_material.xml:45
+-keep class androidx.appcompat.widget.DialogTitle { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_simple_overlay_action_mode.xml:23
+-keep class androidx.appcompat.widget.FitWindowsFrameLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_simple.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_dialog_title_material.xml:22
+-keep class androidx.appcompat.widget.FitWindowsLinearLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_search_view.xml:75
+-keep class androidx.appcompat.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:233
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_toolbar.xml:36
+-keep class androidx.appcompat.widget.Toolbar { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_simple_overlay_action_mode.xml:32
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_screen_simple.xml:25
+-keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_password_hint.xml:12
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_password.xml:11
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_normal_tips.xml:12
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_listview_menu.xml:6
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_date.xml:11
+# Referenced at /root/android-wallet/app/src/main/res/layout/layout_transaction_item.xml:8
+# Referenced at /root/android-wallet/app/src/main/res/layout/base_recyclerview_lostviewtype_item.xml:2
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_manager_item.xml:9
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_home_top_item.xml:8
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_operation_history_item.xml:8
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_item.xml:8
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_address_manager_item.xml:9
+-keep class androidx.cardview.widget.CardView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_password.xml:68
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_normal_tips.xml:53
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_date.xml:38
+# Referenced at /root/android-wallet/app/src/main/res/layout/layout_transaction_item.xml:24
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:164
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_manager.xml:20
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_payment.xml:44
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content.xml:9
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_operation_history_item.xml:23
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_item.xml:23
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops.xml:11
+-keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_password.xml:72
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_normal_tips.xml:57
+# Referenced at /root/android-wallet/app/src/main/res/layout/popupwindow_date.xml:42
+# Referenced at /root/android-wallet/app/src/main/res/layout/layout_transaction_item.xml:29
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:173
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_manager.xml:30
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_payment.xml:52
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content.xml:16
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_operation_history_item.xml:28
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_item.xml:28
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops.xml:18
+-keep class androidx.constraintlayout.widget.Guideline { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_bottom_sheet_dialog.xml:26
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:2
+-keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_alert_dialog.xml:40
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_details_private_keys.xml:36
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_details_mnemonic_words.xml:46
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_details.xml:18
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_transaction_details.xml:42
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_set_wallet.xml:37
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_receive.xml:17
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_payment_confirm.xml:45
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_payment.xml:18
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_node_add.xml:17
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet_fragment_mnemonic.xml:8
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet_fragment_keys.xml:7
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_update.xml:17
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_remove.xml:17
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_register.xml:17
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_create_wallet_confirm.xml:41
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_create_wallet.xml:46
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_address_add.xml:16
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_about_us.xml:29
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/res/layout/abc_alert_dialog_material.xml:41
+-keep class androidx.core.widget.NestedScrollView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main.xml:8
+-keep class androidx.drawerlayout.widget.DrawerLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_calendar_months.xml:18
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_calendar_horizontal.xml:29
+# Referenced at /root/android-wallet/app/src/main/res/layout/base_layout_main.xml:18
+-keep class androidx.recyclerview.widget.RecyclerView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/base_layout_main.xml:13
+-keep class androidx.swiperefreshlayout.widget.SwipeRefreshLayout { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:303
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet.xml:30
+-keep class androidx.viewpager.widget.ViewPager { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/layout_appbar_default.xml:2
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:10
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_wallet.xml:14
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_home.xml:15
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_find.xml:14
+-keep class com.google.android.material.appbar.AppBarLayout { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:17
+-keep class com.google.android.material.appbar.CollapsingToolbarLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_toolbar_surface.xml:16
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_toolbar_elevation.xml:16
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_toolbar_custom_background.xml:16
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_toolbar.xml:16
+-keep class com.google.android.material.appbar.MaterialToolbar { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_header_fullscreen.xml:36
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_calendar_month_navigation.xml:32
+-keep class com.google.android.material.button.MaterialButton { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_reflow_chipgroup.xml:25
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_action_chip.xml:17
+-keep class com.google.android.material.chip.Chip { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/test_reflow_chipgroup.xml:19
+-keep class com.google.android.material.chip.ChipGroup { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_calendar_month.xml:18
+-keep class com.google.android.material.datepicker.MaterialCalendarGridView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_bottom_navigation_item.xml:27
+-keep class com.google.android.material.internal.BaselineLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_header_toggle.xml:18
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_text_input_start_icon.xml:18
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_text_input_end_icon.xml:18
+-keep class com.google.android.material.internal.CheckableImageButton { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_navigation_item.xml:17
+-keep class com.google.android.material.internal.NavigationMenuItemView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_navigation_menu.xml:17
+-keep class com.google.android.material.internal.NavigationMenuView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main.xml:15
+-keep class com.google.android.material.navigation.NavigationView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_layout_snackbar.xml:18
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_layout_snackbar.xml:18
+-keep class com.google.android.material.snackbar.Snackbar$SnackbarLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_layout_snackbar_include.xml:18
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/design_layout_snackbar_include.xml:18
+-keep class com.google.android.material.snackbar.SnackbarContentLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_text_input_date_range.xml:32
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_text_input_date.xml:31
+-keep class com.google.android.material.textfield.TextInputEditText { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_text_input_date_range.xml:26
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/mtrl_picker_text_input_date.xml:26
+-keep class com.google.android.material.textfield.TextInputLayout { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/text_view_without_line_height.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/text_view_with_theme_line_height.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/text_view_with_line_height_from_style.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/text_view_with_line_height_from_layout.xml:17
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/res/layout/text_view_with_line_height_from_appearance.xml:17
+-keep class com.google.android.material.textview.MaterialTextView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/res/layout/zxing_barcode_scanner.xml:4
+-keep class com.journeyapps.barcodescanner.BarcodeView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/res/layout/zxing_capture.xml:23
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_qrcode.xml:9
+-keep class com.journeyapps.barcodescanner.DecoratedBarcodeView { <init>(...); }
+
+# Referenced at /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/res/layout/zxing_barcode_scanner.xml:9
+-keep class com.journeyapps.barcodescanner.ViewfinderView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running_fragment_default.xml:9
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_manager.xml:88
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_node_manager.xml:10
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_wallet.xml:64
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_home.xml:127
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_main_content_fragment_find.xml:63
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_language_setting.xml:11
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_operation_history.xml:10
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops.xml:284
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_address_manager.xml:10
+-keep class com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_set_wallet.xml:87
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_payment.xml:173
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_node_add.xml:43
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet_fragment_mnemonic.xml:33
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet_fragment_keys.xml:33
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_update.xml:43
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops_register.xml:43
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_dpops.xml:36
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_create_wallet_confirm.xml:87
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_address_add.xml:42
+-keep class com.xcash.views.EditTextInNestedScrollView { <init>(...); }
+
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_wallet_running.xml:286
+# Referenced at /root/android-wallet/app/src/main/res/layout/activity_import_wallet.xml:12
+-keep class com.xcash.views.tablayout.TabLayout { <init>(...); }
+

@@ -1,0 +1,406 @@
+-- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:24:9-32:20
+	android:grantUriPermissions
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:28:13-47
+	android:authorities
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:26:13-64
+	android:exported
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:25:13-62
+manifest
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+MERGED from [com.google.android.material:material:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [:xcash] /root/android-wallet/xcash/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2a3e40c53ab630b15976cf43ec3e7c60/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a82924bf5528158ec909aad1eb52c55b/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/cd77219fe1da77b9df131a3e7d8fefff/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/0da0a821e1beb6c49d1766ae733bb80e/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a70ae948b9eeda418617f2fd8cb028e5/core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /root/.gradle/caches/transforms-2/files-2.1/2e31c77df9bc48d63a54343742943c59/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:17:1-56:12
+MERGED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.fragment:fragment:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/65d9964f1751305b6859049c3205900b/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/8eb591bee72917a23940608f8ae7f095/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/05ccf88952acf14e11119e44f1b676b3/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e3dbbb613abbc31b2ccaca8248c17365/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8fc7430d861d0f983f5ada4b8b0ab25f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/c28dc15d5ef4b25936f4349ef606f158/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /root/.gradle/caches/transforms-2/files-2.1/67b923a5117f306da73740cf72866610/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/088b2bb661703c69e7e7bd005557081b/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/79535b1e52df0b4ce8bc47d1000d0837/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8b31916d8b54a12dabe6733428f5b515/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/457ff4d8410a63a08f6117c68516b134/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b28096dce63fd9d627cc2ff935698477/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b678522d1c3e8b47637213cf64c7780f/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/69bf9767d506be6964108a14615ffa91/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/9d81ec9a4708c8db2a761227cbbe6ce1/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/92cc6304cd17d91a5f65b65c29b5e375/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e9794629edb63186066ffe459102cc7b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/b69231343007112f0c0835781864cc3e/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/f66c49bce90b7d2ad3021854ff226c7f/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/aaa9993f7f17230cf744969809673b09/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/23e2482b2fea43d3f694b0a9d1c41fab/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d0ccea0862d9126ef23344d7ac26fa64/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+	package
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:3:5-31
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:1-82:12
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:9:5-83
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:9:22-80
+uses-permission#android.permission.CAMERA
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:10:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:22:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:22:5-65
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:10:22-62
+permission#com.xcash.wallet.aidl.permission.LOCAL
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:12:5-73
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:12:17-70
+uses-permission#com.xcash.wallet.aidl.permission.LOCAL
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:13:5-78
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:13:22-75
+application
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:15:5-80:19
+MERGED from [com.google.android.material:material:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /root/.gradle/caches/transforms-2/files-2.1/2e31c77df9bc48d63a54343742943c59/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /root/.gradle/caches/transforms-2/files-2.1/2e31c77df9bc48d63a54343742943c59/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:46:5-54:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:46:5-54:19
+MERGED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/f66c49bce90b7d2ad3021854ff226c7f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/f66c49bce90b7d2ad3021854ff226c7f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:20:9-35
+	android:label
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:19:9-41
+	android:icon
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:18:9-43
+	android:allowBackup
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:17:9-35
+	android:theme
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:21:9-51
+	android:usesCleartextTraffic
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:22:9-44
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:16:9-55
+activity#com.xcash.wallet.SplashActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:35:9-41:20
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:35:19-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:39:27-74
+activity#com.xcash.wallet.ChooseWalletActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:42:9-74
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:42:19-71
+activity#com.xcash.wallet.SetWalletActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:43:9-71
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:43:19-68
+activity#com.xcash.wallet.CreateWalletActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:44:9-74
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:44:19-71
+activity#com.xcash.wallet.ImportWalletActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:45:9-74
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:45:19-71
+activity#com.xcash.wallet.CreateWalletConfirmActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:46:9-81
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:46:19-78
+activity#com.xcash.wallet.MainActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:47:9-66
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:47:19-63
+activity#com.xcash.wallet.WalletManagerActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:48:9-75
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:48:19-72
+activity#com.xcash.wallet.WalletDetailsActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:49:9-75
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:49:19-72
+activity#com.xcash.wallet.WalletDetailsMnemonicWordsActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:50:9-88
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:50:19-85
+activity#com.xcash.wallet.WalletDetailsPrivateKeysActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:51:9-86
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:51:19-83
+activity#com.xcash.wallet.WalletRunningActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:52:9-75
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:52:19-72
+activity#com.xcash.wallet.NodeManagerActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:53:9-73
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:53:19-70
+activity#com.xcash.wallet.PaymentActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:54:9-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:54:19-66
+activity#com.xcash.wallet.PaymentConfirmActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:55:9-76
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:55:19-73
+activity#com.xcash.wallet.AddressManagerActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:56:9-76
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:56:19-73
+activity#com.xcash.wallet.AddressAddActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:57:9-72
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:57:19-69
+activity#com.xcash.wallet.LanguageSettingActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:58:9-77
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:58:19-74
+activity#com.xcash.wallet.NodeAddActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:59:9-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:59:19-66
+activity#com.xcash.wallet.WebViewActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:60:9-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:60:19-66
+activity#com.xcash.wallet.QRCodeActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:61:9-68
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:61:19-65
+activity#com.xcash.wallet.ReceiveActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:62:9-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:62:19-66
+activity#com.xcash.wallet.TransactionDetailsActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:63:9-80
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:63:19-77
+activity#com.xcash.wallet.AboutUsActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:64:9-69
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:64:19-66
+activity#com.xcash.wallet.DpopsActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:65:9-67:70
+	android:windowSoftInputMode
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:67:13-67
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:66:13-58
+activity#com.xcash.wallet.DpopsRegisterActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:68:9-75
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:68:19-72
+activity#com.xcash.wallet.DpopsUpdateActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:69:9-73
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:69:19-70
+activity#com.xcash.wallet.DpopsOperationHistoryActivity
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:70:9-83
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:70:19-80
+service#com.xcash.wallet.aidl.service.WalletService
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:72:9-77:15
+	android:enabled
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:74:13-35
+	android:exported
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:75:13-36
+	android:permission
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:76:13-72
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:73:13-71
+uses-sdk
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e6a991c5a52771af144f20ba50a4f297/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [:xcash] /root/android-wallet/xcash/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:xcash] /root/android-wallet/xcash/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/b3661b335e25cc0bcec48b89246034c4/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2a3e40c53ab630b15976cf43ec3e7c60/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2a3e40c53ab630b15976cf43ec3e7c60/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a82924bf5528158ec909aad1eb52c55b/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a82924bf5528158ec909aad1eb52c55b/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/cd77219fe1da77b9df131a3e7d8fefff/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/cd77219fe1da77b9df131a3e7d8fefff/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/0da0a821e1beb6c49d1766ae733bb80e/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/0da0a821e1beb6c49d1766ae733bb80e/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a70ae948b9eeda418617f2fd8cb028e5/core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a70ae948b9eeda418617f2fd8cb028e5/core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /root/.gradle/caches/transforms-2/files-2.1/2e31c77df9bc48d63a54343742943c59/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /root/.gradle/caches/transforms-2/files-2.1/2e31c77df9bc48d63a54343742943c59/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/65d9964f1751305b6859049c3205900b/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/65d9964f1751305b6859049c3205900b/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/8eb591bee72917a23940608f8ae7f095/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/8eb591bee72917a23940608f8ae7f095/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/05ccf88952acf14e11119e44f1b676b3/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/05ccf88952acf14e11119e44f1b676b3/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e3dbbb613abbc31b2ccaca8248c17365/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e3dbbb613abbc31b2ccaca8248c17365/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8fc7430d861d0f983f5ada4b8b0ab25f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8fc7430d861d0f983f5ada4b8b0ab25f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/c28dc15d5ef4b25936f4349ef606f158/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/c28dc15d5ef4b25936f4349ef606f158/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /root/.gradle/caches/transforms-2/files-2.1/67b923a5117f306da73740cf72866610/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /root/.gradle/caches/transforms-2/files-2.1/67b923a5117f306da73740cf72866610/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/088b2bb661703c69e7e7bd005557081b/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/088b2bb661703c69e7e7bd005557081b/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/79535b1e52df0b4ce8bc47d1000d0837/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/79535b1e52df0b4ce8bc47d1000d0837/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8b31916d8b54a12dabe6733428f5b515/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8b31916d8b54a12dabe6733428f5b515/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/457ff4d8410a63a08f6117c68516b134/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/457ff4d8410a63a08f6117c68516b134/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/e9d267c39890385adcadf7222b957ff3/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b28096dce63fd9d627cc2ff935698477/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b28096dce63fd9d627cc2ff935698477/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b678522d1c3e8b47637213cf64c7780f/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b678522d1c3e8b47637213cf64c7780f/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/69bf9767d506be6964108a14615ffa91/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/69bf9767d506be6964108a14615ffa91/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/9d81ec9a4708c8db2a761227cbbe6ce1/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/9d81ec9a4708c8db2a761227cbbe6ce1/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/92cc6304cd17d91a5f65b65c29b5e375/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/92cc6304cd17d91a5f65b65c29b5e375/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e9794629edb63186066ffe459102cc7b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e9794629edb63186066ffe459102cc7b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/b69231343007112f0c0835781864cc3e/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /root/.gradle/caches/transforms-2/files-2.1/b69231343007112f0c0835781864cc3e/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/f66c49bce90b7d2ad3021854ff226c7f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/f66c49bce90b7d2ad3021854ff226c7f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/aaa9993f7f17230cf744969809673b09/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/aaa9993f7f17230cf744969809673b09/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/23e2482b2fea43d3f694b0a9d1c41fab/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/23e2482b2fea43d3f694b0a9d1c41fab/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d0ccea0862d9126ef23344d7ac26fa64/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d0ccea0862d9126ef23344d7ac26fa64/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml
+		INJECTED from /root/android-wallet/app/src/main/AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:29:13-31:57
+	android:resource
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:31:17-54
+	android:name
+		ADDED from /root/android-wallet/app/src/main/AndroidManifest.xml:30:17-67
+uses-feature#android.hardware.camera
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:27:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:26:9-47
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:35:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:34:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:36:5-38:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:38:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:37:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:39:5-41:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:41:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:40:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:43:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:47:9-53:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:50:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:49:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:51:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:53:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:52:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] /root/.gradle/caches/transforms-2/files-2.1/310876dd775291079bc345c009552219/jetified-zxing-android-embedded-3.6.0/AndroidManifest.xml:48:13-74
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.2] /root/.gradle/caches/transforms-2/files-2.1/236863f0a8d75132bbd903ab7c33bed8/room-runtime-2.2.2/AndroidManifest.xml:26:13-74
