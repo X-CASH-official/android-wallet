@@ -98,6 +98,42 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 git clone https://github.com/X-CASH-official/android-wallet.git
 ```
 
+Install JDK
+`sudo apt install openjdk-8-jdk`
+
+Install android studio
+`sudo snap install android-studio --classic`
+
 #### Open with Android Studio
 
-Open project in Android Studio and `Run` the proect
+Open project in Android Studio
+
+install the NDK
+```
+File -> Settings
+Type "SDK" in the search box
+click on the "SDK Tools" tab
+Check the box next to NDK (side by side)
+Then click on apply
+
+when it is done, resync gradle by pressing the elephant icon at the top right
+
+```
+
+Build APK
+Create a key file to sign your APK
+
+```
+Open a android studio terminal (should have a tab on the bottom) and run this command
+keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
+Fill it out and then this is your key file
+```
+
+Create a signed APK
+```
+Build -> Gnerate signed key file or APK
+Select APK and click next
+Select your keyfile and type in the password. For key alias use "my-alias" and click next
+Select release and check the box for V1 and V2 signature versions and click finish
+The apk will be located in 
+```
