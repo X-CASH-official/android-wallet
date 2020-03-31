@@ -98,6 +98,36 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 git clone https://github.com/X-CASH-official/android-wallet.git
 ```
 
+Note we will be using the home directory for the below instructions and have cloned the repository to $HOME
+
+The libaries to build the apk are already built, but if you need to update them or rebuild them this is how you would do so
+
+Install build tools
+`sudo apt update && sudo apt install -y build-essential cmake tofrodos libtool-bin`
+
+get the [lastest version of boost](https://www.boost.org/users/download/)
+
+download it
+`cd ~ && wget https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.gz && tar -xf boost_1_72_0.tar.gz && rm boost_1_72_0.tar.gz`
+
+build boost
+```
+rm -r ~/android-wallet/boost/lib
+sudo ./b2 --build-type=minimal link=static runtime-link=static --with-chrono --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-system --with-thread --prefix=$HOME/android-wallet/xcash-libs/boost/ threading=multi threadapi=pthread target-os=android install -j $(nproc)
+rm -r ~/android-wallet/xcash-libs/boost/include
+rm -r ~/android-wallet/xcash-libs/boost/lib/cmake
+mkdir ~/android-wallet/xcash-libs/boost/lib/arm64-v8a
+mkdir ~/android-wallet/xcash-libs/boost/lib/armeabi-v7a
+cp -a ~/android-wallet/xcash-libs/boost/lib/* ~/android-wallet/xcash-libs/boost/lib/arm64-v8a
+cp -a ~/android-wallet/xcash-libs/boost/lib/* ~/android-wallet/xcash-libs/boost/lib/armeabi-v7a
+```
+
+
+
+
+
+
+
 Install JDK
 `sudo apt install openjdk-8-jdk`
 
