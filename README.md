@@ -100,70 +100,53 @@ git clone https://github.com/X-CASH-official/android-wallet.git
 
 Note we will be using the home directory for the below instructions and have cloned the repository to $HOME
 
-The libaries to build the apk are already built, but if you need to update them or rebuild them this is how you would do so
+The libaries to build the apk are already built, but if you need to update them or rebuild them, run the build script
+`$HOME/android-wallet/xcash-libs/build.sh`
 
-Install build tools
-`sudo apt update && sudo apt install -y build-essential cmake tofrodos libtool-bin`
-
-get the [lastest version of boost](https://www.boost.org/users/download/)
-
-download it
-`cd ~ && wget https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.gz && tar -xf boost_1_72_0.tar.gz && rm boost_1_72_0.tar.gz`
-
-build boost
-```
-rm -r ~/android-wallet/boost/lib
-sudo ./b2 --build-type=minimal link=static runtime-link=static --with-chrono --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-system --with-thread --prefix=$HOME/android-wallet/xcash-libs/boost/ threading=multi threadapi=pthread target-os=android install -j $(nproc)
-rm -r ~/android-wallet/xcash-libs/boost/include
-rm -r ~/android-wallet/xcash-libs/boost/lib/cmake
-mkdir ~/android-wallet/xcash-libs/boost/lib/arm64-v8a
-mkdir ~/android-wallet/xcash-libs/boost/lib/armeabi-v7a
-cp -a ~/android-wallet/xcash-libs/boost/lib/* ~/android-wallet/xcash-libs/boost/lib/arm64-v8a
-cp -a ~/android-wallet/xcash-libs/boost/lib/* ~/android-wallet/xcash-libs/boost/lib/armeabi-v7a
-```
+The build script will install the build tools, install the android NDK and build all of the nessary libaries
 
 
 
-
-
-
+To build the APK after using the prebuilt libaries, or building the libaries
 
 Install JDK
-`sudo apt install openjdk-8-jdk`
+`sudo apt install -y openjdk-8-jdk`
 
 Install android studio
 `sudo snap install android-studio --classic`
 
-#### Open with Android Studio
-
 Open project in Android Studio
 
-install the NDK
+Check that the NDK is installed
 ```
 File -> Settings
 Type "SDK" in the search box
-click on the "SDK Tools" tab
+Click on the "SDK Tools" tab
+```
+
+If the NDK was not installed
+```
 Check the box next to NDK (side by side)
-Then click on apply
+Click on apply
 
 when it is done, resync gradle by pressing the elephant icon at the top right
-
 ```
 
 Build APK
 Create a key file to sign your APK
 
+Open an android studio terminal (should have a tab on the bottom) and run this command
 ```
-Open a android studio terminal (should have a tab on the bottom) and run this command
 keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
-Fill it out and then this is your key file
 ```
+Fill it out and then this is your key file
+
 
 Create a signed APK
 ```
-Build -> Gnerate signed key file or APK
+Build -> Generate signed key file or APK
 Select APK and click next
 Select your keyfile and type in the password. For key alias use "my-alias" and click next
 Select release and check the box for V1 and V2 signature versions and click finish
-The apk will be located in 
+The apk will be located in $HOME/android-wallet/app/release/app-release.apk
 ```
