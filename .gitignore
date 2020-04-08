@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !gradle-wrapper.jar
 # Cache of project
 .gradletasknamecache
@@ -19,3 +20,19 @@ local.properties
 .gradletasknamecache
 # gradle/wrapper/gradle-wrapper.properties
 *.jks
+=======
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+>>>>>>> x-wallet/master
