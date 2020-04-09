@@ -2,9 +2,11 @@
 
 <a align="center" href="https://x-network.io/xcash"><img src="header.png" alt="X-Cash Core"></a>
 
+
+
 [![Release](https://img.shields.io/github/v/release/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/releases)
 [![chat](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![License: Apache-2.0](https://img.shields.io/github/license/X-CASH-official/android-wallet)](https://github.com/X-CASH-official-team/android-wallet/blob/master/LICENSE)
 
 </div>
 
@@ -16,7 +18,7 @@ Easily send XCASH publicly or privately, manage your wallets, etc... from your p
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Download](#download)
+- [Download & Installation](#download--installation)
 - [Features](#features)
 - [License](#license)
 - [Contributing](#contributing)
@@ -29,9 +31,11 @@ Easily send XCASH publicly or privately, manage your wallets, etc... from your p
   - [Dependencies](#dependencies)
   - [Build Instructions](#build-instructions)
 
-## Download
+## Download & Installation
 
-Check the [latest release](https://github.com/X-CASH-official/android-wallet/releases)
+> ⚠️ Only download from the [official release page](https://github.com/X-CASH-official/android-wallet/releases).
+
+Download the [latest release](https://github.com/X-CASH-official/android-wallet/releases), transfer the `.apk` file to your phone, and run it. You will need to force your phone to install the app as it is not recognized and distributed through the app store yet.
 
 ## Features
 
