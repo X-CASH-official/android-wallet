@@ -5,8 +5,9 @@
 
 
 [![Release](https://img.shields.io/github/v/release/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/releases)
-[![chat](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
+[![open issues](https://img.shields.io/github/issues-raw/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/issues)
 [![License: Apache-2.0](https://img.shields.io/github/license/X-CASH-official/android-wallet)](https://github.com/X-CASH-official-team/android-wallet/blob/master/LICENSE)
+[![Discord](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
 
 </div>
 
