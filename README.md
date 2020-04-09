@@ -2,21 +2,24 @@
 
 <a align="center" href="https://x-network.io/xcash"><img src="header.png" alt="X-Cash Core"></a>
 
+
+
 [![Release](https://img.shields.io/github/v/release/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/releases)
-[![chat](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![open issues](https://img.shields.io/github/issues-raw/X-CASH-official/android-wallet)](https://github.com/X-CASH-official/android-wallet/issues)
+[![License: Apache-2.0](https://img.shields.io/github/license/X-CASH-official/android-wallet)](https://github.com/X-CASH-official-team/android-wallet/blob/master/LICENSE)
+[![Discord](https://img.shields.io/discord/470575102203920395?logo=discord)](https://discordapp.com/invite/4CAahnd)
 
 </div>
 
 # X-Cash Android Mobile Wallet
 
 📱 **Securely store and manage your XCASH on your mobile.**  
-Easily end XCASH publicly or privately, manage your wallets, etc... from your phone!
+Easily send XCASH publicly or privately, manage your wallets, etc... from your phone!
 
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Download](#download)
+- [Download & Installation](#download--installation)
 - [Features](#features)
 - [License](#license)
 - [Contributing](#contributing)
@@ -25,12 +28,15 @@ Easily end XCASH publicly or privately, manage your wallets, etc... from your ph
 - [Acknowledgement](#acknowledgement)
 - [System Requirements](#system-requirements)
 - [Installing from source](#installing-from-source)
+  - [Cloning the repository](#cloning-the-repository)
   - [Dependencies](#dependencies)
-  - [Develop](#develop)
+  - [Build Instructions](#build-instructions)
 
-## Download
+## Download & Installation
 
-Check the [latest release](https://github.com/X-CASH-official/android-wallet/releases)
+> ⚠️ Only download from the [official release page](https://github.com/X-CASH-official/android-wallet/releases).
+
+Download the [latest release](https://github.com/X-CASH-official/android-wallet/releases), transfer the `.apk` file to your phone, and run it. You will need to force your phone to install the app as it is not recognized and distributed through the app store yet.
 
 ## Features
 
@@ -49,7 +55,7 @@ See your payment history from anywhere, directly on your phone.
 
 ## License
 
-> *Cloned from [m2049r](https://github.com/m2049r)'s [xmrwallet](https://github.com/m2049r/xmrwallet).*
+> *Originally cloned from [m2049r](https://github.com/m2049r)'s [xmrwallet](https://github.com/m2049r/xmrwallet).*
 
 **X-Cash GUI Wallet is an open-source project managed by the X-Cash Foundation**.  
 Licensed under the Apache License, Version 2.0. View [License](LICENSE)
@@ -80,73 +86,64 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 
 `Android 4.2+` (API 17+）
 
-#### Native
-
-`arm64-v8a`,`armeabi-v7a`
-
 ## Installing from source
 
-### Dependencies
-
-[Android Studio](https://developer.android.com/studio) 
-
-### Develop
-
-#### Clone repository
+### Cloning the repository
 
 ```bash
 git clone https://github.com/X-CASH-official/android-wallet.git
 ```
 
-Note we will be using the home directory for the below instructions and have cloned the repository to $HOME
+### Dependencies
 
-The libaries to build the apk are already built, but if you need to update them or rebuild them, run the build script
-`$HOME/android-wallet/xcash-libs/build.sh`
+#### Libraries
 
-The build script will install the build tools, install the android NDK and build all of the nessary libaries
+**Note:** The libraries mandatory the `.apk` already built. If you wish to update them or rebuild, run the build script at: 
 
-
-
-To build the APK after using the prebuilt libaries, or building the libaries
-
-Install JDK
-`sudo apt install -y openjdk-8-jdk`
-
-Install android studio
-`sudo snap install android-studio --classic`
-
-Open project in Android Studio
-
-Check that the NDK is installed
-```
-File -> Settings
-Type "SDK" in the search box
-Click on the "SDK Tools" tab
+```bash
+android-wallet/xcash-libs/build.sh
 ```
 
-If the NDK was not installed
-```
-Check the box next to NDK (side by side)
-Click on apply
+> The build script will install the build tools, the android NDK and build all of the nessary libraries. 
 
-when it is done, resync gradle by pressing the elephant icon at the top right
+#### JDK
+
+```bash
+sudo apt install -y openjdk-8-jdk
 ```
 
-Build APK
-Create a key file to sign your APK
+#### Android Studio
 
-Open an android studio terminal (should have a tab on the bottom) and run this command
+You can download Android Studio here: https://developer.android.com/studio) or run: 
+```bash
+sudo snap install android-studio --classic
 ```
+
+#### NDK
+
+Open `Android Studio` and verify that the Native Development Kit (NDK) is installed.
+
+Go to `Files > Settings` and type `SDK`in the search box, then click on the `SDK Tools`tab.
+
+If the NDK is not installed, you can check the box and click on `Apply`.
+
+Once done, re-sync `gradle` (elephant icon on the top right)
+
+
+### Build Instructions
+
+#### Sign your `.apk` (optional)
+
+Open a terminal window in `android-studio` and run:
+```bash
 keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
 ```
-Fill it out and then this is your key file
 
+Replace `my-alias` by your name.
 
-Create a signed APK
-```
-Build -> Generate signed key file or APK
-Select APK and click next
-Select your keyfile and type in the password. For key alias use "my-alias" and click next
-Select release and check the box for V1 and V2 signature versions and click finish
-The apk will be located in $HOME/android-wallet/app/release/app-release.apk
-```
+#### Build the APK
+
+Go to `Build > Generate signed key file or APK`, select `APK` and click `Next`. Give your keyfile and select `release. Check box for V1 and V2 signature and click finish.
+
+The app will be built in :
+```android-wallet/app/release/app-release.apk```
