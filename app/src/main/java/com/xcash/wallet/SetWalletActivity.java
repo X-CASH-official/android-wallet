@@ -139,7 +139,8 @@ public class SetWalletActivity extends NewBaseActivity {
         } else {
             textViewTitle.setText(R.string.activity_create_wallet_textViewTitle_text);
         }
-        textViewSha256Tips.setText(getString(R.string.activity_set_wallet_SHA256_tips) + AppSignTool.getSingInfo(SetWalletActivity.this, getPackageName(), AppSignTool.SHA256));
+        // disable the sha256 sum for now
+        //textViewSha256Tips.setText(getString(R.string.activity_set_wallet_SHA256_tips) + AppSignTool.getSingInfo(SetWalletActivity.this, getPackageName(), AppSignTool.SHA256));
     }
 
     @Override
