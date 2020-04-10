@@ -7,11 +7,10 @@
 local.properties
 .idea/
 .DS_Store
-/build/
+/build
 /captures
 .externalNativeBuild
 .cxx
-/build/
 /app/release
 # Ignore Gradle GUI config
 !gradle-wrapper.jar
