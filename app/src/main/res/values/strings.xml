@@ -144,6 +144,7 @@
     <string name="activity_wallet_details_private_keys_privateViewKey_tips">Private View Key</string>
     <string name="activity_wallet_details_private_keys_publicSpendKey_tips">Public Spend Key</string>
     <string name="activity_wallet_details_private_keys_privateSpendKey_tips">Private Spend Key</string>
+    <string name="activity_wallet_details_delete_tips">Confirm to delete wallet?</string>
 
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>
     <string name="activity_wallet_running_textViewSynchronizeStatus_text">It may take up to 5 minutes, please wait...</string>

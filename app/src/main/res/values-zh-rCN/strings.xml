@@ -144,6 +144,7 @@
     <string name="activity_wallet_details_private_keys_privateViewKey_tips">查看私钥</string>
     <string name="activity_wallet_details_private_keys_publicSpendKey_tips">支付公钥</string>
     <string name="activity_wallet_details_private_keys_privateSpendKey_tips">支付私钥</string>
+    <string name="activity_wallet_details_delete_tips">确认要删除钱包?</string>
 
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>
     <string name="activity_wallet_running_textViewSynchronizeStatus_text">连接中，可能需要5分钟，请稍候...</string>

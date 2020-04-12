@@ -142,7 +142,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
                         showPassword(relativeLayoutExportMnemonicWords, TYPE_SHOW_PRIVATE_KEYS);
                         break;
                     case R.id.relativeLayoutDeleteWallet:
-                        deleteWallet();
+                        deleteWallet(relativeLayoutDeleteWallet);
                         break;
                     default:
                         break;
@@ -207,10 +207,20 @@ public class WalletDetailsActivity extends NewBaseActivity {
         });
     }
 
-    private void deleteWallet() {
+    private void deleteWallet(View view) {
         if (wallet == null) {
             return;
         }
+        PopupWindowHelp.showPopupWindowNormalTips(WalletDetailsActivity.this, view.getRootView(), view, getString(R.string.activity_wallet_details_delete_tips), new PopupWindowHelp.OnShowPopupWindowNormalTipsListener() {
+            @Override
+            public void okClick(PopupWindow popupWindow, View view) {
+                popupWindow.dismiss();
+                doDeleteWallet();
+            }
+        });
+    }
+
+    private void doDeleteWallet(){
         TheApplication.getTheApplication().getWalletServiceHelper().closeWallet(wallet.getId());
         WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
         if (walletOperateManager == null) {
