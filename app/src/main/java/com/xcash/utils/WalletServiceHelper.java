@@ -206,25 +206,25 @@ public class WalletServiceHelper {
             walletOperateManager.checkWalletPassword(name, password, new OnNormalListener.Stub() {
                 @Override
                 public void onSuccess(final String tips) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
+                    baseActivity.handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             onVerifyWalletPasswordListener.onSuccess(tips);
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
 
                         }
-                    });
+                    },300);
                 }
 
                 @Override
                 public void onError(final String error) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
+                    baseActivity.handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             onVerifyWalletPasswordListener.onError(error);
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
                         }
-                    });
+                    },300);
                 }
             });
         } catch (RemoteException e) {

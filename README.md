@@ -84,7 +84,7 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 
 #### Mobile
 
-`Android 4.2+` (API 17+）
+`Android 5.0+` (API 21+）
 
 ## Installing from source
 

@@ -241,7 +241,7 @@
                     android:layout_marginTop="@dimen/view_normal_margin_broad"
                     android:layout_marginLeft="@dimen/view_normal_margin_broad"
                     android:layout_marginRight="@dimen/view_normal_margin_broad"
-                    android:text="@string/activity_set_wallet_textViewAgreementTips_text"
+                    android:text="@string/activity_set_wallet_textViewValidateSha256Tips_text"
                     android:textColor="?attr/mainColorText"
                     android:textSize="@dimen/textView_normal_textSize_narrow" />
 
