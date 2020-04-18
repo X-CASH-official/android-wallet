@@ -58,6 +58,7 @@
     <string name="activity_set_wallet_editTextPassword_hint">Your password</string>
     <string name="activity_set_wallet_editTextConfirmPassword_hint">Confirm your password</string>
     <string name="activity_set_wallet_editTextDescription_hint">Password Hint</string>
+    <string name="activity_set_wallet_textViewValidateSha256Tips_text">Please make sure to download from the official channel</string>
     <string name="activity_set_wallet_textViewAgreementTips_text">I have verified the SHA-256 hash for the current version</string>
     <string name="activity_set_wallet_passwordConfirm_tips">Passwords are not the same.</string>
     <string name="activity_set_wallet_confirmEmpty_tips">Wallet name and password cannot be empty</string>
@@ -235,7 +236,7 @@
     <string name="activity_transaction_details_paymentId_tips">Payment ID:</string>
 
     <string name="activity_about_us_textViewTitle_text">About Us</string>
-    <string name="activity_about_us_textViewDetails_text">X-CASH is a community driven and open-source project developing the new standard of digital payment. Unique blockchain network with public and private transactions, custom DPOS consensus, and soon sidechains. Based and improved upon the renowned CryptoNote protocol, X-Cash aims at becoming the standard in digital payment and transaction settlement\n• FlexPrivacy: X-Cash proposes the flexibility to send a transaction privately or publicly, directly from your wallet by toggling a simple switch, without compromising your privacy.\n• Delegated Proof of Private Stake (DPOPS): To tackle scalability and future upgrades while reducing the energy comsuption of the network, we are developing a customized and unique DPOS consensus that can be implemented in any privacy coin.\n• Sidechains: Delegates will be able to host sidechains on the X-Cash network, providing an easy, secured, economical and customizable blockchain solution to match your project needs.</string>
+    <string name="activity_about_us_textViewDetails_text">X-Cash is a community driven and open-source project developing the new standard of digital payment. Unique blockchain network with public and private transactions, custom DPOS consensus, and soon sidechains. Based and improved upon the renowned CryptoNote protocol, X-Cash aims at becoming the standard in digital payment and transaction settlement.\n• FlexPrivacy: X-Cash proposes the flexibility to send a transaction privately or publicly, directly from your wallet by toggling a simple switch, without compromising your privacy.\n• Delegated Proof of Private Stake (DPOPS): To tackle scalability and future upgrades while reducing the energy comsuption of the network, we are developing a customized and unique DPOS consensus that can be implemented in any privacy coin.\n• Sidechains: Delegates will be able to host sidechains on the X-Cash network, providing an easy, secured, economical and customizable blockchain solution to match your project needs.</string>
     <string name="activity_about_us_textViewFindNewVersion_text">New version available on GitHub</string>
 
     <string name="activity_dpops_textViewTitle_text">DPOPS</string>

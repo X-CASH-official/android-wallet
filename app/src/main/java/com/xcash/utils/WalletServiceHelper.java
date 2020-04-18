@@ -80,7 +80,7 @@ public class WalletServiceHelper {
                     bindService();
                     resetOpenWallet(null);
                 }
-            }, 500);
+            }, TheApplication.DEFAULT_WALLETOPERATEDELAY);
         }
 
     };
@@ -166,7 +166,7 @@ public class WalletServiceHelper {
             public void run() {
                 loadRefreshWallet(wallet, password, needReset, onOpenWalletListener);
             }
-        }, 500);
+        }, TheApplication.DEFAULT_WALLETOPERATEDELAY);
         this.wallet = wallet;
         this.password = password;
     }
@@ -206,25 +206,25 @@ public class WalletServiceHelper {
             walletOperateManager.checkWalletPassword(name, password, new OnNormalListener.Stub() {
                 @Override
                 public void onSuccess(final String tips) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
+                    baseActivity.handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             onVerifyWalletPasswordListener.onSuccess(tips);
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
 
                         }
-                    });
+                    },TheApplication.DEFAULT_WALLETOPERATEDELAY);
                 }
 
                 @Override
                 public void onError(final String error) throws RemoteException {
-                    baseActivity.handler.post(new Runnable() {
+                    baseActivity.handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             onVerifyWalletPasswordListener.onError(error);
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
                         }
-                    });
+                    },TheApplication.DEFAULT_WALLETOPERATEDELAY);
                 }
             });
         } catch (RemoteException e) {

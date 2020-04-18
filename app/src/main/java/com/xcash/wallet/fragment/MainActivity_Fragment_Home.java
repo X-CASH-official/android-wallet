@@ -155,7 +155,12 @@ public class MainActivity_Fragment_Home extends BaseFragment {
 
     @Override
     protected void initOther() {
-
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadTransactionInfos();
+            }
+        }, TheApplication.AUTOREFRESHDELAY);
     }
 
     private void initBaseRecyclerViewFromFrameLayout() {
@@ -167,7 +172,6 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             }
         };
         baseRecyclerViewFromFrameLayout.setOnRefreshListener(onRefreshListener);
-        baseRecyclerViewFromFrameLayout.autoRefresh(handler, TheApplication.AUTOREFRESHDELAY);
     }
 
     private void onClickListener() {
@@ -347,6 +351,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
             imageViewLock.setImageResource(R.mipmap.activity_main_content_fragment_home_top_item_lock);
             imageViewLock.setTag(false);
             imageViewLock.setEnabled(true);
+            relativeLayoutTransactionInfo.setVisibility(View.GONE);
             linearLayoutTransactionContent.setVisibility(View.GONE);
             progressSynchronize.setVisibility(View.GONE);
             textViewUnlockedAmount.setVisibility(View.GONE);

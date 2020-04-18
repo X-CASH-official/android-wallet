@@ -53,6 +53,9 @@ public class TheApplication extends Application {
     public static final String DOWNLOADCACHE_DIR_NAME = "downloadCache";
     public static final String SETTING_LASTFILENAME = "setting.txt";
     public static final int AUTOREFRESHDELAY = 350;
+    public static final int DEFAULT_SQLDELAY = 350;
+    public static final int DEFAULT_WALLETOPERATEDELAY = 500;
+
 
     private static TheApplication theApplication;
     private static String filesDirRootPath = null;

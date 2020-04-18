@@ -217,6 +217,7 @@ public class MainActivity_Fragment_Wallet extends BaseFragment {
             public Boolean runOnIo() {
                 boolean result = false;
                 try {
+                    Thread.sleep(TheApplication.DEFAULT_SQLDELAY);
                     List<Wallet> wallets = AppDatabase.getInstance().walletDao().loadWallets();
                     if (wallets != null) {
                         Wallet[] walletsArray = wallets.toArray(new Wallet[]{});
