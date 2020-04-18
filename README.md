@@ -86,6 +86,8 @@ All security vulnerabilities concerning the X-Cash blockchain will be promply ad
 
 `Android 5.0+` (API 21+）
 
+`abiFilters` armeabi-v7a,arm64-v8a
+
 ## Installing from source
 
 ### Cloning the repository

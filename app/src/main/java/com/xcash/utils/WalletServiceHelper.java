@@ -80,7 +80,7 @@ public class WalletServiceHelper {
                     bindService();
                     resetOpenWallet(null);
                 }
-            }, 500);
+            }, TheApplication.DEFAULT_WALLETOPERATEDELAY);
         }
 
     };
@@ -166,7 +166,7 @@ public class WalletServiceHelper {
             public void run() {
                 loadRefreshWallet(wallet, password, needReset, onOpenWalletListener);
             }
-        }, 500);
+        }, TheApplication.DEFAULT_WALLETOPERATEDELAY);
         this.wallet = wallet;
         this.password = password;
     }
@@ -213,7 +213,7 @@ public class WalletServiceHelper {
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
 
                         }
-                    },300);
+                    },TheApplication.DEFAULT_WALLETOPERATEDELAY);
                 }
 
                 @Override
@@ -224,7 +224,7 @@ public class WalletServiceHelper {
                             onVerifyWalletPasswordListener.onError(error);
                             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
                         }
-                    },300);
+                    },TheApplication.DEFAULT_WALLETOPERATEDELAY);
                 }
             });
         } catch (RemoteException e) {
