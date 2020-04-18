@@ -58,7 +58,7 @@
     <string name="activity_set_wallet_editTextPassword_hint">您的密码</string>
     <string name="activity_set_wallet_editTextConfirmPassword_hint">确认您的密码</string>
     <string name="activity_set_wallet_editTextDescription_hint">密码提示</string>
-    <string name="activity_set_wallet_textViewValidateSha256Tips_text">请校验SHA256值</string>
+    <string name="activity_set_wallet_textViewValidateSha256Tips_text">请确保从官方渠道下载</string>
     <string name="activity_set_wallet_textViewAgreementTips_text">我已仔细校验当前版本的SHA256值</string>
     <string name="activity_set_wallet_passwordConfirm_tips">密码输入不匹配</string>
     <string name="activity_set_wallet_confirmEmpty_tips">名称和密码不能为空</string>

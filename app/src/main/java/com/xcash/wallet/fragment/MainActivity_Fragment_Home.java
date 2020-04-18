@@ -155,7 +155,12 @@ public class MainActivity_Fragment_Home extends BaseFragment {
 
     @Override
     protected void initOther() {
-
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadTransactionInfos();
+            }
+        }, TheApplication.AUTOREFRESHDELAY);
     }
 
     private void initBaseRecyclerViewFromFrameLayout() {

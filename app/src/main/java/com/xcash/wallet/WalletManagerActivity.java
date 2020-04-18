@@ -208,6 +208,7 @@ public class WalletManagerActivity extends NewBaseActivity {
             public Boolean runOnIo() {
                 boolean result = false;
                 try {
+                    Thread.sleep(300);
                     List<Wallet> wallets = AppDatabase.getInstance().walletDao().loadWallets();
                     if (wallets != null) {
                         Wallet[] walletsArray = wallets.toArray(new Wallet[]{});
