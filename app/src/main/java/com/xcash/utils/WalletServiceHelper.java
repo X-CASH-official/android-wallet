@@ -15,34 +15,38 @@
  */
 package com.xcash.utils;
 
-import android.app.PendingIntent;
-import android.app.ProgressDialog;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Looper;
-import android.os.RemoteException;
+ import android.app.ProgressDialog;
+ import android.content.ComponentName;
+ import android.content.Context;
+ import android.content.Intent;
+ import android.content.ServiceConnection;
+ import android.os.Handler;
+ import android.os.IBinder;
+ import android.os.Looper;
+ import android.os.RemoteException;
 
-import com.xcash.base.BaseActivity;
-import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.MainActivity;
-import com.xcash.wallet.R;
-import com.xcash.wallet.TheApplication;
-import com.xcash.wallet.WalletRunningActivity;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.OnWalletDataListener;
-import com.xcash.wallet.aidl.OnWalletRefreshListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.aidl.manager.XManager;
-import com.xcash.wallet.aidl.service.WalletService;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+ import com.xcash.base.BaseActivity;
+ import com.xcash.utils.database.AppDatabase;
+ import com.xcash.utils.database.entity.OperationHistory;
+ import com.xcash.utils.database.entity.Wallet;
+ import com.xcash.wallet.MainActivity;
+ import com.xcash.wallet.R;
+ import com.xcash.wallet.TheApplication;
+ import com.xcash.wallet.WalletRunningActivity;
+ import com.xcash.wallet.aidl.OnNormalListener;
+ import com.xcash.wallet.aidl.OnWalletDataListener;
+ import com.xcash.wallet.aidl.OnWalletRefreshListener;
+ import com.xcash.wallet.aidl.WalletOperateManager;
+ import com.xcash.wallet.aidl.manager.XManager;
+ import com.xcash.wallet.aidl.service.WalletService;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.ProgressDialogHelp;
 
 public class WalletServiceHelper {
 
     private Handler handler = new Handler(Looper.getMainLooper());
+    private Handler voteHandler = new Handler(Looper.getMainLooper());
+
     private WalletOperateManager walletOperateManager;
     private OnWalletRefreshListener onWalletRefreshListener = new MyOnWalletRefreshListener();
     private Context context;
@@ -146,6 +150,21 @@ public class WalletServiceHelper {
         context.unbindService(serviceConnection);
     }
 
+//    public void startForegroundService() {
+//        Intent intent = new Intent(context, WalletService.class);
+//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+//            context.startForegroundService (intent);
+//        }else{
+//            context.startService (intent);
+//        }
+//    }
+//
+//    public void stopForegroundService() {
+//        Intent intent = new Intent(context, WalletService.class);
+//        context.stopService (intent);
+//    }
+
+
     public WalletOperateManager getWalletOperateManager() {
         if (walletOperateManager == null) {
             BaseActivity.showLongToast(TheApplication.getTheApplication(), TheApplication.getTheApplication().getString(R.string.service_uninitialized_tips));
@@ -231,6 +250,84 @@ public class WalletServiceHelper {
             e.printStackTrace();
             onVerifyWalletPasswordListener.onError(baseActivity.getString(R.string.wallet_service_not_running_tips));
             ProgressDialogHelp.enabledView(baseActivity, progressDialog, progressDialogKey, null);
+        }
+    }
+
+    private void doVote(final String value,final OnVoteListener onVoteListener){
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            final String content = "{\"value\":" + value + "}\n\nResult=> ";
+            walletOperateManager.vote(value, new OnNormalListener.Stub() {
+                @Override
+                public void onSuccess(final String tips) throws RemoteException {
+                    addOperationHistory(wallet.getId(), "Vote", true, content + tips);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(onVoteListener!=null) {
+                                onVoteListener.onSuccess(tips);
+                            }
+                            BaseActivity.showShortToast(context, tips);
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    addOperationHistory(wallet.getId(), "Vote", false, content + error);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(onVoteListener!=null) {
+                                onVoteListener.onError(error);
+                            }
+                            BaseActivity.showShortToast(context, context.getString(R.string.activity_dpops_vote_failed_tips));
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            if(onVoteListener!=null) {
+                onVoteListener.onError(context.getString(R.string.wallet_service_not_running_tips));
+            }
+        }
+    }
+
+    public void waitToVote(Context context,final String value,long delayMillis,boolean showNotification,final OnVoteListener onVoteListener){
+        if(showNotification){
+            String content = context.getString(R.string.waiting_to_vote_tips)+" "+value;
+            notificationId = notificationId + 1;
+            notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, NotificationHelper.getDefaultPendingIntent(context));
+        }
+        voteHandler.removeCallbacksAndMessages(null);
+        voteHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doVote(value,onVoteListener);
+            }
+        },delayMillis);
+    }
+
+    /**
+     * Need running in thread
+     */
+    public static void addOperationHistory(int walletId, String operation, boolean status, String description) {
+        if (operation == null || description == null) {
+            return;
+        }
+        String statusInfo = ActivityHelp.DELEGATE_FAILED;
+        if (status) {
+            statusInfo = ActivityHelp.DELEGATE_SUCCESS;
+        }
+        try {
+            OperationHistory operationHistory = new OperationHistory(walletId, operation, statusInfo, description, System.currentTimeMillis());
+            AppDatabase.getInstance().operationHistoryDao().insertOperationHistorys(operationHistory);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -362,11 +459,9 @@ public class WalletServiceHelper {
          */
         private void receiveNotfication(int walletId, String txId, long amount) {
             try {
-                Intent notificationIntent = new Intent(context, MainActivity.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
                 String content = context.getString(R.string.start_receive_transaction_notfication_tips) + String.valueOf(amount / 1000000.0f) + " " + XManager.SYMBOL;
                 notificationId = notificationId + 1;
-                notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, pendingIntent);
+                notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, NotificationHelper.getDefaultPendingIntent(context));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -384,6 +479,14 @@ public class WalletServiceHelper {
     public interface OnOpenWalletListener {
 
         void onSuccess(com.xcash.wallet.aidl.Wallet wallet);
+
+        void onError(String error);
+
+    }
+
+    public interface OnVoteListener {
+
+        void onSuccess(String tips);
 
         void onError(String error);
 

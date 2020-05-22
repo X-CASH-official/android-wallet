@@ -32,6 +32,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.xcash.base.BaseActivity;
+import com.xcash.utils.WalletServiceHelper;
 import com.xcash.utils.database.entity.Wallet;
 import com.xcash.wallet.aidl.OnNormalListener;
 import com.xcash.wallet.aidl.WalletOperateManager;
@@ -207,7 +208,7 @@ public class DpopsRegisterActivity extends NewBaseActivity {
             walletOperateManager.delegateRegister(delegateName, delegateIPAddress, blockVerifierMessagesPublicKey, new OnNormalListener.Stub() {
                 @Override
                 public void onSuccess(final String tips) throws RemoteException {
-                    DpopsActivity.addOperationHistory(wallet.getId(), "Delegate Register", true, content + tips);
+                    WalletServiceHelper.addOperationHistory(wallet.getId(), "Delegate Register", true, content + tips);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -220,7 +221,7 @@ public class DpopsRegisterActivity extends NewBaseActivity {
 
                 @Override
                 public void onError(final String error) throws RemoteException {
-                    DpopsActivity.addOperationHistory(wallet.getId(), "Delegate Register", false, content + error);
+                    WalletServiceHelper.addOperationHistory(wallet.getId(), "Delegate Register", false, content + error);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {

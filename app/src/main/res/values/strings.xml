@@ -39,6 +39,8 @@
     <string name="retry_bind_service_tips">Service disconnected, trying to reconnect.. please try gain later</string>
     <string name="show_more_tips">Show More</string>
     <string name="address_error_tips">Error address</string>
+    <string name="server_run_tips">XCASH server is running!</string>
+    <string name="waiting_to_vote_tips">Waiting to vote for</string>
 
     <string name="popupwindow_textViewOK_text">OK</string>
     <string name="popupwindow_textViewCancel_text">Cancel</string>
@@ -251,6 +253,10 @@
     <string name="activity_dpops_checkVoteValue_tips">Vote value cannot be empty</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">Unlocked balance must be greater than 0</string>
     <string name="activity_dpops_vote_failed_tips">Delegate vote failed | You can view the info in the history page</string>
+    <string name="activity_dpops_waiting_vote_tips">Whether to initiate a vote, expected to wait</string>
+    <string name="activity_dpops_waiting_vote_minute_tips">minutes</string>
+    <string name="activity_dpops_auto_waiting_vote_tips">Auto waiting vote</string>
+    <string name="activity_dpops_quick_vote_tips">Quick vote</string>
 
     <string name="activity_dpops_register_textViewTitle_text">Register Delegate</string>
     <string name="activity_dpops_register_editTextDelegateName_hint">Delegate Name</string>

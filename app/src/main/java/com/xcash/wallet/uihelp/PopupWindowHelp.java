@@ -156,6 +156,60 @@ public class PopupWindowHelp {
         baseActivity.addPopupWindow(popupWindowKey, popupWindow);
     }
 
+    public interface OnShowPopupWindowCustomTipsListener {
+
+        void initView(PopupWindow popupWindow, TextView textViewTips,TextView textViewLeft,TextView textViewRight);
+
+    }
+
+    public static void showPopupWindowCustomTips(final BaseActivity baseActivity, View view, final View needEnableView, final OnShowPopupWindowCustomTipsListener onShowPopupWindowCustomTipsListener) {
+        if (view.getWindowToken() == null) {
+            BaseActivity.showSystemErrorLog(WINDOWTOKENISNULL);
+            return;
+        }
+        if (needEnableView != null) {
+            needEnableView.setEnabled(false);
+        }
+        LayoutInflater layoutInflater = baseActivity.getLayoutInflater();
+        View popupWindowView = layoutInflater.inflate(R.layout.popupwindow_normal_tips, null);
+        int popupwindow_horizontal_margin = baseActivity.getResources().getDimensionPixelSize(
+                R.dimen.popupwindow_horizontal_margin);
+        int popupWindowWidth = BaseActivity.getScreenWidth(baseActivity) - popupwindow_horizontal_margin * 2;
+        final String popupWindowKey = POPUPWINDOWKEY + TimeTool.getOnlyTimeWithoutSleep();
+        final PopupWindow popupWindow = new PopupWindow(popupWindowView, popupWindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                WindowManager.LayoutParams windowManagerLayoutParams = baseActivity.getWindow().getAttributes();
+                windowManagerLayoutParams.alpha = 1.0f;
+                baseActivity.getWindow().setAttributes(windowManagerLayoutParams);
+                if (needEnableView != null) {
+                    needEnableView.setEnabled(true);
+                }
+                baseActivity.removePopupWindow(popupWindowKey);
+            }
+        });
+        final TextView textViewTips = (TextView) popupWindowView.findViewById(R.id.textViewTips);
+        final TextView textViewCancel = (TextView) popupWindowView.findViewById(R.id.textViewCancel);
+        final TextView textViewOK = (TextView) popupWindowView.findViewById(R.id.textViewOK);
+        if (onShowPopupWindowCustomTipsListener != null) {
+            onShowPopupWindowCustomTipsListener.initView(popupWindow,textViewTips,textViewCancel,textViewOK);
+        }
+
+        ColorDrawable colorDrawable = new ColorDrawable(Color.argb(0, 255, 255, 255));
+        popupWindow.setBackgroundDrawable(colorDrawable);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(false);
+        popupWindow.setAnimationStyle(R.style.popwindowNormalAnimationCenter);
+        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        WindowManager.LayoutParams windowManagerLayoutParams = baseActivity.getWindow().getAttributes();
+        windowManagerLayoutParams.alpha = 0.7f;
+        baseActivity.getWindow().setAttributes(windowManagerLayoutParams);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        baseActivity.addPopupWindow(popupWindowKey, popupWindow);
+    }
+
+
     public interface OnShowPopupWindowPasswordTipsListener {
 
         void okClick(PopupWindow popupWindow, EditText editTextPassword, View view);

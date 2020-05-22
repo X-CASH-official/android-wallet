@@ -16,51 +16,47 @@
 package com.xcash.wallet;
 
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.os.RemoteException;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+ import android.app.ProgressDialog;
+ import android.content.Intent;
+ import android.content.pm.ActivityInfo;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.os.Message;
+ import android.view.View;
+ import android.widget.AdapterView;
+ import android.widget.BaseAdapter;
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.FrameLayout;
+ import android.widget.ImageView;
+ import android.widget.PopupWindow;
+ import android.widget.RelativeLayout;
+ import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+ import androidx.annotation.NonNull;
+ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.xcash.adapters.listviewadapter.Search_History_ListViewAdapter;
-import com.xcash.adapters.recyclerviewadapter.DpopsActivity_RecyclerViewAdapter;
-import com.xcash.base.BaseActivity;
-import com.xcash.base.recyclerviewlibrary.models.ViewItem;
-import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
-import com.xcash.models.Delegate;
-import com.xcash.models.local.KeyValueItem;
-import com.xcash.models.local.Setting;
-import com.xcash.models.net.GetDelegates_GsonModel;
-import com.xcash.utils.CoroutineHelper;
-import com.xcash.utils.HttpURLConnectionTool;
-import com.xcash.utils.database.AppDatabase;
-import com.xcash.utils.database.entity.OperationHistory;
-import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+ import com.xcash.adapters.listviewadapter.Search_History_ListViewAdapter;
+ import com.xcash.adapters.recyclerviewadapter.DpopsActivity_RecyclerViewAdapter;
+ import com.xcash.base.BaseActivity;
+ import com.xcash.base.recyclerviewlibrary.models.ViewItem;
+ import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
+ import com.xcash.base.utils.TimeTool;
+ import com.xcash.models.Delegate;
+ import com.xcash.models.local.KeyValueItem;
+ import com.xcash.models.local.Setting;
+ import com.xcash.models.net.GetDelegates_GsonModel;
+ import com.xcash.utils.CoroutineHelper;
+ import com.xcash.utils.HttpURLConnectionTool;
+ import com.xcash.utils.WalletServiceHelper;
+ import com.xcash.utils.database.entity.Wallet;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.wallet.uihelp.ProgressDialogHelp;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+ import java.util.ArrayList;
+ import java.util.Calendar;
+ import java.util.List;
 
 
 public class DpopsActivity extends NewBaseActivity {
@@ -105,9 +101,7 @@ public class DpopsActivity extends NewBaseActivity {
             public void handleMessage(@NonNull Message msg) {
                 switch (msg.what) {
                     case 0:
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-                        textViewUtcTime.setText(getString(R.string.activity_dpops_utcTime_tips)+simpleDateFormat.format(new Date()));
+                        textViewUtcTime.setText(getString(R.string.activity_dpops_utcTime_tips)+ TimeTool.getUtcTime());
                         handler.sendEmptyMessageDelayed(0, 30000);
                         break;
                     default:
@@ -193,7 +187,7 @@ public class DpopsActivity extends NewBaseActivity {
                         doSearch(buttonSearch);
                         break;
                     case R.id.buttonVote:
-                        doVote(buttonVote);
+                        checkVote(buttonVote);
                         break;
                     case R.id.buttonRegister:
                         Intent intent = new Intent(DpopsActivity.this,
@@ -371,7 +365,7 @@ public class DpopsActivity extends NewBaseActivity {
         doRefresh();
     }
 
-    private void doVote(final View view) {
+    private void checkVote(View view) {
         if (wallet == null) {
             return;
         }
@@ -381,7 +375,7 @@ public class DpopsActivity extends NewBaseActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String value = editTextVoteValue.getText().toString();
+        final String value = editTextVoteValue.getText().toString();
         if (value.equals("")) {
             BaseActivity.showShortToast(DpopsActivity.this, getString(R.string.activity_dpops_checkVoteValue_tips));
             return;
@@ -390,45 +384,60 @@ public class DpopsActivity extends NewBaseActivity {
             BaseActivity.showShortToast(DpopsActivity.this, getString(R.string.activity_dpops_checkUnlockedBalance_tips));
             return;
         }
-        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
-        if (walletOperateManager == null) {
-            return;
+
+        Calendar calendar = Calendar.getInstance();
+        int  minute=  calendar.get(Calendar.MINUTE);
+        int waitMinute=0;
+        if(minute>3){
+            waitMinute=60+1-minute;
+        }else{
+            if (minute<1){
+                waitMinute=1;
+            }
         }
-        Object[] objects = ProgressDialogHelp.unEnabledView(DpopsActivity.this, view);
+        final long delayMillis=waitMinute*60*1000;
+        final String voteTips=getString(R.string.activity_dpops_waiting_vote_tips)+" "+waitMinute+" "+getString(R.string.activity_dpops_waiting_vote_minute_tips);
+        PopupWindowHelp.showPopupWindowCustomTips(DpopsActivity.this, view.getRootView(), view, new PopupWindowHelp.OnShowPopupWindowCustomTipsListener() {
+            @Override
+            public void initView(final PopupWindow popupWindow, TextView textViewTips, TextView textViewLeft, TextView textViewRight) {
+                textViewTips.setText(voteTips);
+                textViewLeft.setText(getString(R.string.activity_dpops_auto_waiting_vote_tips));
+                textViewRight.setText(getString(R.string.activity_dpops_quick_vote_tips));
+                textViewLeft.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                        TheApplication.getTheApplication().getWalletServiceHelper().waitToVote(TheApplication.getTheApplication(),value,delayMillis,true,null);
+                    }
+                });
+                textViewRight.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                        quickVote(value);
+                    }
+                });
+            }
+        });
+    }
+
+    private void quickVote(String value){
+        Object[] objects = ProgressDialogHelp.unEnabledView(DpopsActivity.this, null);
         final ProgressDialog progressDialog = (ProgressDialog) objects[0];
         final String progressDialogKey = (String) objects[1];
-        try {
-            final String content = "{\"value\":" + value + "}\n\nResult=> ";
-            walletOperateManager.vote(value, new OnNormalListener.Stub() {
-                @Override
-                public void onSuccess(final String tips) throws RemoteException {
-                    addOperationHistory(wallet.getId(), "Vote", true, content + tips);
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            BaseActivity.showShortToast(DpopsActivity.this, tips);
-                            ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, view);
-                        }
-                    });
-                }
+        TheApplication.getTheApplication().getWalletServiceHelper().waitToVote(DpopsActivity.this, value, 0,false, new WalletServiceHelper.OnVoteListener() {
+            @Override
+            public void onSuccess(String tips) {
+                ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, null);
+            }
 
-                @Override
-                public void onError(final String error) throws RemoteException {
-                    addOperationHistory(wallet.getId(), "Vote", false, content + error);
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            BaseActivity.showShortToast(DpopsActivity.this, getString(R.string.activity_dpops_vote_failed_tips));
-                            ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, view);
-                        }
-                    });
-                }
-            });
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, view);
-        }
+            @Override
+            public void onError(String error) {
+                ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, null);
+            }
+        });
     }
+
 
     public void doRefresh() {
         baseRecyclerViewFromFrameLayout.autoRefresh(handler, TheApplication.AUTOREFRESHDELAY);
@@ -446,23 +455,5 @@ public class DpopsActivity extends NewBaseActivity {
         coroutineHelper.onDestroy();
     }
 
-    /**
-     * Need running in thread
-     */
-    public static void addOperationHistory(int walletId, String operation, boolean status, String description) {
-        if (operation == null || description == null) {
-            return;
-        }
-        String statusInfo = ActivityHelp.DELEGATE_FAILED;
-        if (status) {
-            statusInfo = ActivityHelp.DELEGATE_SUCCESS;
-        }
-        try {
-            OperationHistory operationHistory = new OperationHistory(walletId, operation, statusInfo, description, System.currentTimeMillis());
-            AppDatabase.getInstance().operationHistoryDao().insertOperationHistorys(operationHistory);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 }

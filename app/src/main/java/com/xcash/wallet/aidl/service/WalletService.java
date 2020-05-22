@@ -15,45 +15,51 @@
  */
 package com.xcash.wallet.aidl.service;
 
-import android.app.Service;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.RemoteCallbackList;
-import android.os.RemoteException;
+ import android.app.Notification;
+ import android.app.NotificationChannel;
+ import android.app.NotificationManager;
+ import android.app.PendingIntent;
+ import android.app.Service;
+ import android.content.Context;
+ import android.content.Intent;
+ import android.os.Handler;
+ import android.os.IBinder;
+ import android.os.RemoteCallbackList;
+ import android.os.RemoteException;
 
-import com.xcash.base.utils.LogTool;
-import com.xcash.base.utils.TimeTool;
-import com.my.monero.model.PendingTransaction;
-import com.my.monero.model.TransactionHistory;
-import com.my.monero.model.WalletManager;
-import com.xcash.utils.LanguageTool;
-import com.xcash.utils.database.AppDatabase;
-import com.xcash.utils.database.entity.Node;
-import com.xcash.utils.database.entity.TransactionInfo;
-import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.R;
-import com.xcash.wallet.aidl.OnCreateTransactionListener;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.OnWalletDataListener;
-import com.xcash.wallet.aidl.OnWalletRefreshListener;
-import com.xcash.wallet.aidl.Transaction;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.aidl.manager.XManager;
-import com.xcash.wallet.aidl.manager.XWalletController;
+ import com.my.monero.model.PendingTransaction;
+ import com.my.monero.model.TransactionHistory;
+ import com.my.monero.model.WalletManager;
+ import com.xcash.base.utils.LogTool;
+ import com.xcash.base.utils.TimeTool;
+ import com.xcash.utils.LanguageTool;
+ import com.xcash.utils.database.AppDatabase;
+ import com.xcash.utils.database.entity.Node;
+ import com.xcash.utils.database.entity.TransactionInfo;
+ import com.xcash.utils.database.entity.Wallet;
+ import com.xcash.wallet.MainActivity;
+ import com.xcash.wallet.R;
+ import com.xcash.wallet.aidl.OnCreateTransactionListener;
+ import com.xcash.wallet.aidl.OnNormalListener;
+ import com.xcash.wallet.aidl.OnWalletDataListener;
+ import com.xcash.wallet.aidl.OnWalletRefreshListener;
+ import com.xcash.wallet.aidl.Transaction;
+ import com.xcash.wallet.aidl.WalletOperateManager;
+ import com.xcash.wallet.aidl.manager.XManager;
+ import com.xcash.wallet.aidl.manager.XWalletController;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.PriorityBlockingQueue;
+ import java.io.File;
+ import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.concurrent.PriorityBlockingQueue;
 
 public class WalletService extends Service {
 
+    private final String CHANNEL_ID="channel_1";
     private final int OPERATETYPE_DESTROY = -1;
     private final int OPERATETYPE_RUN = 1;
     private final int OPERATETYPE_STOP = 2;
@@ -84,11 +90,12 @@ public class WalletService extends Service {
     public void onCreate() {
         super.onCreate();
         loadWalletThread();
+        startForeground();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return START_REDELIVER_INTENT;
+        return super.onStartCommand(intent, flags, startId);
     }
 
     private void loadWalletThread() {
@@ -99,6 +106,40 @@ public class WalletService extends Service {
         operateType = OPERATETYPE_RUN;
         loadWalletThread = new Thread(new LoadWalletThreadRunnable());
         loadWalletThread.start();
+    }
+
+    private void startForeground() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        String title=getString(R.string.app_name);
+        String content=getString(R.string.server_run_tips);
+        Notification notification;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationManager notificationManager=(NotificationManager)getSystemService (NOTIFICATION_SERVICE);
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, getString(R.string.app_name), NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel (notificationChannel);
+            notification = new Notification.Builder(this, CHANNEL_ID)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentTitle (title)
+                    .setContentText (content)
+                    .setContentIntent(pendingIntent)
+                    .build();
+        } else {
+            notification = new Notification.Builder(this)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentTitle (title)
+                    .setContentText (content)
+                    .setContentIntent(pendingIntent)
+                    .build();
+        }
+        notification.flags = Notification.FLAG_ONGOING_EVENT;
+        notification.flags |= Notification.FLAG_NO_CLEAR;
+        notification.flags |= Notification.FLAG_FOREGROUND_SERVICE;
+        startForeground(1, notification);
     }
 
     @Override

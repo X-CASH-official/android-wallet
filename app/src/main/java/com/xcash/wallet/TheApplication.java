@@ -54,7 +54,7 @@ public class TheApplication extends Application {
     public static final String SETTING_LASTFILENAME = "setting.txt";
     public static final int AUTOREFRESHDELAY = 350;
     public static final int DEFAULT_SQLDELAY = 350;
-    public static final int DEFAULT_WALLETOPERATEDELAY = 500;
+    public static final int DEFAULT_WALLETOPERATEDELAY = 350;
 
 
     private static TheApplication theApplication;
