@@ -7,7 +7,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.xcash.wallet2"
+        applicationId "com.xcash.wallet"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1
