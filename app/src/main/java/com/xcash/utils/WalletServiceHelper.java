@@ -267,10 +267,10 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+                            showNotification(tips+" "+value);
                             if(onVoteListener!=null) {
                                 onVoteListener.onSuccess(tips);
                             }
-                            BaseActivity.showShortToast(context, tips);
                         }
                     });
                 }
@@ -281,10 +281,10 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+                            showNotification(context.getString(R.string.activity_dpops_vote_failed_tips)+" "+value);
                             if(onVoteListener!=null) {
                                 onVoteListener.onError(error);
                             }
-                            BaseActivity.showShortToast(context, context.getString(R.string.activity_dpops_vote_failed_tips));
                         }
                     });
                 }
@@ -300,8 +300,7 @@ public class WalletServiceHelper {
     public void waitToVote(Context context,final String value,long delayMillis,boolean showNotification,final OnVoteListener onVoteListener){
         if(showNotification){
             String content = context.getString(R.string.waiting_to_vote_tips)+" "+value;
-            notificationId = notificationId + 1;
-            notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, NotificationHelper.getDefaultPendingIntent(context));
+            showNotification(content);
         }
         voteHandler.removeCallbacksAndMessages(null);
         voteHandler.postDelayed(new Runnable() {
@@ -310,6 +309,11 @@ public class WalletServiceHelper {
                 doVote(value,onVoteListener);
             }
         },delayMillis);
+    }
+
+    public void showNotification(String content){
+        notificationId = notificationId + 1;
+        notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, NotificationHelper.getDefaultPendingIntent(context));
     }
 
     /**
@@ -460,8 +464,7 @@ public class WalletServiceHelper {
         private void receiveNotfication(int walletId, String txId, long amount) {
             try {
                 String content = context.getString(R.string.start_receive_transaction_notfication_tips) + String.valueOf(amount / 1000000.0f) + " " + XManager.SYMBOL;
-                notificationId = notificationId + 1;
-                notificationHelper.sendNotification(notificationId, context.getString(R.string.app_name), content, NotificationHelper.getDefaultPendingIntent(context));
+                showNotification(content);
             } catch (Exception e) {
                 e.printStackTrace();
             }

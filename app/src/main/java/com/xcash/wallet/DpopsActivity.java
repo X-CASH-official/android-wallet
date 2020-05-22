@@ -386,13 +386,13 @@ public class DpopsActivity extends NewBaseActivity {
         }
 
         Calendar calendar = Calendar.getInstance();
-        int  minute=  calendar.get(Calendar.MINUTE);
+        int minute=calendar.get(Calendar.MINUTE);
         int waitMinute=0;
-        if(minute>3){
-            waitMinute=60+1-minute;
+        if(minute>=4){
+            waitMinute=60+2-minute;
         }else{
-            if (minute<1){
-                waitMinute=1;
+            if (minute<2){
+                waitMinute=2-minute;
             }
         }
         final long delayMillis=waitMinute*60*1000;
