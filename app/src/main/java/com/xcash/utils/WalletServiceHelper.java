@@ -267,7 +267,9 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            showNotification(tips+" "+value);
+                            String content=tips+"=>"+value;
+                            showNotification(content);
+                            BaseActivity.showLongToast(context, content);
                             if(onVoteListener!=null) {
                                 onVoteListener.onSuccess(tips);
                             }
@@ -281,7 +283,9 @@ public class WalletServiceHelper {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            showNotification(context.getString(R.string.activity_dpops_vote_failed_tips)+" "+value);
+                            String content=context.getString(R.string.activity_dpops_vote_failed_tips)+"=>"+value;
+                            showNotification(content);
+                            BaseActivity.showLongToast(context, content);
                             if(onVoteListener!=null) {
                                 onVoteListener.onError(error);
                             }

@@ -387,15 +387,19 @@ public class DpopsActivity extends NewBaseActivity {
 
         Calendar calendar = Calendar.getInstance();
         int minute=calendar.get(Calendar.MINUTE);
+        int second=calendar.get(Calendar.SECOND);
         int waitMinute=0;
         if(minute>=4){
             waitMinute=60+2-minute;
         }else{
             if (minute<2){
                 waitMinute=2-minute;
+            }else{
+                waitMinute=0;
+                second=0;
             }
         }
-        final long delayMillis=waitMinute*60*1000;
+        final long delayMillis=waitMinute*60*1000-second*1000;
         final String voteTips=getString(R.string.activity_dpops_waiting_vote_tips)+" "+waitMinute+" "+getString(R.string.activity_dpops_waiting_vote_minute_tips);
         PopupWindowHelp.showPopupWindowCustomTips(DpopsActivity.this, view.getRootView(), view, new PopupWindowHelp.OnShowPopupWindowCustomTipsListener() {
             @Override
