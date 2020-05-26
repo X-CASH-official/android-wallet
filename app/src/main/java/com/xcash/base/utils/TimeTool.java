@@ -15,7 +15,11 @@
  */
 package com.xcash.base.utils;
 
-public class TimeTool {
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ import java.util.TimeZone;
+
+ public class TimeTool {
 
     private static long oldTime = -1;
     private static int count = 0;
@@ -50,5 +54,12 @@ public class TimeTool {
         time = time * ratio + count;
         return time;
     }
+
+    public static String getUtcTime() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return simpleDateFormat.format(new Date());
+    }
+
 
 }

@@ -8,6 +8,7 @@
 
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />
     <uses-permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />

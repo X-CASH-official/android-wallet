@@ -39,6 +39,8 @@
     <string name="retry_bind_service_tips">绑定服务断开连接，正在尝试重新连接，请稍后再试</string>
     <string name="show_more_tips">显示更多</string>
     <string name="address_error_tips">地址错误</string>
+    <string name="server_run_tips">XCASH服务正在运行!</string>
+    <string name="waiting_to_vote_tips">等待投票给</string>
 
     <string name="popupwindow_textViewOK_text">确定</string>
     <string name="popupwindow_textViewCancel_text">取消</string>
@@ -251,6 +253,10 @@
     <string name="activity_dpops_checkVoteValue_tips">投票内容不能为空</string>
     <string name="activity_dpops_checkUnlockedBalance_tips">可用余额必须大于0</string>
     <string name="activity_dpops_vote_failed_tips">投票给指定代表失败，您可以在历史记录页面中查看信息</string>
+    <string name="activity_dpops_waiting_vote_tips">是否发起投票，预计等待</string>
+    <string name="activity_dpops_waiting_vote_minute_tips">分钟</string>
+    <string name="activity_dpops_auto_waiting_vote_tips">定时投票</string>
+    <string name="activity_dpops_quick_vote_tips">立即投票</string>
 
     <string name="activity_dpops_register_textViewTitle_text">注册代表</string>
     <string name="activity_dpops_register_editTextDelegateName_hint">代表名称</string>

@@ -21,12 +21,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+import com.xcash.wallet.MainActivity;
 import com.xcash.wallet.R;
 
 
@@ -121,4 +123,12 @@ public class NotificationHelper extends ContextWrapper {
         getNotificationManager().notify(notifyId, builder.build());
     }
 
+    public static PendingIntent getDefaultPendingIntent(Context context){
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
 }

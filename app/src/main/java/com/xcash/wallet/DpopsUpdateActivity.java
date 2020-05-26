@@ -35,6 +35,7 @@ import androidx.core.content.ContextCompat;
 
 import com.xcash.base.BaseActivity;
 import com.xcash.models.local.KeyValueItem;
+import com.xcash.utils.WalletServiceHelper;
 import com.xcash.utils.database.entity.Wallet;
 import com.xcash.wallet.aidl.OnNormalListener;
 import com.xcash.wallet.aidl.WalletOperateManager;
@@ -227,7 +228,7 @@ public class DpopsUpdateActivity extends NewBaseActivity {
             walletOperateManager.delegateUpdate(item, value, new OnNormalListener.Stub() {
                 @Override
                 public void onSuccess(final String tips) throws RemoteException {
-                    DpopsActivity.addOperationHistory(wallet.getId(), "Delegate Update", true, content + tips);
+                    WalletServiceHelper.addOperationHistory(wallet.getId(), "Delegate Update", true, content + tips);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -240,7 +241,7 @@ public class DpopsUpdateActivity extends NewBaseActivity {
 
                 @Override
                 public void onError(final String error) throws RemoteException {
-                    DpopsActivity.addOperationHistory(wallet.getId(), "Delegate Update", false, content + error);
+                    WalletServiceHelper.addOperationHistory(wallet.getId(), "Delegate Update", false, content + error);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
