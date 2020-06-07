@@ -17,6 +17,8 @@ package com.xcash.base.utils;
 
 import android.app.Application;
 
+import com.xcash.wallet.TheApplication;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -86,7 +88,7 @@ public class CatchBugManager implements UncaughtExceptionHandler {
 
     private void writeBugThenDoDefault(String bugContent, Thread thread, Throwable throwable) {
         String bug = "My device:" + android.os.Build.MODEL + "in android version:" + android.os.Build.VERSION.RELEASE + "get a bug:\n" + bugContent;
-        FileTool.needShowAndWriteLogToSdcard(true, FileTool.getDefaultRootPath() + File.separator + "CrashLog.txt", bug, null, 1);
+        FileTool.needShowAndWriteLogToSdcard(true, TheApplication.getExternalFilesDirRootPath() + File.separator + "CrashLog.txt", bug, null, 1);
         defaultUncaughtExceptionHandler.uncaughtException(thread, throwable);
     }
 

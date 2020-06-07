@@ -15,7 +15,6 @@
  */
 package com.xcash.wallet;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
@@ -24,15 +23,14 @@ import android.view.View;
 import android.view.Window;
 
 import com.xcash.utils.CoroutineHelper;
-import com.xcash.utils.PermissionHelper;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.Wallet;
 import com.xcash.wallet.aidl.manager.XManager;
 
 public class SplashActivity extends NewBaseActivity {
 
-    private String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-    private PermissionHelper permissionHelper = new PermissionHelper(SplashActivity.this, permissions);
+//    private String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//    private PermissionHelper permissionHelper = new PermissionHelper(SplashActivity.this, permissions);
     private CoroutineHelper coroutineHelper = new CoroutineHelper();
 
     @Override
@@ -64,18 +62,18 @@ public class SplashActivity extends NewBaseActivity {
 
     @Override
     protected void initConfigUi() {
-        permissionHelper.setOnPermissionListener(new PermissionHelper.OnPermissionListener() {
-            @Override
-            public void onSuccess() {
-                goToJump();
-            }
-
-            @Override
-            public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-            }
-        });
-        permissionHelper.checkPermission();
+//        permissionHelper.setOnPermissionListener(new PermissionHelper.OnPermissionListener() {
+//            @Override
+//            public void onSuccess() {
+//                goToJump();
+//            }
+//
+//            @Override
+//            public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//
+//            }
+//        });
+//        permissionHelper.checkPermission();
     }
 
     @Override
@@ -85,7 +83,7 @@ public class SplashActivity extends NewBaseActivity {
 
     @Override
     protected void initOther() {
-
+        goToJump();
     }
 
     private void goToJump() {
@@ -119,17 +117,17 @@ public class SplashActivity extends NewBaseActivity {
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        permissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        permissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        permissionHelper.onActivityResult(requestCode, resultCode, data);
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        permissionHelper.onActivityResult(requestCode, resultCode, data);
+//    }
 
     @Override
     protected void onDestroy() {
