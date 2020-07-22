@@ -134,6 +134,11 @@ Once done, re-sync `gradle` (elephant icon on the top right)
 
 ### Build Instructions
 
+#### Setup global build variables
+
+Setup the android SDK and NDK build variables  
+`export ANDROID_SDK_ROOT=/root/Android/Sdk/; export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/YOUR_NDK_VERSION;`
+
 #### Sign your `.apk` (optional)
 
 Open a terminal window in `android-studio` and run:
