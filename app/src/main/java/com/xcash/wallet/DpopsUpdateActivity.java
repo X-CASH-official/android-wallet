@@ -190,9 +190,9 @@ public class DpopsUpdateActivity extends NewBaseActivity {
         keyValueItems.add(new KeyValueItem("about", "about"));
         keyValueItems.add(new KeyValueItem("website", "website"));
         keyValueItems.add(new KeyValueItem("team", "team"));
-        keyValueItems.add(new KeyValueItem("pool_mode", "pool_mode"));
-        keyValueItems.add(new KeyValueItem("fee_structure", "fee_structure"));
-        keyValueItems.add(new KeyValueItem("server_settings", "server_settings"));
+        keyValueItems.add(new KeyValueItem("shared_delegate_status", "shared_delegate_status"));
+        keyValueItems.add(new KeyValueItem("delegate_fee", "delegate_fee"));
+        keyValueItems.add(new KeyValueItem("server_specs", "server_specs"));
         PopupWindowHelp.showPopupWindowListViewNormal(DpopsUpdateActivity.this, view.getRootView(), view, relativeLayoutItem.getWidth(), view_normal_margin_broad, locations[1] + editTextItem.getHeight(), keyValueItems, 5, new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
