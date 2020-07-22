@@ -68,14 +68,14 @@ public class DpopsActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAda
                 TextView textViewAmount = (TextView) holder.getView(R.id.textViewAmount);
                 TextView textViewInfo = (TextView) holder.getView(R.id.textViewInfo);
 
-                String fee_structure = "0%";
-                if (delegate.getFee_structure() != "") {
-                    fee_structure = delegate.getFee_structure() + "%";
+                String delegate_fee = "0%";
+                if (delegate.getDelegate_fee() != "") {
+                    delegate_fee = delegate.getDelegate_fee() + "%";
                 }
                 textViewDelegateName.setText(delegate.getDelegate_name());
                 textViewAmount.setText(delegate.getTotal_vote_count());
 
-                textViewInfo.setText("online_status:" + delegate.getOnline_status() + "\npool_mode:" + delegate.getPool_mode() + "|fee_structure:" + fee_structure + "\nblock_verifier_score:" + delegate.getBlock_verifier_score() + "\nblock_verifier_total_rounds:" + delegate.getBlock_verifier_total_rounds());
+                textViewInfo.setText("online_status:" + delegate.getOnline_status() + "\ndelegate_status:" + delegate.getShared_delegate_status() + "|delegate_fee:" + delegate_fee + "\nblock_verifier_score:" + delegate.getBlock_verifier_score() + "\nblock_verifier_total_rounds:" + delegate.getBlock_verifier_total_rounds());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
