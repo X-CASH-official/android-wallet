@@ -22,8 +22,8 @@ public class Delegate implements Serializable {
 
     private String total_vote_count;
     private String delegate_name;
-    private String pool_mode;
-    private String fee_structure;
+    private String shared_delegate_status;
+    private String delegate_fee;
     private String block_verifier_score;
     private String online_status;
     private String block_verifier_total_rounds;
@@ -45,20 +45,20 @@ public class Delegate implements Serializable {
         this.delegate_name = delegate_name;
     }
 
-    public String getPool_mode() {
-        return pool_mode;
+    public String getShared_delegate_status() {
+        return shared_delegate_status;
     }
 
-    public void setPool_mode(String pool_mode) {
-        this.pool_mode = pool_mode;
+    public void setShared_delegate_status(String shared_delegate_status) {
+        this.shared_delegate_status = shared_delegate_status;
     }
 
-    public String getFee_structure() {
-        return fee_structure;
+    public String getDelegate_fee() {
+        return delegate_fee;
     }
 
-    public void setFee_structure(String fee_structure) {
-        this.fee_structure = fee_structure;
+    public void setDelegate_fee(String delegate_fee) {
+        this.delegate_fee = delegate_fee;
     }
 
     public String getBlock_verifier_score() {
@@ -98,13 +98,12 @@ public class Delegate implements Serializable {
         return "Delegate{" +
                 "total_vote_count='" + total_vote_count + '\'' +
                 ", delegate_name='" + delegate_name + '\'' +
-                ", pool_mode='" + pool_mode + '\'' +
-                ", fee_structure='" + fee_structure + '\'' +
+                ", shared_delegate_status='" + shared_delegate_status + '\'' +
+                ", delegate_fee='" + delegate_fee + '\'' +
                 ", block_verifier_score='" + block_verifier_score + '\'' +
                 ", online_status='" + online_status + '\'' +
                 ", block_verifier_total_rounds='" + block_verifier_total_rounds + '\'' +
                 ", block_verifier_online_percentage='" + block_verifier_online_percentage + '\'' +
                 '}';
     }
-
 }
