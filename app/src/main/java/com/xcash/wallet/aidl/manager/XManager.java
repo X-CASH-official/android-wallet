@@ -137,7 +137,7 @@ public class XManager {
     }
 
     public static File getWalletDir(String name) {
-        String dirPath = TheApplication.getExternalFilesDirRootPath() + File.separator + WALLET + File.separator + name;
+        String dirPath = TheApplication.getFilesDirRootPath() + File.separator + WALLET + File.separator + name;
         File file = new File(dirPath);
         if (!file.exists()) {
             file.mkdirs();
