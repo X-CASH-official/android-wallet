@@ -241,6 +241,11 @@ public class WalletDetailsActivity extends NewBaseActivity {
                 public void onSuccess(final String tips) throws RemoteException {
                     try {
                         XManager.getInstance().resetWalletData(wallet.getName());
+                        // delete transactionInfos
+                        List<TransactionInfo> transactionInfos = AppDatabase.getInstance().transactionInfoDao().loadTransactionInfosByWalletId(wallet.getSymbol(), wallet.getId());
+                        if (transactionInfos != null) {
+                            AppDatabase.getInstance().transactionInfoDao().deleteTransactionInfo(transactionInfos.toArray(new TransactionInfo[]{}));
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
