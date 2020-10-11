@@ -46,6 +46,8 @@ interface WalletOperateManager {
 
     void vote(String value,OnNormalListener onNormalListener);
 
+    void delayVote(String value,long voteTimestamp,OnNormalListener onNormalListener);
+
     void delegateRegister(String delegate_name,String delegate_IP_address,String block_verifier_messages_public_key,OnNormalListener onNormalListener);
 
     void delegateUpdate(String item,String value,OnNormalListener onNormalListener);

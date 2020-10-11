@@ -129,9 +129,11 @@
     <string name="activity_wallet_details_textViewPasswordHintTitle_text">Password Hint</string>
     <string name="activity_wallet_details_textViewExportMnemonicWordsTitle_text">Export Mnemonic Seed</string>
     <string name="activity_wallet_details_textViewExportPrivateKeysTitle_text">Export Private Keys</string>
+    <string name="activity_wallet_details_textViewResetBlockChainTitle_text">Reset Block Chain</string>
     <string name="activity_wallet_details_textViewDeleteWalletTitle_text">Delete Wallet</string>
     <string name="activity_wallet_details_openWalletPasswordError_tips">Incorrect password</string>
     <string name="activity_wallet_details_openWalletError_tips">Could not open wallet</string>
+    <string name="activity_wallet_details_resetBlockChainSuccess_tips">Successfully reset block chain</string>
     <string name="activity_wallet_details_deleteSuccess_tips">Wallet successfully deleted</string>
     <string name="activity_wallet_details_deleteError_tips">Could not delete wallet</string>
     <string name="activity_wallet_details_mnemonic_words_textViewTitle_text">Recover Mnemonic</string>
@@ -147,6 +149,7 @@
     <string name="activity_wallet_details_private_keys_privateViewKey_tips">Private View Key</string>
     <string name="activity_wallet_details_private_keys_publicSpendKey_tips">Public Spend Key</string>
     <string name="activity_wallet_details_private_keys_privateSpendKey_tips">Private Spend Key</string>
+    <string name="activity_wallet_details_reset_block_chain_tips">Confirm to reset block chain?</string>
     <string name="activity_wallet_details_delete_tips">Confirm to delete wallet?</string>
 
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>

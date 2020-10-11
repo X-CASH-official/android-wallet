@@ -16,26 +16,25 @@
 package com.xcash.wallet;
 
 
-import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+ import android.content.Intent;
+ import android.content.res.TypedArray;
+ import android.graphics.drawable.Drawable;
+ import android.os.Bundle;
+ import android.text.Editable;
+ import android.text.TextWatcher;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.CheckBox;
+ import android.widget.EditText;
+ import android.widget.FrameLayout;
+ import android.widget.ImageView;
+ import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
+ import androidx.core.content.ContextCompat;
 
-import com.xcash.base.BaseActivity;
-import com.xcash.utils.AppSignTool;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.ColorHelp;
+ import com.xcash.base.BaseActivity;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.ColorHelp;
 
 public class SetWalletActivity extends NewBaseActivity {
 

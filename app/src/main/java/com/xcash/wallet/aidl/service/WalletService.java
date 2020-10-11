@@ -32,6 +32,7 @@ package com.xcash.wallet.aidl.service;
  import com.my.monero.model.WalletManager;
  import com.xcash.base.utils.LogTool;
  import com.xcash.base.utils.TimeTool;
+ import com.xcash.models.local.DelayVote;
  import com.xcash.utils.LanguageTool;
  import com.xcash.utils.database.AppDatabase;
  import com.xcash.utils.database.entity.Node;
@@ -69,9 +70,13 @@ public class WalletService extends Service {
     private final PriorityBlockingQueue<WalletOperate> priorityBlockingQueueWalletOperate = new PriorityBlockingQueue<WalletOperate>();
     private final RemoteCallbackList<OnWalletRefreshListener> onWalletRefreshListenerList = new RemoteCallbackList<>();
     private final HashMap<String, WalletOperate> waitingWalletOperateHashMap = new HashMap<String, WalletOperate>();
-    private boolean canRunControlThread = true;
-    private boolean loadWalletThreadStatusRunning = false;
-    private Thread loadWalletThread;
+    private final List<DelayVote> delayVotes = new ArrayList<DelayVote>();//need synchronized
+    private boolean canRunWalletThread = true;
+    private boolean walletThreadStatusRunning = false;
+    private Thread walletThread;
+    private boolean canRunCycleThread = true;
+    private boolean cycleThreadStatusRunning = false;
+    private Thread cycleThread;
     private Handler handler = new Handler();
     private MyBinder myBinder = new MyBinder();
     private int operateType = OPERATETYPE_STOP;
@@ -90,6 +95,7 @@ public class WalletService extends Service {
     public void onCreate() {
         super.onCreate();
         loadWalletThread();
+        loadCycleThread();
         startForeground();
     }
 
@@ -99,13 +105,22 @@ public class WalletService extends Service {
     }
 
     private void loadWalletThread() {
-        if (loadWalletThreadStatusRunning) {
+        if (walletThreadStatusRunning) {
             return;
         }
-        loadWalletThreadStatusRunning = true;
+        walletThreadStatusRunning = true;
         operateType = OPERATETYPE_RUN;
-        loadWalletThread = new Thread(new LoadWalletThreadRunnable());
-        loadWalletThread.start();
+        walletThread = new Thread(new WalletThreadRunnable());
+        walletThread.start();
+    }
+
+    private void loadCycleThread() {
+        if (cycleThreadStatusRunning) {
+            return;
+        }
+        cycleThreadStatusRunning = true;
+        cycleThread = new Thread(new CycleThreadRunnable());
+        cycleThread.start();
     }
 
     private void startForeground() {
@@ -154,6 +169,7 @@ public class WalletService extends Service {
             handler.removeCallbacksAndMessages(null);
         }
         operateType = OPERATETYPE_DESTROY;
+        canRunCycleThread=false;
     }
 
     private void callBack(WalletInfo walletInfo) {
@@ -393,6 +409,16 @@ public class WalletService extends Service {
         addToPriorityBlockingQueue(walletOperate);
     }
 
+    private void addDelayVote(long voteTimestamp,String  value,OnNormalListener onNormalListener) {
+        DelayVote delayVote = new DelayVote();
+        delayVote.setVoteTimestamp(voteTimestamp);
+        delayVote.setValue(value);
+        delayVote.setOnNormalListener(onNormalListener);
+        synchronized (delayVotes){
+            delayVotes.add(delayVote);
+        }
+    }
+
     class MyBinder extends WalletOperateManager.Stub {
 
         @Override
@@ -460,6 +486,11 @@ public class WalletService extends Service {
         }
 
         @Override
+        public void delayVote(String value,long voteTimestamp,OnNormalListener onNormalListener) throws RemoteException {
+            addDelayVote(voteTimestamp, value,onNormalListener);
+        }
+
+        @Override
         public void delegateRegister(String delegate_name, String delegate_IP_address, String block_verifier_messages_public_key, OnNormalListener onNormalListener) throws RemoteException {
             addWalletOperateDelegate(WalletOperate.TYPE_DELEGATE_REGISTER, onNormalListener, null, null, delegate_name, delegate_IP_address, block_verifier_messages_public_key);
         }
@@ -507,11 +538,57 @@ public class WalletService extends Service {
 
     }
 
-    class LoadWalletThreadRunnable implements Runnable {
+    class CycleThreadRunnable implements Runnable {
 
         public void run() {
             try {
-                while (canRunControlThread) {
+                while (canRunCycleThread) {
+                    try {
+                        checkCycleTimestamp();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } finally {
+                cycleThreadStatusRunning = false;
+            }
+        }
+
+        /**
+         * Running in thread
+         */
+        private void checkCycleTimestamp() {
+            synchronized (delayVotes) {
+                long timestamp=System.currentTimeMillis();
+                List<DelayVote> overTimeDelayVotes=new ArrayList<>();
+                for(int i=0;i<delayVotes.size();i++){
+                    DelayVote delayVote= delayVotes.get(i);
+                    if(timestamp>=delayVote.getVoteTimestamp()){
+                        overTimeDelayVotes.add(delayVote);
+                    }
+                }
+                if(overTimeDelayVotes.size()>0){
+                    for(int i=0;i<overTimeDelayVotes.size();i++){
+                        DelayVote delayVote= overTimeDelayVotes.get(i);
+                        addWalletOperateDelegate(WalletOperate.TYPE_VOTE, delayVote.getOnNormalListener(), null, delayVote.getValue(), null, null, null);
+                        delayVotes.remove(delayVote);
+                    }
+                }
+            }
+        }
+    }
+
+
+    class WalletThreadRunnable implements Runnable {
+
+        public void run() {
+            try {
+                while (canRunWalletThread) {
                     try {
                         boolean needExit = doOperate();
                         if (needExit) {
@@ -527,7 +604,7 @@ public class WalletService extends Service {
                     }
                 }
             } finally {
-                loadWalletThreadStatusRunning = false;
+                walletThreadStatusRunning = false;
             }
         }
 
@@ -943,7 +1020,7 @@ public class WalletService extends Service {
                     com.xcash.wallet.aidl.Wallet wallet = convertWallet(activeWallet);
                     onWalletDataListener.onSuccess(wallet);
                 } else {
-                    File file = XManager.getInstance().getWalletFile(walletOperate.getName());
+                    File file = XManager.getInstance().getWalletData(walletOperate.getName());
                     if (file.exists()) {
                         com.my.monero.model.Wallet openWallet = WalletManager.getInstance().openWallet(file.getPath(), walletOperate.getPassword());
                         if (openWallet == null || openWallet.getStatus() != com.my.monero.model.Wallet.Status.Status_Ok) {

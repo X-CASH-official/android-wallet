@@ -15,36 +15,35 @@
  */
 package com.xcash.wallet.fragment;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.widget.AdapterView;
+ import android.widget.ImageView;
+ import android.widget.RelativeLayout;
 
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.xcash.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAdapter;
-import com.xcash.base.recyclerviewlibrary.models.ViewItem;
-import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
-import com.xcash.models.local.KeyValueItem;
-import com.xcash.utils.ClipboardTool;
-import com.xcash.utils.CoroutineHelper;
-import com.xcash.utils.database.AppDatabase;
-import com.xcash.utils.database.entity.AddressBook;
-import com.xcash.wallet.AddressManagerActivity;
-import com.xcash.wallet.MainActivity;
-import com.xcash.wallet.R;
-import com.xcash.wallet.ReceiveActivity;
-import com.xcash.wallet.TheApplication;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAdapter;
+ import com.xcash.base.recyclerviewlibrary.models.ViewItem;
+ import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
+ import com.xcash.models.local.KeyValueItem;
+ import com.xcash.utils.CoroutineHelper;
+ import com.xcash.utils.database.AppDatabase;
+ import com.xcash.utils.database.entity.AddressBook;
+ import com.xcash.wallet.AddressManagerActivity;
+ import com.xcash.wallet.MainActivity;
+ import com.xcash.wallet.R;
+ import com.xcash.wallet.ReceiveActivity;
+ import com.xcash.wallet.TheApplication;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.PopupWindowHelp;
 
-import java.util.ArrayList;
-import java.util.List;
+ import java.util.ArrayList;
+ import java.util.List;
 
 public class MainActivity_Fragment_Find extends BaseFragment {
 

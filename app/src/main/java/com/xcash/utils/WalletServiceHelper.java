@@ -301,18 +301,55 @@ public class WalletServiceHelper {
         }
     }
 
-    public void waitToVote(Context context,final String value,long delayMillis,boolean showNotification,final OnVoteListener onVoteListener){
+    private void doDelayVote(final String value,final long voteTimestamp){
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        try {
+            final String content = "{\"value\":" + value + "}\n\nResult=> ";
+            walletOperateManager.delayVote(value,voteTimestamp, new OnNormalListener.Stub() {
+                @Override
+                public void onSuccess(final String tips) throws RemoteException {
+                    addOperationHistory(wallet.getId(), "delayVote", true, content + tips);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String content=tips+"=>"+value;
+                            showNotification(content);
+                            BaseActivity.showLongToast(context, content);
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    addOperationHistory(wallet.getId(), "delayVote", false, content + error);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String content=context.getString(R.string.activity_dpops_vote_failed_tips)+"=>"+value;
+                            showNotification(content);
+                            BaseActivity.showLongToast(context, content);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void quickToVote(final String value,final OnVoteListener onVoteListener){
+        doVote(value,onVoteListener);
+    }
+
+    public void waitToVote(Context context,final String value,long voteTimestamp,boolean showNotification){
         if(showNotification){
             String content = context.getString(R.string.waiting_to_vote_tips)+" "+value;
             showNotification(content);
         }
-        voteHandler.removeCallbacksAndMessages(null);
-        voteHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doVote(value,onVoteListener);
-            }
-        },delayMillis);
+        doDelayVote(value,voteTimestamp);
     }
 
     public void showNotification(String content){

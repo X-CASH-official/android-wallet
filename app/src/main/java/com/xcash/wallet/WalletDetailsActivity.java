@@ -62,6 +62,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
     private RelativeLayout relativeLayoutPasswordHint;
     private RelativeLayout relativeLayoutExportMnemonicWords;
     private RelativeLayout relativeLayoutExportPrivateKeys;
+    private RelativeLayout relativeLayoutResetBlockChain;
     private RelativeLayout relativeLayoutDeleteWallet;
 
     private View.OnClickListener onClickListener;
@@ -92,6 +93,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
         relativeLayoutPasswordHint = (RelativeLayout) findViewById(R.id.relativeLayoutPasswordHint);
         relativeLayoutExportMnemonicWords = (RelativeLayout) findViewById(R.id.relativeLayoutExportMnemonicWords);
         relativeLayoutExportPrivateKeys = (RelativeLayout) findViewById(R.id.relativeLayoutExportPrivateKeys);
+        relativeLayoutResetBlockChain = (RelativeLayout) findViewById(R.id.relativeLayoutResetBlockChain);
         relativeLayoutDeleteWallet = (RelativeLayout) findViewById(R.id.relativeLayoutDeleteWallet);
         onClickListener();
     }
@@ -139,7 +141,10 @@ public class WalletDetailsActivity extends NewBaseActivity {
                         showPassword(relativeLayoutExportMnemonicWords, TYPE_SHOW_MNEMONIC_WORDS);
                         break;
                     case R.id.relativeLayoutExportPrivateKeys:
-                        showPassword(relativeLayoutExportMnemonicWords, TYPE_SHOW_PRIVATE_KEYS);
+                        showPassword(relativeLayoutExportPrivateKeys, TYPE_SHOW_PRIVATE_KEYS);
+                        break;
+                    case R.id.relativeLayoutResetBlockChain:
+                        resetBlockChain(relativeLayoutResetBlockChain);
                         break;
                     case R.id.relativeLayoutDeleteWallet:
                         deleteWallet(relativeLayoutDeleteWallet);
@@ -154,6 +159,7 @@ public class WalletDetailsActivity extends NewBaseActivity {
         relativeLayoutPasswordHint.setOnClickListener(onClickListener);
         relativeLayoutExportMnemonicWords.setOnClickListener(onClickListener);
         relativeLayoutExportPrivateKeys.setOnClickListener(onClickListener);
+        relativeLayoutResetBlockChain.setOnClickListener(onClickListener);
         relativeLayoutDeleteWallet.setOnClickListener(onClickListener);
     }
 
@@ -206,6 +212,63 @@ public class WalletDetailsActivity extends NewBaseActivity {
             }
         });
     }
+
+    private void resetBlockChain(View view) {
+        if (wallet == null) {
+            return;
+        }
+        PopupWindowHelp.showPopupWindowNormalTips(WalletDetailsActivity.this, view.getRootView(), view, getString(R.string.activity_wallet_details_reset_block_chain_tips), new PopupWindowHelp.OnShowPopupWindowNormalTipsListener() {
+            @Override
+            public void okClick(PopupWindow popupWindow, View view) {
+                popupWindow.dismiss();
+                doResetBlockChain();
+            }
+        });
+    }
+
+    private void doResetBlockChain(){
+        TheApplication.getTheApplication().getWalletServiceHelper().closeWallet(wallet.getId());
+        WalletOperateManager walletOperateManager = TheApplication.getTheApplication().getWalletServiceHelper().getWalletOperateManager();
+        if (walletOperateManager == null) {
+            return;
+        }
+        Object[] objects = ProgressDialogHelp.unEnabledView(WalletDetailsActivity.this, null);
+        final ProgressDialog progressDialog = (ProgressDialog) objects[0];
+        final String progressDialogKey = (String) objects[1];
+        try {
+            walletOperateManager.closeWallet(wallet.getId(), new OnNormalListener.Stub() {
+                @Override
+                public void onSuccess(final String tips) throws RemoteException {
+                    try {
+                        XManager.getInstance().resetWalletData(wallet.getName());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            BaseActivity.showShortToast(WalletDetailsActivity.this, getString(R.string.activity_wallet_details_resetBlockChainSuccess_tips));
+                            ProgressDialogHelp.enabledView(WalletDetailsActivity.this, progressDialog, progressDialogKey, null);
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final String error) throws RemoteException {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            ProgressDialogHelp.enabledView(WalletDetailsActivity.this, progressDialog, progressDialogKey, null);
+                        }
+                    });
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            ProgressDialogHelp.enabledView(WalletDetailsActivity.this, progressDialog, progressDialogKey, null);
+        }
+    }
+
 
     private void deleteWallet(View view) {
         if (wallet == null) {

@@ -13,11 +13,11 @@
     <dimen name="popupwindow_listview_normal_listView_height">250dp</dimen>
     <dimen name="popupwindow_listview_normal_item_height">50dp</dimen>
 
-    <dimen name="textView_normal_textSize_super_broad">21sp</dimen>
+    <dimen name="textView_normal_textSize_super_broad">22sp</dimen>
     <dimen name="textView_normal_textSize_broad">18sp</dimen>
-    <dimen name="textView_normal_textSize_default">15sp</dimen>
+    <dimen name="textView_normal_textSize_default">14sp</dimen>
     <dimen name="textView_normal_textSize_narrow">12sp</dimen>
-    <dimen name="textView_normal_textSize_super_narrow">9sp</dimen>
+    <dimen name="textView_normal_textSize_super_narrow">10sp</dimen>
 
     <dimen name="line_normal_widthOrHeight_broad">2dp</dimen>
     <dimen name="line_normal_widthOrHeight_default">1dp</dimen>
