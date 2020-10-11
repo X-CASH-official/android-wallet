@@ -441,7 +441,7 @@ public class MainActivity_Fragment_Home extends BaseFragment {
                 textViewSynchronizeStatus.setTextColor(mainColorText);
                 progressSynchronize.setIndeterminate(false);
                 if (result) {
-                    textViewSynchronizeStatus.setText(getString(R.string.activity_wallet_running_SynchronizedSuccess_tips));
+                    textViewSynchronizeStatus.setText(getString(R.string.activity_wallet_running_SynchronizedSuccess_tips)+"("+blockChainHeight+")");
                     progressSynchronize.setProgress(100);
                 } else {
                     textViewSynchronizeStatus.setText(getString(R.string.activity_wallet_running_leaveDistance_tips) + blockChainHeight + "/" + daemonHeight);

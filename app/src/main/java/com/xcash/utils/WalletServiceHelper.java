@@ -311,7 +311,7 @@ public class WalletServiceHelper {
             walletOperateManager.delayVote(value,voteTimestamp, new OnNormalListener.Stub() {
                 @Override
                 public void onSuccess(final String tips) throws RemoteException {
-                    addOperationHistory(wallet.getId(), "delayVote", true, content + tips);
+                    addOperationHistory(wallet.getId(), "AutoVote", true, content + tips);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -324,7 +324,7 @@ public class WalletServiceHelper {
 
                 @Override
                 public void onError(final String error) throws RemoteException {
-                    addOperationHistory(wallet.getId(), "delayVote", false, content + error);
+                    addOperationHistory(wallet.getId(), "AutoVote", false, content + error);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
