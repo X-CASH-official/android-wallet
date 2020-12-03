@@ -170,6 +170,7 @@
          }
          operateType = OPERATETYPE_DESTROY;
          canRunCycleThread = false;
+         stopForeground(true);
      }
 
      private void callBack(WalletInfo walletInfo) {

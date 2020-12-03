@@ -134,6 +134,9 @@ public class WalletServiceHelper {
     }
 
     public void bindService() {
+        if (walletOperateManager != null && walletOperateManager.asBinder().isBinderAlive()) {
+            return;
+        }
         Intent intent = new Intent(context, WalletService.class);
         context.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
     }

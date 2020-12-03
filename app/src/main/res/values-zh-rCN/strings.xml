@@ -116,6 +116,7 @@
     <string name="activity_main_navigationview_textViewLanguageSetting_text">语言设置</string>
     <string name="activity_main_navigationview_textViewContactUs_text">联系我们</string>
     <string name="activity_main_navigationview_textViewAboutUs_text">关于我们</string>
+    <string name="activity_main_navigationview_checkBoxExit_text">退出时关闭服务</string>
 
     <string name="activity_wallet_manager_textViewTitle_text">钱包管理</string>
     <string name="activity_wallet_manager_item_textViewActiveStatus_text">已激活</string>

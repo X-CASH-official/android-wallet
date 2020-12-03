@@ -383,6 +383,22 @@
                 android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
                 android:background="@color/line_normal_background" />
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/view_normal_margin_broad"
+                >
+                <CheckBox
+                    android:id="@+id/checkBoxExit"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/mainColorText"
+                    android:text="@string/activity_main_navigationview_checkBoxExit_text"/>
+
+            </RelativeLayout>
+
         </LinearLayout>
 
     </RelativeLayout>
