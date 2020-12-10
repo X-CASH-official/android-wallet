@@ -21,6 +21,7 @@ public class Setting {
 
     private String language;
     private List<String> searchHistorys;
+    private boolean closeServerWhenExit;
 
     public String getLanguage() {
         return language;
@@ -38,4 +39,11 @@ public class Setting {
         this.searchHistorys = searchHistorys;
     }
 
+    public boolean isCloseServerWhenExit() {
+        return closeServerWhenExit;
+    }
+
+    public void setCloseServerWhenExit(boolean closeServerWhenExit) {
+        this.closeServerWhenExit = closeServerWhenExit;
+    }
 }

@@ -116,6 +116,7 @@
     <string name="activity_main_navigationview_textViewLanguageSetting_text">语言设置</string>
     <string name="activity_main_navigationview_textViewContactUs_text">联系我们</string>
     <string name="activity_main_navigationview_textViewAboutUs_text">关于我们</string>
+    <string name="activity_main_navigationview_checkBoxExit_text">退出时关闭服务</string>
 
     <string name="activity_wallet_manager_textViewTitle_text">钱包管理</string>
     <string name="activity_wallet_manager_item_textViewActiveStatus_text">已激活</string>
@@ -129,9 +130,11 @@
     <string name="activity_wallet_details_textViewPasswordHintTitle_text">密码提示</string>
     <string name="activity_wallet_details_textViewExportMnemonicWordsTitle_text">导出助记词</string>
     <string name="activity_wallet_details_textViewExportPrivateKeysTitle_text">导出私钥</string>
+    <string name="activity_wallet_details_textViewResetBlockChainTitle_text">重置区块链</string>
     <string name="activity_wallet_details_textViewDeleteWalletTitle_text">删除钱包</string>
     <string name="activity_wallet_details_openWalletPasswordError_tips">密码错误</string>
     <string name="activity_wallet_details_openWalletError_tips">钱包打开错误</string>
+    <string name="activity_wallet_details_resetBlockChainSuccess_tips">重置区块链成功</string>
     <string name="activity_wallet_details_deleteSuccess_tips">钱包删除成功</string>
     <string name="activity_wallet_details_deleteError_tips">钱包删除异常</string>
     <string name="activity_wallet_details_mnemonic_words_textViewTitle_text">恢复助记词</string>
@@ -147,6 +150,7 @@
     <string name="activity_wallet_details_private_keys_privateViewKey_tips">查看私钥</string>
     <string name="activity_wallet_details_private_keys_publicSpendKey_tips">支付公钥</string>
     <string name="activity_wallet_details_private_keys_privateSpendKey_tips">支付私钥</string>
+    <string name="activity_wallet_details_reset_block_chain_tips">确认要重置区块链?</string>
     <string name="activity_wallet_details_delete_tips">确认要删除钱包?</string>
 
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>

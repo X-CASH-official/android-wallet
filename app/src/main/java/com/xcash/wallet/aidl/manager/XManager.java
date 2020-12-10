@@ -49,37 +49,16 @@ public class XManager {
         return xManager;
     }
 
-    public File getWalletDir(String name) {
-        String dirPath = TheApplication.getFilesDirRootPath() + File.separator + WALLET + File.separator + name;
-        File file = new File(dirPath);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        return file;
-    }
-
-    public File getWalletFile(String name) {
-        return new File(getWalletDir(name), name);
-    }
-
-    public File getKeysFile(String name) {
-        return new File(getWalletDir(name), name + ".keys");
-    }
-
-    public File getAddressFile(String name) {
-        return new File(getWalletDir(name), name + ".address.txt");
-    }
-
     public Wallet createWallet(String walletName, String password) {
-        return xWalletController.createWallet(generateXMRFile(walletName), password);
+        return xWalletController.createWallet(generateWalletFile(walletName), password);
     }
 
     public Wallet recoveryWallet(String walletName, String password, String mnemonic, long restoreHeight) {
-        return xWalletController.recoveryWallet(generateXMRFile(walletName), password, mnemonic, restoreHeight);
+        return xWalletController.recoveryWallet(generateWalletFile(walletName), password, mnemonic, restoreHeight);
     }
 
     public Wallet createWalletWithKeys(String walletName, String password, String address, String viewKey, String spendKey, long restoreHeight) {
-        return xWalletController.createWalletWithKeys(generateXMRFile(walletName), password, restoreHeight, address, viewKey, spendKey);
+        return xWalletController.createWalletWithKeys(generateWalletFile(walletName), password, restoreHeight, address, viewKey, spendKey);
     }
 
     public boolean verifyWalletPasswordOnly(String name, String password) {
@@ -97,10 +76,7 @@ public class XManager {
         if (name == null || password == null) {
             return null;
         }
-        File file = getWalletFile(name);
-        if (!file.exists()) {
-            return null;
-        }
+        File file = getWalletData(name);
         return xWalletController.openWallet(file.getPath(), password, walletId);
     }
 
@@ -133,11 +109,9 @@ public class XManager {
         appDatabase.walletDao().insertWallet(wallet);
     }
 
-    private File generateXMRFile(String name) {
-        File walletFile = getWalletFile(name);
-        File keysFile = getKeysFile(name + ".keys");
-        File addressFile = getAddressFile(name + ".address.txt");
-        if (walletFile.exists() || keysFile.exists() || addressFile.exists()) {
+    private File generateWalletFile(String name) {
+        File walletFile = getWalletData(name);
+        if (walletFile.exists()) {
             LogTool.e(TAG, "Some wallet files already exist for " + name);
         }
         return walletFile;
@@ -162,9 +136,30 @@ public class XManager {
         AppDatabase.getInstance().nodeDao().insertNodes(defaultNodesArray);
     }
 
-    public static void deleteWallet(String name) {
+    public static File getWalletDir(String name) {
         String dirPath = TheApplication.getFilesDirRootPath() + File.separator + WALLET + File.separator + name;
+        File file = new File(dirPath);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        return file;
+    }
+
+    public static File getWalletData(String name) {
+        return new File(getWalletDir(name), name);
+    }
+
+    public static File getKeysFile(String name) {
+        return new File(getWalletDir(name), name + ".keys");
+    }
+
+    public static void deleteWallet(String name) {
+        String dirPath =getWalletDir(name).getAbsolutePath();
         FileTool.deleteFolder(dirPath);
     }
 
+    public static void resetWalletData(String name) {
+        String dirPath = getWalletData(name).getAbsolutePath();
+        FileTool.deleteFile(dirPath);
+    }
 }

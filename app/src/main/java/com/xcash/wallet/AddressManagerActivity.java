@@ -16,31 +16,30 @@
 package com.xcash.wallet;
 
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+ import android.app.Activity;
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.view.View;
+ import android.widget.ImageView;
+ import android.widget.PopupWindow;
+ import android.widget.RelativeLayout;
+ import android.widget.TextView;
 
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.xcash.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAdapter;
-import com.xcash.base.BaseActivity;
-import com.xcash.base.recyclerviewlibrary.models.ViewItem;
-import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
-import com.xcash.utils.ClipboardTool;
-import com.xcash.utils.CoroutineHelper;
-import com.xcash.utils.database.AppDatabase;
-import com.xcash.utils.database.entity.AddressBook;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.adapters.recyclerviewadapter.AddressManagerActivity_RecyclerViewAdapter;
+ import com.xcash.base.BaseActivity;
+ import com.xcash.base.recyclerviewlibrary.models.ViewItem;
+ import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
+ import com.xcash.utils.CoroutineHelper;
+ import com.xcash.utils.database.AppDatabase;
+ import com.xcash.utils.database.entity.AddressBook;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.PopupWindowHelp;
 
-import java.util.ArrayList;
-import java.util.List;
+ import java.util.ArrayList;
+ import java.util.List;
 
 public class AddressManagerActivity extends NewBaseActivity {
 

@@ -46,6 +46,7 @@ public class SplashActivity extends NewBaseActivity {
             setContentView(R.layout.activity_splash);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             setWindowType(1);
+            TheApplication.getTheApplication().getWalletServiceHelper().bindService();
             initAll();
         }
     }

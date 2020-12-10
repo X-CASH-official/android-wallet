@@ -400,6 +400,7 @@ public class DpopsActivity extends NewBaseActivity {
             }
         }
         final long delayMillis=waitMinute*60*1000-second*1000;
+        final long voteTimestamp=System.currentTimeMillis()+delayMillis;
         final String voteTips=getString(R.string.activity_dpops_waiting_vote_tips)+" "+waitMinute+" "+getString(R.string.activity_dpops_waiting_vote_minute_tips);
         PopupWindowHelp.showPopupWindowCustomTips(DpopsActivity.this, view.getRootView(), view, new PopupWindowHelp.OnShowPopupWindowCustomTipsListener() {
             @Override
@@ -411,25 +412,25 @@ public class DpopsActivity extends NewBaseActivity {
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
-                        TheApplication.getTheApplication().getWalletServiceHelper().waitToVote(TheApplication.getTheApplication(),value,delayMillis,true,null);
+                        TheApplication.getTheApplication().getWalletServiceHelper().waitToVote(TheApplication.getTheApplication(),value,voteTimestamp,true);
                     }
                 });
                 textViewRight.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
-                        quickVote(value);
+                        quickToVote(value);
                     }
                 });
             }
         });
     }
 
-    private void quickVote(String value){
+    private void quickToVote(String value){
         Object[] objects = ProgressDialogHelp.unEnabledView(DpopsActivity.this, null);
         final ProgressDialog progressDialog = (ProgressDialog) objects[0];
         final String progressDialogKey = (String) objects[1];
-        TheApplication.getTheApplication().getWalletServiceHelper().waitToVote(DpopsActivity.this, value, 0,false, new WalletServiceHelper.OnVoteListener() {
+        TheApplication.getTheApplication().getWalletServiceHelper().quickToVote( value, new WalletServiceHelper.OnVoteListener() {
             @Override
             public void onSuccess(String tips) {
                 ProgressDialogHelp.enabledView(DpopsActivity.this, progressDialog, progressDialogKey, null);

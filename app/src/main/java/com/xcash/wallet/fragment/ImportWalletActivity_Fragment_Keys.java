@@ -15,33 +15,33 @@
  */
 package com.xcash.wallet.fragment;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.res.TypedArray;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+ import android.app.ProgressDialog;
+ import android.content.Intent;
+ import android.content.res.TypedArray;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.os.RemoteException;
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.widget.Button;
+ import android.widget.DatePicker;
+ import android.widget.EditText;
+ import android.widget.PopupWindow;
+ import android.widget.RelativeLayout;
+ import android.widget.TextView;
 
-import com.xcash.base.BaseActivity;
-import com.my.monero.util.RestoreHeight;
-import com.xcash.utils.StringTool;
-import com.xcash.wallet.MainActivity;
-import com.xcash.wallet.R;
-import com.xcash.wallet.TheApplication;
-import com.xcash.wallet.aidl.OnWalletDataListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+ import com.my.monero.util.RestoreHeight;
+ import com.xcash.base.BaseActivity;
+ import com.xcash.utils.StringTool;
+ import com.xcash.wallet.MainActivity;
+ import com.xcash.wallet.R;
+ import com.xcash.wallet.TheApplication;
+ import com.xcash.wallet.aidl.OnWalletDataListener;
+ import com.xcash.wallet.aidl.WalletOperateManager;
+ import com.xcash.wallet.uihelp.ActivityHelp;
+ import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.wallet.uihelp.ProgressDialogHelp;
 
 public class ImportWalletActivity_Fragment_Keys extends BaseFragment {
 

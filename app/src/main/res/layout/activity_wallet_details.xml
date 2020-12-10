@@ -306,6 +306,38 @@
                             android:src="@mipmap/normal_target_arrow" />
 
                     </RelativeLayout>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
+                        android:layout_marginLeft="@dimen/activity_wallet_details_marginLeft"
+                        android:background="@color/line_normal_background" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutResetBlockChain"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/activity_main_navigationview_item_height"
+                        android:background="@drawable/normal_material_select_background">
+
+                        <TextView
+                            android:id="@+id/textViewResetBlockChainTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/activity_wallet_details_marginLeft"
+                            android:singleLine="true"
+                            android:text="@string/activity_wallet_details_textViewResetBlockChainTitle_text"
+                            android:textColor="@color/darkColor_default"
+                            android:textSize="@dimen/textView_normal_textSize_default" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/view_normal_margin_broad"
+                            android:src="@mipmap/normal_target_arrow" />
+
+                    </RelativeLayout>
 
                     <FrameLayout
                         android:layout_width="match_parent"

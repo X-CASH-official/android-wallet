@@ -16,24 +16,25 @@
 package com.xcash.utils.database;
 
 
-import android.content.Context;
+ import android.content.Context;
 
-import androidx.room.Database;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
-import com.xcash.utils.database.dao.AddressBookDao;
-import com.xcash.utils.database.dao.NodeDao;
-import com.xcash.utils.database.dao.OperationHistoryDao;
-import com.xcash.utils.database.dao.TransactionInfoDao;
-import com.xcash.utils.database.dao.WalletDao;
-import com.xcash.utils.database.entity.AddressBook;
-import com.xcash.utils.database.entity.Node;
-import com.xcash.utils.database.entity.OperationHistory;
-import com.xcash.utils.database.entity.TransactionInfo;
-import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.TheApplication;
+ import androidx.room.Database;
+ import androidx.room.Room;
+ import androidx.room.RoomDatabase;
 
-import org.jetbrains.annotations.NotNull;
+ import com.xcash.utils.database.dao.AddressBookDao;
+ import com.xcash.utils.database.dao.NodeDao;
+ import com.xcash.utils.database.dao.OperationHistoryDao;
+ import com.xcash.utils.database.dao.TransactionInfoDao;
+ import com.xcash.utils.database.dao.WalletDao;
+ import com.xcash.utils.database.entity.AddressBook;
+ import com.xcash.utils.database.entity.Node;
+ import com.xcash.utils.database.entity.OperationHistory;
+ import com.xcash.utils.database.entity.TransactionInfo;
+ import com.xcash.utils.database.entity.Wallet;
+ import com.xcash.wallet.TheApplication;
+
+ import org.jetbrains.annotations.NotNull;
 
 @Database(entities = {AddressBook.class, Node.class, OperationHistory.class, TransactionInfo.class, Wallet.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
