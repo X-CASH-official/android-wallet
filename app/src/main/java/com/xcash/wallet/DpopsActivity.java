@@ -390,10 +390,10 @@ public class DpopsActivity extends NewBaseActivity {
         int second=calendar.get(Calendar.SECOND);
         int waitMinute=0;
         if(minute>=4){
-            waitMinute=60+2-minute;
+            waitMinute=60+3-minute;
         }else{
-            if (minute<2){
-                waitMinute=2-minute;
+            if (minute<3){
+                waitMinute=3-minute;
             }else{
                 waitMinute=0;
                 second=0;

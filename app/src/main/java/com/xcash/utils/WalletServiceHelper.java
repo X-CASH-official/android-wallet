@@ -169,8 +169,9 @@ public class WalletServiceHelper {
 
 
     public WalletOperateManager getWalletOperateManager() {
-        if (walletOperateManager == null) {
+        if (walletOperateManager == null||!walletOperateManager.asBinder().isBinderAlive()) {
             BaseActivity.showLongToast(TheApplication.getTheApplication(), TheApplication.getTheApplication().getString(R.string.service_uninitialized_tips));
+            bindService();
         }
         return walletOperateManager;
     }
