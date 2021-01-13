@@ -57,9 +57,10 @@ package com.xcash.wallet;
  import java.util.ArrayList;
  import java.util.Calendar;
  import java.util.List;
+ import java.util.TimeZone;
 
 
-public class DpopsActivity extends NewBaseActivity {
+ public class DpopsActivity extends NewBaseActivity {
 
     private Wallet wallet;
     private int view_normal_margin_default;
@@ -386,6 +387,7 @@ public class DpopsActivity extends NewBaseActivity {
         }
 
         Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
         int minute=calendar.get(Calendar.MINUTE);
         int second=calendar.get(Calendar.SECOND);
         int waitMinute=0;
