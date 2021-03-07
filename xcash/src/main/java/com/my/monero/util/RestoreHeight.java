@@ -59,6 +59,17 @@ public class RestoreHeight {
         blockHeight.put("2020-01-01", 509640L);
         blockHeight.put("2020-02-01", 532380L);
         blockHeight.put("2020-03-01", 553000L);
+        blockHeight.put("2020-04-01", 575000L);
+        blockHeight.put("2020-05-01", 597000L);
+        blockHeight.put("2020-06-01", 619000L);
+        blockHeight.put("2020-07-01", 641000L);
+        blockHeight.put("2020-08-01", 663000L);
+        blockHeight.put("2020-09-01", 685000L);
+        blockHeight.put("2020-10-01", 707200L);
+        blockHeight.put("2020-11-01", 728500L);
+        blockHeight.put("2020-12-01", 750000L);
+//      blockHeight.put("2021-01-01", 773000L);
+//      blockHeight.put("2021-02-01", 795000L);
     }
 
     public long getHeight(String date) {
@@ -80,6 +91,8 @@ public class RestoreHeight {
         calendar.add(Calendar.DAY_OF_MONTH, -4);
         if (calendar.get(Calendar.YEAR) < 2018)
             return 0;
+        if (calendar.get(Calendar.YEAR) > 2020)
+            return 750000;
         Calendar query = (Calendar) calendar.clone();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         formatter.setTimeZone(TimeZone.getTimeZone("UTC"));

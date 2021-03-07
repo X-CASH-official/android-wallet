@@ -83,7 +83,7 @@
     <string name="activity_import_wallet_fragment_quick_restore_height_tips">Restore from height:</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">Mnemonic Seed</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">Please enter mnemonic. Separate each word by single spaces</string>
-    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">Synchronize from date or specific block height to speed up sync</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">Synchronize from date with first tx or specific block height to speed up sync</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">Date of start sync (Optional)</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">Block Height (Optional)</string>
     <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">Mnemonic seed cannot be empty</string>

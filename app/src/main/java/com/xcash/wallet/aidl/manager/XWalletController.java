@@ -210,13 +210,14 @@ public class XWalletController {
                     lastBlockTime = System.currentTimeMillis();
                     LogTool.d(TAG, "newBlock height: " + height);
                     onWalletListener.onRefreshed(height);
-                    wallet.store();
                 }
+                wallet.store();
             }
 
             @Override
             public void updated() {
                 LogTool.d(TAG, "updated");
+                wallet.store();
             }
 
             @Override

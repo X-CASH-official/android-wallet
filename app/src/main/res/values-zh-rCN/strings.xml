@@ -83,8 +83,8 @@
     <string name="activity_import_wallet_fragment_quick_restore_height_tips">快速恢复高度:</string>
     <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">助记词</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">输入助记词，用空格分割</string>
-    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">填写交易日期或区块高度以加快同步</string>
-    <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">近期交易日期（选填）</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">填写首次交易日期或区块高度以加快同步</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">交易日期（选填）</string>
     <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">区块号（选填）</string>
     <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">助记词不能为空</string>
     <string name="activity_import_wallet_fragment_mnemonic_buttonNext_text">导入钱包</string>
