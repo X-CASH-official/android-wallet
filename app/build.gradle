@@ -10,8 +10,8 @@ android {
         applicationId "com.xcash.wallet"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 5
-        versionName "1.2.0"
+        versionCode 6
+        versionName "1.2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         sourceSets {
             main {

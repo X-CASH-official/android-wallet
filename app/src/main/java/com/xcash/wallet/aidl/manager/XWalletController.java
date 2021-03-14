@@ -211,22 +211,19 @@ public class XWalletController {
                     LogTool.d(TAG, "newBlock height: " + height);
                     onWalletListener.onRefreshed(height);
                 }
-                wallet.store();
             }
 
             @Override
             public void updated() {
                 LogTool.d(TAG, "updated");
-                wallet.store();
             }
 
             @Override
             public void refreshed() {
                 LogTool.d(TAG, "refreshed");
                 if (wallet.isSynchronized() && !synced) {
-                    if (wallet.store()) {
-                        synced = true;
-                    }
+                    wallet.store();
+                    synced = true;
                 }
                 onWalletListener.onRefreshed(-1);
             }
