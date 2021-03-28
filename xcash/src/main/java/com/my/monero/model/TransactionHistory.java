@@ -65,20 +65,20 @@ public class TransactionHistory {
         loadNotes(wallet);
     }
 
-//    public void refresh() {
-//        transactions = refreshJ();
-//    }
-
     public void refresh() {
-        List<TransactionInfo> t = refreshJ();
-        for (Iterator<TransactionInfo> iterator = t.iterator(); iterator.hasNext(); ) {
-            TransactionInfo info = iterator.next();
-            if (info.account != accountIndex || info.amount == 0) {
-                iterator.remove();
-            }
-        }
-        transactions = t;
+        transactions = refreshJ();
     }
+
+//    public void refresh() {
+//        List<TransactionInfo> t = refreshJ();
+//        for (Iterator<TransactionInfo> iterator = t.iterator(); iterator.hasNext(); ) {
+//            TransactionInfo info = iterator.next();
+//            if (info.account != accountIndex || info.amount == 0) {
+//                iterator.remove();
+//            }
+//        }
+//        transactions = t;
+//    }
 
     private native List<TransactionInfo> refreshJ();
 

@@ -20,6 +20,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.xcash.utils.database.entity.TransactionInfo;
 
@@ -41,5 +42,8 @@ public interface TransactionInfoDao {
 
     @Delete
     void deleteTransactionInfo(@NotNull TransactionInfo... transactionInfo);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateTransactionInfos(@NotNull TransactionInfo... transactionInfo);
 
 }

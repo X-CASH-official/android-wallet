@@ -1333,17 +1333,65 @@
                  walletOperate.setHavePendingTransaction(havePendingTransaction(transactionInfos));
                  walletOperate.setUpdateTransactionHeight(blockChainHeight);
 
-                 TransactionInfo[] transactionInfosArray = transactionInfos.toArray(new TransactionInfo[]{});
                  List<TransactionInfo> theTransactionInfos = AppDatabase.getInstance().transactionInfoDao().loadTransactionInfosByWalletId(XManager.SYMBOL, walletId);
-                 if (theTransactionInfos != null) {
-                     AppDatabase.getInstance().transactionInfoDao().deleteTransactionInfo(theTransactionInfos.toArray(new TransactionInfo[]{}));
-                 }
-                 AppDatabase.getInstance().transactionInfoDao().insertTransactionInfos(transactionInfosArray);
+
+                 List<TransactionInfo> needUpdateTransactionInfos=getNeedUpdateTransactionInfos(theTransactionInfos, transactionInfos);
+                 List<TransactionInfo> needInsertTransactionInfos=getNeedInsertTransactionInfos(theTransactionInfos, transactionInfos);
+                 AppDatabase.getInstance().transactionInfoDao().updateTransactionInfos(needUpdateTransactionInfos.toArray(new TransactionInfo[]{}));
+                 AppDatabase.getInstance().transactionInfoDao().insertTransactionInfos(needInsertTransactionInfos.toArray(new TransactionInfo[]{}));
+
                  WalletInfo walletInfo = new WalletInfo();
                  walletInfo.setWalletId(walletId);
                  walletInfo.setType(WalletInfo.TYPE_REFRESH_TRANSACTION);
                  callBack(walletInfo);
              }
+         }
+
+         /**
+          * Running in thread
+          */
+         private List<TransactionInfo> getNeedUpdateTransactionInfos(List<TransactionInfo> oldTransactionInfos, List<TransactionInfo> newTransactionInfos) {
+             List<TransactionInfo> transactionInfos = new ArrayList<>();
+             if (oldTransactionInfos == null || newTransactionInfos == null) {
+                 return transactionInfos;
+             }
+             for (int i = 0; i < newTransactionInfos.size(); i++) {
+                 TransactionInfo newTransactionInfo = newTransactionInfos.get(i);
+                 for (int j = 0; j < oldTransactionInfos.size(); j++) {
+                     TransactionInfo oldTransactionInfo = oldTransactionInfos.get(j);
+                     if (newTransactionInfo.getHash().equals(oldTransactionInfo.getHash())) {
+                         oldTransactionInfo.setPending(newTransactionInfo.isPending());
+                         oldTransactionInfo.setFailed(newTransactionInfo.isFailed());
+                         oldTransactionInfo.setConfirmations(newTransactionInfo.getConfirmations());
+                         transactionInfos.add(oldTransactionInfo);
+                     }
+                 }
+             }
+             return transactionInfos;
+         }
+
+         /**
+          * Running in thread
+          */
+         private List<TransactionInfo> getNeedInsertTransactionInfos(List<TransactionInfo> oldTransactionInfos, List<TransactionInfo> newTransactionInfos) {
+             List<TransactionInfo> transactionInfos = new ArrayList<>();
+             if (oldTransactionInfos == null || newTransactionInfos == null) {
+                 return transactionInfos;
+             }
+             for (int i = 0; i < newTransactionInfos.size(); i++) {
+                 TransactionInfo newTransactionInfo = newTransactionInfos.get(i);
+                 boolean haveExist = false;
+                 for (int j = 0; j < oldTransactionInfos.size(); j++) {
+                     TransactionInfo oldTransactionInfo = oldTransactionInfos.get(j);
+                     if (newTransactionInfo.getHash().equals(oldTransactionInfo.getHash())) {
+                         haveExist = true;
+                     }
+                 }
+                 if (!haveExist) {
+                     transactionInfos.add(newTransactionInfo);
+                 }
+             }
+             return transactionInfos;
          }
 
          /**
