@@ -207,7 +207,7 @@
     <string name="activity_payment_radioButtonLow_text">Low Priority</string>
     <string name="activity_payment_radioButtonNormal_text">Normal Priority</string>
     <string name="activity_payment_radioButtonHigh_text">High Priority</string>
-    <string name="activity_payment_textViewAllAmount_text">Full Balance</string>
+    <string name="activity_payment_textViewAllAmount_text">ALL</string>
     <string name="activity_payment_payAllAmount_tips">The full balance is less than the transaction fees</string>
     <string name="activity_payment_payAmountCheckError_tips">Transaction amount needs to be greater than 0</string>
     <string name="activity_payment_paySweepAll_tips">Do you want send a sweep all transaction for clear transactions?</string>
