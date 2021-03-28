@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class XManager {
 
-    public static final int TRANSACTION_MIN_CONFIRMATION = 10;
+    public static final int TRANSACTION_MIN_CONFIRMATION = 6;
     public static final String SYMBOL = "XCASH";
     public static final String TAG = "XManager";
     public static final String WALLET = "wallet";

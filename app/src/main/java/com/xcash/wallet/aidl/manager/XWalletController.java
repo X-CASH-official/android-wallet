@@ -207,7 +207,7 @@
 
              @Override
              public void newBlock(long height) {
-                 if (lastBlockTime < System.currentTimeMillis() - 2000) {
+                 if (lastBlockTime < System.currentTimeMillis() - 4000) {
                      lastBlockTime = System.currentTimeMillis();
                      LogTool.d(TAG, "newBlock height: " + height);
                      onWalletListener.onRefreshed(height);
