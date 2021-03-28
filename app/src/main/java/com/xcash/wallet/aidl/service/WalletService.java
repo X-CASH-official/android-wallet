@@ -1323,7 +1323,7 @@
              if (transactionHistory == null) {
                  return;
              }
-             transactionHistory.refresh();
+             transactionHistory.refreshWithNotes(wallet);
              List<TransactionInfo> transactionInfos = getTransactionHistory(walletId, transactionHistory);
              if (transactionInfos == null) {
                  return;
@@ -1352,8 +1352,11 @@
           */
          private List<TransactionInfo> getNeedUpdateTransactionInfos(List<TransactionInfo> oldTransactionInfos, List<TransactionInfo> newTransactionInfos) {
              List<TransactionInfo> transactionInfos = new ArrayList<>();
-             if (oldTransactionInfos == null || newTransactionInfos == null) {
+             if (newTransactionInfos == null) {
                  return transactionInfos;
+             }
+             if(oldTransactionInfos==null){
+                 oldTransactionInfos= new ArrayList<>();
              }
              for (int i = 0; i < newTransactionInfos.size(); i++) {
                  TransactionInfo newTransactionInfo = newTransactionInfos.get(i);
@@ -1375,8 +1378,11 @@
           */
          private List<TransactionInfo> getNeedInsertTransactionInfos(List<TransactionInfo> oldTransactionInfos, List<TransactionInfo> newTransactionInfos) {
              List<TransactionInfo> transactionInfos = new ArrayList<>();
-             if (oldTransactionInfos == null || newTransactionInfos == null) {
+             if (newTransactionInfos == null) {
                  return transactionInfos;
+             }
+             if(oldTransactionInfos==null){
+                 oldTransactionInfos= new ArrayList<>();
              }
              for (int i = 0; i < newTransactionInfos.size(); i++) {
                  TransactionInfo newTransactionInfo = newTransactionInfos.get(i);
@@ -1424,6 +1430,7 @@
                  transactionInfo.setPaymentId(theTransactionInfo.paymentId);
                  transactionInfo.setTxKey(theTransactionInfo.txKey);
                  transactionInfo.setAddress(theTransactionInfo.address);
+                 transactionInfo.setDescription(theTransactionInfo.notes);
                  transactionInfos.add(transactionInfo);
              }
              return transactionInfos;

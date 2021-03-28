@@ -86,6 +86,8 @@ public class Transaction_Default_RecyclerViewAdapter extends UnLoadMoreRecyclerV
                 TextView textViewAmount = (TextView) holder.getView(R.id.textViewAmount);
                 TextView textViewHash = (TextView) holder.getView(R.id.textViewHash);
                 TextView textViewTime = (TextView) holder.getView(R.id.textViewTime);
+                TextView textViewDescription = (TextView) holder.getView(R.id.textViewDescription);
+
                 if (transactionInfo.isPending() || transactionInfo.getConfirmations() < XManager.TRANSACTION_MIN_CONFIRMATION) {
                     textViewStatus.setText(baseActivity.getString(R.string.layout_transaction_item_status_tips) + "(" + baseActivity.getString(R.string.layout_transaction_item_status_pending_tips) + " " + transactionInfo.getConfirmations() + ")");
                     textViewStatus.setTextColor(editText_normal_hint);
@@ -104,6 +106,13 @@ public class Transaction_Default_RecyclerViewAdapter extends UnLoadMoreRecyclerV
                 textViewHash.setText(baseActivity.getString(R.string.layout_transaction_item_hash_tips) + "    " + transactionInfo.getHash());
                 textViewTime.setText(baseActivity.getString(R.string.layout_transaction_item_date_tips) + "    " + StringTool.getDateTime(transactionInfo.getTimestamp()));
 
+                String description=transactionInfo.getDescription();
+                if(description!=null&&!description.equals("")){
+                    textViewDescription.setVisibility(View.VISIBLE);
+                    textViewDescription.setText(baseActivity.getString(R.string.layout_transaction_item_description_tips) + "    " + transactionInfo.getDescription());
+                }else{
+                    textViewDescription.setVisibility(View.GONE);
+                }
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

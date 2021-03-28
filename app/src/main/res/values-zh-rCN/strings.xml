@@ -153,6 +153,7 @@
     <string name="activity_wallet_details_reset_block_chain_tips">确认要重置区块链?</string>
     <string name="activity_wallet_details_delete_tips">确认要删除钱包?</string>
 
+    <string name="activity_wallet_running_textViewSweepAll_text">SWEEP ALL</string>
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>
     <string name="activity_wallet_running_textViewSynchronizeStatus_text">连接中，可能需要5分钟，请稍候...</string>
     <string name="activity_wallet_running_buttonSend_text">发送</string>
@@ -191,6 +192,7 @@
     <string name="layout_transaction_item_status_over_tips">已完成</string>
     <string name="layout_transaction_item_hash_tips">哈希:</string>
     <string name="layout_transaction_item_date_tips">日期:</string>
+    <string name="layout_transaction_item_description_tips">描述:</string>
 
     <string name="activity_payment_textViewTitle_text">支付</string>
     <string name="activity_payment_textViewAmountTips_text">可用余额</string>
@@ -208,6 +210,7 @@
     <string name="activity_payment_textViewAllAmount_text">ALL</string>
     <string name="activity_payment_payAllAmount_tips">您是否需要全额付款，全额付款将减去交易费用。</string>
     <string name="activity_payment_payAmountCheckError_tips">付款金额需要大于0</string>
+    <string name="activity_payment_paySweepAll_tips">您是否需要发送一笔全额交易以归集交易?</string>
 
     <string name="activity_address_manager_textViewTitle_text">地址管理</string>
     <string name="activity_address_manager_addAddressSuccess_tips">添加地址成功</string>

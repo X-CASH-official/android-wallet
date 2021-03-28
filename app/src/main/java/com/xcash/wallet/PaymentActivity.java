@@ -60,6 +60,7 @@ public class PaymentActivity extends NewBaseActivity {
     private ImageView imageViewIcon;
     private TextView textViewWalletName;
     private TextView textViewAmount;
+    private TextView textViewSweepAll;
     private ImageView imageViewWalletAddress;
     private EditText editTextWalletAddress;
     private FrameLayout frameLayoutWalletAddress;
@@ -121,6 +122,7 @@ public class PaymentActivity extends NewBaseActivity {
         imageViewIcon = (ImageView) findViewById(R.id.imageViewIcon);
         textViewWalletName = (TextView) findViewById(R.id.textViewWalletName);
         textViewAmount = (TextView) findViewById(R.id.textViewAmount);
+        textViewSweepAll = (TextView) findViewById(R.id.textViewSweepAll);
         imageViewWalletAddress = (ImageView) findViewById(R.id.imageViewWalletAddress);
         editTextWalletAddress = (EditText) findViewById(R.id.editTextWalletAddress);
         frameLayoutWalletAddress = (FrameLayout) findViewById(R.id.frameLayoutWalletAddress);
@@ -239,6 +241,9 @@ public class PaymentActivity extends NewBaseActivity {
                     case R.id.imageViewRight:
                         QRCodeActivity.openQRCodeActivity(PaymentActivity.this);
                         break;
+                    case R.id.textViewSweepAll:
+                        doSweepAll(textViewSweepAll);
+                        break;
                     case R.id.imageViewWalletAddress:
                         chooseAddress();
                         break;
@@ -264,6 +269,7 @@ public class PaymentActivity extends NewBaseActivity {
         };
         imageViewBack.setOnClickListener(onClickListener);
         imageViewRight.setOnClickListener(onClickListener);
+        textViewSweepAll.setOnClickListener(onClickListener);
         imageViewWalletAddress.setOnClickListener(onClickListener);
         textViewAllAmount.setOnClickListener(onClickListener);
         linearLayoutLow.setOnClickListener(onClickListener);
@@ -302,6 +308,19 @@ public class PaymentActivity extends NewBaseActivity {
                 break;
         }
         this.priority = priority;
+    }
+
+    private void doSweepAll(View view){
+        if (wallet == null) {
+            return;
+        }
+        PopupWindowHelp.showPopupWindowNormalTips(PaymentActivity.this, view.getRootView(), view, getString(R.string.activity_payment_paySweepAll_tips), new PopupWindowHelp.OnShowPopupWindowNormalTipsListener() {
+            @Override
+            public void okClick(PopupWindow popupWindow, View view) {
+                popupWindow.dismiss();
+                createTransaction(wallet.getAddress(), "-1", "", "", "Sweep all", priority, checkBox.isChecked());
+            }
+        });
     }
 
     private void doNext(View view) {

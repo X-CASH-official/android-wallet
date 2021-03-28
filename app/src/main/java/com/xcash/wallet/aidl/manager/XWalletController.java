@@ -407,6 +407,7 @@
                  LogTool.e(TAG, pendingTransaction.getErrorString());
                  return null;
              }
+             wallet.setUserNote(pendingTransaction.getFirstTxId(),description);
              return pendingTransaction;
          } catch (Exception e) {
              e.printStackTrace();
