@@ -69,13 +69,17 @@ public class DpopsActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAda
                 TextView textViewInfo = (TextView) holder.getView(R.id.textViewInfo);
 
                 String delegate_fee = "0%";
-                if (delegate.getDelegate_fee() != "") {
+                if (delegate.getDelegate_fee()!=null&&!delegate.getDelegate_fee().equals("")) {
                     delegate_fee = delegate.getDelegate_fee() + "%";
+                }
+                String block_verifier_online_percentage = "0%";
+                if (delegate.getBlock_verifier_online_percentage()!=null&&!delegate.getBlock_verifier_online_percentage().equals("")) {
+                    block_verifier_online_percentage = delegate.getBlock_verifier_online_percentage() + "%";
                 }
                 textViewDelegateName.setText(delegate.getDelegate_name());
                 textViewAmount.setText(delegate.getTotal_vote_count());
 
-                textViewInfo.setText("online_status:" + delegate.getOnline_status() + "\ndelegate_status:" + delegate.getShared_delegate_status() + "|delegate_fee:" + delegate_fee + "\nblock_verifier_score:" + delegate.getBlock_verifier_score() + "\nblock_verifier_total_rounds:" + delegate.getBlock_verifier_total_rounds());
+                textViewInfo.setText("online_status:" + delegate.getOnline_status() + "\ndelegate_status:" + delegate.getShared_delegate_status() + "|delegate_fee:" + delegate_fee  + "\nblock_verifier_total_rounds:" + delegate.getBlock_verifier_total_rounds()+ "\nblock_verifier_online_percentage:" + block_verifier_online_percentage);
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

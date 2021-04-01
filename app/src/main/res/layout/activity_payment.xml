@@ -149,14 +149,29 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/line_normal_widthOrHeight_narrow"
-                        android:layout_marginBottom="@dimen/view_normal_margin_default"
                         android:background="@color/line_normal_background" />
+
+                    <TextView
+                        android:id="@+id/textViewSweepAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/view_normal_margin_narrow"
+                        android:layout_marginTop="@dimen/view_normal_margin_narrow"
+                        android:layout_marginBottom="@dimen/view_normal_margin_narrow"
+                        android:layout_marginLeft="@dimen/view_normal_margin_broad"
+                        android:layout_marginRight="@dimen/view_normal_margin_broad"
+                        android:layout_gravity="right"
+                        android:singleLine="true"
+                        android:text="@string/activity_wallet_running_textViewSweepAll_text"
+                        android:textColor="@color/mainColorText_default"
+                        android:textSize="@dimen/textView_normal_textSize_super_narrow"
+                        android:textStyle="bold"
+                        />
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutWalletAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/view_normal_margin_broad"
                         android:layout_marginLeft="@dimen/view_normal_margin_broad"
                         android:layout_marginRight="@dimen/view_normal_margin_broad">
 

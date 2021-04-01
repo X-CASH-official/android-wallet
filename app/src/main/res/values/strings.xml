@@ -153,6 +153,7 @@
     <string name="activity_wallet_details_reset_block_chain_tips">Confirm to reset block chain?</string>
     <string name="activity_wallet_details_delete_tips">Confirm to delete wallet?</string>
 
+    <string name="activity_wallet_running_textViewSweepAll_text">SWEEP ALL</string>
     <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>
     <string name="activity_wallet_running_textViewSynchronizeStatus_text">It may take up to 5 minutes, please wait...</string>
     <string name="activity_wallet_running_buttonSend_text">Send</string>
@@ -191,6 +192,7 @@
     <string name="layout_transaction_item_status_over_tips">COMPLETE</string>
     <string name="layout_transaction_item_hash_tips">HASH:</string>
     <string name="layout_transaction_item_date_tips">DATE:</string>
+    <string name="layout_transaction_item_description_tips">Description:</string>
 
     <string name="activity_payment_textViewTitle_text">Transfers</string>
     <string name="activity_payment_textViewAmountTips_text">Available Balance</string>
@@ -205,9 +207,10 @@
     <string name="activity_payment_radioButtonLow_text">Low Priority</string>
     <string name="activity_payment_radioButtonNormal_text">Normal Priority</string>
     <string name="activity_payment_radioButtonHigh_text">High Priority</string>
-    <string name="activity_payment_textViewAllAmount_text">Full Balance</string>
+    <string name="activity_payment_textViewAllAmount_text">ALL</string>
     <string name="activity_payment_payAllAmount_tips">The full balance is less than the transaction fees</string>
     <string name="activity_payment_payAmountCheckError_tips">Transaction amount needs to be greater than 0</string>
+    <string name="activity_payment_paySweepAll_tips">Do you want send a sweep all transaction for clear transactions?</string>
 
     <string name="activity_address_manager_textViewTitle_text">Address Book</string>
     <string name="activity_address_manager_addAddressSuccess_tips">Address successfully added</string>

@@ -20,6 +20,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.xcash.utils.database.entity.TransactionInfo;
 
@@ -33,13 +34,16 @@ public interface TransactionInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTransactionInfos(@NotNull TransactionInfo... transactionInfo);
 
-    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId ORDER BY _id")
+    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId ORDER BY timestamp DESC")
     List<TransactionInfo> loadTransactionInfosByWalletId(@NotNull String symbol, int walletId);
 
-    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId AND direction = :direction ORDER BY _id")
+    @Query("SELECT * FROM transaction_infos WHERE symbol = :symbol AND walletId = :walletId AND direction = :direction ORDER BY timestamp DESC")
     List<TransactionInfo> loadTransactionInfosByWalletIdAndDirection(@NotNull String symbol, int walletId, int direction);
 
     @Delete
     void deleteTransactionInfo(@NotNull TransactionInfo... transactionInfo);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateTransactionInfos(@NotNull TransactionInfo... transactionInfo);
 
 }
