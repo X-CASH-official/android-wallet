@@ -123,16 +123,16 @@ public class XManager {
             return;
         }
         Node[] defaultNodesArray = new Node[10];
-        defaultNodesArray[0] = new Node(SYMBOL, "europe1.xcash.foundation:18281", "", "", true);
-        defaultNodesArray[1] = new Node(SYMBOL, "europe2.xcash.foundation:18281", "", "", false);
-        defaultNodesArray[2] = new Node(SYMBOL, "europe3.xcash.foundation:18281", "", "", false);
-        defaultNodesArray[3] = new Node(SYMBOL, "us1.xcash.foundation:18281", "", "", false);
-        defaultNodesArray[4] = new Node(SYMBOL, "usseed1.x-cash.org:18281", "", "", false);
-        defaultNodesArray[5] = new Node(SYMBOL, "usseed2.x-cash.org:18281", "", "", false);
-        defaultNodesArray[6] = new Node(SYMBOL, "asiaseed2.x-cash.org:18281", "", "", false);
-        defaultNodesArray[7] = new Node(SYMBOL, "oceania1.xcash.foundation:18281", "", "", false);
-        defaultNodesArray[8] = new Node(SYMBOL, "xcash-china1.oiwm.com:18281", "", "", false);
-        defaultNodesArray[9] = new Node(SYMBOL, "xcash-china2.oiwm.com:18281", "snakeway", "snake123456", false);
+        defaultNodesArray[0] = new Node(SYMBOL, "dpops-test-1.xcash.foundation:18281", "", "", true);
+        defaultNodesArray[1] = new Node(SYMBOL, "dpops-test-2.xcash.foundation:18281", "", "", false);
+        defaultNodesArray[2] = new Node(SYMBOL, "dpops-test-3.xcash.foundation:18281", "", "", false);
+        defaultNodesArray[3] = new Node(SYMBOL, "dpops-test-4.xcash.foundation:18281", "", "", false);
+        defaultNodesArray[4] = new Node(SYMBOL, "testnode-at.xcash.rocks:18281", "", "", false);
+        defaultNodesArray[5] = new Node(SYMBOL, "testnet.xcash-ju.fr:18281", "", "", false);
+        defaultNodesArray[6] = new Node(SYMBOL, "testnode-nl.xcash.rocks:18281", "", "", false);
+        defaultNodesArray[7] = new Node(SYMBOL, "dpops-test-5.xcash.foundation:18281", "", "", false);
+        defaultNodesArray[8] = new Node(SYMBOL, "testnet.x-delegate.io:18281", "", "", false);
+        defaultNodesArray[9] = new Node(SYMBOL, "testnode.xcash.rocks:18281", "", "", false);
         AppDatabase.getInstance().nodeDao().insertNodes(defaultNodesArray);
     }
 

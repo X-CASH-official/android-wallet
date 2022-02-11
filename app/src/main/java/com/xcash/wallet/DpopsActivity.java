@@ -296,11 +296,11 @@ package com.xcash.wallet;
             searchHistorys = new ArrayList<>();
         }
         if (searchHistorys.size() == 0) {
-            searchHistorys.add("delegates.xcash.foundation");
-            searchHistorys.add("europe1.xcash.foundation");
-            searchHistorys.add("europe2.xcash.foundation");
-            searchHistorys.add("europe3.xcash.foundation");
-            searchHistorys.add("asia1.xcash.foundation");
+            searchHistorys.add("dpops-test-delegates.xcash.foundation");
+            searchHistorys.add("dpops-test-1.xcash.foundation");
+            searchHistorys.add("dpops-test-2.xcash.foundation");
+            searchHistorys.add("dpops-test-3.xcash.foundation");
+            searchHistorys.add("dpops-test-4.xcash.foundation");
             setting.setSearchHistorys(searchHistorys);
             TheApplication.setAndWriteSetting(setting);
         }
