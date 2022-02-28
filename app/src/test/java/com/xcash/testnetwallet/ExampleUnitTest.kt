@@ -1,4 +1,4 @@
-package com.xcash.wallet
+package com.xcash.testnetwallet
 
 import org.junit.Test
 
