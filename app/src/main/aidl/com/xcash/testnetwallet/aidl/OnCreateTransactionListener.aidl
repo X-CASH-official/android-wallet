@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.xcash.wallet.aidl;
+package com.xcash.testnetwallet.aidl;
 
-import com.xcash.wallet.aidl.Transaction;
+import com.xcash.testnetwallet.aidl.Transaction;
 
 interface OnCreateTransactionListener {
 

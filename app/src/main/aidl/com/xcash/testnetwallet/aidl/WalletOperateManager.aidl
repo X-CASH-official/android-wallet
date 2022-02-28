@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.aidl;
+package com.xcash.testnetwallet.aidl;
 
-import com.xcash.wallet.aidl.OnWalletRefreshListener;
-import com.xcash.wallet.aidl.OnWalletDataListener;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.OnCreateTransactionListener;
+import com.xcash.testnetwallet.aidl.OnWalletRefreshListener;
+import com.xcash.testnetwallet.aidl.OnWalletDataListener;
+import com.xcash.testnetwallet.aidl.OnNormalListener;
+import com.xcash.testnetwallet.aidl.OnCreateTransactionListener;
 
 interface WalletOperateManager {
 
