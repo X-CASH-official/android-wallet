@@ -110,7 +110,7 @@
 #wallet
 -keep class com.my.monero.** {*;}
 
--keep class com.xcash.wallet.aidl.** {*;}
+-keep class com.xcash.testnetwallet.aidl.** {*;}
 
 -keepclassmembernames class com.xcash.models.** { *; }
 
