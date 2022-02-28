@@ -24,7 +24,7 @@ import com.xcash.base.BaseActivity;
 import com.xcash.base.recyclerviewlibrary.adapters.UnLoadMoreRecyclerViewAdapter;
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.utils.database.entity.AddressBook;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.util.List;
 

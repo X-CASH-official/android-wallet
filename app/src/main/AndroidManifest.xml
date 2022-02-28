@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xcash.wallet">
+    package="com.xcash.testnetwallet">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,11 +10,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />
-    <uses-permission android:name="com.xcash.wallet.aidl.permission.LOCAL" />
+    <permission android:name="com.xcash.testnetwallet.aidl.permission.LOCAL" />
+    <uses-permission android:name="com.xcash.testnetwallet.aidl.permission.LOCAL" />
 
     <application
-        android:name="com.xcash.wallet.TheApplication"
+        android:name="com.xcash.testnetwallet.TheApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -33,48 +33,48 @@
         </provider>
 
 
-        <activity android:name="com.xcash.wallet.SplashActivity">
+        <activity android:name="com.xcash.testnetwallet.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.xcash.wallet.ChooseWalletActivity" />
-        <activity android:name="com.xcash.wallet.SetWalletActivity" />
-        <activity android:name="com.xcash.wallet.CreateWalletActivity" />
-        <activity android:name="com.xcash.wallet.ImportWalletActivity" />
-        <activity android:name="com.xcash.wallet.CreateWalletConfirmActivity" />
-        <activity android:name="com.xcash.wallet.MainActivity" />
-        <activity android:name="com.xcash.wallet.WalletManagerActivity" />
-        <activity android:name="com.xcash.wallet.WalletDetailsActivity" />
-        <activity android:name="com.xcash.wallet.WalletDetailsMnemonicWordsActivity" />
-        <activity android:name="com.xcash.wallet.WalletDetailsPrivateKeysActivity" />
-        <activity android:name="com.xcash.wallet.WalletRunningActivity" />
-        <activity android:name="com.xcash.wallet.NodeManagerActivity" />
-        <activity android:name="com.xcash.wallet.PaymentActivity" />
-        <activity android:name="com.xcash.wallet.PaymentConfirmActivity" />
-        <activity android:name="com.xcash.wallet.AddressManagerActivity" />
-        <activity android:name="com.xcash.wallet.AddressAddActivity" />
-        <activity android:name="com.xcash.wallet.LanguageSettingActivity" />
-        <activity android:name="com.xcash.wallet.NodeAddActivity" />
-        <activity android:name="com.xcash.wallet.WebViewActivity" />
-        <activity android:name="com.xcash.wallet.QRCodeActivity" />
-        <activity android:name="com.xcash.wallet.ReceiveActivity" />
-        <activity android:name="com.xcash.wallet.TransactionDetailsActivity" />
-        <activity android:name="com.xcash.wallet.AboutUsActivity" />
+        <activity android:name="com.xcash.testnetwallet.ChooseWalletActivity" />
+        <activity android:name="com.xcash.testnetwallet.SetWalletActivity" />
+        <activity android:name="com.xcash.testnetwallet.CreateWalletActivity" />
+        <activity android:name="com.xcash.testnetwallet.ImportWalletActivity" />
+        <activity android:name="com.xcash.testnetwallet.CreateWalletConfirmActivity" />
+        <activity android:name="com.xcash.testnetwallet.MainActivity" />
+        <activity android:name="com.xcash.testnetwallet.WalletManagerActivity" />
+        <activity android:name="com.xcash.testnetwallet.WalletDetailsActivity" />
+        <activity android:name="com.xcash.testnetwallet.WalletDetailsMnemonicWordsActivity" />
+        <activity android:name="com.xcash.testnetwallet.WalletDetailsPrivateKeysActivity" />
+        <activity android:name="com.xcash.testnetwallet.WalletRunningActivity" />
+        <activity android:name="com.xcash.testnetwallet.NodeManagerActivity" />
+        <activity android:name="com.xcash.testnetwallet.PaymentActivity" />
+        <activity android:name="com.xcash.testnetwallet.PaymentConfirmActivity" />
+        <activity android:name="com.xcash.testnetwallet.AddressManagerActivity" />
+        <activity android:name="com.xcash.testnetwallet.AddressAddActivity" />
+        <activity android:name="com.xcash.testnetwallet.LanguageSettingActivity" />
+        <activity android:name="com.xcash.testnetwallet.NodeAddActivity" />
+        <activity android:name="com.xcash.testnetwallet.WebViewActivity" />
+        <activity android:name="com.xcash.testnetwallet.QRCodeActivity" />
+        <activity android:name="com.xcash.testnetwallet.ReceiveActivity" />
+        <activity android:name="com.xcash.testnetwallet.TransactionDetailsActivity" />
+        <activity android:name="com.xcash.testnetwallet.AboutUsActivity" />
         <activity
-            android:name="com.xcash.wallet.DpopsActivity"
+            android:name="com.xcash.testnetwallet.DpopsActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name="com.xcash.wallet.DpopsRegisterActivity" />
-        <activity android:name="com.xcash.wallet.DpopsUpdateActivity" />
-        <activity android:name="com.xcash.wallet.DpopsOperationHistoryActivity" />
+        <activity android:name="com.xcash.testnetwallet.DpopsRegisterActivity" />
+        <activity android:name="com.xcash.testnetwallet.DpopsUpdateActivity" />
+        <activity android:name="com.xcash.testnetwallet.DpopsOperationHistoryActivity" />
 
         <service
-            android:name="com.xcash.wallet.aidl.service.WalletService"
+            android:name="com.xcash.testnetwallet.aidl.service.WalletService"
             android:enabled="true"
             android:exported="true"
-            android:permission="com.xcash.wallet.aidl.permission.LOCAL"
+            android:permission="com.xcash.testnetwallet.aidl.permission.LOCAL"
             />
 
 
