@@ -13,7 +13,7 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
- package com.xcash.wallet;
+ package com.xcash.testnetwallet;
 
 
  import android.content.Intent;
@@ -46,14 +46,14 @@
  import com.xcash.utils.WalletServiceHelper;
  import com.xcash.utils.database.AppDatabase;
  import com.xcash.utils.database.entity.Wallet;
- import com.xcash.wallet.aidl.OnNormalListener;
- import com.xcash.wallet.aidl.WalletOperateManager;
- import com.xcash.wallet.fragment.MainActivity_Fragment_Find;
- import com.xcash.wallet.fragment.MainActivity_Fragment_Home;
- import com.xcash.wallet.fragment.MainActivity_Fragment_Wallet;
- import com.xcash.wallet.uihelp.ActivityHelp;
- import com.xcash.wallet.uihelp.ColorHelp;
- import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.testnetwallet.aidl.OnNormalListener;
+ import com.xcash.testnetwallet.aidl.WalletOperateManager;
+ import com.xcash.testnetwallet.fragment.MainActivity_Fragment_Find;
+ import com.xcash.testnetwallet.fragment.MainActivity_Fragment_Home;
+ import com.xcash.testnetwallet.fragment.MainActivity_Fragment_Wallet;
+ import com.xcash.testnetwallet.uihelp.ActivityHelp;
+ import com.xcash.testnetwallet.uihelp.ColorHelp;
+ import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
 
  public class MainActivity extends NewBaseActivity {
 

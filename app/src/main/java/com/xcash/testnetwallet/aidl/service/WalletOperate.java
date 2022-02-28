@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.aidl.service;
+package com.xcash.testnetwallet.aidl.service;
 
 
 import com.my.monero.model.PendingTransaction;
 import com.xcash.utils.database.entity.Node;
-import com.xcash.wallet.aidl.OnCreateTransactionListener;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.OnWalletDataListener;
+import com.xcash.testnetwallet.aidl.OnCreateTransactionListener;
+import com.xcash.testnetwallet.aidl.OnNormalListener;
+import com.xcash.testnetwallet.aidl.OnWalletDataListener;
 
 public class WalletOperate implements Comparable<WalletOperate> {
 

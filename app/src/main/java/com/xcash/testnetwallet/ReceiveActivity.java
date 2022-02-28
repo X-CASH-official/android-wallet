@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -29,7 +29,7 @@ import com.xcash.base.BaseActivity;
 import com.xcash.utils.ClipboardTool;
 import com.xcash.utils.CoroutineHelper;
 import com.xcash.utils.QRCodeTool;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 public class ReceiveActivity extends NewBaseActivity {
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -25,7 +25,7 @@ import android.view.Window;
 import com.xcash.utils.CoroutineHelper;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.manager.XManager;
+import com.xcash.testnetwallet.aidl.manager.XManager;
 
 public class SplashActivity extends NewBaseActivity {
 

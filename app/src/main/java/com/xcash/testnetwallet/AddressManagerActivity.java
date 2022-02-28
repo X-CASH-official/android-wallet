@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
  import android.app.Activity;
@@ -35,8 +35,8 @@ package com.xcash.wallet;
  import com.xcash.utils.CoroutineHelper;
  import com.xcash.utils.database.AppDatabase;
  import com.xcash.utils.database.entity.AddressBook;
- import com.xcash.wallet.uihelp.ActivityHelp;
- import com.xcash.wallet.uihelp.PopupWindowHelp;
+ import com.xcash.testnetwallet.uihelp.ActivityHelp;
+ import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
 
  import java.util.ArrayList;
  import java.util.List;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.app.Activity;
@@ -28,8 +28,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xcash.base.BaseActivity;
-import com.xcash.wallet.aidl.manager.XManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.aidl.manager.XManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 public class NodeAddActivity extends NewBaseActivity {
 

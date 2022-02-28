@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.aidl.manager;
+package com.xcash.testnetwallet.aidl.manager;
 
 import com.xcash.base.utils.FileTool;
 import com.xcash.base.utils.LogTool;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.Node;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.TheApplication;
+import com.xcash.testnetwallet.TheApplication;
 
 import java.io.File;
 import java.util.List;

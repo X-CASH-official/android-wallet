@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.uihelp;
+package com.xcash.testnetwallet.uihelp;
 
 import android.app.ProgressDialog;
 import android.view.View;
 
 import com.xcash.base.BaseActivity;
 import com.xcash.base.utils.TimeTool;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 public class ProgressDialogHelp {
 

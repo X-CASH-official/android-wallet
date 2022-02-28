@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.fragment;
+package com.xcash.testnetwallet.fragment;
 
  import android.app.ProgressDialog;
  import android.content.Intent;
@@ -34,14 +34,14 @@ package com.xcash.wallet.fragment;
  import com.my.monero.util.RestoreHeight;
  import com.xcash.base.BaseActivity;
  import com.xcash.utils.StringTool;
- import com.xcash.wallet.MainActivity;
- import com.xcash.wallet.R;
- import com.xcash.wallet.TheApplication;
- import com.xcash.wallet.aidl.OnWalletDataListener;
- import com.xcash.wallet.aidl.WalletOperateManager;
- import com.xcash.wallet.uihelp.ActivityHelp;
- import com.xcash.wallet.uihelp.PopupWindowHelp;
- import com.xcash.wallet.uihelp.ProgressDialogHelp;
+ import com.xcash.testnetwallet.MainActivity;
+ import com.xcash.testnetwallet.R;
+ import com.xcash.testnetwallet.TheApplication;
+ import com.xcash.testnetwallet.aidl.OnWalletDataListener;
+ import com.xcash.testnetwallet.aidl.WalletOperateManager;
+ import com.xcash.testnetwallet.uihelp.ActivityHelp;
+ import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
+ import com.xcash.testnetwallet.uihelp.ProgressDialogHelp;
 
 public class ImportWalletActivity_Fragment_Mnemonic extends BaseFragment {
 
@@ -174,7 +174,7 @@ public class ImportWalletActivity_Fragment_Mnemonic extends BaseFragment {
         try {
             walletOperateManager.importWalletMnemonic(set_wallet_name, set_wallet_password, set_wallet_description, mnemonic, blockHeight, new OnWalletDataListener.Stub() {
                 @Override
-                public void onSuccess(final com.xcash.wallet.aidl.Wallet wallet) throws RemoteException {
+                public void onSuccess(final com.xcash.testnetwallet.aidl.Wallet wallet) throws RemoteException {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {

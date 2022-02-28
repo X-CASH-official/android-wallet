@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.uihelp;
+package com.xcash.testnetwallet.uihelp;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -36,7 +36,7 @@ import com.xcash.adapters.listviewadapter.Search_History_ListViewAdapter;
 import com.xcash.base.BaseActivity;
 import com.xcash.base.utils.TimeTool;
 import com.xcash.models.local.KeyValueItem;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

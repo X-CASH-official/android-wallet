@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -28,7 +28,7 @@ import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
 import com.xcash.models.local.Setting;
 import com.xcash.utils.LanguageTool;
-import com.xcash.wallet.aidl.WalletOperateManager;
+import com.xcash.testnetwallet.aidl.WalletOperateManager;
 
 import java.util.ArrayList;
 import java.util.List;

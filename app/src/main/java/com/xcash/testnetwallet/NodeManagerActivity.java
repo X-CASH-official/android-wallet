@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -36,9 +36,9 @@ import com.xcash.utils.WalletServiceHelper;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.Node;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.manager.XManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
+import com.xcash.testnetwallet.aidl.manager.XManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -268,7 +268,7 @@ public class NodeManagerActivity extends NewBaseActivity {
                 } else {
                     TheApplication.getTheApplication().getWalletServiceHelper().resetOpenWallet(new WalletServiceHelper.OnOpenWalletListener() {
                         @Override
-                        public void onSuccess(com.xcash.wallet.aidl.Wallet wallet) {
+                        public void onSuccess(com.xcash.testnetwallet.aidl.Wallet wallet) {
                             BaseActivity.showShortToast(NodeManagerActivity.this, getString(R.string.activity_node_manager_changeNodeSuccess_tips));
                         }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -28,7 +28,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.xcash.adapters.viewpageradapter.ImportWalletActivity_ViewPagerAdapter;
 import com.xcash.views.tablayout.TabLayout;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 
 public class ImportWalletActivity extends NewBaseActivity {

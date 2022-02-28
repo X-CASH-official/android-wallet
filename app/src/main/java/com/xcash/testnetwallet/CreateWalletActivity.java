@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.app.ProgressDialog;
@@ -33,10 +33,10 @@ import androidx.core.content.ContextCompat;
 
 import com.xcash.base.BaseActivity;
 import com.xcash.utils.ClipboardTool;
-import com.xcash.wallet.aidl.OnWalletDataListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+import com.xcash.testnetwallet.aidl.OnWalletDataListener;
+import com.xcash.testnetwallet.aidl.WalletOperateManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ProgressDialogHelp;
 
 public class CreateWalletActivity extends NewBaseActivity {
 
@@ -145,7 +145,7 @@ public class CreateWalletActivity extends NewBaseActivity {
         try {
             walletOperateManager.createWallet(set_wallet_name, set_wallet_password, set_wallet_description, new OnWalletDataListener.Stub() {
                 @Override
-                public void onSuccess(final com.xcash.wallet.aidl.Wallet wallet) throws RemoteException {
+                public void onSuccess(final com.xcash.testnetwallet.aidl.Wallet wallet) throws RemoteException {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {

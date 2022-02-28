@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet.fragment;
+package com.xcash.testnetwallet.fragment;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -43,15 +43,15 @@ import com.xcash.utils.CoroutineHelper;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.TransactionInfo;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.MainActivity;
-import com.xcash.wallet.R;
-import com.xcash.wallet.TheApplication;
-import com.xcash.wallet.TransactionDetailsActivity;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.BaseRecyclerViewFromFrameLayoutHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
+import com.xcash.testnetwallet.MainActivity;
+import com.xcash.testnetwallet.R;
+import com.xcash.testnetwallet.TheApplication;
+import com.xcash.testnetwallet.TransactionDetailsActivity;
+import com.xcash.testnetwallet.aidl.OnNormalListener;
+import com.xcash.testnetwallet.aidl.WalletOperateManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.BaseRecyclerViewFromFrameLayoutHelp;
+import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
 
 import java.util.ArrayList;
 import java.util.List;

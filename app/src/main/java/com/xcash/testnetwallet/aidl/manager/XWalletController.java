@@ -13,7 +13,7 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
- package com.xcash.wallet.aidl.manager;
+ package com.xcash.testnetwallet.aidl.manager;
 
  import com.my.monero.data.TxData;
  import com.my.monero.model.PendingTransaction;

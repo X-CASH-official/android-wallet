@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.app.ProgressDialog;
@@ -39,13 +39,13 @@ import com.google.zxing.integration.android.IntentResult;
 import com.xcash.base.BaseActivity;
 import com.xcash.utils.StringTool;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.OnCreateTransactionListener;
-import com.xcash.wallet.aidl.Transaction;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.ColorHelp;
-import com.xcash.wallet.uihelp.PopupWindowHelp;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+import com.xcash.testnetwallet.aidl.OnCreateTransactionListener;
+import com.xcash.testnetwallet.aidl.Transaction;
+import com.xcash.testnetwallet.aidl.WalletOperateManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ColorHelp;
+import com.xcash.testnetwallet.uihelp.PopupWindowHelp;
+import com.xcash.testnetwallet.uihelp.ProgressDialogHelp;
 
 public class PaymentActivity extends NewBaseActivity {
 

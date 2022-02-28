@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.app.ProgressDialog;
@@ -35,10 +35,10 @@ import com.xcash.base.recyclerviewlibrary.views.BaseRecyclerViewFromFrameLayout;
 import com.xcash.utils.CoroutineHelper;
 import com.xcash.utils.database.AppDatabase;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.OnNormalListener;
-import com.xcash.wallet.aidl.WalletOperateManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
-import com.xcash.wallet.uihelp.ProgressDialogHelp;
+import com.xcash.testnetwallet.aidl.OnNormalListener;
+import com.xcash.testnetwallet.aidl.WalletOperateManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ProgressDialogHelp;
 
 import java.util.ArrayList;
 import java.util.Collections;

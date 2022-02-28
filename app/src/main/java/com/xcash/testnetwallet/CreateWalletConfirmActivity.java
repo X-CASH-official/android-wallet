@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -24,7 +24,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.xcash.base.BaseActivity;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 public class CreateWalletConfirmActivity extends NewBaseActivity {
 

@@ -13,7 +13,7 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
- package com.xcash.wallet.aidl.service;
+ package com.xcash.testnetwallet.aidl.service;
 
  import android.app.Notification;
  import android.app.NotificationChannel;
@@ -38,16 +38,16 @@
  import com.xcash.utils.database.entity.Node;
  import com.xcash.utils.database.entity.TransactionInfo;
  import com.xcash.utils.database.entity.Wallet;
- import com.xcash.wallet.MainActivity;
- import com.xcash.wallet.R;
- import com.xcash.wallet.aidl.OnCreateTransactionListener;
- import com.xcash.wallet.aidl.OnNormalListener;
- import com.xcash.wallet.aidl.OnWalletDataListener;
- import com.xcash.wallet.aidl.OnWalletRefreshListener;
- import com.xcash.wallet.aidl.Transaction;
- import com.xcash.wallet.aidl.WalletOperateManager;
- import com.xcash.wallet.aidl.manager.XManager;
- import com.xcash.wallet.aidl.manager.XWalletController;
+ import com.xcash.testnetwallet.MainActivity;
+ import com.xcash.testnetwallet.R;
+ import com.xcash.testnetwallet.aidl.OnCreateTransactionListener;
+ import com.xcash.testnetwallet.aidl.OnNormalListener;
+ import com.xcash.testnetwallet.aidl.OnWalletDataListener;
+ import com.xcash.testnetwallet.aidl.OnWalletRefreshListener;
+ import com.xcash.testnetwallet.aidl.Transaction;
+ import com.xcash.testnetwallet.aidl.WalletOperateManager;
+ import com.xcash.testnetwallet.aidl.manager.XManager;
+ import com.xcash.testnetwallet.aidl.manager.XWalletController;
 
  import java.io.File;
  import java.util.ArrayList;
@@ -282,7 +282,7 @@
          }
      }
 
-     private void addWalletOperateSetDaemon(int type, com.xcash.wallet.aidl.OnNormalListener onNormalListener, Node node) {
+     private void addWalletOperateSetDaemon(int type, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener, Node node) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -292,7 +292,7 @@
          addToPriorityBlockingQueue(walletOperate);
      }
 
-     private void addWalletOperateCheckWalletPassword(int type, com.xcash.wallet.aidl.OnNormalListener onNormalListener, String name, String password) {
+     private void addWalletOperateCheckWalletPassword(int type, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener, String name, String password) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -303,7 +303,7 @@
          addToPriorityBlockingQueue(walletOperate);
      }
 
-     private void addWalletOperate(int type, com.xcash.wallet.aidl.OnWalletDataListener onWalletDataListener, int id, String name, String password, String passwordPrompt, String mnemonic, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, boolean needReset, Node node) {
+     private void addWalletOperate(int type, com.xcash.testnetwallet.aidl.OnWalletDataListener onWalletDataListener, int id, String name, String password, String passwordPrompt, String mnemonic, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, boolean needReset, Node node) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -361,7 +361,7 @@
          }
      }
 
-     private void addWalletOperateCreateTransaction(int type, com.xcash.wallet.aidl.OnCreateTransactionListener onCreateTransactionListener, String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {
+     private void addWalletOperateCreateTransaction(int type, com.xcash.testnetwallet.aidl.OnCreateTransactionListener onCreateTransactionListener, String walletAddress, String amount, String ringSize, String paymentId, String description, int priority, boolean publicTransaction) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -377,7 +377,7 @@
          addToPriorityBlockingQueue(walletOperate);
      }
 
-     private void addWalletOperateNormal(int type, com.xcash.wallet.aidl.OnNormalListener onNormalListener) {
+     private void addWalletOperateNormal(int type, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -386,7 +386,7 @@
          addToPriorityBlockingQueue(walletOperate);
      }
 
-     private void addWalletOperateCloseWallet(int type, com.xcash.wallet.aidl.OnNormalListener onNormalListener, int id) {
+     private void addWalletOperateCloseWallet(int type, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener, int id) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -396,7 +396,7 @@
          addToPriorityBlockingQueue(walletOperate);
      }
 
-     private void addWalletOperateDelegate(int type, com.xcash.wallet.aidl.OnNormalListener onNormalListener, String item, String value, String delegate_name, String delegate_IP_address, String block_verifier_messages_public_key) {
+     private void addWalletOperateDelegate(int type, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener, String item, String value, String delegate_name, String delegate_IP_address, String block_verifier_messages_public_key) {
          WalletOperate walletOperate = new WalletOperate();
          walletOperate.setKey(String.valueOf(TimeTool.getOnlyTimeWithoutSleep()));
          walletOperate.setType(type);
@@ -423,7 +423,7 @@
      class MyBinder extends WalletOperateManager.Stub {
 
          @Override
-         public void setDaemon(String url, String username, String password, com.xcash.wallet.aidl.OnNormalListener onNormalListener) throws RemoteException {
+         public void setDaemon(String url, String username, String password, com.xcash.testnetwallet.aidl.OnNormalListener onNormalListener) throws RemoteException {
              Node node = new Node();
              node.setUrl(url);
              node.setUsername(username);
@@ -432,17 +432,17 @@
          }
 
          @Override
-         public void createWallet(String name, String password, String passwordPrompt, com.xcash.wallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+         public void createWallet(String name, String password, String passwordPrompt, com.xcash.testnetwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
              addWalletOperate(WalletOperate.TYPE_CREATE_WALLET, onWalletDataListener, 0, name, password, passwordPrompt, null, null, null, null, 0, false, null);
          }
 
          @Override
-         public void importWalletMnemonic(String name, String password, String passwordPrompt, String mnemonic, long restoreHeight, com.xcash.wallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+         public void importWalletMnemonic(String name, String password, String passwordPrompt, String mnemonic, long restoreHeight, com.xcash.testnetwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
              addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_MNEMONIC, onWalletDataListener, 0, name, password, passwordPrompt, mnemonic, null, null, null, restoreHeight, false, null);
          }
 
          @Override
-         public void importWalletKeys(String name, String password, String passwordPrompt, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, com.xcash.wallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+         public void importWalletKeys(String name, String password, String passwordPrompt, String addressKey, String privateViewKey, String privateSpendKey, long restoreHeight, com.xcash.testnetwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
              addWalletOperate(WalletOperate.TYPE_IMPORT_WALLET_KEYS, onWalletDataListener, 0, name, password, passwordPrompt, null, addressKey, privateViewKey, privateSpendKey, restoreHeight, false, null);
          }
 
@@ -452,7 +452,7 @@
          }
 
          @Override
-         public void loadRefreshWallet(int id, String name, String password, long restoreHeight, boolean needReset, com.xcash.wallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
+         public void loadRefreshWallet(int id, String name, String password, long restoreHeight, boolean needReset, com.xcash.testnetwallet.aidl.OnWalletDataListener onWalletDataListener) throws RemoteException {
              addWalletOperate(WalletOperate.TYPE_LOAD_REFRESH_WALLET, onWalletDataListener, id, name, password, null, null, null, null, null, restoreHeight, needReset, null);
          }
 
@@ -1015,7 +1015,7 @@
              try {
                  com.my.monero.model.Wallet activeWallet = XManager.getInstance().getXWalletController().getActiveWallet();
                  if (activeWallet != null && walletOperate.getId() == XManager.getInstance().getXWalletController().getActiveWalletId()) {
-                     com.xcash.wallet.aidl.Wallet wallet = convertWallet(activeWallet);
+                     com.xcash.testnetwallet.aidl.Wallet wallet = convertWallet(activeWallet);
                      onWalletDataListener.onSuccess(wallet);
                  } else {
                      File file = XManager.getInstance().getWalletData(walletOperate.getName());
@@ -1029,7 +1029,7 @@
                              }
                              onWalletDataListener.onError(error);
                          } else {
-                             com.xcash.wallet.aidl.Wallet wallet = convertWallet(openWallet);
+                             com.xcash.testnetwallet.aidl.Wallet wallet = convertWallet(openWallet);
                              openWallet.close();
                              onWalletDataListener.onSuccess(wallet);
                          }
@@ -1202,7 +1202,7 @@
                      }
                      onWalletDataListener.onError(error);
                  } else {
-                     com.xcash.wallet.aidl.Wallet wallet = convertWallet(openWallet);
+                     com.xcash.testnetwallet.aidl.Wallet wallet = convertWallet(openWallet);
                      onWalletDataListener.onSuccess(wallet);
                  }
              } catch (RemoteException e) {
@@ -1213,8 +1213,8 @@
          /**
           * Running in thread
           */
-         private com.xcash.wallet.aidl.Wallet convertWallet(com.my.monero.model.Wallet openWallet) {
-             com.xcash.wallet.aidl.Wallet wallet = new com.xcash.wallet.aidl.Wallet();
+         private com.xcash.testnetwallet.aidl.Wallet convertWallet(com.my.monero.model.Wallet openWallet) {
+             com.xcash.testnetwallet.aidl.Wallet wallet = new com.xcash.testnetwallet.aidl.Wallet();
              wallet.setSymbol(XManager.SYMBOL);
              wallet.setName(openWallet.getName());
              wallet.setAddress(openWallet.getAddress());
@@ -1231,8 +1231,8 @@
          /**
           * Running in thread
           */
-         private com.xcash.wallet.aidl.Wallet convertByDBWallet(Wallet dbWallet) {
-             com.xcash.wallet.aidl.Wallet wallet = new com.xcash.wallet.aidl.Wallet();
+         private com.xcash.testnetwallet.aidl.Wallet convertByDBWallet(Wallet dbWallet) {
+             com.xcash.testnetwallet.aidl.Wallet wallet = new com.xcash.testnetwallet.aidl.Wallet();
              wallet.setSymbol(XManager.SYMBOL);
              wallet.setId(dbWallet.getId());
              wallet.setName(dbWallet.getName());

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xcash.wallet;
+package com.xcash.testnetwallet;
 
 
 import android.content.Intent;
@@ -33,8 +33,8 @@ import com.xcash.utils.ClipboardTool;
 import com.xcash.utils.StringTool;
 import com.xcash.utils.database.entity.TransactionInfo;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.aidl.manager.XManager;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.aidl.manager.XManager;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 import java.util.ArrayList;
 import java.util.List;
