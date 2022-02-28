@@ -25,7 +25,7 @@ import android.util.DisplayMetrics;
 import androidx.annotation.RequiresApi;
 
 import com.xcash.models.local.Setting;
-import com.xcash.wallet.TheApplication;
+import com.xcash.testnetwallet.TheApplication;
 
 import java.util.ArrayList;
 import java.util.List;

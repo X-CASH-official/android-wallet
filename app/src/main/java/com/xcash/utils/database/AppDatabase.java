@@ -32,7 +32,7 @@ package com.xcash.utils.database;
  import com.xcash.utils.database.entity.OperationHistory;
  import com.xcash.utils.database.entity.TransactionInfo;
  import com.xcash.utils.database.entity.Wallet;
- import com.xcash.wallet.TheApplication;
+ import com.xcash.testnetwallet.TheApplication;
 
  import org.jetbrains.annotations.NotNull;
 
