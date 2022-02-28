@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.base.recyclerviewlibrary.models.ViewLayerItem;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.util.ArrayList;
 import java.util.List;

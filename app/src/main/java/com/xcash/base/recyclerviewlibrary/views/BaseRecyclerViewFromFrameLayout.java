@@ -31,7 +31,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.xcash.base.recyclerviewlibrary.adapters.BaseRecyclerViewAdapter;
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 public class BaseRecyclerViewFromFrameLayout extends FrameLayout {
 
