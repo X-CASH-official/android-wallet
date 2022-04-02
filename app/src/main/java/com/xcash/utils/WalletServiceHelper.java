@@ -29,18 +29,18 @@ package com.xcash.utils;
  import com.xcash.utils.database.AppDatabase;
  import com.xcash.utils.database.entity.OperationHistory;
  import com.xcash.utils.database.entity.Wallet;
- import com.xcash.wallet.MainActivity;
- import com.xcash.wallet.R;
- import com.xcash.wallet.TheApplication;
- import com.xcash.wallet.WalletRunningActivity;
- import com.xcash.wallet.aidl.OnNormalListener;
- import com.xcash.wallet.aidl.OnWalletDataListener;
- import com.xcash.wallet.aidl.OnWalletRefreshListener;
- import com.xcash.wallet.aidl.WalletOperateManager;
- import com.xcash.wallet.aidl.manager.XManager;
- import com.xcash.wallet.aidl.service.WalletService;
- import com.xcash.wallet.uihelp.ActivityHelp;
- import com.xcash.wallet.uihelp.ProgressDialogHelp;
+ import com.xcash.testnetwallet.MainActivity;
+ import com.xcash.testnetwallet.R;
+ import com.xcash.testnetwallet.TheApplication;
+ import com.xcash.testnetwallet.WalletRunningActivity;
+ import com.xcash.testnetwallet.aidl.OnNormalListener;
+ import com.xcash.testnetwallet.aidl.OnWalletDataListener;
+ import com.xcash.testnetwallet.aidl.OnWalletRefreshListener;
+ import com.xcash.testnetwallet.aidl.WalletOperateManager;
+ import com.xcash.testnetwallet.aidl.manager.XManager;
+ import com.xcash.testnetwallet.aidl.service.WalletService;
+ import com.xcash.testnetwallet.uihelp.ActivityHelp;
+ import com.xcash.testnetwallet.uihelp.ProgressDialogHelp;
 
 public class WalletServiceHelper {
 
@@ -105,7 +105,7 @@ public class WalletServiceHelper {
         try {
             walletOperateManager.loadRefreshWallet(wallet.getId(), wallet.getName(), set_wallet_password, wallet.getRestoreHeight(), needReset, new OnWalletDataListener.Stub() {
                 @Override
-                public void onSuccess(final com.xcash.wallet.aidl.Wallet wallet) throws RemoteException {
+                public void onSuccess(final com.xcash.testnetwallet.aidl.Wallet wallet) throws RemoteException {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -526,7 +526,7 @@ public class WalletServiceHelper {
 
     public interface OnOpenWalletListener {
 
-        void onSuccess(com.xcash.wallet.aidl.Wallet wallet);
+        void onSuccess(com.xcash.testnetwallet.aidl.Wallet wallet);
 
         void onError(String error);
 

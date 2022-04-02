@@ -20,7 +20,7 @@ package com.xcash.views.tablayout;
 import android.content.Context;
 import android.content.res.TypedArray;
 
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 class ThemeUtils {
 

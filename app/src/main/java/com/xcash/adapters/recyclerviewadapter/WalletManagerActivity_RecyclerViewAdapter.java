@@ -37,9 +37,9 @@ import com.xcash.base.BaseActivity;
 import com.xcash.base.recyclerviewlibrary.adapters.UnLoadMoreRecyclerViewAdapter;
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.utils.database.entity.Wallet;
-import com.xcash.wallet.R;
-import com.xcash.wallet.WalletDetailsActivity;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.R;
+import com.xcash.testnetwallet.WalletDetailsActivity;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 import java.util.List;
 

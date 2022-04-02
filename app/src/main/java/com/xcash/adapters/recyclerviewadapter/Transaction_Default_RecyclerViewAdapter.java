@@ -27,8 +27,8 @@ import com.xcash.base.recyclerviewlibrary.adapters.UnLoadMoreRecyclerViewAdapter
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.utils.StringTool;
 import com.xcash.utils.database.entity.TransactionInfo;
-import com.xcash.wallet.R;
-import com.xcash.wallet.aidl.manager.XManager;
+import com.xcash.testnetwallet.R;
+import com.xcash.testnetwallet.aidl.manager.XManager;
 
 import java.util.List;
 
