@@ -16,7 +16,7 @@
  package com.xcash.models.local;
 
 
- import com.xcash.wallet.aidl.OnNormalListener;
+ import com.xcash.testnetwallet.aidl.OnNormalListener;
 
  public class DelayVote {
 

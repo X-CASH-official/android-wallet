@@ -25,7 +25,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.xcash.base.BaseActivity;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.util.ArrayList;
 import java.util.List;

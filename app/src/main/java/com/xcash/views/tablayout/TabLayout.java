@@ -67,7 +67,7 @@ import androidx.core.widget.TextViewCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

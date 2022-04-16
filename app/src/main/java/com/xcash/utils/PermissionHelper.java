@@ -27,7 +27,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 import java.util.ArrayList;
 import java.util.List;

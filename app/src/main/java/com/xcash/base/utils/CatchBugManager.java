@@ -17,7 +17,7 @@ package com.xcash.base.utils;
 
 import android.app.Application;
 
-import com.xcash.wallet.TheApplication;
+import com.xcash.testnetwallet.TheApplication;
 
 import java.io.File;
 import java.io.IOException;

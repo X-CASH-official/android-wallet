@@ -22,10 +22,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.xcash.wallet.fragment.BaseFragment;
-import com.xcash.wallet.fragment.ImportWalletActivity_Fragment_Keys;
-import com.xcash.wallet.fragment.ImportWalletActivity_Fragment_Mnemonic;
-import com.xcash.wallet.uihelp.ActivityHelp;
+import com.xcash.testnetwallet.fragment.BaseFragment;
+import com.xcash.testnetwallet.fragment.ImportWalletActivity_Fragment_Keys;
+import com.xcash.testnetwallet.fragment.ImportWalletActivity_Fragment_Mnemonic;
+import com.xcash.testnetwallet.uihelp.ActivityHelp;
 
 public class ImportWalletActivity_ViewPagerAdapter extends FragmentStatePagerAdapter {
 

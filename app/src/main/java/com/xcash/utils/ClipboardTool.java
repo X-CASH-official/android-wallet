@@ -20,7 +20,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 
 import com.xcash.base.BaseActivity;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 public class ClipboardTool {
 

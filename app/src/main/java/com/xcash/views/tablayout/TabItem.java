@@ -25,7 +25,7 @@ import android.view.View;
 
 import androidx.appcompat.widget.TintTypedArray;
 
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.R;
 
 public final class TabItem extends View {
 

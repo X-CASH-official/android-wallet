@@ -28,8 +28,8 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
-import com.xcash.wallet.MainActivity;
-import com.xcash.wallet.R;
+import com.xcash.testnetwallet.MainActivity;
+import com.xcash.testnetwallet.R;
 
 
 public class NotificationHelper extends ContextWrapper {
