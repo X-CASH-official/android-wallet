@@ -525,38 +525,9 @@ Java_com_my_monero_model_WalletManager_getNetworkDifficulty(JNIEnv *env, jobject
     return XCash::WalletManagerFactory::getWalletManager()->networkDifficulty();
 }
 
-JNIEXPORT jdouble JNICALL
-Java_com_my_monero_model_WalletManager_getMiningHashRate(JNIEnv *env, jobject instance) {
-    return XCash::WalletManagerFactory::getWalletManager()->miningHashRate();
-}
-
 JNIEXPORT jlong JNICALL
 Java_com_my_monero_model_WalletManager_getBlockTarget(JNIEnv *env, jobject instance) {
     return XCash::WalletManagerFactory::getWalletManager()->blockTarget();
-}
-
-JNIEXPORT jboolean JNICALL
-Java_com_my_monero_model_WalletManager_isMining(JNIEnv *env, jobject instance) {
-    return static_cast<jboolean>(XCash::WalletManagerFactory::getWalletManager()->isMining());
-}
-
-JNIEXPORT jboolean JNICALL
-Java_com_my_monero_model_WalletManager_startMining(JNIEnv *env, jobject instance,
-                                                   jstring address,
-                                                   jboolean background_mining,
-                                                   jboolean ignore_battery) {
-    const char *_address = env->GetStringUTFChars(address, NULL);
-    bool success =
-            XCash::WalletManagerFactory::getWalletManager()->startMining(std::string(_address),
-                                                                             background_mining,
-                                                                             ignore_battery);
-    env->ReleaseStringUTFChars(address, _address);
-    return static_cast<jboolean>(success);
-}
-
-JNIEXPORT jboolean JNICALL
-Java_com_my_monero_model_WalletManager_stopMining(JNIEnv *env, jobject instance) {
-    return static_cast<jboolean>(XCash::WalletManagerFactory::getWalletManager()->stopMining());
 }
 
 JNIEXPORT jstring JNICALL
