@@ -171,15 +171,7 @@ public class WalletManager {
 
     public native long getNetworkDifficulty();
 
-    public native double getMiningHashRate();
-
     public native long getBlockTarget();
-
-    public native boolean isMining();
-
-    public native boolean startMining(String address, boolean background_mining, boolean ignore_battery);
-
-    public native boolean stopMining();
 
     public native String resolveOpenAlias(String address, boolean dnssec_valid);
 

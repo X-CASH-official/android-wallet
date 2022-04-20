@@ -1,4 +1,4 @@
-prefix=/opt/android/monero/monero-android-lib/build/build/libsodium/arm
+prefix=/opt/android/monero/build/build/libsodium/arm
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

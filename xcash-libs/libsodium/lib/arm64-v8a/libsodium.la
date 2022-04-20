@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/opt/android/monero/monero-android-lib/build/build/libsodium/arm64/lib'
+libdir='/opt/android/monero/build/build/libsodium/arm64/lib'
