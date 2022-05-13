@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">X-CASH</string>
     <string name="contact_us_url">https://xcashteam.atlassian.net/servicedesk/customer/portal/1/group/-1</string>
-    <string name="about_us_url">https://github.com/X-CASH-official</string>
+    <string name="about_us_url">https://github.com/X-CASH-official/android-wallet/releases</string>
 
     <string name="base_layout_load_completed_textView_text">Complete</string>
     <string name="base_recyclerview_lostviewtype_item_textView_text">Lost viewType in recyclerView</string>
