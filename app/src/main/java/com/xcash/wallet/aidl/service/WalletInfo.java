@@ -36,6 +36,7 @@ public class WalletInfo {
     private String unlockedBalance;
     private boolean result;
     private int progress;
+    private int daemonVersion;
     private long daemonHeight;
     private long blockChainHeight;
     private String txId;
@@ -104,6 +105,14 @@ public class WalletInfo {
 
     public void setDaemonHeight(long daemonHeight) {
         this.daemonHeight = daemonHeight;
+    }
+
+    public int getDaemonVersion() {
+        return daemonVersion;
+    }
+
+    public void setDaemonVersion(int daemonVersion) {
+        this.daemonVersion = daemonVersion;
     }
 
     public long getBlockChainHeight() {

@@ -31,6 +31,7 @@ public class AboutUsActivity extends NewBaseActivity {
     private ImageView imageViewBack;
     private TextView textViewTitle;
     private TextView textViewVersion;
+    private TextView textViewCoreVersion;
     private TextView textViewFindNewVersion;
 
     private View.OnClickListener onClickListener;
@@ -52,6 +53,7 @@ public class AboutUsActivity extends NewBaseActivity {
         imageViewBack = (ImageView) findViewById(R.id.imageViewBack);
         textViewTitle = (TextView) findViewById(R.id.textViewTitle);
         textViewVersion = (TextView) findViewById(R.id.textViewVersion);
+        textViewCoreVersion = (TextView) findViewById(R.id.textViewCoreVersion);
         textViewFindNewVersion = (TextView) findViewById(R.id.textViewFindNewVersion);
         onClickListener();
     }
@@ -59,7 +61,8 @@ public class AboutUsActivity extends NewBaseActivity {
     @Override
     protected void initConfigUi() {
         textViewTitle.setText(R.string.activity_about_us_textViewTitle_text);
-        textViewVersion.setText("v" + MachineInformationTool.getVersionName(AboutUsActivity.this));
+        textViewVersion.setText("v" + MachineInformationTool.getVersionName(AboutUsActivity.this) + " (android wallet)");
+         textViewCoreVersion.setText("v" + getString(R.string.XCASH_CORE_VERSION) + " (xcash-core)");
     }
 
     @Override

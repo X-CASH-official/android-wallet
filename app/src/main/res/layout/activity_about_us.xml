@@ -72,6 +72,16 @@
                         android:textSize="@dimen/textView_normal_textSize_default" />
 
                     <TextView
+                        android:id="@+id/textViewCoreVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/view_normal_margin_default"
+                        android:textColor="?attr/mainColorText"
+                        android:textSize="@dimen/textView_normal_textSize_default"
+                        tools:text="@string/number_0_text" />
+
+                    <TextView
                         android:id="@+id/textViewDetails"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

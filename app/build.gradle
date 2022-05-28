@@ -60,4 +60,9 @@ dependencies {
 
     implementation project(':xcash')
 
+    preBuild.doFirst {
+        println("Executing update_version.sh")
+        def proc = "xcash-libs/update_version.sh".execute()
+        proc.waitForProcessOutput(System.out, System.err)
+    }
 }
