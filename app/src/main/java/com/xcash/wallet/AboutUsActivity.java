@@ -61,10 +61,8 @@ public class AboutUsActivity extends NewBaseActivity {
     @Override
     protected void initConfigUi() {
         textViewTitle.setText(R.string.activity_about_us_textViewTitle_text);
-        textViewVersion.setText("v" + MachineInformationTool.getVersionName(AboutUsActivity.this));
-        textViewCoreVersion.setText("v" + MachineInformationTool.getVersionName(AboutUsActivity.this));
-        //long version = TheApplication.getTheApplication().getWalletServiceHelper().getDaemonVersion();
-        //textViewVersion.setText("v" + version);
+        textViewVersion.setText("v" + MachineInformationTool.getVersionName(AboutUsActivity.this) + " (android wallet)");
+         textViewCoreVersion.setText("v" + getString(R.string.XCASH_CORE_VERSION) + " (xcash-core)");
     }
 
     @Override
