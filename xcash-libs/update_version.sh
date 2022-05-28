@@ -4,4 +4,4 @@ LIB_FILE=libversion.a
 
 VERSION=`strings $LIB_DIR/$LIB_FILE | grep -P [0-9]+\.[0-9]+\.[0-9]+-release | tr -d '\-release'`
 
-sed "s/%VERSION%/$VERSION/g" xcash-libs/version_template.xml > app/src/main/res/xml/version.xml
+sed "s/%VERSION%/$VERSION/g" xcash-libs/version_template.xml > app/src/main/res/values/version.xml

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="XCASH_CORE_VERSION">%VERSION%</string>
+    <string name="XCASH_CORE_VERSION" translatable="false">%VERSION%</string>
 </resources>
