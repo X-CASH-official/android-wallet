@@ -35,6 +35,9 @@ public class LanguageTool {
 
     public static final String LANGUAGE_ENGLISH = "ENGLISH";
     public static final String LANGUAGE_CHINESE = "简体中文";
+    public static final String LANGUAGE_SPANISH = "SPANISH";
+    public static final String LANGUAGE_FRENCH = "FRENCH";
+    public static final String LANGUAGE_PORTUGUESE = "PORTUGUESE";
 
     public static Context initAppLanguage(Context context, String language) {
         if (language == null) {
@@ -46,6 +49,12 @@ public class LanguageTool {
                 localLanguage = Locale.ENGLISH.getLanguage();
             } else if (language.equals(LANGUAGE_CHINESE)) {
                 localLanguage = Locale.CHINESE.getLanguage();
+            } else if (language.equals(LANGUAGE_SPANISH)) {
+                localLanguage = new Locale("es", "ES").getLanguage();
+            } else if (language.equals(LANGUAGE_FRENCH)) {
+                localLanguage = Locale.FRENCH.getLanguage();
+            } else if (language.equals(LANGUAGE_PORTUGUESE)) {
+                localLanguage = new Locale("pt", "PT").getLanguage();
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 return createConfiguration(context, localLanguage);
@@ -118,6 +127,9 @@ public class LanguageTool {
         List<String> languages = new ArrayList<>();
         languages.add(LanguageTool.LANGUAGE_ENGLISH);
         languages.add(LanguageTool.LANGUAGE_CHINESE);
+        languages.add(LanguageTool.LANGUAGE_SPANISH);
+        languages.add(LanguageTool.LANGUAGE_FRENCH);
+        languages.add(LanguageTool.LANGUAGE_PORTUGUESE);
         int selectPosition = 0;
         for (int i = 0; i < languages.size(); i++) {
             if (language != null && languages.get(i).equals(language)) {

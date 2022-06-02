@@ -1,0 +1,291 @@
+<resources>
+    <string name="app_name">X-CASH</string>
+    <string name="contact_us_url">https://xcashteam.atlassian.net/servicedesk/customer/portal/1/group/-1</string>
+    <string name="about_us_url">https://github.com/X-CASH-official/android-wallet/releases</string>
+
+    <string name="base_layout_load_completed_textView_text">Compléter</string>
+    <string name="base_recyclerview_lostviewtype_item_textView_text">Lost viewType in recyclerView</string>
+
+    <string name="permission_setting_tips">Permissions manquantes. Pour que le porte-monnaie fonctionne correctement, veuillez autoriser les permissions appropriées.</string>
+    <string name="permission_setting">Paramètres</string>
+    <string name="permission_cancel">Annuler</string>
+    <string name="button_next">Suivant</string>
+    <string name="button_ok">OK</string>
+    <string name="number_0_text">0</string>
+    <string name="number_over_99_text">···</string>
+    <string name="number_amount_0_text">0.00</string>
+    <string name="progressDialogHelp_tips">Veuillez patienter...</string>
+    <string name="normal_nodata_textView_text">Pas de données</string>
+    <string name="normal_load_completed_textView_text">Compléter</string>
+    <string name="normal_copySuccess_tips">Copié dans le presse-papiers !</string>
+    <string name="over_request_tips">La demande dépasse la limite de traitement. Veuillez réessayer plus tard</string>
+    <string name="wallet_not_exists_tips">Le porte-monnaie n\'existe pas.</string>
+    <string name="password_can_not_empty_tips">Le mot de passe ne peut pas être vide!</string>
+    <string name="check_password_error_tips">Erreur de vérification du mot de passe</string>
+    <string name="set_daemon_error_tips">Echec de déclaration du daemon</string>
+    <string name="create_transaction_error_tips">La création de la transaction a échoué. Veuillez vérifier les champs pour les erreurs</string>
+    <string name="send_transaction_error_tips">La diffusion de la transaction a échoué</string>
+    <string name="not_find_active_wallet_tips">Impossible de trouver le portefeuille actuel</string>
+    <string name="close_active_wallet_error_tips">Impossible de fermer le portefeuille actuel</string>
+    <string name="get_wallet_data_error_tips">Impossible de récupérer les données du portefeuille</string>
+    <string name="delegate_vote_error_tips">Impossible de voter pour un délégué</string>
+    <string name="delegate_register_error_tips">Impossible d\'enregistrer le délégué</string>
+    <string name="delegate_update_error_tips">Impossible de mettre à jour les informations sur le délégué</string>
+    <string name="delegate_remove_error_tips">Impossible de supprimer le délégué</string>
+    <string name="qrcode_cancel_tips">La lecture du code QR a été interrompue</string>
+    <string name="wallet_service_not_running_tips">Le service Wallet ne fonctionne pas</string>
+    <string name="service_uninitialized_tips">Le service n\'est pas prêt, veuillez réessayer</string>
+    <string name="start_receive_transaction_notfication_tips">Reçu une transaction de :</string>
+    <string name="retry_bind_service_tips">Le service est déconnecté, j\'essaie de me reconnecter... veuillez réessayer plus tard.</string>
+    <string name="show_more_tips">Afficher plus</string>
+    <string name="address_error_tips">Erreur d’adresse</string>
+    <string name="server_run_tips">Le serveur XCASH fonctionne!</string>
+    <string name="waiting_to_vote_tips">En attente de voter pour</string>
+
+    <string name="popupwindow_textViewOK_text">OK</string>
+    <string name="popupwindow_textViewCancel_text">Annuler</string>
+    <string name="popupwindow_password_textViewPasswordTips_text">Entrez le mot de passe du portefeuille :</string>
+    <string name="popupwindow_password_editTextPassword_hint">Votre mot de passe</string>
+    <string name="popupwindow_password_textViewPasswordHintTips_text">Indice de mot de passe</string>
+
+    <string name="activity_splash_textViewCopyright_text">Copyright © 2019-2021 The X-Cash Foundation</string>
+    <string name="activity_splash_initDaemonError_tips">Echec de déclaration du daemon</string>
+
+    <string name="activity_choose_wallet_buttonCreateWallet_text">Créer un portefeuille</string>
+    <string name="activity_choose_wallet_buttonImportWallet_text">Importation de portefeuille</string>
+    <string name="activity_choose_wallet_textViewWalletTips_text">Vous avez besoin d\'au moins un portefeuille. Créez un nouveau portefeuille ou importez un portefeuille existant.</string>
+
+    <string name="activity_set_wallet_textViewTips_text">• Verifiez SHA-256 \nPour la sécurité et la sûreté de vos actifs, veuillez faire correspondre le hash SHA-256 correspondant à la version actuelle de l\'application.\n- Définition d’un mot de passe \nPour la sécurité et la sûreté de vos actifs, veuillez définir un mot de passe utilisé pour l\'autorisation de votre clé privée et des transactions.</string>
+    <string name="activity_set_wallet_editTextLoginName_hint">Le nom de votre portefeuille</string>
+    <string name="activity_set_wallet_editTextPassword_hint">Le mot de passe de votre portefeuille</string>
+    <string name="activity_set_wallet_editTextConfirmPassword_hint">Confirmez le mot de passe de votre portefeuille</string>
+    <string name="activity_set_wallet_editTextDescription_hint">Indice de mot de passe</string>
+    <string name="activity_set_wallet_textViewValidateSha256Tips_text">Veillez à télécharger depuis le canal officiel</string>
+    <string name="activity_set_wallet_textViewAgreementTips_text">J\'ai vérifié le hachage SHA-256 de la version actuelle.</string>
+    <string name="activity_set_wallet_passwordConfirm_tips">Les mots de passe ne sont pas les mêmes.</string>
+    <string name="activity_set_wallet_confirmEmpty_tips">Le nom du portefeuille et le mot de passe ne peuvent pas être vides</string>
+    <string name="activity_set_wallet_unCheck_tips">Veuillez valider le hachage SHA-256 de la version actuelle.</string>
+    <string name="activity_set_wallet_SHA256_tips">Signature SHA-256:</string>
+    <string name="activity_set_wallet_passwordDigitError_tips">Le mot de passe doit comporter au moins 6 caractères</string>
+
+    <string name="activity_create_wallet_textViewTitle_text">Créer un portefeuille</string>
+    <string name="activity_create_wallet_textViewTips_text">• Graine mnémotechnique de secours : \NLa perte de cette graine entraînera la perte de tous vos fonds. Notez-la et conservez-la dans un endroit sûr.\n• Évitez les captures d\'écran : n\'importe qui ayant votre graine mnémotechnique peut accéder à vos biens et les dépenser..</string>
+    <string name="activity_create_wallet_buttonNext_text">J\'ai noté ma graine mnémotechnique.</string>
+    <string name="activity_create_wallet_waitingCreateWalletTips_text">Veuillez attendre la création du portefeuille</string>
+    <string name="activity_create_wallet_writeDownTips_text">Veuillez noter votre graine mnémotechnique</string>
+    <string name="activity_create_wallet_createWalletError_tips">Erreur de création de portefeuille</string>
+    <string name="activity_create_wallet_walletExist_tips">Ce portefeuille de noms existe déjà</string>
+    <string name="activity_create_wallet_getActiveWalletError_tips">Ne pas avoir de portefeuille actif</string>
+
+    <string name="activity_import_wallet_textViewTitle_text">Importation du portefeuille</string>
+    <string name="activity_import_wallet_fragment_tabLayout_mnemonic_text">Importer via la graine de Mnémotechnique</string>
+    <string name="activity_import_wallet_fragment_tabLayout_keys_text">Importation via clés privées</string>
+    <string name="activity_import_wallet_fragment_quick_restore_height_tips">Restaurer à partir de la hauteur du bloc:</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewMnemonicTips_text">Graine mnémotechnique</string>
+    <string name="activity_import_wallet_fragment_mnemonic_editTextMnemonic_hint">Veuillez entrer la graine mnémotechnique. Séparez chaque mot par des espaces simples</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewSyncTips_text">Synchronisation à partir de la date de la première transmission ou d\'une hauteur de bloc spécifique pour accélérer la synchronisation.</string>
+    <string name="activity_import_wallet_fragment_mnemonic_textViewDate_text">Date de début de la synchronisation (facultatif)</string>
+    <string name="activity_import_wallet_fragment_mnemonic_editTextBlockHeight_text">Hauteur du bloc (en option)</string>
+    <string name="activity_import_wallet_fragment_mnemonic_mnemonicEmpty_tips">La graine mnémotechnique ne peut pas être vide</string>
+    <string name="activity_import_wallet_fragment_mnemonic_buttonNext_text">Importation du portefeuille</string>
+    <string name="activity_import_wallet_fragment_keys_textViewPrivateViewKeyTips_text">Clé privée de visualisation</string>
+    <string name="activity_import_wallet_fragment_keys_editTextPrivateViewKey_hint">Entrer votre clé privée de visualisation</string>
+    <string name="activity_import_wallet_fragment_keys_textViewPrivateSpendKeyTips_text">Clé privée de dépense (facultatif)</string>
+    <string name="activity_import_wallet_fragment_keys_editTextPrivateSpendKey_hint">Saisissez votre clé privée de dépense. Si elle n\'est pas fournie, vous ne pourrez pas dépenser les fonds.</string>
+    <string name="activity_import_wallet_fragment_keys_textViewInputAddressTips_text">Adresse du portefeuille</string>
+    <string name="activity_import_wallet_fragment_keys_editTextInputAddressKey_hint">Entrez l\'adresse de votre portefeuille</string>
+
+    <string name="activity_create_wallet_confirm_textViewTitle_text">Vérification de Mnémotechnique</string>
+    <string name="activity_create_wallet_confirm_textViewTips_text">Pour vous assurer que vous avez correctement copié la graine mnémotechnique, veuillez la transcrire à nouveau.</string>
+    <string name="activity_create_wallet_confirm_textViewWordTips_text">Entrez votre graine mnémotechnique.</string>
+    <string name="activity_create_wallet_confirm_buttonNext_text">Vérification</string>
+    <string name="activity_create_wallet_confirm_confirmMnemonicEmpty_tips">La graine mnémonique ne peut pas être vide</string>
+    <string name="activity_create_wallet_confirm_confirmMnemonicUnEquals_tips">La graine mnémotechnique est incorrecte</string>
+
+    <string name="layout_active_wallet_textViewCopyAddress_text">Copie</string>
+
+    <string name="activity_main_bottomTab_textViewHomeTab_text">Accueil</string>
+    <string name="activity_main_bottomTab_textViewFindTab_text">Adresse</string>
+    <string name="activity_main_bottomTab_textViewWalletTab_text">Portefeuille</string>
+    <string name="activity_main_exitTips">Appuyez à nouveau pour sortir</string>
+    <string name="activity_main_home_close_active_wallet_tips">Confirmer pour fermer le portefeuille actif?</string>
+
+    <string name="activity_main_navigationview_textViewWalletTitle_text">Gestionnaire de portefeuilles</string>
+    <string name="activity_main_navigationview_textViewAddressTitle_text">Gestionnaire d\'adresses</string>
+    <string name="activity_main_navigationview_textViewNodeSetting_text">Paramètres des nœuds</string>
+    <string name="activity_main_navigationview_textViewLanguageSetting_text">Paramètres linguistiques</string>
+    <string name="activity_main_navigationview_textViewContactUs_text">Nous contacter</string>
+    <string name="activity_main_navigationview_textViewAboutUs_text">A propos de nous</string>
+    <string name="activity_main_navigationview_checkBoxExit_text">Fermer le serveur à la sortie</string>
+
+    <string name="activity_wallet_manager_textViewTitle_text">Gestionnaire de portefeuilles</string>
+    <string name="activity_wallet_manager_item_textViewActiveStatus_text">actif</string>
+    <string name="activity_wallet_manager_item_textViewWalletType_text">X-Cash</string>
+    <string name="activity_wallet_manager_activeWallet_error_tips">Le chargement du portefeuille actif a échoué</string>
+    <string name="activity_wallet_manager_delete_address_tips">Confirmer pour supprimer l\'adresse?</string>
+
+    <string name="activity_wallet_details_textViewTitle_text">Gestionnaire de portefeuilles</string>
+    <string name="activity_wallet_details_textViewWalletNameTitle_text">Nom du portefeuille</string>
+    <string name="activity_wallet_details_textViewWalletAddressTitle_text">Adresse du portefeuille</string>
+    <string name="activity_wallet_details_textViewPasswordHintTitle_text">Password Hint</string>
+    <string name="activity_wallet_details_textViewExportMnemonicWordsTitle_text">Exportation de la graine mnémotechnique</string>
+    <string name="activity_wallet_details_textViewExportPrivateKeysTitle_text">Exportation de clés privées</string>
+    <string name="activity_wallet_details_textViewResetBlockChainTitle_text">Réinitialiser la chaîne de blocs</string>
+    <string name="activity_wallet_details_textViewDeleteWalletTitle_text">Supprimer le portefeuille</string>
+    <string name="activity_wallet_details_openWalletPasswordError_tips">Mot de passe incorrect</string>
+    <string name="activity_wallet_details_openWalletError_tips">Impossible d\'ouvrir le portefeuille</string>
+    <string name="activity_wallet_details_resetBlockChainSuccess_tips">Réinitialisation réussie de la chaîne de blocs</string>
+    <string name="activity_wallet_details_deleteSuccess_tips">Portefeuille supprimé avec succès</string>
+    <string name="activity_wallet_details_deleteError_tips">Impossible de supprimer le portefeuille</string>
+    <string name="activity_wallet_details_mnemonic_words_textViewTitle_text">Récupérer la graine mnémotechnique</string>
+    <string name="activity_wallet_details_mnemonic_words_waitingLoadingWalletTips_text">Chargement de la graine mnémotechnique. Veuillez attendre</string>
+    <string name="activity_wallet_details_mnemonic_words_writeDownTips_text">Veuillez noter votre graine mnémotechnique</string>
+    <string name="activity_wallet_details_mnemonic_words_mnemonicEmpty_tips">Impossible d\'obtenir la graine mnémotechnique</string>
+    <string name="activity_wallet_details_private_keys_textViewTitle_text">Récupérer les clés privées</string>
+    <string name="activity_wallet_details_private_keys_textViewTips_text">• Sauvegarde des clés privées:\nLa perte de ce document entraînera la perte de tous vos fonds. Notez-la et conservez-la dans un endroit sûr.\n• Évitez les captures d\'écran:\nQuiconque possède votre graine mnémotechnique peut accéder à vos actifs et les dépenser..</string>
+    <string name="activity_wallet_details_private_keys_waitingLoadingWalletTips_text">Chargement des clés privées. Please wait</string>
+    <string name="activity_wallet_details_private_keys_writeDownTips_text">Veuillez noter vos clés privées</string>
+    <string name="activity_wallet_details_private_keys_addressKey_tips">Adresse</string>
+    <string name="activity_wallet_details_private_keys_publicViewKey_tips">Clé de visualisation publique</string>
+    <string name="activity_wallet_details_private_keys_privateViewKey_tips">Clé de visualisation privée</string>
+    <string name="activity_wallet_details_private_keys_publicSpendKey_tips">Clé de dépense publique</string>
+    <string name="activity_wallet_details_private_keys_privateSpendKey_tips">Clé de dépense privée</string>
+    <string name="activity_wallet_details_reset_block_chain_tips">Confirmer la réinitialisation de la chaîne de blocs?</string>
+    <string name="activity_wallet_details_delete_tips">Confirmer la suppression du portefeuille?</string>
+
+    <string name="activity_wallet_running_textViewSweepAll_text">SWEEP ALL</string>
+    <string name="activity_wallet_running_textViewDpops_text">DPOPS</string>
+    <string name="activity_wallet_running_textViewSynchronizeStatus_text">Cela peut prendre jusqu\'à 5 minutes, veuillez patienter....</string>
+    <string name="activity_wallet_running_buttonSend_text">Envoyer</string>
+    <string name="activity_wallet_running_buttonReceive_text">Recevoir</string>
+
+    <string name="activity_wallet_running_tabLayout_all_text">Tout</string>
+    <string name="activity_wallet_running_tabLayout_receive_text">Recevoir</string>
+    <string name="activity_wallet_running_tabLayout_send_text">Envoyer</string>
+    <string name="activity_wallet_running_SynchronizedError_tips">Erreur de synchronisation, veuillez vérifier votre connexion</string>
+    <string name="activity_wallet_running_SynchronizedSuccess_tips">Succès de la synchronisation</string>
+    <string name="activity_wallet_running_leaveDistance_tips">Synchronisation, estimation des blocs restants:\n</string>
+    <string name="activity_wallet_running_unlocked_tips">(déverrouillé)</string>
+
+    <string name="activity_node_manager_textViewTitle_text">Choisir le nœud</string>
+    <string name="activity_node_manager_changeNodeSuccess_tips">Nœud modifié</string>
+    <string name="activity_node_manager_changeNodeError_tips">Impossible de changer de nœud</string>
+    <string name="activity_node_manager_deleteNodeSuccess_tips">Nœud supprimé avec succès</string>
+    <string name="activity_node_manager_deleteNodeError_tips">Impossible de supprimer le noeud</string>
+    <string name="activity_node_add_textViewTitle_text">Ajouter un nœud</string>
+    <string name="activity_node_delete_node_tips">Confirmer pour supprimer le nœud?</string>
+    <string name="activity_node_add_editTextNodeIp_hint">IP ou Nom DNS du nœud</string>
+    <string name="activity_node_add_editTextNodePort_hint">Port du nœud</string>
+    <string name="activity_node_add_editTextUsername_hint">Nom d\'utilisateur (facultatif)</string>
+    <string name="activity_node_add_editTextPassword_hint">Mot de passe (facultatif)</string>
+    <string name="activity_node_add_confirmEmpty_tips">L\'IP ou le Nom DNS et le port ne peuvent pas être vides</string>
+    <string name="activity_node_add_addNodeSuccess_tips">Nœud ajouté avec succès</string>
+    <string name="activity_node_add_addNodeError_tips">Impossible d\'ajouter le nœud</string>
+
+    <string name="activity_main_content_fragment_home_top_item_textViewSynchronizeStatus_text">Le porte-monnaie est verrouillé, appuyez pour reprendre</string>
+    <string name="activity_main_content_fragment_home_textViewTransactionTitle_text">Historique des transactions:</string>
+    <string name="activity_main_content_fragment_home_textViewTransactionDetails_text">Détails</string>
+
+    <string name="layout_transaction_item_empty_tips">Aucune transaction</string>
+    <string name="layout_transaction_item_status_tips">STATUT</string>
+    <string name="layout_transaction_item_status_pending_tips">EN ATTENTE</string>
+    <string name="layout_transaction_item_status_over_tips">TERMINÉE</string>
+    <string name="layout_transaction_item_hash_tips">HASH:</string>
+    <string name="layout_transaction_item_date_tips">DATE:</string>
+    <string name="layout_transaction_item_description_tips">Description:</string>
+
+    <string name="activity_payment_textViewTitle_text">Transferts</string>
+    <string name="activity_payment_textViewAmountTips_text">Solde disponible</string>
+    <string name="activity_payment_textViewPublicTips_text">Transaction publique?</string>
+    <string name="activity_payment_editTextWalletAddress_hint">Adresse du destinataire</string>
+    <string name="activity_payment_editTextAmount_hint">Montant</string>
+    <string name="activity_payment_editTextRingSize_hint">Taille de la bague (21 par défaut) (facultatif)</string>
+    <string name="activity_payment_editTextPaymentId_hint">ID du paiement (facultatif)</string>
+    <string name="activity_payment_editTextDescription_hint">Description (facultatif)</string>
+    <string name="activity_payment_confirmEmpty_tips">L\'adresse et le montant ne peuvent être vides</string>
+    <string name="activity_payment_confirm_textViewTitle_text">Confirmer les informations sur la transaction</string>
+    <string name="activity_payment_radioButtonLow_text">Priorité Basse</string>
+    <string name="activity_payment_radioButtonNormal_text">Priorité Normale</string>
+    <string name="activity_payment_radioButtonHigh_text">Priorité Haute</string>
+    <string name="activity_payment_textViewAllAmount_text">Tout</string>
+    <string name="activity_payment_payAllAmount_tips">Le solde total est inférieur aux frais de transaction</string>
+    <string name="activity_payment_payAmountCheckError_tips">Le montant de la transaction doit être supérieur à 0</string>
+    <string name="activity_payment_paySweepAll_tips">Voulez-vous envoyer un SWEEP_ALL ?</string>
+
+    <string name="activity_address_manager_textViewTitle_text">Carnet d\'adresses</string>
+    <string name="activity_address_manager_addAddressSuccess_tips">Adresse ajoutée avec succès</string>
+    <string name="activity_address_manager_addAddressError_tips">Impossible d\'ajouter l’adresse</string>
+    <string name="activity_address_manager_deleteAddressSuccess_tips">Adresse supprimée avec succès</string>
+    <string name="activity_address_manager_deleteAddressError_tips">Impossible de supprimer l\'adresse</string>
+
+    <string name="activity_address_add_textViewTitle_text">Ajouter une adresse</string>
+    <string name="activity_address_add_confirmEmpty_tips">L\'adresse et la description ne peuvent être vides</string>
+    <string name="activity_address_add_editTextAddress_hint">Adresse XCASH</string>
+    <string name="activity_address_add_editTextNotes_hint">Description</string>
+
+    <string name="activity_payment_confirm_address_tips">Adresse:</string>
+    <string name="activity_payment_confirm_amount_tips">Montant:</string>
+    <string name="activity_payment_confirm_fee_tips">Frais :</string>
+    <string name="activity_payment_confirm_firstTxId_tips">Tx Id:</string>
+    <string name="activity_payment_confirm_txCount_tips">Tx Count:</string>
+    <string name="activity_payment_confirm_paySuccess_tips">Succès de la transaction</string>
+
+    <string name="activity_webview_chooseFile_tips">Choisir le fichier</string>
+
+    <string name="activity_language_setting_textViewTitle_text">Réglage de la langue</string>
+
+    <string name="activity_qrcode_textViewTitle_text">Scanner le code QR</string>
+
+    <string name="activity_receive_textViewTitle_text">RECEVOIR</string>
+
+    <string name="activity_transaction_details_textViewTitle_text">Détails de la transaction</string>
+    <string name="activity_transaction_details_fee_tips">Frais :</string>
+    <string name="activity_transaction_details_blockHeight_tips">Hauteur du bloc:</string>
+    <string name="activity_transaction_details_confirmations_tips">Confirmations:</string>
+    <string name="activity_transaction_details_paymentId_tips">ID du paiement:</string>
+
+    <string name="activity_about_us_textViewTitle_text">A propos de nous</string>
+    <string name="activity_about_us_textViewDetails_text">X-Cash est un projet communautaire et open-source qui développe une nouvelle norme de paiement numérique. Un réseau de chaîne de bloc unique avec des transactions publiques et privées, un consensus DPOS personnalisé, et bientôt des chaînes collatérales. Basé et amélioré à partir du célèbre protocole CryptoNote, X-Cash vise à devenir la norme en matière de paiement numérique et de règlement des transactions.\n• Confidentialité Flexible: X-Cash offre la possibilité d\'envoyer une transaction privée ou publique, directement à partir de votre portefeuille, en actionnant un simple curseur, sans compromettre votre vie privée.\n• Preuve d’enjeu déléguée privée (DPOPS): Pour assurer l\'évolutivité et les futures mises à niveau tout en réduisant la consommation d\'énergie du réseau, nous développons un consensus DPOS personnalisé et unique qui peut être mis en œuvre pour n\'importe quelle pièce privée.\n• Chaînes Collatérales: Les délégués pourront héberger des chaînes collatérales sur le réseau X-Cash, offrant ainsi une solution de chaîne de bloc simple, sécurisée, économique et personnalisable pour répondre aux besoins de vos projets..</string>
+    <string name="activity_about_us_textViewFindNewVersion_text">Nouvelle version disponible sur GitHub</string>
+
+    <string name="activity_dpops_textViewTitle_text">DPOPS</string>
+    <string name="activity_dpops_editTextTarget_hint">Adresses des délégués partagés</string>
+    <string name="activity_dpops_buttonSearch_text">Recherche</string>
+    <string name="activity_dpops_editTextVoteValue_hint">Nom du délégué | Public Address</string>
+    <string name="activity_dpops_buttonVote_text">Voter</string>
+    <string name="activity_dpops_buttonRegister_text">Enregister</string>
+    <string name="activity_dpops_buttonUpdate_text">Mise à jour</string>
+    <string name="activity_dpops_buttonMore_text">Plus</string>
+    <string name="activity_dpops_confirmEmpty_tips">Le contenu de la recherche ne peut être vide</string>
+    <string name="activity_dpops_checkVoteValue_tips">La valeur du champs vote ne peut être vide</string>
+    <string name="activity_dpops_checkUnlockedBalance_tips">Le solde débloqué doit être supérieur à 0</string>
+    <string name="activity_dpops_vote_failed_tips">Le vote pour le délégué a échoué | Vous pouvez consulter les informations dans la page d\'historique</string>
+    <string name="activity_dpops_waiting_vote_tips">Si vous souhaiter voter, vous devez attendre</string>
+    <string name="activity_dpops_waiting_vote_minute_tips">minutes</string>
+    <string name="activity_dpops_auto_waiting_vote_tips">Attente automatique</string>
+    <string name="activity_dpops_quick_vote_tips">Vote Rapide</string>
+
+    <string name="activity_dpops_register_textViewTitle_text">Enregistrer un délégué</string>
+    <string name="activity_dpops_register_editTextDelegateName_hint">Nom du délégué</string>
+    <string name="activity_dpops_register_editTextDelegateIPAddress_hint">Adresse IP ou Nom DNS du délégué</string>
+    <string name="activity_dpops_register_editTextBlockVerifierMessagesPublicKey_hint">Messages du vérificateur de blocs de Clé publique</string>
+    <string name="activity_dpops_register_confirmDelegateNameEmpty_tips">Le nom du délégué ne peut être vide</string>
+    <string name="activity_dpops_register_confirmDelegateIPAddressEmpty_tips">L\'adresse IP ou le Nom DNS du délégué ne peut pas être vide</string>
+    <string name="activity_dpops_register_confirmBlockVerifierMessagesPublicKeyEmpty_tips">Le messages du vérificateur de blocs de Clé publique ne peut être vide.</string>
+    <string name="activity_dpops_register_buttonNext_text">Enregistrer un délégué</string>
+
+    <string name="activity_dpops_update_textViewTitle_text">Mettre à jour le délégué</string>
+    <string name="activity_dpops_update_editTextItem_hint">Type d\'élément</string>
+    <string name="activity_dpops_update_editTextValue_hint">Contenu</string>
+    <string name="activity_dpops_update_confirmItem_tips">L\'élément ne peut être vide</string>
+    <string name="activity_dpops_update_confirmValue_tips">La valeur ne peut pas être vide</string>
+    <string name="activity_dpops_update_buttonNext_text">Mettre à jour le délégué</string>
+
+    <string name="activity_dpops_remove_textViewTitle_text">Supprimer le délégué</string>
+    <string name="activity_dpops_remove_buttonNext_text">Supprimer le délégué</string>
+    <string name="activity_dpops_show_history_tips">Montrer l’historique</string>
+
+    <string name="activity_dpops_operation_history_textViewTitle_text">Montrer l’historique</string>
+    <string name="activity_dpops_utcTime_tips">Heure UTC actuelle:</string>
+
+</resources>
