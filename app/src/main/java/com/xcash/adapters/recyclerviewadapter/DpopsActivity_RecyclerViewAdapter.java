@@ -24,10 +24,10 @@ import com.xcash.base.BaseActivity;
 import com.xcash.base.recyclerviewlibrary.adapters.UnLoadMoreRecyclerViewAdapter;
 import com.xcash.base.recyclerviewlibrary.models.ViewItem;
 import com.xcash.models.Delegate;
+import com.xcash.utils.CompactNumberFormatter;
 import com.xcash.wallet.R;
 
 import java.util.List;
-
 
 public class DpopsActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAdapter {
 
@@ -77,7 +77,14 @@ public class DpopsActivity_RecyclerViewAdapter extends UnLoadMoreRecyclerViewAda
                     block_verifier_online_percentage = delegate.getBlock_verifier_online_percentage() + "%";
                 }
                 textViewDelegateName.setText(delegate.getDelegate_name());
-                textViewAmount.setText(delegate.getTotal_vote_count());
+
+                String total_vote_count = delegate.getTotal_vote_count();
+                int decimals = CompactNumberFormatter.getXCASHDecimals();
+                double total_vote_count_d = Double.parseDouble(total_vote_count);
+                total_vote_count_d /= Math.pow(10, decimals);
+                total_vote_count = CompactNumberFormatter.formatValue(total_vote_count_d);
+
+                textViewAmount.setText(total_vote_count);
 
                 textViewInfo.setText("online_status:" + delegate.getOnline_status() + "\ndelegate_status:" + delegate.getShared_delegate_status() + "|delegate_fee:" + delegate_fee  + "\nblock_verifier_total_rounds:" + delegate.getBlock_verifier_total_rounds()+ "\nblock_verifier_online_percentage:" + block_verifier_online_percentage);
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
