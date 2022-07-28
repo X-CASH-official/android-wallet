@@ -37,6 +37,7 @@ import android.widget.TextView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.xcash.base.BaseActivity;
+import com.xcash.utils.BarcodeData;
 import com.xcash.utils.StringTool;
 import com.xcash.utils.database.entity.Wallet;
 import com.xcash.wallet.aidl.OnCreateTransactionListener;
@@ -433,7 +434,26 @@ public class PaymentActivity extends NewBaseActivity {
         } else if (requestCode == IntentIntegrator.REQUEST_CODE) {
             if (resultCode == RESULT_OK && data != null) {
                 IntentResult intentResult = IntentIntegrator.parseActivityResult(resultCode, data);
-                editTextWalletAddress.setText(intentResult.getContents());
+               // String content = intentResult.getContents();
+                String content = data.getStringExtra("SCAN_RESULT");
+                BarcodeData bcd = BarcodeData.fromQrCode(content);
+                if (bcd != null) {
+                    editTextWalletAddress.setText(bcd.address);
+
+                    if (bcd.paymentId != null) {
+                        editTextPaymentId.setText(bcd.paymentId);
+                    }
+
+                    if (bcd.amount != null) {
+                        editTextAmount.setText(bcd.amount);
+                    }
+
+                    if (bcd.description != null) {
+                        editTextDescription.setText(bcd.description);
+                    }
+                } else {
+                    BaseActivity.showShortToast(PaymentActivity.this, getString(R.string.qrcode_cancel_tips));
+                }
             } else {
                 BaseActivity.showShortToast(PaymentActivity.this, getString(R.string.qrcode_cancel_tips));
             }
