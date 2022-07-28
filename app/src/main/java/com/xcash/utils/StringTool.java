@@ -15,10 +15,13 @@
  */
 package com.xcash.utils;
 
+import android.support.v4.os.IResultReceiver;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 
 public class StringTool {
@@ -89,6 +92,24 @@ public class StringTool {
             return false;
         }
         return true;
+    }
+
+    public static boolean isAddressValid(String address) {
+        /* Address has XCA or XCB prefix followed by 95 or 107 base58 chars
+            TODO:
+             - Verify 1st digit and address checksum */
+
+        // Checks both standard and integrated addresses
+        boolean result = Pattern.matches("^XCA[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{95}$", address) ||
+                Pattern.matches("^XCB[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{107}$", address);
+
+        return result;
+    }
+
+    public static boolean isPaymentIdValid(String paymentId) {
+        /* Payment Ids are hex strings with 64 chars */
+        boolean result = Pattern.matches("^[A-Fa-f0-9]{64}$", paymentId);
+        return result;
     }
 
 }
